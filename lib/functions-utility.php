@@ -57,15 +57,30 @@ function debug_page_request() {
 }
 
 // Get custom post type options for CMB
-function get_posttype_options($argument) {
+function get_product_options() {
+  if ( class_exists( 'WooCommerce' ) ) {
     $get_post_args = array(
-        'post_type' => $argument,
-        'posts_per_page' => -1
+        'post_type' => 'product',
+        'posts_per_page' => -1,
+        'meta_query' => array(
+          array(
+            'key' => '_stock_status',
+            'value' => 'instock',
+          ),
+          array(
+            'key' => '_visibility',
+            'value' => 'hidden',
+            'compare' => '!=',
+          ),
+        )
     );
     $options = array();
     foreach ( get_posts( $get_post_args ) as $post ) {
       $title = get_the_title( $post->ID );
       $options[$post->ID] = __($title, 'cmb2' );
     }
-    return $options;
+  } else {
+    $options = null;
+  }
+  return $options;
 }
