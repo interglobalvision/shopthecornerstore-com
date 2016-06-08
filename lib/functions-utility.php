@@ -60,6 +60,7 @@ function debug_page_request() {
 function get_posttype_options($argument) {
     $get_post_args = array(
         'post_type' => $argument,
+        'posts_per_page' => -1
     );
     $options = array();
     foreach ( get_posts( $get_post_args ) as $post ) {
