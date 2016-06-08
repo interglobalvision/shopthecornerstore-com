@@ -5,7 +5,7 @@ function add_menu_icons_styles(){
 ?>
  
 <style>
-#menu-posts-project .dashicons-admin-post:before {
+#menu-posts-editorial .dashicons-admin-post:before {
     content: '\f319';
 }
 </style>
@@ -16,23 +16,23 @@ add_action( 'admin_head', 'add_menu_icons_styles' );
 
 
 //Register Custom Post Types
-add_action( 'init', 'register_cpt_project' );
+add_action( 'init', 'register_cpt_editorial' );
 
-function register_cpt_project() {
+function register_cpt_editorial() {
 
     $labels = array( 
-        'name' => _x( 'Projects', 'project' ),
-        'singular_name' => _x( 'Project', 'project' ),
-        'add_new' => _x( 'Add New', 'project' ),
-        'add_new_item' => _x( 'Add New Project', 'project' ),
-        'edit_item' => _x( 'Edit Project', 'project' ),
-        'new_item' => _x( 'New Project', 'project' ),
-        'view_item' => _x( 'View Project', 'project' ),
-        'search_items' => _x( 'Search Projects', 'project' ),
-        'not_found' => _x( 'No projects found', 'project' ),
-        'not_found_in_trash' => _x( 'No projects found in Trash', 'project' ),
-        'parent_item_colon' => _x( 'Parent Project:', 'project' ),
-        'menu_name' => _x( 'Projects', 'project' ),
+        'name' => _x( 'Editorials', 'editorial' ),
+        'singular_name' => _x( 'Editorial', 'editorial' ),
+        'add_new' => _x( 'Add New', 'editorial' ),
+        'add_new_item' => _x( 'Add New Editorial', 'editorial' ),
+        'edit_item' => _x( 'Edit Editorial', 'editorial' ),
+        'new_item' => _x( 'New Editorial', 'editorial' ),
+        'view_item' => _x( 'View Editorial', 'editorial' ),
+        'search_items' => _x( 'Search Editorials', 'editorial' ),
+        'not_found' => _x( 'No editorials found', 'editorial' ),
+        'not_found_in_trash' => _x( 'No editorials found in Trash', 'editorial' ),
+        'parent_item_colon' => _x( 'Parent Editorial:', 'editorial' ),
+        'menu_name' => _x( 'Editorials', 'editorial' ),
     );
 
     $args = array( 
@@ -56,5 +56,5 @@ function register_cpt_project() {
         'capability_type' => 'post'
     );
 
-    register_post_type( 'project', $args );
+    register_post_type( 'editorial', $args );
 }
