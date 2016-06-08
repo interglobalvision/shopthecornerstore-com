@@ -55,3 +55,16 @@ function debug_page_request() {
   echo basename($template);
   echo ' -->'.D4P_EOL;
 }
+
+// Get custom post type options for CMB
+function get_posttype_options($argument) {
+    $get_post_args = array(
+        'post_type' => $argument,
+    );
+    $options = array();
+    foreach ( get_posts( $get_post_args ) as $post ) {
+      $title = get_the_title( $post->ID );
+      $options[$post->ID] = __($title, 'cmb2' );
+    }
+    return $options;
+}
