@@ -25,7 +25,7 @@ if( have_posts() ) {
 
     <article <?php post_class('row'); ?> id="post-<?php the_ID(); ?>">
 
-      <div class="col col3">
+      <div class="product-details col col3">
         <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
 
         <?php the_content(); ?>
@@ -44,7 +44,7 @@ if( have_posts() ) {
 
       </div>
 
-      <div class="col col9">
+      <div class="product-images col col9">
         <?php 
           if ($image_ids) {
 
