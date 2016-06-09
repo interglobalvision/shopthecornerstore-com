@@ -72,7 +72,7 @@ function igv_cmb_metaboxes() {
       'id'               => 'product',
       'type'             => 'select',
       'show_option_none' => true,
-      'options' => get_posttype_options('product'),
+      'options' => get_product_options(),
     ) );
   }
 
