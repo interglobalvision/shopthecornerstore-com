@@ -55,10 +55,3 @@ function debug_page_request() {
   echo basename($template);
   echo ' -->'.D4P_EOL;
 }
-
-// Get attachment ID from URL
-function get_id_from_url($image_url) {
-  global $wpdb;
-  $attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url )); 
-  return $attachment[0]; 
-}
