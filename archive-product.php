@@ -14,13 +14,15 @@ if( have_posts() ) {
   while( have_posts() ) {
     the_post();
 
-    $stock = get_post_meta($post->ID, '_stock_status', true);
+    $product = new WC_Product($post->ID);
+    $in_stock = $product->is_in_stock();
+    $availability = $product->get_availability();
 ?>
 
     <article <?php post_class('col col-3'); ?> id="post-<?php the_ID(); ?>">
 
-      <?php if ($stock === 'outofstock') { ?>
-      <span class="sold">Sold</span>
+      <?php if (!$in_stock) { ?>
+      <span class="sold"><?php echo $availability['availability']; ?></span>
       <?php } ?>
 
       <?php the_post_thumbnail(); ?>
