@@ -1,5 +1,5 @@
 <?php
-get_header();
+get_header( 'shop' );
 
 $args = array(
   'post_type' => 'editorial',
@@ -31,23 +31,31 @@ if( have_posts() ) {
     if ($slides) {
 ?>
 
-      <div class="product-details col col3">
-      
-        <a href="" class="js-product-title"></a>
+      <!-- Product details container -->
+      <div class="col col3">
 
-        <div class="js-product-content">
+        <div class="product-details">
 
-        <span class="price js-product-price"></span>
+          <a href="" class="js-product-title"></a>
+          <div class="js-product-content"></div>
+          <span class="price js-product-price"></span>
 
-        <a href="" class="add-to-cart js-product-cart"></a>
+          <form class="cart" method="post" enctype='multipart/form-data'>
+            <input type="hidden" name="add-to-cart" class="js-product-id" value="" />
+            <button type="submit" class="add-to-cart u-hidden js-product-button"></button>
+          </form>
 
-        <span class="sold js-sold"></span>
+          <span class="sold js-product-sold"></span>
+
+        </div>
 
       </div>
+      <!-- End Product details container -->
 
-      <!-- Slider main container -->
-      <div class="col col9 swiper-container">
-        <div class="swiper-wrapper">
+      <div class="col col9">
+        <!-- Slider main container -->
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
           <!-- Slides -->
 <?php 
       foreach($slides[0] as $slide) {
@@ -55,32 +63,31 @@ if( have_posts() ) {
 
         if ($has_product) {
           $product = new WC_Product($slide['product']);
-          $title = $product->get_title();
-          $price = $product->get_price_html();
-          $in_stock = $product->check_stock_status();
-          $availability = $product->get_availability();
-          $cart_url = $product->add_to_cart_url();
-          $cart_text = $product->single_add_to_cart_text();
+          $product_data = array(
+            'title' => $product->get_title(),
+            'id' => $product->id,
+            'url' => $product->get_permalink(),
+            'price' => $product->get_price_html(),
+            'stock' => $product->is_in_stock(),
+            'availability' => $product->get_availability(),
+            'button_text' => $product->single_add_to_cart_text(),
+          );
         }
 ?>
-          <div class="swiper-slide" <?php if ($has_product) {
-            echo 'data-product="true"';
-            echo 'data-title="' . $title . '"';
-            echo 'data-price="' . htmlspecialchars($price) . '"';
-            echo 'data-stock="' . $in_stock . '"';
-            echo 'data-availability="' . $availability['availability'] . '"';
-            echo 'data-cart-url="' . $cart_url . '"';
-            echo 'data-cart_text="' . $cart_text . '"';
-          } else {
-            echo 'data-product="false"';
-          } ?> >
-            <?php echo $slide['image']?>
-          </div>
-<?php } ?>
-        </div>
+            <div class="swiper-slide" <?php if ($has_product) {
+              echo 'data-product="' . htmlspecialchars(json_encode($product_data)) . '"';
+            } ?> >
+              <?php echo wp_get_attachment_image($slide['image_id'], null, false, array( 'class' => '' )); ?>
+            </div> 
+<?php } // End foreach ?>
 
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+            <!-- End Slides -->
+          </div>  
+
+          <div class="swiper-button-prev">prev</div>
+          <div class="swiper-button-next">next</div>
+        </div>
+        <!-- End Slider main container -->
       </div>
 
 <?php } ?>
