@@ -20,7 +20,7 @@ if( have_posts() ) {
     $availability = $product->get_availability();
     $cart_url = $product->add_to_cart_url();
     $cart_text = $product->single_add_to_cart_text();
-    $images = $product->get_gallery_attachment_ids();
+    $image_ids = $product->get_gallery_attachment_ids();
 ?>
 
     <article <?php post_class('row'); ?> id="post-<?php the_ID(); ?>">
@@ -30,26 +30,26 @@ if( have_posts() ) {
 
         <?php the_content(); ?>
 
-        <?php echo $price; ?>
+        <?php echo '<span class="price">' . $price . '</span>'; ?>
 
-        <?php if ($in_stock) { ?>
+      <?php if ($in_stock) { ?>
 
         <a href="<?php echo $cart_url; ?>"><?php echo $cart_text; ?></a>
 
-        <?php } else { ?>
+      <?php } else { ?>
 
         <span class="sold"><?php echo $availability['availability']; ?></span>
 
-        <?php } ?>
+      <?php } ?>
 
       </div>
 
       <div class="col col9">
         <?php 
-          if ($images) {
+          if ($image_ids) {
 
-            foreach($images as $image) {
-              echo $image;
+            foreach($image_ids as $image_id) {
+              echo wp_get_attachment_image($image_id, null, false, array( 'class' => '' ));
             }
 
           }
