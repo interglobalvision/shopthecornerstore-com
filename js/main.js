@@ -10,7 +10,7 @@ Site = {
       _this.onResize();
     });
 
-  },
+  }, 
 
   onResize: function() {
     var _this = this;
