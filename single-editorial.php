@@ -31,8 +31,22 @@ if( have_posts() ) {
     if ($slides) {
 ?>
 
+      <div class="product-details col col3">
+      
+        <a href="" class="js-product-title"></a>
+
+        <div class="js-product-content">
+
+        <span class="price js-product-price"></span>
+
+        <a href="" class="add-to-cart js-product-cart"></a>
+
+        <span class="sold js-sold"></span>
+
+      </div>
+
       <!-- Slider main container -->
-      <div class="swiper-container">
+      <div class="col col9 swiper-container">
         <div class="swiper-wrapper">
           <!-- Slides -->
 <?php 
