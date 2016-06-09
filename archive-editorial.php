@@ -54,8 +54,6 @@ if( have_posts() ) {
   <!-- end posts -->
   </section>
 
-  <?php get_template_part('partials/pagination'); ?>
-
 <!-- end main-content -->
 
 </main>
