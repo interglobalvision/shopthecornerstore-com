@@ -58,11 +58,13 @@
   <!-- start content -->
   <header id="header">
   <?php
-    $logo = IGV_get_option('_igv_metadata_logo');
+    $logo_url = IGV_get_option('_igv_metadata_logo');
+    $logo_id = get_id_from_url($logo_url);
+    $logo = wp_get_attachment_image($logo_id, null, null, array( 'class' => 'logo' ));
 
     if ($logo) {
   ?>
-    <a href="<?php echo home_url(); ?>"><img src="<?php echo $logo; ?>" class="logo"></a>
+    <a href="<?php echo home_url(); ?>"><?php echo $logo; ?></a>
   <?php
     } else {
   ?>
