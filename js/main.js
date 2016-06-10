@@ -10,6 +10,12 @@ Site = {
       _this.onResize();
     });
 
+    if ($('body').hasClass('post-type-archive-editorial')) {
+      $('.archive-title').on('mouseover',function() {
+        _this.showArchiveImage( $(this).attr('data-id') );
+      });
+    }
+
   },
 
   onResize: function() {
@@ -25,11 +31,16 @@ Site = {
       $(this).html(string);
     });
   },
+
+  showArchiveImage: function(id) {
+    $('.archive-image').hide();
+    $('.archive-image[data-id=' + id + ']').show();
+  }
 };
 
 jQuery(document).ready(function () {
   'use strict';
 
-  Site.init();
+  Site.init(); 
 
 });
