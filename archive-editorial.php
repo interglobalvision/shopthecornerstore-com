@@ -19,7 +19,7 @@ if( have_posts() ) {
     the_post();
 ?>
 
-        <li><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
+        <li><a href="<?php the_permalink() ?>" class="archive-title" data-id="<?php echo $post->ID; ?>"><?php the_title(); ?></a></li>
 
 <?php
   }
@@ -35,7 +35,7 @@ if( have_posts() ) {
     the_post();
 ?>
 
-    <?php the_post_thumbnail(); ?>
+    <?php the_post_thumbnail('slide', array('data-id' => $post->ID, 'class' => 'archive-image')); ?>
 
 <?php
   }
