@@ -19,7 +19,7 @@ if( have_posts() ) {
     $availability = $product->get_availability();
 ?>
 
-    <article <?php post_class('col col-3'); ?> id="post-<?php the_ID(); ?>">
+    <article <?php post_class('col col3'); ?> id="post-<?php the_ID(); ?>">
 
       <?php if (!$in_stock) { ?>
       <span class="sold"><?php echo $availability['availability']; ?></span>
