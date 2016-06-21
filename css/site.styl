@@ -1,5 +1,6 @@
 @import "kouto-swiss"
 @import "helpers"
+@import "swiper"
 
 // ******************************************************
 
@@ -22,7 +23,7 @@
 
 meyer-reset()
 box-sizing-reset()
-normalize()
+normalize() 
 
 // ******************************************************
 
@@ -46,7 +47,7 @@ $gutter = 16px
   min-height: 1px
 
 for col in 1..$cols
-  .col-{col}
+  .col{col}
     width: ( col * $col ) + ( ( col - 1 ) * $gutter )
 
     // FLUID COLS
@@ -128,7 +129,7 @@ h3
   font-size: $font-size-h3
 
 p
-  margin-bottom: 1rem
+  margin-bottom: 1rem 
 
   // FONT RULES
 
