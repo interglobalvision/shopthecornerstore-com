@@ -35,7 +35,7 @@ if( have_posts() ) {
     the_post();
 ?>
 
-    <?php the_post_thumbnail('slide', array('data-id' => $post->ID, 'class' => 'archive-image')); ?>
+    <?php the_post_thumbnail( 'full', array('data-id' => $post->ID, 'class' => 'archive-image') ); ?>
 
 <?php
   }
