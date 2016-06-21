@@ -84,7 +84,7 @@ if( have_posts() ) {
             <div class="swiper-slide" <?php if ($has_product) {
               echo 'data-product="' . htmlspecialchars(json_encode($product_data)) . '"';
             } ?> >
-              <?php echo wp_get_attachment_image($slide['image_id'], null, false, array( 'class' => '' )); ?>
+              <?php echo wp_get_attachment_image($slide['image_id'], 'col10-square-nocrop', false, array( 'class' => '' )); ?>
             </div>
 <?php } // End foreach ?>
 
