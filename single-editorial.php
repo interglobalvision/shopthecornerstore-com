@@ -29,6 +29,7 @@ if( have_posts() ) {
 
 <?php 
     if ($slides) {
+      if ($is_recent) {
 ?>
 
       <!-- Product details container -->
@@ -53,6 +54,15 @@ if( have_posts() ) {
       <!-- End Product details container -->
 
       <div class="col col9">
+
+<?php 
+      } else {
+?>
+      <div class="col col1"></div>
+      <div class="col col10">
+
+<?php } ?>
+
         <!-- Slider main container -->
         <div class="swiper-container">
           <div class="swiper-wrapper">
