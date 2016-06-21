@@ -1,5 +1,5 @@
 <?php
-get_header( 'shop' );
+get_header();
 
 $args = array(
   'post_type' => 'editorial',
@@ -11,10 +11,7 @@ $recent_id = $recent_editorial[0]->ID;
 
 <!-- main content -->
 
-<main id="main-content">
-
-  <!-- main posts loop -->
-  <section id="posts">
+<main id="main-content" class="container">
 
 <?php
 if( have_posts() ) {
@@ -27,7 +24,7 @@ if( have_posts() ) {
 
     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-<?php 
+<?php
     if ($slides) {
       if ($is_recent) {
 ?>
@@ -55,7 +52,7 @@ if( have_posts() ) {
 
       <div class="col col9">
 
-<?php 
+<?php
       } else {
 ?>
       <div class="col col1"></div>
@@ -67,7 +64,7 @@ if( have_posts() ) {
         <div class="swiper-container">
           <div class="swiper-wrapper">
           <!-- Slides -->
-<?php 
+<?php
       foreach($slides[0] as $slide) {
         $has_product = ($is_recent && $slide['product'] ? true : false);
 
@@ -88,11 +85,11 @@ if( have_posts() ) {
               echo 'data-product="' . htmlspecialchars(json_encode($product_data)) . '"';
             } ?> >
               <?php echo wp_get_attachment_image($slide['image_id'], null, false, array( 'class' => '' )); ?>
-            </div> 
+            </div>
 <?php } // End foreach ?>
 
             <!-- End Slides -->
-          </div>  
+          </div>
 
           <div class="swiper-button-prev">prev</div>
           <div class="swiper-button-next">next</div>
@@ -111,11 +108,6 @@ if( have_posts() ) {
     <article class="u-alert"><?php _e('Sorry, no posts matched your criteria :{'); ?></article>
 <?php
 } ?>
-
-  <!-- end posts -->
-  </section>
-
-  <?php get_template_part('partials/pagination'); ?>
 
 <!-- end main-content -->
 
