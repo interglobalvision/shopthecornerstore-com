@@ -56,7 +56,9 @@
   <section id="main-container">
 
   <!-- start content -->
-  <header id="header">
+  <header id="header" class="container">
+    <div class="row">
+      <div class="col col2">
   <?php
     $logo_id = IGV_get_option('_igv_metadata_logo_id');
 
@@ -68,41 +70,52 @@
     } else {
   ?>
     <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
-  <?php } 
-
+  <?php }
+    ?>
+      </div>
+  <?php
     $args = array(
       'posts_per_page'   => 2,
       'post_type'        => 'editorial',
     );
     $editorial_posts = get_posts( $args );
   ?>
+      <nav class="col col6">
+        <ul id="menu" class="u-inline-list">
+        <?php if ( class_exists( 'WooCommerce' ) ) { ?>
+          <li class="menu-item">
+            <a href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>">Shop</a>
+          </li>
+        <?php }
 
-  <nav>
-    <ul class="menu">
-    <?php if ( class_exists( 'WooCommerce' ) ) { ?>
-      <li class="menu-item">
-        <a href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>">Shop</a>
-      </li>
-    <?php } 
-
-      if ($editorial_posts) {
-    ?>
-      <li class="menu-item">
-        <a href="<?php echo get_permalink($editorial_posts[0]->ID); ?>">Editorial</a>
-      </li>
-    <?php
-        if (count($editorial_posts) > 1) {
-    ?>
-      <li class="menu-item">
-        <a href="<?php echo get_post_type_archive_link( 'editorial' ); ?>">Archive</a>
-      </li>
-    <?php 
-        } 
-      }
-    ?>
-      <li class="menu-item">
-        <a href="<?php echo get_permalink( get_option('page_for_posts' ) ); ?>">Journal</a>
-      </li>
-    </ul>
-  </nav>
+          if ($editorial_posts) {
+        ?>
+          <li class="menu-item">
+            <a href="<?php echo get_permalink($editorial_posts[0]->ID); ?>">Editorial</a>
+          </li>
+        <?php
+            if (count($editorial_posts) > 1) {
+        ?>
+          <li class="menu-item">
+            <a href="<?php echo get_post_type_archive_link( 'editorial' ); ?>">Archive</a>
+          </li>
+        <?php
+            }
+          }
+        ?>
+          <li class="menu-item">
+            <a href="<?php echo get_permalink( get_option('page_for_posts' ) ); ?>">Journal</a>
+          </li>
+        </ul>
+      </nav>
+  <?php 
+    if (is_singular('editorial')) {
+  ?>
+      <div class="col col4">
+        <h1><?php the_title(); ?></h1>
+      </div>
+  <?php 
+    }
+  ?>
+    </div>
   </header>
