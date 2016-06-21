@@ -10,6 +10,10 @@ Site = {
       _this.onResize();
     });
 
+    if ($('body').hasClass('post-type-archive-editorial')) {
+      _this.Editorial.Archive.init();
+    }
+
   },
 
   onResize: function() {
@@ -25,11 +29,35 @@ Site = {
       $(this).html(string);
     });
   },
+
+};
+
+Site.Editorial = {
+
+  Archive: {
+
+    init: function() {
+      var _this = this;
+
+      $('.archive-title').on('mouseover',function() {
+        _this.showImage( $(this).attr('data-id') );
+      });
+    },
+
+    showImage: function(id) {
+      var _this = this;
+
+      $('.archive-image').hide();
+      $('.archive-image[data-id=' + id + ']').show();
+    }
+
+  },
+
 };
 
 jQuery(document).ready(function () {
   'use strict';
 
-  Site.init();
+  Site.init(); 
 
 });
