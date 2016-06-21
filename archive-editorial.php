@@ -35,7 +35,7 @@ if( have_posts() ) {
     the_post();
 ?>
 
-    <?php the_post_thumbnail( 'full', array('data-id' => $post->ID, 'class' => 'archive-image') ); ?>
+    <?php the_post_thumbnail( 'col6-square-nocrop', array('data-id' => $post->ID, 'class' => 'archive-image') ); ?>
 
 <?php
   }
@@ -48,7 +48,7 @@ if( have_posts() ) {
     <article class="u-alert"><?php _e('Sorry, no posts matched your criteria :{'); ?></article>
 <?php
 } ?>
-    
+
 
 
   <!-- end posts -->
