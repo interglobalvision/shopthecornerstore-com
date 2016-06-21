@@ -1,5 +1,5 @@
 /* jshint browser: true, devel: true, indent: 2, curly: true, eqeqeq: true, futurehostile: true, latedef: true, undef: true, unused: true */
-/* global $, jQuery, document, Site, Modernizr */
+/* global $, jQuery, document, Site, Modernizr, Swiper */
 
 Site = {
   mobileThreshold: 601,
@@ -14,7 +14,7 @@ Site = {
       _this.Editorial.Single.init();
     }
 
-  }, 
+  },
 
   onResize: function() {
     var _this = this;
@@ -75,7 +75,7 @@ Site.Editorial = {
         }
 
         $('.product-details').show();
-      } 
+      }
     },
 
   },
