@@ -55,3 +55,9 @@ function custom_login_logo() {
 }
 add_action( 'login_head', 'custom_login_logo' );
 */
+
+// add Woo support declaration
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+  add_theme_support( 'woocommerce' );
+}
