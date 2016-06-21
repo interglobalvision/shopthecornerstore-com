@@ -11,9 +11,7 @@ Site = {
     });
 
     if ($('body').hasClass('post-type-archive-editorial')) {
-      $('.archive-title').on('mouseover',function() {
-        _this.showArchiveImage( $(this).attr('data-id') );
-      });
+      _this.Editorial.Archive.init();
     }
 
   },
@@ -32,10 +30,29 @@ Site = {
     });
   },
 
-  showArchiveImage: function(id) {
-    $('.archive-image').hide();
-    $('.archive-image[data-id=' + id + ']').show();
-  }
+};
+
+Site.Editorial = {
+
+  Archive: {
+
+    init: function() {
+      var _this = this;
+
+      $('.archive-title').on('mouseover',function() {
+        _this.showImage( $(this).attr('data-id') );
+      });
+    },
+
+    showImage: function(id) {
+      var _this = this;
+
+      $('.archive-image').hide();
+      $('.archive-image[data-id=' + id + ']').show();
+    }
+
+  },
+
 };
 
 jQuery(document).ready(function () {
