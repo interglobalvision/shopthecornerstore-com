@@ -108,13 +108,13 @@
           </li>
         </ul>
       </nav>
-  <?php 
+  <?php
     if (is_singular('editorial')) {
   ?>
       <div class="col col4">
         <h1><?php the_title(); ?></h1>
       </div>
-  <?php 
+  <?php
     }
   ?>
     </div>
