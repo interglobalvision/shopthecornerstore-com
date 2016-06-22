@@ -15,17 +15,17 @@ if( have_posts() ) {
     the_post();
 
     $product = new WC_Product($post->ID);
+    $product_id = $product->id;
     $price = $product->get_price_html();
     $in_stock = $product->is_in_stock();
     $availability = $product->get_availability();
-    $cart_url = $product->add_to_cart_url();
     $cart_text = $product->single_add_to_cart_text();
     $image_ids = $product->get_gallery_attachment_ids();
 ?>
 
     <article <?php post_class('row'); ?> id="post-<?php the_ID(); ?>">
 
-      <div class="col col3">
+      <div class="product-details col col3">
         <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
 
         <?php the_content(); ?>
@@ -34,7 +34,10 @@ if( have_posts() ) {
 
       <?php if ($in_stock) { ?>
 
-        <a href="<?php echo $cart_url; ?>"><?php echo $cart_text; ?></a>
+        <form class="cart" method="post" enctype='multipart/form-data'>
+          <input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $product_id ); ?>" />
+          <button type="submit" class="add_to_cart"><?php echo esc_html( $cart_text ); ?></button>
+        </form>
 
       <?php } else { ?>
 
@@ -44,7 +47,7 @@ if( have_posts() ) {
 
       </div>
 
-      <div class="col col9">
+      <div class="product-images col col9">
         <?php 
           if ($image_ids) {
 

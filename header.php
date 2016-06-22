@@ -58,7 +58,7 @@
   <!-- start content -->
   <header id="header" class="container">
     <div class="row">
-      <div class="col col3">
+      <div class="col col2">
   <?php
     $logo_id = IGV_get_option('_igv_metadata_logo_id');
 
@@ -80,7 +80,7 @@
     );
     $editorial_posts = get_posts( $args );
   ?>
-      <nav class="col col9">
+      <nav class="col col6">
         <ul id="menu" class="u-inline-list">
         <?php if ( class_exists( 'WooCommerce' ) ) { ?>
           <li class="menu-item">
@@ -108,5 +108,14 @@
           </li>
         </ul>
       </nav>
+  <?php
+    if (is_singular('editorial')) {
+  ?>
+      <div class="col col4">
+        <h1><?php the_title(); ?></h1>
+      </div>
+  <?php
+    }
+  ?>
     </div>
   </header>
