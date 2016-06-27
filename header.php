@@ -55,6 +55,8 @@
 
   <section id="main-container">
 
+  <?php if (is_front_page()) { get_template_part('partials/splash'); } ?>
+
   <!-- start content -->
   <header id="header" class="container">
     <div class="row">
