@@ -101,6 +101,21 @@ class IGV_Admin {
       ),
     ) );
 
+    $options_metabox->add_field( array(
+      'name' => __( 'Splash Page', 'cmb2' ),
+      'desc' => __( '', 'cmb2' ),
+      'id'   => $this->prefix . 'splashpage_title',
+      'type' => 'title',
+    ) );
+
+    $options_metabox->add_field( array(
+      'name'         => __( 'Background Images', 'cmb2' ),
+      'desc'         => __( 'Upload or add multiple images.', 'cmb2' ),
+      'id'           => $prefix . 'bg_images',
+      'type'         => 'file_list',
+      'preview_size' => array( 150, 150 ), // Default: array( 50, 50 )
+    ) );
+
     // SOCIAL MEDIA OPTIONS
 
     $options_metabox->add_field( array(
