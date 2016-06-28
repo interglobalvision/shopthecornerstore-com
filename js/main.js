@@ -14,7 +14,7 @@ Site = {
       _this.Editorial.Single.init();
     } else if ($('body').hasClass('post-type-archive-editorial')) {
       _this.Editorial.Archive.init();
-    } else if ($('.splash-container').length) {
+    } else if ($('.splash-swiper').length) {
       _this.Splash.init();
     }
 
