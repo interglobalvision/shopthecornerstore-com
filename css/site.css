@@ -1290,7 +1290,6 @@ img {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  color: #fdfdfd;
 }
 .splash-swiper {
   position: fixed !important;
