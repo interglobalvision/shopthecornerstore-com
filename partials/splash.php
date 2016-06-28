@@ -28,13 +28,13 @@ if ($images) {
   if ($logo_id) {
     $logo = wp_get_attachment_image_src($logo_id, 'splash');
 ?>
-    <a href="<?php echo home_url(); ?>" class="splash-logo">
+    <div class="splash-logo">
       <img src="<?php echo $logo[0]; ?>">
-    </a>
+    </div>
 <?php
   } else {
 ?>
-    <h1 class="splash-logo"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+    <h1 class="splash-logo"><?php bloginfo('name'); ?></h1>
 <?php } ?>
     <?php get_template_part('partials/nav'); ?>
   </header>
