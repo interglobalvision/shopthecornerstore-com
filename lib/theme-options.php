@@ -109,6 +109,13 @@ class IGV_Admin {
     ) );
 
     $options_metabox->add_field( array(
+      'name'         => __( 'Logo', 'cmb2' ),
+      'desc'         => __( '', 'cmb2' ),
+      'id'           => $this->prefix . 'splash_logo',
+      'type'         => 'file',
+    ) );
+
+    $options_metabox->add_field( array(
       'name'         => __( 'Background Images', 'cmb2' ),
       'desc'         => __( 'Upload or add multiple images.', 'cmb2' ),
       'id'           => $this->prefix . 'splash_images',
