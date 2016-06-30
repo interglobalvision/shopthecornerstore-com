@@ -1276,6 +1276,10 @@ img {
 .archive-image:not(:first-of-type) {
   display: none;
 }
+.masonry-item {
+  width: 620px;
+  margin: 0 8px 16px;
+}
 @media screen and (max-width: 601px) {
   .container {
     width: 96%;

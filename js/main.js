@@ -18,6 +18,10 @@ Site = {
       _this.Editorial.Archive.init();
     }
 
+    if ($('body').hasClass('blog')) {
+      _this.Journal.init();
+    }
+
   },
 
   onResize: function() {
@@ -35,6 +39,16 @@ Site = {
   },
 
 };
+
+Site.Journal = {
+
+  init: function() {
+    $('.masonry-container').masonry({
+      itemSelector: '.masonry-item',
+    });
+  },
+
+}
 
 Site.Editorial = {
 
