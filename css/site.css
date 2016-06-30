@@ -1280,6 +1280,11 @@ img {
   width: 620px;
   margin: 0 8px 16px;
 }
+.post-date {
+  display: inline-block;
+  color: #969696;
+  border-bottom: 2px solid #969696;
+}
 @media screen and (max-width: 601px) {
   .container {
     width: 96%;

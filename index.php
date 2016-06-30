@@ -22,7 +22,7 @@ if( have_posts() ) {
 
         <?php the_content(); ?>
 
-        <div class="post-date"><?php echo get_the_date(); ?></div>
+        <div class="post-date padding-bottom-tiny"><?php echo get_the_date(); ?></div>
 
       </article>
 
