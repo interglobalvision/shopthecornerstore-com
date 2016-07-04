@@ -59,6 +59,11 @@ add_action( 'init', 'cmb_initialize_cmb_meta_boxes', 9999 );
 function cmb_initialize_cmb_meta_boxes() {
   if (!class_exists( 'cmb2_bootstrap_202' ) ) {
     require_once 'lib/CMB2/init.php';
+  }
+
+  // Add CMB2 Gallery field
+  if ( ! function_exists( 'pw_gallery_field' ) ) {
+    define( 'PW_GALLERY_URL', get_stylesheet_directory_uri() . '/lib/cmb-field-gallery/' );
     require_once 'lib/cmb-field-gallery/cmb-field-gallery.php';
   }
 }
