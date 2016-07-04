@@ -13,15 +13,15 @@
           <ul class="u-inline-list">
             <?php if (!empty($facebook)) { ?>
             <li>
-              <a href="<?php echo $facebook; ?>"><img src="facebook"></a>
+              <a href="<?php echo $facebook; ?>"><img class="social-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/img/dist/facebook_icon.svg"></a>
             </li>
             <?php } if (!empty($instagram)) { ?>
             <li>
-              <a href="https://instagram.com/<?php echo $instagram; ?>"><img src="facebook"></a>
+              <a href="https://instagram.com/<?php echo $instagram; ?>"><img class="social-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/img/dist/instagram_icon.svg"></a>
             </li>
             <?php } if (!empty($twitter)) { ?>
             <li>
-              <a href="https://twitter.com/<?php echo $twitter; ?>"><img src="facebook"></a>
+              <a href="https://twitter.com/<?php echo $twitter; ?>"><img class="social-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/img/dist/twitter_icon.svg"></a>
             </li>
             <?php } ?>
           </ul>
