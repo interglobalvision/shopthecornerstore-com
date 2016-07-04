@@ -12,13 +12,13 @@ get_header();
 <?php
 if( have_posts() ) { 
 ?>
-    <div class="masonry-container">
+    <div class="journal-container">
 <?php
   while( have_posts() ) {
     the_post();
 ?>
 
-      <article <?php post_class('masonry-item'); ?> id="post-<?php the_ID(); ?>">
+      <article <?php post_class('journal-post'); ?> id="post-<?php the_ID(); ?>">
 
         <?php the_content(); ?>
 

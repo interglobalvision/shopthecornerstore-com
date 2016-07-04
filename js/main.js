@@ -43,9 +43,11 @@ Site = {
 Site.Journal = {
 
   init: function() {
-    $('.masonry-container').masonry({
-      itemSelector: '.masonry-item',
-    });
+    if ($('.journal-container').length) {
+      $('.journal-container').masonry({
+        itemSelector: '.journal-item',
+      });
+    }
   },
 
 }
