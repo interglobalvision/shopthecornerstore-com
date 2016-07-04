@@ -119,8 +119,7 @@ class IGV_Admin {
       'name'         => __( 'Background Images', 'cmb2' ),
       'desc'         => __( 'Upload or add multiple images.', 'cmb2' ),
       'id'           => $this->prefix . 'splash_images',
-      'type'         => 'file_list',
-      'preview_size' => array( 150, 150 ),
+      'type'         => 'pw_gallery',
     ) );
 
     // SOCIAL MEDIA OPTIONS
