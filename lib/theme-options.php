@@ -120,6 +120,7 @@ class IGV_Admin {
       'desc'         => __( 'Upload or add multiple images.', 'cmb2' ),
       'id'           => $this->prefix . 'splash_images',
       'type'         => 'pw_gallery',
+      'preview_size' => array( 150, 150 ),
     ) );
 
     // SOCIAL MEDIA OPTIONS
