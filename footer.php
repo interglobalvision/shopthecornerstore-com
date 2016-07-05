@@ -1,9 +1,11 @@
   <?php
+    if (!is_front_page()) {
+
     $facebook = IGV_get_option('_igv_socialmedia_facebook_url');
     $twitter = IGV_get_option('_igv_socialmedia_twitter');
     $instagram = IGV_get_option('_igv_socialmedia_instagram');
 
-    $contact_id = get_id_by_slug('contact'); 
+    $contact_id = get_id_by_slug('contact');
     $shipping_id = get_id_by_slug('shipping');
   ?>
     <footer id="footer" class="container">
@@ -49,6 +51,7 @@
         </div>
       </div>
     </footer>
+<?php } ?>
 
   </section>
 

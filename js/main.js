@@ -12,10 +12,10 @@ Site = {
 
     if ($('body').hasClass('single-editorial')) {
       _this.Editorial.Single.init();
-    }
-
-    if ($('body').hasClass('post-type-archive-editorial')) {
+    } else if ($('body').hasClass('post-type-archive-editorial')) {
       _this.Editorial.Archive.init();
+    } else if ($('.splash-swiper').length) {
+      _this.Splash.init();
     }
 
   },
@@ -31,6 +31,24 @@ Site = {
       var string = $(this).html();
       string = string.replace(/ ([^ ]*)$/,'&nbsp;$1');
       $(this).html(string);
+    });
+  },
+
+};
+
+Site.Splash = {
+
+  init: function() {
+    var _this = this;
+
+    var swiper = new Swiper('.swiper-container', {
+      autoplay: 3000,
+      loop: true,
+      speed: 1500,
+      effect: 'fade',
+      fade: {
+        crossFade: false
+      },
     });
   },
 
