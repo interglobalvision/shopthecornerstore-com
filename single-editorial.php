@@ -22,7 +22,7 @@ if( have_posts() ) {
     $is_recent = ($recent_id === $post->ID ? true : false);
 ?>
 
-    <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+    <article <?php post_class('row'); ?> id="post-<?php the_ID(); ?>">
 
 <?php
     if ($slides) {

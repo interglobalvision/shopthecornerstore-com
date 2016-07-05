@@ -102,6 +102,9 @@ $font-tracking-wider = 0.05em
 
 $color-black-soft = rgb(14, 14, 14)
 $color-white-soft = rgb(253, 253, 253)
+$color-grey = rgb(150, 150, 150)
+
+$border-width = 2px
 
 // ******************************************************
 
@@ -314,12 +317,22 @@ img
 .archive-image:not(:first-of-type)
   display: none
 
+// JOURNAL
+
+.masonry-item
+  width: ( 6 * $col ) + ( ( 6 - 1 ) * $gutter )
+  margin: 0 ($gutter/2) $gutter
 
 // FOOTER
 
 .social-icon
   width: $margin-small
   margin-right: $margin-tiny
+
+.post-date
+  display: inline-block
+  color: $color-grey
+  border-bottom: $border-width solid $color-grey
 
 
 // ******************************************************

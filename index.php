@@ -7,27 +7,34 @@ get_header();
 <main id="main-content">
 
   <!-- main posts loop -->
-  <section id="posts">
+  <section id="posts" class="container">
 
 <?php
-if( have_posts() ) {
+if( have_posts() ) { 
+?>
+    <div class="journal-container">
+<?php
   while( have_posts() ) {
     the_post();
 ?>
 
-    <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+      <article <?php post_class('journal-post'); ?> id="post-<?php the_ID(); ?>">
 
-      <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+        <?php the_content(); ?>
 
-      <?php the_content(); ?>
+        <div class="post-date padding-bottom-tiny"><?php echo get_the_date(); ?></div>
 
-    </article>
+      </article>
 
 <?php
   }
+?>
+    </div>
+    <div class="text-align-center"><a class="button js-load-more">Load More</a></div>
+<?php 
 } else {
 ?>
-    <article class="u-alert"><?php _e('Sorry, no posts matched your criteria :{'); ?></article>
+    <article class="u-alert masonry-item"><?php _e('Sorry, no posts matched your criteria :{'); ?></article>
 <?php
 } ?>
 

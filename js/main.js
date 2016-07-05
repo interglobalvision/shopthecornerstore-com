@@ -18,6 +18,10 @@ Site = {
       _this.Splash.init();
     }
 
+    if ($('body').hasClass('blog')) {
+      _this.Journal.init();
+    }
+
   },
 
   onResize: function() {
@@ -36,8 +40,18 @@ Site = {
 
 };
 
-Site.Splash = {
+Site.Journal = {
+  init: function() {
+    if ($('.journal-container').length) {
+      $('.journal-container').masonry({
+        itemSelector: '.journal-item',
+      });
+    }
+  },
 
+};
+
+Site.Splash = {
   init: function() {
     var _this = this;
 

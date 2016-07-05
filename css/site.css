@@ -1349,9 +1349,18 @@ img {
 .archive-image:not(:first-of-type) {
   display: none;
 }
+.masonry-item {
+  width: 620px;
+  margin: 0 8px 16px;
+}
 .social-icon {
   width: 16px;
   margin-right: 8px;
+}
+.post-date {
+  display: inline-block;
+  color: #969696;
+  border-bottom: 2px solid #969696;
 }
 @media screen and (max-width: 601px) {
   .container {
