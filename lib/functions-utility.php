@@ -84,3 +84,10 @@ function get_product_options() {
   }
   return $options;
 }
+
+// Get attachment ID by url
+function attachment_id_from_url($image_url) {
+  global $wpdb;
+  $attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url )); 
+  return $attachment[0]; 
+}
