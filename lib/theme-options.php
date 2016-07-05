@@ -138,6 +138,7 @@ class IGV_Admin {
       'desc' => __( '', 'IGV' ),
       'id'   => $this->prefix . 'socialmedia_facebook_url',
       'type' => 'text',
+      'default' => 'https://www.facebook.com/a.corner.of.heaven/',
     ) );
 
     $options_metabox->add_field( array(
@@ -145,6 +146,7 @@ class IGV_Admin {
       'desc' => __( '', 'IGV' ),
       'id'   => $this->prefix . 'socialmedia_twitter',
       'type' => 'text',
+      'default' => 'the_corner_sto',
     ) );
 
     $options_metabox->add_field( array(
@@ -152,7 +154,9 @@ class IGV_Admin {
       'desc' => __( '', 'IGV' ),
       'id'   => $this->prefix . 'socialmedia_instagram',
       'type' => 'text',
+      'default' => 'the_corner_store',
     ) );
+
 
     // METADATA OPTIONS
 

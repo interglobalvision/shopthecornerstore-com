@@ -1349,6 +1349,10 @@ img {
 .archive-image:not(:first-of-type) {
   display: none;
 }
+.social-icon {
+  width: 16px;
+  margin-right: 8px;
+}
 @media screen and (max-width: 601px) {
   .container {
     width: 96%;
