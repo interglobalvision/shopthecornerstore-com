@@ -1,5 +1,7 @@
+<?php if (!is_front_page()) { ?>
     <footer id="footer">
     </footer>
+<?php } ?>
 
   </section>
 
