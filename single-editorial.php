@@ -25,7 +25,7 @@ if( have_posts() ) {
     <article <?php post_class('row'); ?> id="post-<?php the_ID(); ?>">
 
 <?php
-    if ($slides) {
+    if (!empty($slides)) {
       if ($is_recent) {
 ?>
 
@@ -66,7 +66,7 @@ if( have_posts() ) {
           <!-- Slides -->
 <?php
       foreach($slides[0] as $slide) {
-        $has_product = ($is_recent && $slide['product'] ? true : false);
+        $has_product = ($is_recent && !empty($slide['product']) ? true : false);
 
         if ($has_product) {
           $product = new WC_Product($slide['product']);
