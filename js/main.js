@@ -44,8 +44,8 @@ Site.Journal = {
   init: function() {
     if ($('.journal-container').length) {
       $('.journal-container').masonry({
-        itemSelector: '.journal-item',
-      });
+        itemSelector: '.journal-post',
+      }); 
     }
   },
 

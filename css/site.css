@@ -1349,7 +1349,7 @@ img {
 .archive-image:not(:first-of-type) {
   display: none;
 }
-.masonry-item {
+.journal-post {
   width: 620px;
   margin: 0 8px 16px;
 }
