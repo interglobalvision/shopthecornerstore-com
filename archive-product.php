@@ -20,7 +20,7 @@ if( have_posts() ) {
     $availability = $product->get_availability();
 
     if ($i % 4 === 0 && $i !== 0) {
-      echo "</div>\n<div class=\"row margin-bottom-small\">";
+      echo '</div>\n<div class="row margin-bottom-small">';
     }
 ?>
     <article <?php post_class('col col3 shop-product'); ?> id="product-<?php the_ID(); ?>">
