@@ -107,13 +107,15 @@ $color-grey = rgb(150, 150, 150)
 
 $border-width = 2px
 
+$speed-transition-fast = .1s
+
 // ******************************************************
 
 // TYPOGRAPHY
 
 html
   font-family: "Montserrat", font-stack('Helvetica')
-  font-size: $font-size-basic 
+  font-size: $font-size-basic
   letter-spacing: $font-tracking-basic
 
 body
@@ -137,6 +139,9 @@ p
 
   // FONT RULES
 
+.font-serif
+  font-family: font-stack('Georgia')
+
 .font-italic
   font-style: italic
 
@@ -145,6 +150,9 @@ p
 
 .font-small-caps
   font-size: 0.85em
+  text-transform: uppercase
+
+.font-uppercase
   text-transform: uppercase
 
 .font-capitalize
@@ -313,16 +321,58 @@ img
 .splash-footer
   flex: 1 0 0
 
+// ******************************************************
+
+// PRODUCT ARCHIVE
+
+.shop-product
+  position: relative
+  img
+    display: block
+    width: 100%
+
+.shop-product-title-holder
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 50
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, .5)
+  opacity: 0
+  transition: opacity $speed-transition-fast
+  &:hover
+    opacity: 1
+
+.shop-product-title
+  margin: $margin-basic $margin-tiny
+
+.shop-product-sold
+  position: absolute
+  top: 0
+  left: 0
+  padding: $margin-small
+  z-index: 10
+
+// ******************************************************
+
 // ARCHIVE
 
 .archive-image:not(:first-of-type)
   display: none
+
+// ******************************************************
 
 // JOURNAL
 
 .journal-post
   width: ( 6 * $col ) + ( ( 6 - 1 ) * $gutter )
   margin: 0 ($gutter/2) $gutter
+
+// ******************************************************
 
 // FOOTER
 
