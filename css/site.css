@@ -1476,7 +1476,11 @@ img {
   margin-left: 12px;
   z-index: 100;
   color: #fff;
-  line-height: 1;
+}
+.shop-product-sold img {
+  width: auto;
+  height: 18px;
+  display: inline-block;
 }
 .shop-product-sold-text {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
