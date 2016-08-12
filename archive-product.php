@@ -28,7 +28,7 @@ if( have_posts() ) {
         </div>
         <?php if (!$in_stock) { ?>
           <span class="row align-center shop-product-sold font-uppercase">
-            <img src="<?php echo get_stylesheet_directory_uri() . '/img/dist/teardrop.svg'; ?>">
+            <img class="shop-product-sold-icon" src="<?php echo get_stylesheet_directory_uri() . '/img/dist/teardrop.svg'; ?>">
             <span class="shop-product-sold-text">&nbsp;<?php echo $availability['availability']; ?></span>
           </span>
         <?php } ?>

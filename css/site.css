@@ -1474,10 +1474,9 @@ img {
   left: 0;
   padding: 12px;
   margin-left: 12px;
-  z-index: 100;
   color: #fff;
 }
-.shop-product-sold img {
+.shop-product-sold-icon {
   width: auto;
   height: 18px;
   display: inline-block;
