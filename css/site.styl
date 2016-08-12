@@ -43,26 +43,10 @@ $gutter = 24px
   flex: 0 1 auto
   flex-direction: row
   flex-wrap: wrap
-  padding-top: ($gutter / 2)
   &.reverse
     flex-direction: row-reverse
 
 // FLEX POSITIONING
-
-.flex-col
-  box-sizing: border-box
-  display: flex
-  flex-direction: column
-  &.reverse
-    flex-direction: column-reverse
-
-.flex-row
-  box-sizing: border-box
-  display: flex
-  flex-direction: row
-  flex-wrap: wrap
-  &.reverse
-    flex-direction: row-reverse
 
 .justify-start
   justify-content: flex-start
@@ -98,10 +82,9 @@ $gutter = 24px
   box-sizing: border-box
   max-width: 100%
   margin-bottom: ($gutter / 2)
-
+  
 .col-s
-  padding-right: ($gutter / 2)
-  padding-left: ($gutter / 2)
+  padding: 0 ($gutter / 2)
 
 for offset in 0..($cols - 1)
   .offset-s-{offset}
