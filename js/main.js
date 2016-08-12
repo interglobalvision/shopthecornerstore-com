@@ -12,10 +12,18 @@ Site = {
 
     if ($('body').hasClass('single-editorial')) {
       _this.Editorial.Single.init();
-    } else if ($('body').hasClass('post-type-archive-editorial')) {
+    } 
+
+    if ($('body').hasClass('post-type-archive-editorial')) {
       _this.Editorial.Archive.init();
-    } else if ($('.splash-swiper').length) {
+    } 
+
+    if ($('.splash-swiper').length) {
       _this.Splash.init();
+    } 
+
+    if ($('body').hasClass('woocommerce')) {
+      _this.Shop.init();
     }
 
     if ($('body').hasClass('blog')) {
@@ -39,6 +47,37 @@ Site = {
   },
 
 };
+
+Site.Shop = {
+  init: function() {
+    var _this = this;
+
+    this.Search.init();
+  },
+
+  Search: {
+    init: function() {
+      var _this = this;
+
+      if ($('#searchform').length) {
+        _this.bindFocus();
+      }
+    },
+
+    bindFocus: function() {
+      $('#searchform').on('click', function(e) {
+        if (!$(this).hasClass('active')) {
+          e.preventDefault();
+
+          $(this).addClass('active');
+          $('#s').focus();
+        }
+      })
+    },
+
+  },
+
+}
 
 Site.Journal = {
   init: function() {
