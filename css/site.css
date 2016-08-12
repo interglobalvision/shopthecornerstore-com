@@ -1080,15 +1080,15 @@ th {
       align-content: flex-end;
 }
 .col {
-  -ms-flex: 1 0 auto;
+  -ms-flex: 1 1 auto;
   -webkit-box-flex: 1;
-          flex: 1 0 auto;
+          flex: 1 1 auto;
   box-sizing: border-box;
   max-width: 100%;
-  margin-bottom: 12px;
 }
 .col-s {
   padding: 0 12px;
+  margin-bottom: 12px;
 }
 .offset-s-0 {
   margin-left: 0%;
@@ -1200,22 +1200,26 @@ th {
 }
 html {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 15px;
+  font-size: 13px;
   letter-spacing: 0.001em;
+  text-transform: uppercase;
 }
 body {
   line-height: 1.35;
 }
-h1 {
-  font-size: 2.617924rem;
-  line-height: 1.15;
-}
-h2 {
-  font-size: 2.058106176075472rem;
-  line-height: 1.15;
-}
-h3 {
+h1,
+.font-size-h1 {
   font-size: 1.618rem;
+  line-height: 1.15;
+}
+h2,
+.font-size-h2 {
+  font-size: 1.272006289292628rem;
+  line-height: 1.15;
+}
+h3,
+.font-size-h3 {
+  font-size: 1.155296759485152rem;
 }
 p {
   margin-bottom: 1rem;
@@ -1260,7 +1264,7 @@ a:visited {
   text-decoration: none;
 }
 html {
-  background-color: #fdfdfd;
+  background-color: #fff;
   color: #0e0e0e;
 }
 img {
@@ -1412,6 +1416,26 @@ img {
   -webkit-box-flex: 1;
           flex: 1 0 0;
 }
+#header {
+  text-align: center;
+}
+.menu-item {
+  margin: 0 12px;
+  letter-spacing: 0.1em;
+}
+.editorial-title {
+  letter-spacing: 0.1em;
+}
+#searchform input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  background: none;
+}
+#searchform input:focus {
+  outline: none;
+}
 .shop-product {
   position: relative;
 }
@@ -1480,10 +1504,11 @@ img {
 }
 @media screen and (min-width: 750px) {
   .container {
-    width: 750px;
+    width: 90%;
   }
   .col-m {
     padding: 0 14px;
+    margin-bottom: 14px;
   }
   .offset-m-0 {
     margin-left: 0%;
@@ -1593,6 +1618,12 @@ img {
         flex-basis: 100%;
     max-width: 100%;
   }
+  #header {
+    text-align: left;
+  }
+  .editorial-title {
+    text-align: right;
+  }
 }
 @media screen and (min-width: 1150px) {
   .container {
@@ -1600,6 +1631,7 @@ img {
   }
   .col-l {
     padding: 0 16px;
+    margin-bottom: 16px;
   }
   .offset-l-0 {
     margin-left: 0%;
