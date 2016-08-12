@@ -36,7 +36,9 @@ if (!empty($images)) {
 ?>
     <h1 class="splash-logo"><?php bloginfo('name'); ?></h1>
 <?php } ?>
-    <?php get_template_part('partials/nav'); ?>
+    <nav class="splash-nav u-flex-center">
+      <?php get_template_part('partials/nav'); ?>
+    </nav>
   </header>
   <footer class="splash-footer container u-flex-center">
     &copy;<?php echo date("Y") ?> The Corner LLC. All Rights Reserved

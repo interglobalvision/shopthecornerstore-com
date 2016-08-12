@@ -64,33 +64,42 @@
   <!-- start content -->
   <header id="header" class="container">
     <div class="row">
-      <div class="col col2">
-  <?php
-    $logo_id = IGV_get_option('_igv_metadata_logo_id');
 
-    if ($logo_id) {
-      $logo = wp_get_attachment_image($logo_id, 'logo', false, array( 'class' => 'logo' ));
-  ?>
-    <a href="<?php echo home_url(); ?>"><?php echo $logo; ?></a>
-  <?php
-    } else {
-  ?>
-    <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
-  <?php }
-    ?>
+      <div class="col col2">
+      <?php
+        $logo_id = IGV_get_option('_igv_metadata_logo_id');
+
+        if ($logo_id) {
+          $logo = wp_get_attachment_image($logo_id, 'logo', false, array( 'class' => 'logo' ));
+      ?>
+        <a href="<?php echo home_url(); ?>"><?php echo $logo; ?></a>
+      <?php
+        } else {
+      ?>
+        <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+      <?php 
+        }
+      ?>
       </div>
 
-    <?php get_template_part('partials/nav'); ?>
+      <nav class="<?php echo is_singular('editorial') ? 'col col4' : 'col col8'; ?>">
+        <?php get_template_part('partials/nav'); ?>
+      </nav>
 
-  <?php
-    if (is_singular('editorial')) {
-  ?>
+    <?php
+      if (is_singular('editorial')) {
+    ?>
       <div class="col col4">
         <h1><?php the_title(); ?></h1>
       </div>
-  <?php
-    }
-  ?>
+    <?php
+      }
+    ?>
+
+      <div class="col col2">
+        <?php get_search_form(); ?>
+      </div>
+
     </div>
   </header>
 
