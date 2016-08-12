@@ -11,7 +11,6 @@ get_header();
     <div class="row margin-bottom-small">
 <?php
 if( have_posts() ) {
-  $i = 0;
   while( have_posts() ) {
     the_post();
 
@@ -19,9 +18,6 @@ if( have_posts() ) {
     $in_stock = $product->is_in_stock();
     $availability = $product->get_availability();
 
-    if ($i % 4 === 0 && $i !== 0) {
-      echo '</div>\n<div class="row margin-bottom-small">';
-    }
 ?>
     <article <?php post_class('col col-s col-s-12 col-m col-m-6 col-l col-l-3 shop-product'); ?> id="product-<?php the_ID(); ?>">
       <a href="<?php the_permalink() ?>">
@@ -37,7 +33,6 @@ if( have_posts() ) {
       </a>
     </article>
 <?php
-    $i++;
   }
 } else {
 ?>
