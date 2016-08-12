@@ -122,7 +122,7 @@ $font-tracking-basic = 0.001em
 $font-tracking-wider = 0.05em
 
 $color-black-soft = rgb(14, 14, 14)
-$color-white-soft = rgb(253, 253, 253)
+$color-white = rgb(255, 255, 255)
 $color-grey = rgb(150, 150, 150)
 
 $border-width = 2px
@@ -354,6 +354,9 @@ img
   img
     display: block
     width: 100%
+  &:hover 
+    .shop-product-title-holder, .shop-product-sold-text
+      opacity: 1
 
 .shop-product-title-holder
   position: absolute
@@ -368,8 +371,6 @@ img
   background-color: rgba(255, 255, 255, .5)
   opacity: 0
   transition: opacity $speed-transition-fast
-  &:hover
-    opacity: 1
 
 .shop-product-title
   margin: $margin-basic $margin-tiny
@@ -378,8 +379,15 @@ img
   position: absolute
   top: 0
   left: 0
-  padding: $margin-small
-  z-index: 10
+  padding: $margin-tiny
+  margin-left: $margin-tiny
+  z-index: 100
+  color: $color-white
+  line-height: 1
+  
+.shop-product-sold-text
+  opacity: 0
+  transition: opacity $speed-transition-fast
 
 // ******************************************************
 

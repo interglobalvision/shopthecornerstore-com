@@ -1260,7 +1260,7 @@ a:visited {
   text-decoration: none;
 }
 html {
-  background-color: #fdfdfd;
+  background-color: $color-white-soft;
   color: #0e0e0e;
 }
 img {
@@ -1419,6 +1419,13 @@ img {
   display: block;
   width: 100%;
 }
+.shop-product:hover .shop-product-title-holder,
+.shop-product:hover .shop-product-sold-text {
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
+  opacity: 1;
+}
 .shop-product-title-holder {
   position: absolute;
   top: 0;
@@ -1444,12 +1451,6 @@ img {
   -webkit-transition: opacity 0.1s;
   transition: opacity 0.1s;
 }
-.shop-product-title-holder:hover {
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
-  opacity: 1;
-}
 .shop-product-title {
   margin: 48px 12px;
 }
@@ -1457,8 +1458,18 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 24px;
-  z-index: 10;
+  padding: 12px;
+  margin-left: 12px;
+  z-index: 100;
+  color: #fff;
+  line-height: 1;
+}
+.shop-product-sold-text {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 0.1s;
+  transition: opacity 0.1s;
 }
 .archive-image:not(:first-of-type) {
   display: none;

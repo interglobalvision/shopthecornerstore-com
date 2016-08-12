@@ -23,7 +23,7 @@ if( have_posts() ) {
       echo '</div>\n<div class="row margin-bottom-small">';
     }
 ?>
-    <article <?php post_class('col col3 shop-product'); ?> id="product-<?php the_ID(); ?>">
+    <article <?php post_class('col col-s col-s-12 col-m col-m-6 col-l col-l-3 shop-product'); ?> id="product-<?php the_ID(); ?>">
       <a href="<?php the_permalink() ?>">
         <div class="shop-product-title-holder">
           <h3 class="shop-product-title font-serif font-italic">
@@ -31,7 +31,7 @@ if( have_posts() ) {
           </h3>
         </div>
         <?php if (!$in_stock) { ?>
-          <span class="shop-product-sold font-uppercase"><?php echo $availability['availability']; ?></span>
+          <span class="shop-product-sold font-uppercase">T<span class="shop-product-sold-text">&nbsp;<?php echo $availability['availability']; ?></span></span>
         <?php } ?>
         <?php the_post_thumbnail('col3-portrait-crop'); ?>
       </a>
