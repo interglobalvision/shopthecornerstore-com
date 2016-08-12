@@ -1,0 +1,17 @@
+$cols = 12
+$gutter = 28px
+
+.container
+  width: 750px
+  
+.col-m
+  padding: 0 ($gutter / 2)
+
+for offset in 0..($cols - 1)
+  .offset-m-{offset}
+    margin-left: ( 100% / $cols ) * offset
+
+for col in 1..$cols
+  .col-m-{col}
+    flex-basis: ( 100% / $cols ) * col
+    max-width: ( 100% / $cols ) * col

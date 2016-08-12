@@ -31,49 +31,69 @@ normalize()
 // GRID
 
 $cols = 12
-$col = 90px
-$gutter = 16px
+$gutter = 24px
 
 .container
   margin: 0 auto
-  width: ($col * $cols)+($gutter * $cols)
+  width: 96%
 
 .row
-  clearfix()
+  box-sizing: border-box
+  display: flex
+  flex: 0 1 auto
+  flex-direction: row
+  flex-wrap: wrap
+  &.reverse
+    flex-direction: row-reverse
+
+// FLEX POSITIONING
+
+.justify-start
+  justify-content: flex-start
+
+.justify-center
+  justify-content: center
+
+.justify-end
+  justify-content: flex-end
+
+.align-start
+  align-items: flex-start
+
+.align-center
+  align-items: center
+
+.align-end
+  align-items: flex-end
+
+.align-content-start
+  align-content: flex-start
+
+.align-content-center
+  align-content: center
+
+.align-content-end
+  align-content: flex-end
+
+// COLUMN SIZES & OFFSETS
 
 .col
-  float: left
-  margin-left: ($gutter/2)
-  margin-right: ($gutter/2)
-  min-height: 1px
+  flex: 1 0 auto
+  box-sizing: border-box
+  max-width: 100%
+  margin-bottom: ($gutter / 2)
+  
+.col-s
+  padding: 0 ($gutter / 2)
+
+for offset in 0..($cols - 1)
+  .offset-s-{offset}
+    margin-left: ( 100% / $cols ) * offset
 
 for col in 1..$cols
-  .col{col}
-    width: ( col * $col ) + ( ( col - 1 ) * $gutter )
-
-    // FLUID COLS
-
-.percent-col
-  float: left
-  box-sizing: border-box
-
-$pcols = 10
-
-for pcol in 1..$pcols
-  .s-into-{pcol}
-    width: ( 100% / pcol )
-
-@media screen and (min-width: 601px)
-
-  for pcol in 1..$pcols
-    .m-into-{pcol}
-      width: ( 100% / pcol )
-
-@media screen and (min-width: 993px)
-
-  for pcol in 1..$pcols
-    .l-into-{pcol}
-      width: ( 100% / pcol )
+  .col-s-{col}
+    flex-basis: ( 100% / $cols ) * col
+    max-width: ( 100% / $cols ) * col
 
 // ******************************************************
 
@@ -323,6 +343,10 @@ img
 
 // ******************************************************
 
+// HEADER
+
+// ******************************************************
+
 // PRODUCT ARCHIVE
 
 .shop-product
@@ -369,8 +393,10 @@ img
 // JOURNAL
 
 .journal-post
-  width: ( 6 * $col ) + ( ( 6 - 1 ) * $gutter )
-  margin: 0 ($gutter/2) $gutter
+  /* FIX THIS AFTER MERGE
+  /*
+  /* width: ( 6 * $col ) + ( ( 6 - 1 ) * $gutter ) */
+  margin: 0 $margin-tiny $margin-small
 
 // ******************************************************
 
@@ -390,10 +416,10 @@ img
 
 // MEDIA QUERIES
 
-@media screen and (max-width: ($col * $cols)+($gutter * $cols))
+@media screen and (min-width: 750px)
 
-  @import "responsive/desktop-mid"
+  @import "responsive/tablet"
 
-@media screen and (max-width: 601px)
+@media screen and (min-width: 1150px)
 
-  @import "responsive/mobile"
+  @import "responsive/desktop"
