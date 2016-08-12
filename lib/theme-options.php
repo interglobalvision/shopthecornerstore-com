@@ -102,6 +102,13 @@ class IGV_Admin {
     ) );
 
     $options_metabox->add_field( array(
+      'name'         => __( 'Header Logo', 'cmb2' ),
+      'desc'         => __( '', 'cmb2' ),
+      'id'           => $this->prefix . 'header_logo',
+      'type'         => 'file',
+    ) );
+
+    $options_metabox->add_field( array(
       'name' => __( 'Splash Page', 'cmb2' ),
       'desc' => __( '', 'cmb2' ),
       'id'   => $this->prefix . 'splashpage_title',
