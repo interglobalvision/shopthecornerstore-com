@@ -60,7 +60,11 @@ Site.Shop = {
       var _this = this;
 
       if ($('#searchform').length) {
+        if (!$('#s').val()) {
+          $('#searchform').addClass('active');
+        }
         _this.bindFocus();
+        _this.bindFocusOut();
       }
     },
 
@@ -72,7 +76,15 @@ Site.Shop = {
           $(this).addClass('active');
           $('#s').focus();
         }
-      })
+      });
+    },
+
+    bindFocusOut: function() {
+      $('#s').on('focusout', function() {
+        if(!$(this).val()) {
+          $('#searchform').removeClass('active');
+        }
+      });
     },
 
   },

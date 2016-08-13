@@ -1209,17 +1209,21 @@ body {
 }
 h1,
 .font-size-h1 {
-  font-size: 1.618rem;
+  font-size: 1.781452392364234rem;
   line-height: 1.15;
 }
 h2,
 .font-size-h2 {
-  font-size: 1.272006289292628rem;
+  font-size: 1.469544744064506rem;
   line-height: 1.15;
 }
 h3,
 .font-size-h3 {
-  font-size: 1.155296759485152rem;
+  font-size: 1.272006289292628rem;
+}
+h4,
+.font-size-h4 {
+  font-size: 1.212247806376446rem;
 }
 p {
   margin-bottom: 1rem;
@@ -1242,6 +1246,9 @@ p {
 }
 .font-capitalize {
   text-transform: capitalize;
+}
+.font-letter-spaced {
+  letter-spacing: 0.1em;
 }
 .text-overflow-ellipsis {
   white-space: nowrap;
@@ -1421,10 +1428,6 @@ img {
 }
 .menu-item {
   margin: 0 12px;
-  letter-spacing: 0.1em;
-}
-.editorial-title {
-  letter-spacing: 0.1em;
 }
 #searchform input {
   -webkit-appearance: none;

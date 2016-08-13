@@ -110,9 +110,10 @@ $margin-large = ($gutter * 5)
 
 $font-size-basic = 13px
 $font-size-larger = 1.3rem
-$font-size-h3 = golden-ratio(1rem , .3)
-$font-size-h2 = golden-ratio(1rem , .5)
-$font-size-h1 = golden-ratio(1rem , 1)
+$font-size-h4 = golden-ratio(1rem , .4)
+$font-size-h3 = golden-ratio(1rem , .5)
+$font-size-h2 = golden-ratio(1rem , .8)
+$font-size-h1 = golden-ratio(1rem , 1.2)
 
 $font-leading-basic = 1.35
 $font-leading-tighter = 1.15
@@ -154,6 +155,9 @@ h2, .font-size-h2
 
 h3, .font-size-h3
   font-size: $font-size-h3
+  
+h4, .font-size-h4
+  font-size: $font-size-h4
 
 p
   margin-bottom: 1rem
@@ -178,6 +182,9 @@ p
 
 .font-capitalize
   text-transform: capitalize
+  
+.font-letter-spaced
+  letter-spacing: .1em
 
   // TEXT RULES
 
@@ -351,10 +358,6 @@ img
 
 .menu-item
   margin: 0 $margin-tiny
-  letter-spacing: .1em
-  
-.editorial-title
-  letter-spacing: .1em
   
 #searchform 
   input

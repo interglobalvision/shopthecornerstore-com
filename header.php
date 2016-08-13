@@ -90,7 +90,7 @@
       if (is_singular('editorial')) {
     ?>
       <div class="col col-s col-s-12 col-m col-m-4 col-l">
-        <h1 class="editorial-title font-size-h3"><?php the_title(); ?></h1>
+        <h1 class="font-size-h3 font-letter-spaced"><?php the_title(); ?></h1>
       </div>
     <?php
       }
