@@ -4,7 +4,7 @@ $gutter = 28px
 .container
   width: 750px
   
-.col-m
+.col
   padding: 0 ($gutter / 2)
 
 for offset in 0..($cols - 1)
@@ -15,3 +15,15 @@ for col in 1..$cols
   .col-m-{col}
     flex-basis: ( 100% / $cols ) * col
     max-width: ( 100% / $cols ) * col
+    
+// ******************************************************
+
+// HEADER
+
+#header 
+  text-align: left 
+
+.editorial-title
+  text-align: right
+
+// ******************************************************

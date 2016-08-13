@@ -78,13 +78,13 @@ $gutter = 24px
 // COLUMN SIZES & OFFSETS
 
 .col
-  flex: 1 0 auto
+  flex: 1 1 auto
   box-sizing: border-box
   max-width: 100%
-  margin-bottom: ($gutter / 2)
-  
-.col-s
   padding: 0 ($gutter / 2)
+  
+.col-no-gutter
+  padding: 0
 
 for offset in 0..($cols - 1)
   .offset-s-{offset}
@@ -99,7 +99,7 @@ for col in 1..$cols
 
 // VARIABLES
 
-$golden-ratio = 1.61803398875
+$golden-ratio = 1.61803398875 
 
 $margin-small = ($gutter)
 $margin-tiny = ($gutter / 2)
@@ -108,11 +108,12 @@ $margin-basic = ($gutter * 2)
 $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
-$font-size-basic = 15px
+$font-size-basic = 13px
 $font-size-larger = 1.3rem
-$font-size-h3 = golden-ratio(1rem , 1)
-$font-size-h2 = golden-ratio(1rem , 1.5)
-$font-size-h1 = golden-ratio(1rem , 2)
+$font-size-h4 = golden-ratio(1rem , .3)
+$font-size-h3 = golden-ratio(1rem , .5)
+$font-size-h2 = golden-ratio(1rem , .8)
+$font-size-h1 = golden-ratio(1rem , 1.2)
 
 $font-leading-basic = 1.35
 $font-leading-tighter = 1.15
@@ -137,22 +138,26 @@ html
   font-family: "Montserrat", font-stack('Helvetica')
   font-size: $font-size-basic
   letter-spacing: $font-tracking-basic
+  text-transform: uppercase
 
 body
   line-height: $font-leading-basic
 
   // HTML ELEMENT STYLING
 
-h1
+h1, .font-size-h1
   font-size: $font-size-h1
   line-height: $font-leading-tighter
 
-h2
+h2, .font-size-h2
   font-size: $font-size-h2
   line-height: $font-leading-tighter
 
-h3
+h3, .font-size-h3
   font-size: $font-size-h3
+  
+h4, .font-size-h4
+  font-size: $font-size-h4
 
 p
   margin-bottom: 1rem
@@ -177,6 +182,9 @@ p
 
 .font-capitalize
   text-transform: capitalize
+  
+.font-letter-spaced
+  letter-spacing: .1em
 
   // TEXT RULES
 
@@ -205,7 +213,7 @@ a:visited
 // BASIC
 
 html
-  background-color: $color-white-soft
+  background-color: $color-white
   color: $color-black-soft
 
 img
@@ -345,6 +353,20 @@ img
 
 // HEADER
 
+#header 
+  text-align: center
+
+.menu-item
+  margin: 0 $margin-tiny
+  
+#searchform 
+  input
+    appearance: none
+    border: 0
+    background: none
+    &:focus 
+      outline: none
+    
 // ******************************************************
 
 // PRODUCT ARCHIVE
@@ -426,6 +448,7 @@ img
 // ******************************************************
 
 // MEDIA QUERIES
+
 
 @media screen and (min-width: 750px)
 

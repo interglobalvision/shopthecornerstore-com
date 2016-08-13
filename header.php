@@ -62,14 +62,14 @@
 ?>
 
   <!-- start content -->
-  <header id="header" class="container">
-    <div class="row">
+  <header id="header" class="container margin-top-small">
+    <div class="row align-center">
 
-      <div class="col col2">
+      <div id="header-logo" class="col col-s-4 offset-s-4 col-m-2 offset-m-0">
       <?php
-        $logo_id = IGV_get_option('_igv_metadata_logo_id');
+        $logo_id = IGV_get_option('_igv_header_logo_id');
 
-        if ($logo_id) {
+        if (!empty($logo_id)) {
           $logo = wp_get_attachment_image($logo_id, 'logo', false, array( 'class' => 'logo' ));
       ?>
         <a href="<?php echo home_url(); ?>"><?php echo $logo; ?></a>
@@ -82,23 +82,31 @@
       ?>
       </div>
 
-      <nav class="<?php echo is_singular('editorial') ? 'col col4' : 'col col8'; ?>">
+      <nav class="col col-s-12 col-m-6">
         <?php get_template_part('partials/nav'); ?>
       </nav>
 
     <?php
       if (is_singular('editorial')) {
     ?>
-      <div class="col col4">
-        <h1><?php the_title(); ?></h1>
+      <div class="col col-s-12 col-m-4">
+        <h1 class="font-size-h3 font-letter-spaced"><?php the_title(); ?></h1>
       </div>
     <?php
       }
     ?>
 
-      <div class="col col2">
-        <?php get_search_form(); ?>
+    <?php
+      if (is_archive('product')) {
+    ?>
+      <div class="col col-s-4 offset-s-4 col-m-3 offset-m-1">
+      <?php
+            echo get_product_search_form();
+        ?>
       </div>
+    <?php
+      }
+    ?>
 
     </div>
   </header>
