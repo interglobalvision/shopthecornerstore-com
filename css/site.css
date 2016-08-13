@@ -1085,10 +1085,10 @@ th {
           flex: 1 1 auto;
   box-sizing: border-box;
   max-width: 100%;
-}
-.col-s {
   padding: 0 12px;
-  margin-bottom: 12px;
+}
+.col-no-gutter {
+  padding: 0;
 }
 .offset-s-0 {
   margin-left: 0%;
@@ -1509,9 +1509,8 @@ img {
   .container {
     width: 750px;
   }
-  .col-m {
+  .col {
     padding: 0 14px;
-    margin-bottom: 14px;
   }
   .offset-m-0 {
     margin-left: 0%;
@@ -1632,9 +1631,8 @@ img {
   .container {
     width: 1150px;
   }
-  .col-l {
+  .col {
     padding: 0 16px;
-    margin-bottom: 16px;
   }
   .offset-l-0 {
     margin-left: 0%;
