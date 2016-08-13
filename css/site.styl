@@ -99,7 +99,7 @@ for col in 1..$cols
 
 // VARIABLES
 
-$golden-ratio = 1.61803398875
+$golden-ratio = 1.61803398875 
 
 $margin-small = ($gutter)
 $margin-tiny = ($gutter / 2)
@@ -128,7 +128,7 @@ $color-grey = rgb(150, 150, 150)
 
 $border-width = 2px
 
-$speed-transition-fast = .1s
+$speed-transition-fast = .1s  
 
 // ******************************************************
 
@@ -165,7 +165,7 @@ p
   // FONT RULES
 
 .font-serif
-  font-family: font-stack('Georgia')
+  font-family: 'Crimson Text', font-stack('Georgia')
 
 .font-italic
   font-style: italic
@@ -376,6 +376,9 @@ img
   img
     display: block
     width: 100%
+  &:hover 
+    .shop-product-title-holder, .shop-product-sold-text
+      opacity: 1
 
 .shop-product-title-holder
   position: absolute
@@ -390,8 +393,6 @@ img
   background-color: rgba(255, 255, 255, .5)
   opacity: 0
   transition: opacity $speed-transition-fast
-  &:hover
-    opacity: 1
 
 .shop-product-title
   margin: $margin-basic $margin-tiny
@@ -400,8 +401,18 @@ img
   position: absolute
   top: 0
   left: 0
-  padding: $margin-small
-  z-index: 10
+  padding: $margin-tiny
+  margin-left: $margin-tiny
+  color: $color-white
+  
+.shop-product-sold-icon
+  width: auto
+  height: $margin-tiny * 1.5
+  display: inline-block
+  
+.shop-product-sold-text
+  opacity: 0
+  transition: opacity $speed-transition-fast
 
 // ******************************************************
 

@@ -11,7 +11,6 @@ get_header();
     <div class="row margin-bottom-small">
 <?php
 if( have_posts() ) {
-  $i = 0;
   while( have_posts() ) {
     the_post();
 
@@ -19,11 +18,8 @@ if( have_posts() ) {
     $in_stock = $product->is_in_stock();
     $availability = $product->get_availability();
 
-    if ($i % 4 === 0 && $i !== 0) {
-      echo '</div>\n<div class="row margin-bottom-small">';
-    }
 ?>
-    <article <?php post_class('col col3 shop-product'); ?> id="product-<?php the_ID(); ?>">
+    <article <?php post_class('col col-s col-s-12 col-m col-m-6 col-l col-l-3 shop-product'); ?> id="product-<?php the_ID(); ?>">
       <a href="<?php the_permalink() ?>">
         <div class="shop-product-title-holder">
           <h3 class="shop-product-title font-serif font-italic">
@@ -31,13 +27,15 @@ if( have_posts() ) {
           </h3>
         </div>
         <?php if (!$in_stock) { ?>
-          <span class="shop-product-sold font-uppercase"><?php echo $availability['availability']; ?></span>
+          <span class="row align-center shop-product-sold font-uppercase">
+            <img class="shop-product-sold-icon" src="<?php echo get_stylesheet_directory_uri() . '/img/dist/teardrop.svg'; ?>">
+            <span class="shop-product-sold-text">&nbsp;<?php echo $availability['availability']; ?></span>
+          </span>
         <?php } ?>
         <?php the_post_thumbnail('col3-portrait-crop'); ?>
       </a>
     </article>
 <?php
-    $i++;
   }
 } else {
 ?>
