@@ -2,20 +2,25 @@
 if( get_next_posts_link() || get_previous_posts_link() ) {
 ?>
   <!-- post pagination -->
-  <nav id="pagination">
+  <nav id="pagination" class="container">
+    <div class="row">
+      <div class="col col-s-12 text-align-right">
 <?php
-$previous = get_previous_posts_link('Newer');
-$next = get_next_posts_link('Older');
+$previous = get_previous_posts_link('<img src="' . get_bloginfo('stylesheet_directory') . '/img/dist/prev.svg">');
+$next = get_next_posts_link('<img src="'. get_bloginfo('stylesheet_directory') . '/img/dist/next.svg">');
 if ($previous) {
-  echo $previous;
-}
-if ($previous && $next) {
-  echo ' &mdash; ';
+?>
+  <span class="pagination-button"><?php echo $previous; ?></span>
+<?php
 }
 if ($next) {
-  echo $next;
+?>
+  <span class="pagination-button"><?php echo $next; ?></span>
+<?php
 }
 ?>
+      </div>
+    </div>
   </nav>
 <?php
 }
