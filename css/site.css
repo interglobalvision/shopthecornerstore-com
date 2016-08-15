@@ -1541,6 +1541,7 @@ img {
   }
   .col {
     padding: 0 16px;
+    margin-bottom: 32px;
   }
   .offset-m-0 {
     margin-left: 0%;
@@ -1763,6 +1764,7 @@ img {
   }
   .col {
     padding: 0 24px;
+    margin-bottom: 48px;
   }
   .offset-l-0 {
     margin-left: 0%;
