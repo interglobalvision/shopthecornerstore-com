@@ -11,9 +11,7 @@ Site = {
     });
 
     $(window).bind('resizeEnd', function() {
-      if ($('#journal-container').length) {
-        $('#journal-container').masonry('layout');
-      }
+      _this.Journal.masonryLayout();
     });
     // bind end of resize event triggered by resizeDelay()
 
@@ -117,6 +115,12 @@ Site.Journal = {
         itemSelector: '.journal-post',
         transitionDuration: 0,
       }); 
+    }
+  },
+
+  masonryLayout: function() {
+    if ($('#journal-container').length) {
+      $('#journal-container').masonry('layout');
     }
   },
 
