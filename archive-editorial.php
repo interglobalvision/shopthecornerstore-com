@@ -4,16 +4,16 @@ get_header();
 
 <!-- main content -->
 
-<main id="main-content">
+<main id="main-content" class="container">
 
   <!-- main posts loop -->
-  <section id="posts" class="row">
+  <section id="posts-archive-editorial" class="row justify-center align-center">
 
 <?php
 if( have_posts() ) {
 ?>
-    <div class="col col6">
-      <ul>
+    <div class="col col-s-12 col-m-6">
+      <ul id="archive-editorial-titles">
 <?php
   while( have_posts() ) {
     the_post();
@@ -28,14 +28,14 @@ if( have_posts() ) {
       </ul>
     </div>
 
-    <div class="col col6">
+    <div class="col col-s-12 col-m-6 text-align-center">
 
 <?php
   while( have_posts() ) {
     the_post();
 ?>
 
-    <?php the_post_thumbnail( 'col6-square-nocrop', array('data-id' => $post->ID, 'class' => 'archive-image') ); ?>
+    <?php the_post_thumbnail( 'col6-square-nocrop', array('data-id' => $post->ID, 'class' => 'archive-editorial-image') ); ?>
 
 <?php
   }

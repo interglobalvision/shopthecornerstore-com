@@ -82,7 +82,7 @@ $gutter = 24px
   box-sizing: border-box
   max-width: 100%
   padding: 0 ($gutter / 2)
-  
+
 .col-no-gutter
   padding: 0
 
@@ -99,7 +99,7 @@ for col in 1..$cols
 
 // VARIABLES
 
-$golden-ratio = 1.61803398875 
+$golden-ratio = 1.61803398875
 
 $margin-small = ($gutter)
 $margin-tiny = ($gutter / 2)
@@ -128,7 +128,7 @@ $color-grey = rgb(150, 150, 150)
 
 $border-width = 2px
 
-$speed-transition-fast = .1s  
+$speed-transition-fast = .1s
 
 // ******************************************************
 
@@ -155,7 +155,7 @@ h2, .font-size-h2
 
 h3, .font-size-h3
   font-size: $font-size-h3
-  
+
 h4, .font-size-h4
   font-size: $font-size-h4
 
@@ -182,7 +182,7 @@ p
 
 .font-capitalize
   text-transform: capitalize
-  
+
 .font-letter-spaced
   letter-spacing: .1em
 
@@ -207,6 +207,9 @@ a:active,
 a:visited
   color: inherit
   text-decoration: none
+
+a:hover
+  color: $color-grey
 
 // ******************************************************
 
@@ -353,20 +356,20 @@ img
 
 // HEADER
 
-#header 
+#header
   text-align: center
 
 .menu-item
   margin: 0 $margin-tiny
-  
-#searchform 
+
+#searchform
   input
     appearance: none
     border: 0
     background: none
-    &:focus 
+    &:focus
       outline: none
-    
+
 // ******************************************************
 
 // PRODUCT ARCHIVE
@@ -376,7 +379,7 @@ img
   img
     display: block
     width: 100%
-  &:hover 
+  &:hover
     .shop-product-title-holder, .shop-product-sold-text
       opacity: 1
 
@@ -404,21 +407,28 @@ img
   padding: $margin-tiny
   margin-left: $margin-tiny
   color: $color-white
-  
+
 .shop-product-sold-icon
   width: auto
   height: $margin-tiny * 1.5
   display: inline-block
-  
+
 .shop-product-sold-text
   opacity: 0
   transition: opacity $speed-transition-fast
 
 // ******************************************************
 
-// ARCHIVE
+// ARCHIVE EDITORIAL
 
-.archive-image:not(:first-of-type)
+#posts-archive-editorial
+  height: 100%
+
+#archive-editorial-titles
+  max-width: 500px
+  margin: 0 auto
+
+.archive-editorial-image:not(:first-of-type)
   display: none
 
 // ******************************************************

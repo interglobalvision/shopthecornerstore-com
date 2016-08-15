@@ -12,15 +12,15 @@ Site = {
 
     if ($('body').hasClass('single-editorial')) {
       _this.Editorial.Single.init();
-    } 
+    }
 
     if ($('body').hasClass('post-type-archive-editorial')) {
       _this.Editorial.Archive.init();
-    } 
+    }
 
     if ($('.splash-swiper').length) {
       _this.Splash.init();
-    } 
+    }
 
     if ($('body').hasClass('woocommerce')) {
       _this.Shop.init();
@@ -96,7 +96,7 @@ Site.Journal = {
     if ($('.journal-container').length) {
       $('.journal-container').masonry({
         itemSelector: '.journal-post',
-      }); 
+      });
     }
   },
 
@@ -180,8 +180,8 @@ Site.Editorial = {
     showImage: function(id) {
       var _this = this;
 
-      $('.archive-image').hide();
-      $('.archive-image[data-id=' + id + ']').show();
+      $('.archive-editorial-image').hide();
+      $('.archive-editorial-image[data-id=' + id + ']').show();
     }
 
   },
