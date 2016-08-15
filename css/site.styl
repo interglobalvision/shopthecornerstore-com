@@ -82,9 +82,14 @@ $gutter = 24px
   box-sizing: border-box
   max-width: 100%
   padding: 0 ($gutter / 2)
+  margin-bottom: $gutter
   
 .col-no-gutter
-  padding: 0
+  padding-left: 0
+  padding-right: 0
+  
+.col-no-margin-bottom
+  margin-bottom: 0
 
 for offset in 0..($cols - 1)
   .offset-s-{offset}
