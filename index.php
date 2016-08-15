@@ -12,7 +12,7 @@ get_header();
 <?php
 if( have_posts() ) { 
 ?>
-    <div class="journal-container">
+    <div id="journal-container">
 <?php
   while( have_posts() ) {
     the_post();

@@ -11,8 +11,8 @@ Site = {
     });
 
     $(window).bind('resizeEnd', function() {
-      if ($('.journal-container').length) {
-        $('.journal-container').masonry('layout');
+      if ($('#journal-container').length) {
+        $('#journal-container').masonry('layout');
       }
     });
     // bind end of resize event triggered by resizeDelay()
@@ -112,8 +112,8 @@ Site.Shop = {
 
 Site.Journal = {
   init: function() {
-    if ($('.journal-container').length) {
-      $('.journal-container').masonry({
+    if ($('#journal-container').length) {
+      $('#journal-container').masonry({
         itemSelector: '.journal-post',
         transitionDuration: 0,
       }); 
