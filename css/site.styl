@@ -124,7 +124,7 @@ $font-tracking-wider = 0.05em
 
 $color-black-soft = rgb(14, 14, 14)
 $color-white = rgb(255, 255, 255)
-$color-grey = rgb(150, 150, 150)
+$color-grey = #B7B7B7
 
 $border-width = 2px
 
@@ -219,6 +219,9 @@ html
 img
   max-width: 100%
   height: auto
+  
+.pagination-button
+  padding-left: $margin-small
 
 // ******************************************************
 
@@ -423,17 +426,7 @@ img
 
 // ******************************************************
 
-// JOURNAL
-
-.journal-post
-  /* FIX THIS AFTER MERGE
-  /*
-  /* width: ( 6 * $col ) + ( ( 6 - 1 ) * $gutter ) */
-  margin: 0 $margin-tiny $margin-small
-
-// ******************************************************
-
-// FOOTER
+// FOOTER 
 
 .social-icon
   width: $margin-small
