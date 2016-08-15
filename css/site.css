@@ -1528,7 +1528,7 @@ img {
   height: 100%;
 }
 #archive-editorial-titles {
-  max-width: 500px;
+  max-width: 350px;
   margin: 0 auto;
 }
 .archive-editorial-image:not(:first-of-type) {
