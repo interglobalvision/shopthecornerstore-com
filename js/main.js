@@ -44,14 +44,12 @@ Site = {
   },
 
   resizeDelay: function() { 
-    // trigger end of resize after 500 ms
-    if (window.resizeDelay) {
-      clearTimeout(window.resizeDelay);
-    }
+    var resizeTimer;
 
-    window.resizeDelay = setTimeout(function() {
-      $(window).trigger('resizeEnd');
-    }, 500); 
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      $(window).trigger('resizeEnd');   
+    }, 500);
   },
 
   fixWidows: function() {
