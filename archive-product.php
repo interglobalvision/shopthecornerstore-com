@@ -4,11 +4,10 @@ get_header();
 
 <!-- main content -->
 <div id="main-content-holder">
-<main id="main-content">
+<main id="main-content" class="container">
 
   <!-- main posts loop -->
-  <section id="products" class="container">
-    <div class="row margin-bottom-small">
+  <section id="products" class="row margin-bottom-small">
 <?php
 if( have_posts() ) {
   while( have_posts() ) {
@@ -42,13 +41,12 @@ if( have_posts() ) {
     <article class="col col12 u-alert"><?php _e('Sorry, no products matched your criteria :{'); ?></article>
 <?php
 } ?>
-    </div>
-    <div class="row margin-bottom-basic">
-      <div class="col col12 text-align-center">
-        <?php get_template_part('partials/pagination'); ?>
-      </div>
-    </div>
   </section>
+  <div class="row margin-bottom-basic">
+    <div class="col col12 text-align-center">
+      <?php get_template_part('partials/pagination'); ?>
+    </div>
+  </div>
 
 <!-- end main-content -->
 

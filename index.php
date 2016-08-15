@@ -4,10 +4,10 @@ get_header();
 
 <!-- main content -->
 <div id="main-content-holder">
-<main id="main-content">
+<main id="main-content" class="container">
 
   <!-- main posts loop -->
-  <section id="posts" class="container">
+  <section id="posts">
 
 <?php
 if( have_posts() ) {

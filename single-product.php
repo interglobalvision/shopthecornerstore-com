@@ -4,7 +4,7 @@ get_header();
 
 <!-- main content -->
 <div id="main-content-holder">
-<main id="main-content">
+<main id="main-content" class="container">
 
   <!-- main posts loop -->
   <section id="posts">
