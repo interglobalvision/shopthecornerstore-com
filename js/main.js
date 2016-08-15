@@ -10,6 +10,13 @@ Site = {
       _this.onResize();
     });
 
+    $(window).bind('resizeEnd', function() {
+      if ($('.journal-container').length) {
+        $('.journal-container').masonry('layout');
+      }
+    });
+    // bind end of resize event triggered by resizeDelay()
+
     if ($('body').hasClass('single-editorial')) {
       _this.Editorial.Single.init();
     } 
@@ -35,6 +42,18 @@ Site = {
   onResize: function() {
     var _this = this;
 
+    _this.resizeDelay();
+  },
+
+  resizeDelay: function() { 
+    // trigger end of resize after 500 ms
+    if (window.resizeDelay) {
+      clearTimeout(window.resizeDelay);
+    }
+
+    window.resizeDelay = setTimeout(function() {
+      $(window).trigger('resizeEnd');
+    }, 500); 
   },
 
   fixWidows: function() {
@@ -96,6 +115,7 @@ Site.Journal = {
     if ($('.journal-container').length) {
       $('.journal-container').masonry({
         itemSelector: '.journal-post',
+        transitionDuration: 0,
       }); 
     }
   },
