@@ -10,7 +10,7 @@ $recent_id = $recent_editorial[0]->ID;
 ?>
 
 <!-- main content -->
-
+<div id="main-content-holder">
 <main id="main-content" class="container">
 
 <?php
@@ -112,6 +112,7 @@ if( have_posts() ) {
 <!-- end main-content -->
 
 </main>
+</div>
 
 <?php
 get_footer();

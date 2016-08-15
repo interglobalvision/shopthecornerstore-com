@@ -3,7 +3,7 @@ get_header();
 ?>
 
 <!-- main content -->
-
+<div id="main-content-holder">
 <main id="main-content">
 
   <!-- main posts loop -->
@@ -48,7 +48,7 @@ if( have_posts() ) {
       </div>
 
       <div class="product-images col col9">
-        <?php 
+        <?php
           if ($image_ids) {
 
             foreach($image_ids as $image_id) {
@@ -77,6 +77,7 @@ if( have_posts() ) {
 <!-- end main-content -->
 
 </main>
+</div>
 
 <?php
 get_footer();

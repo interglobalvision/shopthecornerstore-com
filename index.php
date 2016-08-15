@@ -3,14 +3,14 @@ get_header();
 ?>
 
 <!-- main content -->
-
+<div id="main-content-holder">
 <main id="main-content">
 
   <!-- main posts loop -->
   <section id="posts" class="container">
 
 <?php
-if( have_posts() ) { 
+if( have_posts() ) {
 ?>
     <div class="journal-container">
 <?php
@@ -31,7 +31,7 @@ if( have_posts() ) {
 ?>
     </div>
     <div class="text-align-center"><a class="button js-load-more">Load More</a></div>
-<?php 
+<?php
 } else {
 ?>
     <article class="u-alert masonry-item"><?php _e('Sorry, no posts matched your criteria :{'); ?></article>
@@ -46,6 +46,7 @@ if( have_posts() ) {
 <!-- end main-content -->
 
 </main>
+</div>
 
 <?php
 get_footer();

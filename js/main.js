@@ -6,28 +6,36 @@ Site = {
   init: function() {
     var _this = this;
 
+    Site.Layout.init();
+
     $(window).resize(function(){
       _this.onResize();
     });
 
-    if ($('body').hasClass('single-editorial')) {
-      _this.Editorial.Single.init();
-    }
+    $(document).ready(function () {
+
+      Site.Layout.layout();
+
+      if ($('.splash-swiper').length) {
+        _this.Splash.init();
+      }
+
+      if ($('body').hasClass('blog')) {
+        _this.Journal.init();
+      }
+
+      if ($('body').hasClass('single-editorial')) {
+        _this.Editorial.Single.init();
+      }
+
+    });
 
     if ($('body').hasClass('post-type-archive-editorial')) {
       _this.Editorial.Archive.init();
     }
 
-    if ($('.splash-swiper').length) {
-      _this.Splash.init();
-    }
-
     if ($('body').hasClass('woocommerce')) {
       _this.Shop.init();
-    }
-
-    if ($('body').hasClass('blog')) {
-      _this.Journal.init();
     }
 
   },
@@ -35,6 +43,7 @@ Site = {
   onResize: function() {
     var _this = this;
 
+    _this.Layout.onResize();
   },
 
   fixWidows: function() {
@@ -46,6 +55,49 @@ Site = {
     });
   },
 
+};
+
+Site.Layout = {
+  init: function() {
+    var _this = this;
+
+    _this.$mainContentHolder = $('#main-content-holder');
+    _this.$mainContent = $('#main-content');
+    _this.$header = $('#header');
+    _this.$footer = $('#footer');
+
+    _this.windowHeight = $(window).height();
+    _this.windowWidth = $(window).width();
+
+    _this.layout();
+  },
+
+  onResize: function() {
+    var _this = this;
+
+    _this.windowHeight = $(window).height();
+    _this.windowWidth = $(window).width();
+
+    _this.layout();
+  },
+
+  layout: function() {
+    var _this = this;
+
+    _this.$mainContentHolder.css({
+      'height': 'auto'
+    });
+
+    if (_this.$mainContent.height() < _this.windowHeight) {
+
+      var height = _this.windowHeight - (_this.$header.outerHeight(true) + _this.$footer.outerHeight(true));
+
+      _this.$mainContentHolder.css({
+        'height': height
+      });
+    }
+
+  },
 };
 
 Site.Shop = {
@@ -188,9 +240,4 @@ Site.Editorial = {
 
 };
 
-jQuery(document).ready(function () {
-  'use strict';
-
-  Site.init();
-
-});
+Site.init();

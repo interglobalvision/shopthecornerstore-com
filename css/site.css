@@ -1295,6 +1295,12 @@ img {
   max-width: 100%;
   height: auto;
 }
+#main-content-holder {
+  height: 100vh;
+}
+#main-content {
+  height: 100%;
+}
 .margin-top-micro {
   margin-top: 7.416407864998257px;
 }
