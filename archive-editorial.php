@@ -7,40 +7,36 @@ get_header();
 <main id="main-content" class="container">
 
   <!-- main posts loop -->
-  <section id="posts-archive-editorial" class="row justify-center align-center">
+  <section id="posts-archive-editorial" class="row">
 
 <?php
 if( have_posts() ) {
 ?>
-    <div class="col col-s-12 col-m-6">
+    <div class="col col-s-12 col-m-6 u-flex align-center">
       <ul id="archive-editorial-titles">
-<?php
-  while( have_posts() ) {
-    the_post();
-?>
+  <?php
+    while( have_posts() ) {
+      the_post();
+  ?>
 
-        <li><a href="<?php the_permalink() ?>" class="archive-title" data-id="<?php echo $post->ID; ?>"><?php the_title(); ?></a></li>
+          <li><a href="<?php the_permalink() ?>" class="archive-title" data-id="<?php echo $post->ID; ?>"><?php the_title(); ?></a></li>
 
-<?php
-  }
-?>
+  <?php
+    }
+  ?>
 
       </ul>
     </div>
 
-    <div class="col col-s-12 col-m-6 text-align-center">
-
+    <div class="col col-s-12 col-m-6 u-flex justify-center align-center">
 <?php
   while( have_posts() ) {
     the_post();
 ?>
-
-    <?php the_post_thumbnail( 'col6-square-nocrop', array('data-id' => $post->ID, 'class' => 'archive-editorial-image') ); ?>
-
+      <?php the_post_thumbnail( 'col6-square-nocrop', array('data-id' => $post->ID, 'class' => 'archive-editorial-image') ); ?>
 <?php
   }
 ?>
-
     </div>
 <?php
 } else {

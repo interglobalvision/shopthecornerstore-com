@@ -46,6 +46,9 @@ $gutter = 24px
   &.reverse
     flex-direction: row-reverse
 
+.u-flex
+  display: flex
+
 // FLEX POSITIONING
 
 .justify-start
@@ -429,12 +432,19 @@ img
 
 #posts-archive-editorial
   height: 100%
+  min-height: 600px
+  .col
+    height: 100%
+    min-height: 60px
 
 #archive-editorial-titles
   margin-left: $margin-basic
 
-.archive-editorial-image:not(:first-of-type)
-  display: none
+.archive-editorial-image
+  max-height: 100%
+  width: auto
+  &:not(:first-of-type)
+    display: none
 
 // ******************************************************
 

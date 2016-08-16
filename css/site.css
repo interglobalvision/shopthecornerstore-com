@@ -1039,6 +1039,11 @@ th {
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
 }
+.u-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 .justify-start {
   -ms-justify-content: flex-start;
   -webkit-box-pack: start;
@@ -1526,10 +1531,18 @@ img {
 }
 #posts-archive-editorial {
   height: 100%;
+  min-height: 600px;
+}
+#posts-archive-editorial .col {
+  height: 100%;
+  min-height: 60px;
 }
 #archive-editorial-titles {
-  max-width: 350px;
-  margin: 0 auto;
+  margin-left: 48px;
+}
+.archive-editorial-image {
+  max-height: 100%;
+  width: auto;
 }
 .archive-editorial-image:not(:first-of-type) {
   display: none;
