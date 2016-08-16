@@ -1306,6 +1306,12 @@ img {
 #main-content {
   height: 100%;
 }
+.only-mobile {
+  display: initial;
+}
+.only-desktop {
+  display: none;
+}
 .margin-top-micro {
   margin-top: 7.416407864998257px;
 }
@@ -1531,21 +1537,12 @@ img {
 }
 #posts-archive-editorial {
   height: 100%;
-  min-height: 600px;
 }
 #posts-archive-editorial .col {
   height: 100%;
-  min-height: 60px;
 }
 #archive-editorial-titles {
   margin-left: 48px;
-}
-.archive-editorial-image {
-  max-height: 100%;
-  width: auto;
-}
-.archive-editorial-image:not(:first-of-type) {
-  display: none;
 }
 .journal-post {
 /* FIX THIS AFTER MERGE
@@ -1677,11 +1674,40 @@ img {
         flex-basis: 100%;
     max-width: 100%;
   }
+  .only-mobile {
+    display: none;
+  }
+  .only-desktop {
+    display: initial;
+  }
   #header {
     text-align: left;
   }
   .editorial-title {
     text-align: right;
+  }
+  #posts-archive-editorial {
+    height: 100%;
+    min-height: 600px;
+  }
+  #posts-archive-editorial .col {
+    height: 100%;
+    min-height: 600px;
+  }
+  #archive-editorial-titles {
+    margin-left: 48px;
+  }
+  #archive-editorial-images {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .archive-editorial-image {
+    max-height: 100%;
+    width: auto;
+  }
+  .archive-editorial-image:not(:first-of-type) {
+    display: none;
   }
 }
 @media screen and (min-width: 1150px) {

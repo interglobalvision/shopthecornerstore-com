@@ -232,6 +232,12 @@ img
 #main-content
   height: 100%
 
+.only-mobile
+  display: initial
+
+.only-desktop
+  display: none
+
 // ******************************************************
 
 // MARGINS AND PADDING
@@ -432,19 +438,14 @@ img
 
 #posts-archive-editorial
   height: 100%
-  min-height: 600px
   .col
     height: 100%
-    min-height: 60px
 
 #archive-editorial-titles
   margin-left: $margin-basic
 
-.archive-editorial-image
-  max-height: 100%
-  width: auto
-  &:not(:first-of-type)
-    display: none
+// #archive-editorial-images
+//   display: none
 
 // ******************************************************
 
