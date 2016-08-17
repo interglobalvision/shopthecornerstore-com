@@ -1523,7 +1523,7 @@ img {
   margin-left: 12px;
   color: #fff;
 }
-.shop-product-sold-icon {
+img.shop-product-sold-icon {
   width: auto;
   height: 18px;
   display: inline-block;
