@@ -6,7 +6,7 @@ Site = {
   init: function() {
     var _this = this;
 
-    Site.Layout.init();
+//     Site.Layout.init();
 
     $(window).resize(function(){
       _this.onResize();
@@ -14,7 +14,7 @@ Site = {
 
     $(document).ready(function () {
 
-      Site.Layout.layout();
+//       Site.Layout.layout();
 
       if ($('.splash-swiper').length) {
         _this.Splash.init();
@@ -43,7 +43,7 @@ Site = {
   onResize: function() {
     var _this = this;
 
-    _this.Layout.onResize();
+//     _this.Layout.onResize();
   },
 
   fixWidows: function() {
