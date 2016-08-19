@@ -24,26 +24,40 @@ Site = {
         _this.Journal.init();
       }
 
+      $(window).bind('resizeEnd', function() {
+        _this.Journal.masonryLayout();
+      });
+      // bind end of resize event triggered by resizeDelay()
+
       if ($('body').hasClass('single-editorial')) {
         _this.Editorial.Single.init();
+      } 
+
+      if ($('body').hasClass('post-type-archive-editorial')) {
+        _this.Editorial.Archive.init();
+      }
+
+      if ($('body').hasClass('woocommerce')) {
+        _this.Shop.init();
       }
 
     });
-
-    if ($('body').hasClass('post-type-archive-editorial')) {
-      _this.Editorial.Archive.init();
-    }
-
-    if ($('body').hasClass('woocommerce')) {
-      _this.Shop.init();
-    }
 
   },
 
   onResize: function() {
     var _this = this;
 
-//     _this.Layout.onResize();
+    _this.resizeDelay();
+  },
+
+  resizeDelay: function() { 
+    var resizeTimer;
+
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      $(window).trigger('resizeEnd');   
+    }, 500);
   },
 
   fixWidows: function() {
@@ -145,10 +159,17 @@ Site.Shop = {
 
 Site.Journal = {
   init: function() {
-    if ($('.journal-container').length) {
-      $('.journal-container').masonry({
+    if ($('#journal-container').length) {
+      $('#journal-container').masonry({
         itemSelector: '.journal-post',
-      });
+        transitionDuration: 0,
+      }); 
+    }
+  },
+
+  masonryLayout: function() {
+    if ($('#journal-container').length) {
+      $('#journal-container').masonry('layout');
     }
   },
 

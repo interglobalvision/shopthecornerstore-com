@@ -85,9 +85,13 @@ $gutter = 24px
   box-sizing: border-box
   max-width: 100%
   padding: 0 ($gutter / 2)
-
+  
 .col-no-gutter
-  padding: 0
+  padding-left: 0
+  padding-right: 0
+  
+.col-no-margin-bottom
+  margin-bottom: 0
 
 for offset in 0..($cols - 1)
   .offset-s-{offset}
@@ -127,7 +131,7 @@ $font-tracking-wider = 0.05em
 
 $color-black-soft = rgb(14, 14, 14)
 $color-white = rgb(255, 255, 255)
-$color-grey = rgb(150, 150, 150)
+$color-grey = #B7B7B7
 
 $border-width = 2px
 
@@ -225,6 +229,9 @@ html
 img
   max-width: 100%
   height: auto
+  
+.pagination-button
+  padding-left: $margin-small
 
 #main-content-holder
   min-height: 80vh
@@ -351,7 +358,7 @@ img
   justify-content: center
   flex-direction: column
   flex: 9 0 0
-
+ 
 .splash-logo
   display: flex
   justify-content: center
@@ -367,7 +374,7 @@ img
 // ******************************************************
 
 // HEADER
-
+ 
 #header
   text-align: center
 
@@ -441,17 +448,7 @@ img.shop-product-sold-icon
 
 // ******************************************************
 
-// JOURNAL
-
-.journal-post
-  /* FIX THIS AFTER MERGE
-  /*
-  /* width: ( 6 * $col ) + ( ( 6 - 1 ) * $gutter ) */
-  margin: 0 $margin-tiny $margin-small
-
-// ******************************************************
-
-// FOOTER
+// FOOTER 
 
 .social-icon
   width: $margin-small
