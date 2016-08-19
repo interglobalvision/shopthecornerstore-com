@@ -3,7 +3,7 @@ $gutter = 32px
 
 .container
   width: 750px
-  
+
 .col
   padding: 0 ($gutter / 2)
   margin-bottom: $gutter
@@ -16,7 +16,17 @@ for col in 1..$cols
   .col-m-{col}
     flex-basis: ( 100% / $cols ) * col
     max-width: ( 100% / $cols ) * col
-    
+
+// ******************************************************
+
+// BASIC
+
+.only-mobile
+  display: none
+
+.only-desktop
+  display: initial
+
 // ******************************************************
 
 // VARIABLES
@@ -159,10 +169,28 @@ h4, .font-size-h4
 
 // HEADER
 
-#header 
-  text-align: left 
+#header
+  text-align: left
 
 .editorial-title
   text-align: right
+
+// ******************************************************
+
+// ARCHIVE EDITORIAL
+
+#posts-archive-editorial
+  .col
+    min-height: 620px
+
+#archive-editorial-titles
+  margin-left: $margin-basic
+
+#archive-editorial-images
+  display: flex
+
+.archive-editorial-image
+  &:not(:first-of-type)
+    display: none
 
 // ******************************************************

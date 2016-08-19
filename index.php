@@ -3,14 +3,14 @@ get_header();
 ?>
 
 <!-- main content -->
-
-<main id="main-content">
+<div id="main-content-holder">
+<main id="main-content" class="container">
 
   <!-- main posts loop -->
-  <section id="posts" class="container">
+  <section id="posts">
 
 <?php
-if( have_posts() ) { 
+if( have_posts() ) {
 ?>
     <div id="journal-container">
 <?php
@@ -30,6 +30,7 @@ if( have_posts() ) {
   }
 ?>
     </div>
+
 <?php 
 } else {
 ?>
@@ -45,6 +46,7 @@ if( have_posts() ) {
 <!-- end main-content -->
 
 </main>
+</div>
 
 <?php
 get_footer();
