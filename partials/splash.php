@@ -20,21 +20,10 @@ if (!empty($images)) {
 }
 ?>
   <header class="splash-header container">
-
-<?php
-  $logo_id = IGV_get_option('_igv_splash_logo_id');
-
-  if ($logo_id) {
-    $logo = wp_get_attachment_image_src($logo_id, 'splash');
-?>
     <div class="splash-logo">
-      <img src="<?php echo $logo[0]; ?>">
+      <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/logo.svg'); ?>
     </div>
-<?php
-  } else {
-?>
-    <h1 class="splash-logo"><?php bloginfo('name'); ?></h1>
-<?php } ?>
+
     <nav class="splash-nav u-flex-center">
       <?php get_template_part('partials/nav'); ?>
     </nav>
