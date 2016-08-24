@@ -66,20 +66,7 @@
     <div class="row align-center">
 
       <div id="header-logo" class="col col-s-4 offset-s-4 col-m-2 offset-m-0">
-      <?php
-        $logo_id = IGV_get_option('_igv_header_logo_id');
-
-        if (!empty($logo_id)) {
-          $logo = wp_get_attachment_image($logo_id, 'logo', false, array( 'class' => 'logo' ));
-      ?>
-        <a href="<?php echo home_url(); ?>"><?php echo $logo; ?></a>
-      <?php
-        } else {
-      ?>
-        <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
-      <?php 
-        }
-      ?>
+        <a href="<?php echo home_url(); ?>"><?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/logo.svg'); ?></a>
       </div>
 
       <nav class="col col-s-12 col-m-6">
