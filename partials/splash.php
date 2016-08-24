@@ -3,7 +3,6 @@
 $images = IGV_get_option('_igv_splash_images');
 
 if (!empty($images)) {
-  $images = explode(",",$images);
 ?>
   <div class="splash-swiper swiper-container">
     <div class="swiper-wrapper">
@@ -17,11 +16,11 @@ if (!empty($images)) {
 ?>
     </div>
   </div>
-<?php 
+<?php
 }
 ?>
   <header class="splash-header container">
-    
+
 <?php
   $logo_id = IGV_get_option('_igv_splash_logo_id');
 
