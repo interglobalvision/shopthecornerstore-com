@@ -10,7 +10,7 @@
   ?>
     <footer id="footer" class="container">
       <div class="row">
-        <div class="col col3">
+        <div class="col col-no-margin-bottom col3">
           <?php if (!empty($facebook) || !empty($twitter) || !empty($instagram)) { ?>
           <ul class="u-inline-list">
             <?php if (!empty($facebook)) { ?>
@@ -29,10 +29,10 @@
           </ul>
           <?php } ?>
         </div>
-        <div class="col col6 text-align-center font-small-caps">
+        <div class="col col-no-margin-bottom col6 text-align-center font-small-caps">
           &copy; <?php echo date('Y'); ?> The Corner LLC. All Rights Reserved
         </div>
-        <div class="col col3 text-align-right">
+        <div class="col col-no-margin-bottom col3 text-align-right">
           <?php if (!empty($contact_id) || !empty($shipping_id)) { ?>
           <nav class="footer-menu">
             <ul class="u-inline-list">

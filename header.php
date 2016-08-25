@@ -55,28 +55,28 @@
 
   <section id="main-container">
 
-<?php 
-  if (is_front_page()) { 
-    get_template_part('partials/splash'); 
-  } else { 
+<?php
+  if (is_front_page()) {
+    get_template_part('partials/splash');
+  } else {
 ?>
 
   <!-- start content -->
   <header id="header" class="container margin-top-small">
     <div class="row align-center">
 
-      <div id="header-logo" class="col col-s-4 offset-s-4 col-m-2 offset-m-0">
+      <div id="header-logo" class="col col-no-margin-bottom col-s-4 offset-s-4 col-m-2 offset-m-0">
         <a href="<?php echo home_url(); ?>"><?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/logo.svg'); ?></a>
       </div>
 
-      <nav class="col col-s-12 col-m-6">
+      <nav class="col col-no-margin-bottom col-s-12 col-m-6">
         <?php get_template_part('partials/nav'); ?>
       </nav>
 
     <?php
       if (is_singular('editorial')) {
     ?>
-      <div class="col col-s-12 col-m-4">
+      <div class="col col-no-margin-bottom col-s-12 col-m-4">
         <h1 class="font-size-h3 font-letter-spaced"><?php the_title(); ?></h1>
       </div>
     <?php
@@ -86,7 +86,7 @@
     <?php
       if (is_archive('product')) {
     ?>
-      <div class="col col-s-4 offset-s-4 col-m-3 offset-m-1">
+      <div class="col col-no-margin-bottom col-s-4 offset-s-4 col-m-3 offset-m-1">
       <?php
             echo get_product_search_form();
         ?>
