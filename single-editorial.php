@@ -34,16 +34,16 @@ if( have_posts() ) {
 
         <div class="slider-product-details u-invisible">
 
-          <a href="" class="js-product-title"></a>
+          <h1><a href="" class="js-product-title font-serif font-italic font-transform-none"></a></h1>
           <div class="js-product-content"></div>
-          <span class="price js-product-price"></span>
+          <div class="price font-bold font-size-h2 js-product-price"></div>
 
           <form class="cart" method="post" enctype='multipart/form-data'>
             <input type="hidden" name="add-to-cart" class="js-product-id" value="" />
             <button type="submit" class="add-to-cart u-hidden js-product-button"></button>
           </form>
 
-          <span class="sold js-product-sold"></span>
+          <div class="sold js-product-sold"></div>
 
         </div>
 
@@ -81,10 +81,12 @@ if( have_posts() ) {
 
         if ($has_product) {
           $product = new WC_Product($slide['product']);
+          //pr($product); die;
           $product_data = array(
             'title' => $product->get_title(),
             'id' => $product->id,
             'url' => $product->get_permalink(),
+            'content' => apply_filters('the_content', $product->post->post_content),
             'price' => $product->get_price_html(),
             'stock' => $product->is_in_stock(),
             'availability' => $product->get_availability(),
@@ -92,7 +94,7 @@ if( have_posts() ) {
           );
         }
 ?>
-            <div class="swiper-slide" <?php if ($has_product) {
+            <div class="swiper-slide text-align-center" <?php if ($has_product) {
               echo 'data-product="' . htmlspecialchars(json_encode($product_data)) . '"';
             } ?> >
               <?php echo wp_get_attachment_image($slide['image_id'], 'col10-square-nocrop', false, array( 'class' => '' )); ?>
