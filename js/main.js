@@ -202,8 +202,9 @@ Site.Editorial = {
       var swiper = new Swiper('.swiper-container', {
         preloadImages: false,
         lazyLoading: true,
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
+        loop: true,
+        nextButton: '.button-next',
+        prevButton: '.button-prev',
         onInit: function(swiper) {
           _this.updateProductDetails();
         },
