@@ -45,6 +45,14 @@ $gutter = 24px
   flex-wrap: wrap
   &.reverse
     flex-direction: row-reverse
+    
+.column
+  box-sizing: border-box
+  display: flex
+  flex: 0 1 auto
+  flex-direction: column
+  &.reverse
+    flex-direction: column-reverse
 
 .u-flex
   display: flex
@@ -59,6 +67,9 @@ $gutter = 24px
 
 .justify-end
   justify-content: flex-end
+  
+.justify-between
+  justify-content: space-between
 
 .align-start
   align-items: flex-start
