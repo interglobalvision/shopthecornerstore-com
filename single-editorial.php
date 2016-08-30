@@ -32,7 +32,7 @@ if( have_posts() ) {
       <!-- Product details container -->
       <div class="col col-s-12 col-m-3 set-content-height column justify-between">
 
-        <div class="slider-product-details">
+        <div class="slider-product-details u-invisible">
 
           <a href="" class="js-product-title"></a>
           <div class="js-product-content"></div>
@@ -49,8 +49,8 @@ if( have_posts() ) {
 
         <div class="slider-pagination u-flex">
 
-          <div class="button-prev">prev</div>
-          <div class="button-next">next</div>
+          <div class="button-prev u-pointer">prev</div>
+          <div class="button-next u-pointer">next</div>
 
         </div>
 

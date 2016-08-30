@@ -195,6 +195,7 @@ Site.Splash = {
 Site.Editorial = {
 
   Single: {
+    $productDetails: $('.slider-product-details'),
 
     init: function() {
       var _this = this;
@@ -209,7 +210,7 @@ Site.Editorial = {
           _this.updateProductDetails();
         },
         onSlideChangeStart: function(swiper) {
-          $('.product-details').hide();
+          _this.$productDetails.addClass('u-invisible');
         },
         onSlideChangeEnd: function(swiper) {
           _this.updateProductDetails();
@@ -219,6 +220,8 @@ Site.Editorial = {
     },
 
     updateProductDetails: function() {
+      var _this = this;
+
       if ($('.swiper-slide-active').attr('data-product')) {
         var productData = JSON.parse($('.swiper-slide-active').attr('data-product'));
 
@@ -235,7 +238,7 @@ Site.Editorial = {
           $('.js-product-button').addClass('u-hidden');
         }
 
-        $('.product-details').show();
+        _this.$productDetails.removeClass('u-invisible');
       }
     },
 
