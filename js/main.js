@@ -201,8 +201,6 @@ Site.Editorial = {
       var _this = this;
 
       var swiper = new Swiper('.swiper-container', {
-        preloadImages: false,
-        lazyLoading: true,
         loop: true,
         nextButton: '.button-next',
         prevButton: '.button-prev',
