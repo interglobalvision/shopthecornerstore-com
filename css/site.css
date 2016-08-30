@@ -1801,9 +1801,6 @@ img.shop-product-sold-icon {
   .editorial-title {
     text-align: right;
   }
-  #posts-archive-editorial .col {
-    min-height: 620px;
-  }
   #archive-editorial-titles {
     margin-left: 64px;
   }
@@ -1811,6 +1808,13 @@ img.shop-product-sold-icon {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    height: 480px;
+  }
+  #archive-editorial-images img {
+    width: initial;
+    max-height: 100%;
+    height: initial;
+    max-width: initial;
   }
   .archive-editorial-image:not(:first-of-type) {
     display: none;
@@ -2034,5 +2038,8 @@ img.shop-product-sold-icon {
   }
   .padding-bottom-large {
     padding-bottom: 240px;
+  }
+  #archive-editorial-images {
+    height: auto;
   }
 }
