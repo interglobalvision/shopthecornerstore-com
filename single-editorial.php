@@ -49,8 +49,12 @@ if( have_posts() ) {
 
         <div class="slider-pagination u-flex">
 
-          <div class="button-prev u-pointer">prev</div>
-          <div class="button-next u-pointer">next</div>
+          <div class="button-prev u-pointer">
+            <img src="<?php bloginfo('stylesheet_directory'); ?>/img/dist/prev.svg">
+          </div>
+          <div class="button-next u-pointer">
+            <img src="<?php bloginfo('stylesheet_directory'); ?>/img/dist/next.svg">
+          </div>
 
         </div>
 
