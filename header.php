@@ -62,7 +62,7 @@
 ?>
 
   <!-- start content -->
-  <header id="header" class="container margin-top-small">
+  <header id="header" class="container margin-top-tiny">
     <div class="row align-center">
 
       <div id="header-logo" class="col col-no-margin-bottom col-s-4 offset-s-4 col-m-2 offset-m-0">

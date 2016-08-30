@@ -30,7 +30,7 @@ if( have_posts() ) {
 ?>
 
       <!-- Product details container -->
-      <div class="col col3">
+      <div class="col col-s-12 col-m-3 set-content-height">
 
         <div class="product-details">
 
@@ -50,13 +50,13 @@ if( have_posts() ) {
       </div>
       <!-- End Product details container -->
 
-      <div class="col col9">
+      <div class="col col-s-12 col-m-9 set-content-height">
 
 <?php
       } else {
 ?>
-      <div class="col col1"></div>
-      <div class="col col10">
+      <div class="col col-s-0 col-m-1 set-content-height"></div>
+      <div class="col col-s-12 col-m-10 set-content-height">
 
 <?php } ?>
 
