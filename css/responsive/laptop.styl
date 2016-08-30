@@ -33,9 +33,9 @@ $margin-large = ($gutter * 5)
 $font-size-basic = 13px
 $font-size-larger = 1.3rem
 $font-size-h4 = golden-ratio(1rem , .3)
-$font-size-h3 = golden-ratio(1rem , .5)
-$font-size-h2 = golden-ratio(1rem , .8)
-$font-size-h1 = golden-ratio(1rem , 1.2)
+$font-size-h3 = golden-ratio(1rem , .8)
+$font-size-h2 = golden-ratio(1rem , 1.0)
+$font-size-h1 = golden-ratio(1rem , 2.0)
 
 // ******************************************************
 
@@ -77,11 +77,16 @@ $footer-height = (28px)
 .pagination-button
   padding-left: $margin-small
   
-.set-content-height
-  height: 480px
+.set-sidebar-height
+  height: calc("100vh - " + ($header-height + $footer-height))
+  min-height: 540px
   
-.swiper-container
-  height: 100%
+.set-content-height
+  height: 540px
+  
+.slider-pagination
+  .button-prev
+    margin-right: $margin-tiny
 
 // ******************************************************
 

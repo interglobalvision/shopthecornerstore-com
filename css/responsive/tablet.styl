@@ -39,22 +39,6 @@ $font-size-h1 = golden-ratio(1rem , 1.2)
 
 // ******************************************************
 
-// BASIC
-
-$header-height = (55px + $margin-small)
-$footer-height = (28px)
-
-#main-content-holder
-  min-height: calc("100vh - " + ($header-height + $footer-height))
-
-.only-mobile
-  display: none
-
-.only-desktop
-  display: initial
-
-// ******************************************************
-
 // TYPOGRAPHY
 
 html
@@ -84,16 +68,37 @@ h4, .font-size-h4
 
 // BASIC
 
+$header-height = (55px + $margin-small)
+$footer-height = (28px)
+
+#main-content-holder
+  min-height: calc("100vh - " + ($header-height + $footer-height))
+
+.only-mobile
+  display: none
+
+.only-desktop
+  display: initial
+
 .pagination-button
   padding-left: $margin-small
+
+.set-sidebar-height
+  height: calc("100vh - " + ($header-height + $footer-height))
+  min-height: 480px
   
 .set-content-height
-  height: 320px
+  height: 480px
   img
     width: initial
     max-height: 100%
-    height: initial
-    max-width: initial
+    
+.swiper-container
+  height: 100%
+    
+.slider-pagination
+  .button-prev
+    margin-right: $margin-tiny
 
 // ******************************************************
 

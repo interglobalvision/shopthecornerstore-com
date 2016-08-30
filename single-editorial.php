@@ -22,7 +22,7 @@ if( have_posts() ) {
     $is_recent = ($recent_id === $post->ID ? true : false);
 ?>
 
-    <article <?php post_class('row'); ?> id="post-<?php the_ID(); ?>">
+    <article <?php post_class('row align-center'); ?> id="post-<?php the_ID(); ?>">
 
 <?php
     if (!empty($slides)) {
@@ -30,7 +30,7 @@ if( have_posts() ) {
 ?>
 
       <!-- Product details container -->
-      <div class="col col-s-12 col-m-3 set-content-height column justify-between">
+      <div class="col col-s-12 col-m-3 column justify-between set-sidebar-height">
 
         <div class="slider-product-details u-invisible">
 
@@ -61,13 +61,13 @@ if( have_posts() ) {
       </div>
       <!-- End Product details container -->
 
-      <div class="col col-s-12 col-m-9 set-content-height">
+      <div class="col col-s-12 col-m-9  set-content-height">
 
 <?php
       } else {
 ?>
-      <div class="col col-s-0 col-m-1 set-content-height"></div>
-      <div class="col col-s-12 col-m-10 set-content-height">
+      <div class="col col-s-0 col-m-1 "></div>
+      <div class="col col-s-12 col-m-10 ">
 
 <?php } ?>
 
@@ -94,7 +94,7 @@ if( have_posts() ) {
           );
         }
 ?>
-            <div class="swiper-slide text-align-center" <?php if ($has_product) {
+            <div class="swiper-slide text-align-center u-flex align-center justify-center" <?php if ($has_product) {
               echo 'data-product="' . htmlspecialchars(json_encode($product_data)) . '"';
             } ?> >
               <?php echo wp_get_attachment_image($slide['image_id'], 'col10-square-nocrop', false, array( 'class' => '' )); ?>
