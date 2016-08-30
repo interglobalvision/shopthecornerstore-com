@@ -1295,6 +1295,9 @@ p {
 .font-capitalize {
   text-transform: capitalize;
 }
+.font-transform-none {
+  text-transform: none;
+}
 .font-letter-spaced {
   letter-spacing: 0.1em;
 }
