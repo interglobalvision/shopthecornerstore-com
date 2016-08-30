@@ -30,9 +30,9 @@ if( have_posts() ) {
 ?>
 
       <!-- Product details container -->
-      <div class="col col-s-12 col-m-3 set-content-height">
+      <div class="col col-s-12 col-m-3 set-content-height column justify-between">
 
-        <div class="product-details">
+        <div class="slider-product-details">
 
           <a href="" class="js-product-title"></a>
           <div class="js-product-content"></div>
@@ -44,6 +44,13 @@ if( have_posts() ) {
           </form>
 
           <span class="sold js-product-sold"></span>
+
+        </div>
+
+        <div class="slider-pagination u-flex">
+
+          <div class="button-prev">prev</div>
+          <div class="button-next">next</div>
 
         </div>
 
@@ -91,8 +98,6 @@ if( have_posts() ) {
             <!-- End Slides -->
           </div>
 
-          <div class="swiper-button-prev">prev</div>
-          <div class="swiper-button-next">next</div>
         </div>
         <!-- End Slider main container -->
       </div>
