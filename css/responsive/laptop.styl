@@ -2,11 +2,20 @@ $cols = 12
 $gutter = 48px
 
 .container
-  width: 1320px
+  width: 1150px
 
 .col
   padding: 0 ($gutter / 2)
   margin-bottom: $gutter
+
+for offset in 0..($cols - 1)
+  .offset-l-{offset}
+    margin-left: ( 100% / $cols ) * offset
+
+for col in 1..$cols
+  .col-l-{col}
+    flex-basis: ( 100% / $cols ) * col
+    max-width: ( 100% / $cols ) * col
 
 // ******************************************************
 
@@ -69,7 +78,7 @@ $footer-height = (28px)
   padding-left: $margin-small
   
 .set-content-height
-  height: 600px
+  height: 480px
   
 .swiper-container
   height: 100%
@@ -159,3 +168,5 @@ $footer-height = (28px)
   padding-bottom: $margin-large
 
 // ******************************************************
+
+// ARCHIVE EDITORIAL
