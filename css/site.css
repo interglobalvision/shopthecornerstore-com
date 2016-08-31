@@ -1365,6 +1365,9 @@ img {
   max-width: 100%;
   width: 7px;
 }
+.slider-button svg path {
+  fill: #0e0e0e;
+}
 .margin-top-micro {
   margin-top: 4.326237921248983px;
 }
