@@ -30,7 +30,7 @@ if( have_posts() ) {
 ?>
       
       <!-- Product details container -->
-      <div class="col col-s-10 offset-s-1 col-m-3 offset-m-0 column justify-between">
+      <div class="col col-s-10 offset-s-1 col-m-3 offset-m-0">
 
         <div class="slider-product-details u-invisible">
 
