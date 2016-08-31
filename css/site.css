@@ -1561,7 +1561,7 @@ img.shop-product-sold-icon {
   -webkit-transition: opacity 0.1s;
   transition: opacity 0.1s;
 }
-..woocommerce #respond input#submit,
+.woocommerce #respond input#submit,
 .woocommerce a.button,
 .woocommerce button.button,
 .woocommerce input.button {
