@@ -25,7 +25,7 @@ if (!empty($images)) {
       <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/logo.svg'); ?>
     </div>
 
-    <nav class="splash-nav u-flex-center">
+    <nav class="splash-nav u-flex-center text-align-center">
       <?php get_template_part('partials/nav'); ?>
     </nav>
   </header>
