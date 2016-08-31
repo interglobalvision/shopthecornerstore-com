@@ -31,7 +31,7 @@ normalize()
 // GRID
 
 $cols = 12
-$gutter = 24px
+$gutter = 14px
 
 .container
   margin: 0 auto
@@ -266,6 +266,13 @@ $footer-height = (28px)
   
 .product-content p
   margin-bottom: $margin-tiny
+  
+.slider-button
+  width: 100%
+  text-align: center
+  svg 
+    max-width: 100%
+    width: $margin-tiny
 
 // ******************************************************
 
@@ -477,6 +484,13 @@ img.shop-product-sold-icon
 
 #archive-editorial-titles
   margin-left: $margin-basic
+
+// ******************************************************
+
+// SINGLE EDITORIAL
+
+article.row.editorial 
+  flex-direction: column-reverse
 
 // ******************************************************
 
