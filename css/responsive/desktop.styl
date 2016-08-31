@@ -27,19 +27,16 @@ $margin-large = ($gutter * 5)
 
 $header-height = (71px + $margin-small)
 $footer-height = (28px)
+$content-height = 720px
 
 #main-content-holder
   min-height: calc("100vh - " + ($header-height + $footer-height))
 
 .pagination-button
   padding-left: $margin-small
-
-.set-sidebar-height
-  height: calc("100vh - " + ($header-height + $footer-height))
-  min-height: 600px
   
 .set-content-height
-  height: 600px
+  height: $content-height
   
 .slider-pagination
   .button-prev

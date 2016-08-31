@@ -22,7 +22,7 @@ if( have_posts() ) {
     $is_recent = ($recent_id === $post->ID ? true : false);
 ?>
 
-    <article <?php post_class('row align-center'); ?> id="post-<?php the_ID(); ?>">
+    <article <?php post_class('row'); ?> id="post-<?php the_ID(); ?>">
 
 <?php
     if (!empty($slides)) {
@@ -30,11 +30,11 @@ if( have_posts() ) {
 ?>
 
       <!-- Product details container -->
-      <div class="col col-s-12 col-m-3 column justify-between set-sidebar-height">
+      <div class="col col-s-12 col-m-3 column justify-between">
 
         <div class="slider-product-details u-invisible">
 
-          <h1><a href="" class="js-product-title font-serif font-italic font-transform-none"></a></h1>
+          <h1 class="margin-bottom-basic"><a href="" class="js-product-title font-serif font-italic font-transform-none"></a></h1>
           <div class="js-product-content"></div>
           <div class="price font-bold font-size-h2 js-product-price"></div>
 

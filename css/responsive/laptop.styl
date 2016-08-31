@@ -70,6 +70,7 @@ h4, .font-size-h4
 
 $header-height = (71px + $margin-small)
 $footer-height = (28px)
+$content-height = 540px
 
 #main-content-holder
   min-height: calc("100vh - " + ($header-height + $footer-height))
@@ -77,12 +78,8 @@ $footer-height = (28px)
 .pagination-button
   padding-left: $margin-small
   
-.set-sidebar-height
-  height: calc("100vh - " + ($header-height + $footer-height))
-  min-height: 540px
-  
 .set-content-height
-  height: 540px
+  height: $content-height
   
 .slider-pagination
   .button-prev

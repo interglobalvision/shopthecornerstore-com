@@ -1754,10 +1754,6 @@ img.shop-product-sold-icon {
   .pagination-button {
     padding-left: 32px;
   }
-  .set-sidebar-height {
-    height: calc(100vh - 115px);
-    min-height: 480px;
-  }
   .set-content-height {
     height: 480px;
   }
@@ -2008,10 +2004,6 @@ img.shop-product-sold-icon {
   .pagination-button {
     padding-left: 48px;
   }
-  .set-sidebar-height {
-    height: calc(100vh - 147px);
-    min-height: 540px;
-  }
   .set-content-height {
     height: 540px;
   }
@@ -2105,12 +2097,8 @@ img.shop-product-sold-icon {
   .pagination-button {
     padding-left: 48px;
   }
-  .set-sidebar-height {
-    height: calc(100vh - 147px);
-    min-height: 600px;
-  }
   .set-content-height {
-    height: 600px;
+    height: 720px;
   }
   .slider-pagination .button-prev {
     margin-right: 24px;
