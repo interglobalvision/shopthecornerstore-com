@@ -208,9 +208,6 @@ Site.Editorial = {
           _this.updateProductDetails();
         },
         onSlideChangeStart: function(swiper) {
-          _this.$productDetails.addClass('u-invisible');
-        },
-        onSlideChangeEnd: function(swiper) {
           _this.updateProductDetails();
         }
       });
@@ -237,6 +234,8 @@ Site.Editorial = {
         }
 
         _this.$productDetails.removeClass('u-invisible');
+      } else {
+        _this.$productDetails.addClass('u-invisible');
       }
     },
 
