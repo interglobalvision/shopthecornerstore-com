@@ -1,6 +1,7 @@
 <div class="splash-container">
 <?php
 $images = IGV_get_option('_igv_splash_images');
+$color = IGV_get_option('_igv_splash_color');
 
 if (!empty($images)) {
 ?>
@@ -19,8 +20,8 @@ if (!empty($images)) {
 <?php
 }
 ?>
-  <header class="splash-header container">
-    <div class="splash-logo">
+  <header class="splash-header container" <?php echo !empty($color) ? 'style="color:' . $color . ';"' : ''; ?>>
+    <div class="splash-logo" <?php echo !empty($color) ? 'style="fill:' . $color . ';"' : ''; ?>>
       <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/logo.svg'); ?>
     </div>
 
@@ -28,7 +29,7 @@ if (!empty($images)) {
       <?php get_template_part('partials/nav'); ?>
     </nav>
   </header>
-  <footer class="splash-footer container u-flex-center">
+  <footer class="splash-footer container u-flex-center" <?php echo !empty($color) ? 'style="color:' . $color . ';"' : ''; ?>>
     &copy;<?php echo date("Y") ?> The Corner LLC. All Rights Reserved
   </footer>
 </div>
