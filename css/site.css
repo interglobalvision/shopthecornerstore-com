@@ -2092,6 +2092,9 @@ img.shop-product-sold-icon {
   .padding-bottom-large {
     padding-bottom: 240px;
   }
+  .splash-logo svg {
+    width: 50%;
+  }
 }
 @media screen and (min-width: 1320px) {
   .container {
