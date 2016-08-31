@@ -30,7 +30,7 @@ if( have_posts() ) {
 ?>
       
       <!-- Product details container -->
-      <div class="col col-s-10 offset-s-1 col-m-3 offset-m-0">
+      <div class="col col-s-10 offset-s-1 col-m-3 offset-m-0 col-no-margin-bottom">
 
         <div class="slider-product-details u-invisible">
 
@@ -53,15 +53,15 @@ if( have_posts() ) {
 <?php
       }
 ?>
-      <div class="col col-s-12 <?php echo $is_recent ? 'col-m-9' : ''; ?> row">
+      <div class="col col-s-12 <?php echo $is_recent ? 'col-m-9' : ''; ?> col-no-margin-bottom row">
 
-        <div class="col col-s-1 column justify-center">
+        <div class="col col-s-1 col-no-margin-bottom column justify-center">
           <div class="slider-button button-prev u-pointer">
             <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/left.svg'); ?>
           </div>
         </div>
 
-        <div class="col col-s-10 col-no-gutter set-content-height">
+        <div class="col col-s-10 col-no-gutter col-no-margin-bottom set-content-height">
 
           <!-- Slider main container -->
           <div class="swiper-container">
@@ -100,7 +100,7 @@ if( have_posts() ) {
           <!-- End Slider main container -->
         </div>
 
-        <div class="col col-s-1 column justify-center">
+        <div class="col col-s-1 col-no-margin-bottom column justify-center">
           <div class="slider-button button-next u-pointer">
             <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/right.svg'); ?>
           </div>
