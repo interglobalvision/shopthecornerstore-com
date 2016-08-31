@@ -28,9 +28,9 @@ if( have_posts() ) {
     if (!empty($slides)) {
       if ($is_recent) {
 ?>
-
+      
       <!-- Product details container -->
-      <div class="col col-s-12 col-m-3 column justify-between">
+      <div class="col col-s-10 offset-s-1 col-m-3 offset-m-0 column justify-between">
 
         <div class="slider-product-details u-invisible">
 
@@ -47,34 +47,26 @@ if( have_posts() ) {
 
         </div>
 
-        <!--div class="slider-pagination u-flex">
-
-          <div class="button-prev u-pointer">
-            <img src="<?php bloginfo('stylesheet_directory'); ?>/img/dist/prev.svg">
-          </div>
-          <div class="button-next u-pointer">
-            <img src="<?php bloginfo('stylesheet_directory'); ?>/img/dist/next.svg">
-          </div>
-
-        </div-->
-
       </div>
       <!-- End Product details container -->
 
 <?php
       }
 ?>
-      <div class="col col-s-1 column justify-center">
-        <div class="button-prev text-align-right u-pointer">
-          <img src="<?php bloginfo('stylesheet_directory'); ?>/img/dist/prev.svg">
-        </div>
-      </div>
-      <div class="col col-s-10 <?php echo $is_recent ? 'col-m-7' : ''; ?> col-no-gutter set-content-height">
+      <div class="col col-s-12 <?php echo $is_recent ? 'col-m-9' : ''; ?> row">
 
-        <!-- Slider main container -->
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-          <!-- Slides -->
+        <div class="col col-s-1 column justify-center">
+          <div class="slider-button button-prev u-pointer">
+            <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/left.svg'); ?>
+          </div>
+        </div>
+
+        <div class="col col-s-10 col-no-gutter set-content-height">
+
+          <!-- Slider main container -->
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+            <!-- Slides -->
 <?php
       foreach($slides[0] as $slide) {
         $has_product = ($is_recent && !empty($slide['product']) ? true : false);
@@ -94,26 +86,29 @@ if( have_posts() ) {
           );
         }
 ?>
-            <div class="swiper-slide text-align-center u-flex align-center justify-center" <?php if ($has_product) {
-              echo 'data-product="' . htmlspecialchars(json_encode($product_data)) . '"';
-            } ?> >
-              <?php echo wp_get_attachment_image($slide['image_id'], 'col10-square-nocrop', false, array( 'class' => '' )); ?>
-            </div>
+              <div class="swiper-slide text-align-center u-flex align-center justify-center" <?php if ($has_product) {
+                echo 'data-product="' . htmlspecialchars(json_encode($product_data)) . '"';
+              } ?> >
+                <?php echo wp_get_attachment_image($slide['image_id'], 'col10-square-nocrop', false, array( 'class' => '' )); ?>
+              </div>
 <?php } // End foreach ?>
 
-            <!-- End Slides -->
-          </div>
+              <!-- End Slides -->
+            </div>
 
+          </div>
+          <!-- End Slider main container -->
         </div>
-        <!-- End Slider main container -->
-      </div>
-      <div class="col col-s-1 column justify-center">
-        <div class="button-next text-align-left u-pointer">
-          <img src="<?php bloginfo('stylesheet_directory'); ?>/img/dist/next.svg">
+
+        <div class="col col-s-1 column justify-center">
+          <div class="slider-button button-next u-pointer">
+            <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/right.svg'); ?>
+          </div>
         </div>
-      </div>
 
 <?php } ?>
+
+      </div>
 
     </article>
 
