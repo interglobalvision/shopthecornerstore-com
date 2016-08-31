@@ -35,8 +35,8 @@ if( have_posts() ) {
         <div class="slider-product-details u-invisible">
 
           <h1 class="margin-bottom-basic"><a href="" class="js-product-title font-serif font-italic font-transform-none"></a></h1>
-          <div class="js-product-content"></div>
-          <div class="price font-bold font-size-h2 js-product-price"></div>
+          <div class="product-content js-product-content"></div>
+          <div class="price font-bold font-size-h2 js-product-price margin-bottom-tiny"></div>
 
           <form class="cart" method="post" enctype='multipart/form-data'>
             <input type="hidden" name="add-to-cart" class="js-product-id" value="" />
