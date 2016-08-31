@@ -86,8 +86,9 @@
       </div>
 
       <div class="col col-no-margin-bottom col-s-12 col-m-1">
-        <a href="<?php echo esc_url( wc_get_cart_url() ); ?>">
-          <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/cart.svg'); ?>
+        <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart">
+          <img src="<?php echo get_bloginfo('stylesheet_directory') . '/img/dist/cart.svg'; ?>">
+          <?php echo WC()->cart->get_cart_contents_count() ?>
         </a>
       </div>
 
