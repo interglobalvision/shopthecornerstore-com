@@ -202,6 +202,8 @@ Site.Editorial = {
 
       var swiper = new Swiper('.swiper-container', {
         loop: true,
+        speed: 800,
+        spaceBetween: 36,
         nextButton: '.button-next',
         prevButton: '.button-prev',
         onInit: function(swiper) {
