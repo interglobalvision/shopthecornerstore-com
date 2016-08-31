@@ -47,7 +47,7 @@ if( have_posts() ) {
 
         </div>
 
-        <div class="slider-pagination u-flex">
+        <!--div class="slider-pagination u-flex">
 
           <div class="button-prev u-pointer">
             <img src="<?php bloginfo('stylesheet_directory'); ?>/img/dist/prev.svg">
@@ -56,20 +56,20 @@ if( have_posts() ) {
             <img src="<?php bloginfo('stylesheet_directory'); ?>/img/dist/next.svg">
           </div>
 
-        </div>
+        </div-->
 
       </div>
       <!-- End Product details container -->
 
-      <div class="col col-s-12 col-m-9  set-content-height">
-
 <?php
-      } else {
+      }
 ?>
-      <div class="col col-s-0 col-m-1 "></div>
-      <div class="col col-s-12 col-m-10 ">
-
-<?php } ?>
+      <div class="col col-s-1 column justify-center">
+        <div class="button-prev text-align-right u-pointer">
+          <img src="<?php bloginfo('stylesheet_directory'); ?>/img/dist/prev.svg">
+        </div>
+      </div>
+      <div class="col col-s-10 <?php echo $is_recent ? 'col-m-7' : ''; ?> col-no-gutter set-content-height">
 
         <!-- Slider main container -->
         <div class="swiper-container">
@@ -106,6 +106,11 @@ if( have_posts() ) {
 
         </div>
         <!-- End Slider main container -->
+      </div>
+      <div class="col col-s-1 column justify-center">
+        <div class="button-next text-align-left u-pointer">
+          <img src="<?php bloginfo('stylesheet_directory'); ?>/img/dist/next.svg">
+        </div>
       </div>
 
 <?php } ?>
