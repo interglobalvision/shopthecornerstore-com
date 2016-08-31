@@ -1463,7 +1463,8 @@ img {
   fill: #fff;
 }
 .splash-logo svg {
-  width: 100%;
+  width: 80%;
+  max-width: 700px;
 }
 .splash-nav {
   -ms-flex: 1 0 0;
@@ -2089,9 +2090,6 @@ img.shop-product-sold-icon {
   }
   .padding-bottom-large {
     padding-bottom: 240px;
-  }
-  .splash-logo svg {
-    width: 50%;
   }
 }
 @media screen and (min-width: 1320px) {
