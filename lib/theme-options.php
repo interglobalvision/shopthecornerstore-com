@@ -118,8 +118,9 @@ class IGV_Admin {
     $options_metabox->add_field( array(
       'name'         => __( 'Logo', 'cmb2' ),
       'desc'         => __( '', 'cmb2' ),
-      'id'           => $this->prefix . 'splash_logo',
-      'type'         => 'file',
+      'id'           => $this->prefix . 'splash_color',
+      'type'         => 'colorpicker',
+      'default'      => '#ffffff',
     ) );
 
     $options_metabox->add_field( array(
