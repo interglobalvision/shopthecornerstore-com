@@ -7,13 +7,6 @@ $gutter = 24px
 .col
   padding: 0 ($gutter / 2)
   margin-bottom: $gutter
-  
-.col.col-no-margin-bottom
-  margin-bottom: 0
-  
-.col.col-no-gutter
-  padding-left: 0
-  padding-right: 0
 
 for offset in 0..($cols - 1)
   .offset-m-{offset}
@@ -90,25 +83,25 @@ $content-height = 480px
 
 .pagination-button
   padding-left: $margin-small
-  
+
 .set-content-height
   height: $content-height
   img
     width: initial
     max-height: 100%
-    
+
 .swiper-container
   height: 100%
-  
+
 .product-content p
   margin-bottom: $margin-tiny
-  
+
 .slider-button
   &.button-prev
     text-align: right
   &.button-next
     text-align: left
-  svg 
+  svg
     width: $margin-tiny
 
 // ******************************************************
@@ -210,7 +203,7 @@ $content-height = 480px
 // ARCHIVE EDITORIAL
 
 #archive-editorial-titles
-  margin-left: $margin-basic  
+  margin-left: $margin-basic
 
 #archive-editorial-images
   display: flex
@@ -223,5 +216,5 @@ $content-height = 480px
 
 // SINGLE EDITORIAL
 
-article.row.editorial 
+article.row.editorial
   flex-direction: row

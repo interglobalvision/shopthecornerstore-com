@@ -7,13 +7,6 @@ $gutter = 32px
 .col
   padding: 0 ($gutter / 2)
   margin-bottom: $gutter
-  
-.col.col-no-margin-bottom
-  margin-bottom: 0
-  
-.col.col-no-gutter
-  padding-left: 0
-  padding-right: 0
 
 for offset in 0..($cols - 1)
   .offset-l-{offset}
@@ -84,15 +77,15 @@ $content-height = 540px
 
 .pagination-button
   padding-left: $margin-small
-  
+
 .set-content-height
   height: $content-height
-  
+
 .product-content p
   margin-bottom: $margin-tiny
-  
+
 .slider-button
-  svg 
+  svg
     width: $margin-micro
 
 // ******************************************************
