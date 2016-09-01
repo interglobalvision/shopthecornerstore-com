@@ -1460,12 +1460,11 @@ img {
   -ms-flex: 5 0 0;
   -webkit-box-flex: 5;
           flex: 5 0 0;
+  fill: #fff;
 }
 .splash-logo svg {
-  width: 100%;
-}
-.splash-logo .logo-path {
-  fill: #fff;
+  width: 80%;
+  max-width: 700px;
 }
 .splash-nav {
   -ms-flex: 1 0 0;
