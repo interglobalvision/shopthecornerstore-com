@@ -1,5 +1,5 @@
 $cols = 12
-$gutter = 32px
+$gutter = 24px
 
 .container
   width: 750px
@@ -39,22 +39,6 @@ $font-size-h1 = golden-ratio(1rem , 1.2)
 
 // ******************************************************
 
-// BASIC
-
-$header-height = (55px + $margin-small)
-$footer-height = (28px)
-
-#main-content-holder
-  min-height: calc("100vh - " + ($header-height + $footer-height))
-
-.only-mobile
-  display: none
-
-.only-desktop
-  display: initial
-
-// ******************************************************
-
 // TYPOGRAPHY
 
 html
@@ -84,16 +68,41 @@ h4, .font-size-h4
 
 // BASIC
 
+$header-height = (55px + $margin-small)
+$footer-height = (28px)
+$content-height = 480px
+
+#main-content-holder
+  min-height: calc("100vh - " + ($header-height + $footer-height))
+
+.only-mobile
+  display: none
+
+.only-desktop
+  display: initial
+
 .pagination-button
   padding-left: $margin-small
 
 .set-content-height
-  height: 320px
+  height: $content-height
   img
     width: initial
     max-height: 100%
-    height: initial
-    max-width: initial
+
+.swiper-container
+  height: 100%
+
+.product-content p
+  margin-bottom: $margin-tiny
+
+.slider-button
+  &.button-prev
+    text-align: right
+  &.button-next
+    text-align: left
+  svg
+    width: $margin-tiny
 
 // ******************************************************
 
@@ -178,7 +187,7 @@ h4, .font-size-h4
 
 .padding-bottom-large
   padding-bottom: $margin-large
-    
+
 // ******************************************************
 
 // HEADER
@@ -202,6 +211,13 @@ h4, .font-size-h4
 .archive-editorial-image
   &:not(:first-of-type)
     display: none
+
+// ******************************************************
+
+// SINGLE EDITORIAL
+
+article.row.editorial
+  flex-direction: row
 
 // ******************************************************
 

@@ -31,7 +31,7 @@ normalize()
 // GRID
 
 $cols = 12
-$gutter = 24px
+$gutter = 14px
 
 .container
   margin: 0 auto
@@ -45,6 +45,14 @@ $gutter = 24px
   flex-wrap: wrap
   &.reverse
     flex-direction: row-reverse
+    
+.column
+  box-sizing: border-box
+  display: flex
+  flex: 0 1 auto
+  flex-direction: column
+  &.reverse
+    flex-direction: column-reverse
 
 .u-flex
   display: flex
@@ -59,6 +67,9 @@ $gutter = 24px
 
 .justify-end
   justify-content: flex-end
+  
+.justify-between
+  justify-content: space-between
 
 .align-start
   align-items: flex-start
@@ -85,13 +96,14 @@ $gutter = 24px
   box-sizing: border-box
   max-width: 100%
   padding: 0 ($gutter / 2)
+  margin-bottom: $gutter
+  
+.col.col-no-margin-bottom
+  margin-bottom: 0
 
 .col.col-no-gutter
   padding-left: 0
   padding-right: 0
-
-.col.col-no-margin-bottom
-  margin-bottom: 0
 
 for offset in 0..($cols - 1)
   .offset-s-{offset}
@@ -189,6 +201,9 @@ p
 
 .font-capitalize
   text-transform: capitalize
+  
+.font-transform-none
+  text-transform: none
 
 .font-letter-spaced
   letter-spacing: .1em
@@ -249,6 +264,18 @@ $footer-height = (28px)
 
 .set-content-height
   height: auto
+  
+.product-content p
+  margin-bottom: $margin-tiny
+  
+.slider-button
+  width: 100%
+  text-align: center
+  svg 
+    max-width: 100%
+    width: $margin-tiny
+    path 
+      fill: $color-black-soft
 
 // ******************************************************
 
@@ -497,6 +524,13 @@ img.shop-product-sold-icon
 
 #archive-editorial-titles
   margin-left: $margin-basic
+
+// ******************************************************
+
+// SINGLE EDITORIAL
+
+article.row.editorial 
+  flex-direction: column-reverse
 
 // ******************************************************
 

@@ -21,58 +21,29 @@ $margin-basic = ($gutter * 2)
 $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
-$font-size-basic = 13px
-$font-size-larger = 1.3rem
-$font-size-h4 = golden-ratio(1rem , .3)
-$font-size-h3 = golden-ratio(1rem , .5)
-$font-size-h2 = golden-ratio(1rem , .8)
-$font-size-h1 = golden-ratio(1rem , 1.2)
-
-// ******************************************************
-
-// TYPOGRAPHY
-
-html
-  font-size: $font-size-basic
-  letter-spacing: $font-tracking-basic
-
-body
-  line-height: $font-leading-basic
-
-  // HTML ELEMENT STYLING
-
-h1, .font-size-h1
-  font-size: $font-size-h1
-  line-height: $font-leading-tighter
-
-h2, .font-size-h2
-  font-size: $font-size-h2
-  line-height: $font-leading-tighter
-
-h3, .font-size-h3
-  font-size: $font-size-h3
-
-h4, .font-size-h4
-  font-size: $font-size-h4
-
 // ******************************************************
 
 // BASIC
 
 $header-height = (71px + $margin-small)
 $footer-height = (28px)
+$content-height = 720px
 
 #main-content-holder
   min-height: calc("100vh - " + ($header-height + $footer-height))
 
 .pagination-button
   padding-left: $margin-small
-  
+
 .set-content-height
-  height: 600px
-  
-.swiper-container
-  height: 100%
+  height: $content-height
+
+.product-content p
+  margin-bottom: $margin-tiny
+
+.slider-button
+  svg
+    width: $margin-micro
 
 // ******************************************************
 

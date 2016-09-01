@@ -1,5 +1,5 @@
 $cols = 12
-$gutter = 48px
+$gutter = 32px
 
 .container
   width: 1150px
@@ -33,9 +33,9 @@ $margin-large = ($gutter * 5)
 $font-size-basic = 13px
 $font-size-larger = 1.3rem
 $font-size-h4 = golden-ratio(1rem , .3)
-$font-size-h3 = golden-ratio(1rem , .5)
-$font-size-h2 = golden-ratio(1rem , .8)
-$font-size-h1 = golden-ratio(1rem , 1.2)
+$font-size-h3 = golden-ratio(1rem , .8)
+$font-size-h2 = golden-ratio(1rem , 1.0)
+$font-size-h1 = golden-ratio(1rem , 2.0)
 
 // ******************************************************
 
@@ -70,18 +70,23 @@ h4, .font-size-h4
 
 $header-height = (71px + $margin-small)
 $footer-height = (28px)
+$content-height = 540px
 
 #main-content-holder
   min-height: calc("100vh - " + ($header-height + $footer-height))
 
 .pagination-button
   padding-left: $margin-small
-  
+
 .set-content-height
-  height: 480px
-  
-.swiper-container
-  height: 100%
+  height: $content-height
+
+.product-content p
+  margin-bottom: $margin-tiny
+
+.slider-button
+  svg
+    width: $margin-micro
 
 // ******************************************************
 

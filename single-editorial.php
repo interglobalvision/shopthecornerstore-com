@@ -28,52 +28,57 @@ if( have_posts() ) {
     if (!empty($slides)) {
       if ($is_recent) {
 ?>
-
+      
       <!-- Product details container -->
-      <div class="col col-s-12 col-m-3 set-content-height">
+      <div class="col col-s-10 offset-s-1 col-m-3 offset-m-0 col-no-margin-bottom">
 
-        <div class="product-details">
+        <div class="slider-product-details u-invisible">
 
-          <a href="" class="js-product-title"></a>
-          <div class="js-product-content"></div>
-          <span class="price js-product-price"></span>
+          <h1 class="margin-bottom-basic"><a href="" class="js-product-title font-serif font-italic font-transform-none"></a></h1>
+          <div class="product-content js-product-content"></div>
+          <div class="price font-bold font-size-h2 js-product-price margin-bottom-tiny"></div>
 
           <form class="cart" method="post" enctype='multipart/form-data'>
             <input type="hidden" name="add-to-cart" class="js-product-id" value="" />
             <button type="submit" class="add-to-cart u-hidden js-product-button"></button>
           </form>
 
-          <span class="sold js-product-sold"></span>
+          <div class="sold js-product-sold"></div>
 
         </div>
 
       </div>
       <!-- End Product details container -->
 
-      <div class="col col-s-12 col-m-9 set-content-height">
-
 <?php
-      } else {
+      }
 ?>
-      <div class="col col-s-0 col-m-1 set-content-height"></div>
-      <div class="col col-s-12 col-m-10 set-content-height">
+      <div class="col col-s-12 <?php echo $is_recent ? 'col-m-9' : ''; ?> col-no-margin-bottom row">
 
-<?php } ?>
+        <div class="col col-s-1 col-no-margin-bottom column justify-center">
+          <div class="slider-button button-prev u-pointer">
+            <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/left.svg'); ?>
+          </div>
+        </div>
 
-        <!-- Slider main container -->
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-          <!-- Slides -->
+        <div class="col col-s-10 col-no-gutter col-no-margin-bottom set-content-height">
+
+          <!-- Slider main container -->
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+            <!-- Slides -->
 <?php
       foreach($slides[0] as $slide) {
         $has_product = ($is_recent && !empty($slide['product']) ? true : false);
 
         if ($has_product) {
           $product = new WC_Product($slide['product']);
+          //pr($product); die;
           $product_data = array(
             'title' => $product->get_title(),
             'id' => $product->id,
             'url' => $product->get_permalink(),
+            'content' => apply_filters('the_content', $product->post->post_content),
             'price' => $product->get_price_html(),
             'stock' => $product->is_in_stock(),
             'availability' => $product->get_availability(),
@@ -81,23 +86,29 @@ if( have_posts() ) {
           );
         }
 ?>
-            <div class="swiper-slide" <?php if ($has_product) {
-              echo 'data-product="' . htmlspecialchars(json_encode($product_data)) . '"';
-            } ?> >
-              <?php echo wp_get_attachment_image($slide['image_id'], 'col10-square-nocrop', false, array( 'class' => '' )); ?>
-            </div>
+              <div class="swiper-slide text-align-center u-flex align-center justify-center" <?php if ($has_product) {
+                echo 'data-product="' . htmlspecialchars(json_encode($product_data)) . '"';
+              } ?> >
+                <?php echo wp_get_attachment_image($slide['image_id'], 'col10-square-nocrop', false, array( 'class' => '' )); ?>
+              </div>
 <?php } // End foreach ?>
 
-            <!-- End Slides -->
-          </div>
+              <!-- End Slides -->
+            </div>
 
-          <div class="swiper-button-prev">prev</div>
-          <div class="swiper-button-next">next</div>
+          </div>
+          <!-- End Slider main container -->
         </div>
-        <!-- End Slider main container -->
-      </div>
+
+        <div class="col col-s-1 col-no-margin-bottom column justify-center">
+          <div class="slider-button button-next u-pointer">
+            <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/right.svg'); ?>
+          </div>
+        </div>
 
 <?php } ?>
+
+      </div>
 
     </article>
 
