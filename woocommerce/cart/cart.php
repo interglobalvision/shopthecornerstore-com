@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-wc_print_notices();
+//wc_print_notices();
 
 do_action( 'woocommerce_before_cart' ); ?>
 
@@ -141,7 +141,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 					</div>
 				<?php } ?>
 
-				<input type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />
+				<input type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update Basket', 'woocommerce' ); ?>" />
 
 				<?php do_action( 'woocommerce_cart_actions' ); ?>
 
