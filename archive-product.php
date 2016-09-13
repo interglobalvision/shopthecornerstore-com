@@ -31,7 +31,7 @@ if( have_posts() ) {
             <span class="shop-product-sold-text">&nbsp;<?php echo $availability['availability']; ?></span>
           </span>
         <?php } ?>
-        <?php the_post_thumbnail('col3-portrait-crop'); ?>
+        <?php the_post_thumbnail('col-m-6-portrait-crop'); ?>
       </a>
     </article>
 <?php
