@@ -36,7 +36,7 @@ if( have_posts() ) {
 
         <form class="cart" method="post" enctype='multipart/form-data'>
           <input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $product_id ); ?>" />
-          <button type="submit" class="add_to_cart"><?php echo esc_html( $cart_text ); ?></button>
+          <button type="submit" class="add_to_cart">Add to Basket</button>
         </form>
 
       <?php } else { ?>
