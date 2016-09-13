@@ -23,11 +23,11 @@ if (!empty($images)) {
   <header class="splash-header" <?php echo !empty($color) ? 'style="color:' . $color . ';"' : ''; ?>>
     <div class="container">
       <div class="row">
-        <a href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>" class="col col-s-12 col-m-8 offset-m-2 col-l-6 offset-l-3 splash-logo" <?php echo !empty($color) ? 'style="fill:' . $color . ';"' : ''; ?>>
+        <a href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>" class="col col-s-12 col-m-8 offset-m-2 splash-logo" <?php echo !empty($color) ? 'style="fill:' . $color . ';"' : ''; ?>>
           <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/logo.svg'); ?>
         </a>
 
-        <nav class="col col-s-12 col-m-8 offset-m-2 col-l-6 offset-l-3 splash-nav">
+        <nav class="col col-s-12 col-m-8 offset-m-2 splash-nav">
           <?php get_template_part('partials/nav'); ?>
         </nav>
       </div>

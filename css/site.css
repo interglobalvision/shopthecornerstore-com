@@ -1484,7 +1484,7 @@ img {
   width: 100%;
 }
 .splash-nav {
-  font-size: 10px;
+  font-size: 12px;
 }
 .splash-nav ul {
   display: -webkit-box;
@@ -2271,5 +2271,8 @@ article.row.editorial {
   }
   .padding-bottom-large {
     padding-bottom: 240px;
+  }
+  .splash-nav {
+    font-size: 28px;
   }
 }
