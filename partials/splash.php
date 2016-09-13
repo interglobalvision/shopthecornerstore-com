@@ -29,7 +29,4 @@ if (!empty($images)) {
       <?php get_template_part('partials/nav'); ?>
     </nav>
   </header>
-  <footer class="splash-footer container u-flex-center" <?php echo !empty($color) ? 'style="color:' . $color . ';"' : ''; ?>>
-    &copy;<?php echo date("Y") ?> The Corner LLC. All Rights Reserved
-  </footer>
 </div>
