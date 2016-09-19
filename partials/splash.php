@@ -20,16 +20,17 @@ if (!empty($images)) {
 <?php
 }
 ?>
-  <header class="splash-header container" <?php echo !empty($color) ? 'style="color:' . $color . ';"' : ''; ?>>
-    <div class="splash-logo" <?php echo !empty($color) ? 'style="fill:' . $color . ';"' : ''; ?>>
-      <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/logo.svg'); ?>
-    </div>
+  <header class="splash-header" <?php echo !empty($color) ? 'style="color:' . $color . ';"' : ''; ?>>
+    <div class="container">
+      <div class="row">
+        <a href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>" class="col col-s-12 col-m-8 offset-m-2 splash-logo" <?php echo !empty($color) ? 'style="fill:' . $color . ';"' : ''; ?>>
+          <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/logo.svg'); ?>
+        </a>
 
-    <nav class="splash-nav u-flex-center text-align-center">
-      <?php get_template_part('partials/nav'); ?>
-    </nav>
+        <nav class="col col-s-12 col-m-8 offset-m-2 splash-nav">
+          <?php get_template_part('partials/nav'); ?>
+        </nav>
+      </div>
+    </div>
   </header>
-  <footer class="splash-footer container u-flex-center" <?php echo !empty($color) ? 'style="color:' . $color . ';"' : ''; ?>>
-    &copy;<?php echo date("Y") ?> The Corner LLC. All Rights Reserved
-  </footer>
 </div>
