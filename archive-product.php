@@ -21,7 +21,7 @@ if( have_posts() ) {
     <article <?php post_class('col col-s col-s-12 col-m col-m-6 col-l col-l-3 shop-product'); ?> id="product-<?php the_ID(); ?>">
       <a href="<?php the_permalink() ?>">
         <div class="shop-product-title-holder">
-          <h3 class="shop-product-title font-serif font-italic">
+          <h3 class="shop-product-title">
             <?php the_title(); ?>
           </h3>
         </div>
@@ -31,7 +31,7 @@ if( have_posts() ) {
             <span class="shop-product-sold-text">&nbsp;<?php echo $availability['availability']; ?></span>
           </span>
         <?php } ?>
-        <?php the_post_thumbnail('col3-portrait-crop'); ?>
+        <?php the_post_thumbnail('col-m-6-portrait-crop'); ?>
       </a>
     </article>
 <?php
@@ -42,7 +42,7 @@ if( have_posts() ) {
 <?php
 } ?>
   </section>
-  <div class="row margin-bottom-basic">
+  <div class="row padding-bottom-basic">
     <div class="col col12 text-align-center">
       <?php get_template_part('partials/pagination'); ?>
     </div>

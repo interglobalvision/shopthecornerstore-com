@@ -3,7 +3,7 @@ get_header();
 ?>
 
 <!-- main content -->
-<div id="main-content-holder">
+<div id="main-content-holder" class="main-content-flex-center">
 <main id="main-content" class="container">
 
   <!-- main posts loop -->

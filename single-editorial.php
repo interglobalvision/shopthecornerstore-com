@@ -10,7 +10,7 @@ $recent_id = $recent_editorial[0]->ID;
 ?>
 
 <!-- main content -->
-<div id="main-content-holder">
+<div id="main-content-holder" class="main-content-flex-center">
 <main id="main-content" class="container">
 
 <?php
