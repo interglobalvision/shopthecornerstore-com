@@ -34,3 +34,14 @@ function exclude_recent_editorial( $query ) {
   }
 }
 add_action( 'pre_get_posts', 'exclude_recent_editorial', 1 );
+
+function change_cart_text( $translated_text, $text, $domain ){
+  if ($domain == 'woocommerce' && strpos($translated_text, 'Cart')) {
+    $translated_text = str_replace('Cart', 'Basket', $translated_text);
+  }
+  if ($domain == 'woocommerce' && strpos($translated_text, 'cart')) {
+    $translated_text = str_replace('cart', 'basket', $translated_text);
+  }
+  return $translated_text;
+}
+add_filter( 'gettext', 'change_cart_text', 10, 3 );
