@@ -1477,51 +1477,31 @@ img {
   background-repeat: no-repeat;
 }
 .splash-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-justify-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex: 9 0 0;
-  -webkit-box-flex: 9;
-          flex: 9 0 0;
+  position: absolute;
+  width: 100%;
+  bottom: 20%;
 }
 .splash-logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-justify-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: end;
-  -ms-align-items: flex-end;
-  -ms-flex-align: end;
-      align-items: flex-end;
-  -ms-flex: 5 0 0;
-  -webkit-box-flex: 5;
-          flex: 5 0 0;
   fill: #fff;
 }
 .splash-logo svg {
-  width: 80%;
-  max-width: 700px;
+  width: 100%;
 }
 .splash-nav {
-  -ms-flex: 1 0 0;
-  -webkit-box-flex: 1;
-          flex: 1 0 0;
+  font-size: 12px;
 }
-.splash-footer {
-  -ms-flex: 1 0 0;
-  -webkit-box-flex: 1;
-          flex: 1 0 0;
+.splash-nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 #header {
   text-align: center;
@@ -1924,6 +1904,9 @@ article.row.editorial {
   .padding-bottom-large {
     padding-bottom: 120px;
   }
+  .splash-nav {
+    font-size: 18px;
+  }
   #header {
     text-align: left;
   }
@@ -2210,6 +2193,9 @@ article.row.editorial {
     left: 16px;
     padding: 9.888543819997675px;
   }
+  .splash-nav {
+    font-size: 24px;
+  }
 }
 @media screen and (min-width: 1320px) {
   .container {
@@ -2312,5 +2298,8 @@ article.row.editorial {
   .shop-product-sold {
     left: 24px;
     padding: 14.832815729996513px;
+  }
+  .splash-nav {
+    font-size: 28px;
   }
 }
