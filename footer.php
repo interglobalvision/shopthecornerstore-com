@@ -8,7 +8,7 @@
     $contact_id = get_id_by_slug('contact');
     $shipping_id = get_id_by_slug('shipping');
   ?>
-    <footer id="footer" class="container">
+    <footer id="footer" class="container padding-top-tiny padding-bottom-tiny">
       <div class="row">
         <div class="col col-no-margin-bottom col3">
           <?php if (!empty($facebook) || !empty($twitter) || !empty($instagram)) { ?>
