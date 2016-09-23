@@ -30,10 +30,10 @@ $margin-basic = ($gutter * 2)
 $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
-$font-size-small = 13px
-$font-size-basic = 16px
-$font-size-mid = 18px
-$font-size-large = 28px
+$font-size-small = 11px
+$font-size-basic = 14px
+$font-size-mid = 16px
+$font-size-large = 21px
 $font-size-extra = 36px
 
 // ******************************************************
@@ -68,8 +68,8 @@ body
 
 // BASIC
 
-$header-height = 95px
-$footer-height = 66px
+$header-height = 75px
+$footer-height = 53px
 
 .pagination-button
   padding-left: $margin-small
@@ -175,8 +175,17 @@ $footer-height = 66px
 .shop-product-sold
   left: $margin-tiny
   padding: $margin-micro
+  
+// ******************************************************
 
 // SPLASH
 
 .splash-nav
   font-size: 24px
+  
+// ******************************************************
+  
+// SINGLE EDITORIAL
+
+.set-swiper-height
+  height: calc('100vh - ' + ($header-height + $footer-height))

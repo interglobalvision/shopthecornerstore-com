@@ -32,19 +32,15 @@ if( have_posts() ) {
       <!-- Product details container -->
       <div class="col col-l-3 col-no-margin-bottom">
 
-        <div class="set-swiper-height">
+        <div class="slider-product-1-details slider-product-details margin-top-small">
 
-          <div class="slider-product-1-details u-invisible">
+          <?php get_template_part( 'partials/product-details' ); ?>
 
-            <?php get_template_part( 'partials/product-details' ); ?>
+        </div>
 
-          </div>
+        <div class="slider-product-2-details slider-product-details margin-top-small">
 
-          <div class="slider-product-2-details u-invisible">
-
-            <?php get_template_part( 'partials/product-details' ); ?>
-
-          </div>
+          <?php get_template_part( 'partials/product-details' ); ?>
 
         </div>
 

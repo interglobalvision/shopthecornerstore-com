@@ -25,8 +25,8 @@ $margin-large = ($gutter * 5)
 
 // BASIC
 
-$header-height = 95px
-$footer-height = 66px
+$header-height = 91px
+$footer-height = 69px
 
 .pagination-button
   padding-left: $margin-small
@@ -133,7 +133,16 @@ $footer-height = 66px
   left: $margin-tiny
   padding: $margin-micro
 
+// ******************************************************
+
 // SPLASH
 
 .splash-nav
   font-size: 28px
+
+// ******************************************************
+
+// SINGLE EDITORIAL
+
+.set-swiper-height
+  height: calc('100vh - ' + ($header-height + $footer-height))

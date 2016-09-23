@@ -233,9 +233,9 @@ Site.Editorial = {
             $('.slider-product-' + prod +'-details .js-product-button').addClass('u-hidden');
           }
 
-          $('.slider-product-' + prod +'-details').removeClass('u-invisible');
+          $('.slider-product-' + prod +'-details').show();
         } else {
-          $('.slider-product-' + prod +'-details').addClass('u-invisible');
+          $('.slider-product-' + prod +'-details').hide();
         }
       }
     },

@@ -160,6 +160,9 @@ html
 
 body
   line-height: $font-leading-basic
+  
+h1,h2,h3,h4,h5
+  margin: 0
 
   // HTML ELEMENT STYLING
 .font-size-small
@@ -250,17 +253,14 @@ img
 .pagination-button
   padding-left: $margin-small
 
-$header-height = (68px + $margin-small)
-$footer-height = (28px)
+$header-height = 114
+$footer-height = 32
 
 .only-mobile
   display: initial
 
 .only-desktop
   display: none
-
-.set-content-height
-  height: auto
   
 .product-content p
   margin-bottom: $margin-tiny
