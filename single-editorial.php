@@ -30,7 +30,7 @@ if( have_posts() ) {
 ?>
       
       <!-- Product details container -->
-      <div class="col col-l-3 col-no-margin-bottom">
+      <div class="col col-l-3 col-no-margin-bottom column justify-between">
 
         <div class="slider-product-1-details slider-product-details margin-top-small">
 
@@ -41,6 +41,12 @@ if( have_posts() ) {
         <div class="slider-product-2-details slider-product-details margin-top-small">
 
           <?php get_template_part( 'partials/product-details' ); ?>
+
+        </div>
+
+        <div class="slider-pagination-holder margin-top-small margin-bottom-basic row align-end">
+
+          <?php get_template_part( 'partials/slider-pagination' ); ?>
 
         </div>
 
@@ -63,30 +69,12 @@ if( have_posts() ) {
 
         if ($has_product_1) {
           $product = new WC_Product($slide['product_1']);
-          $product_1_data = array(
-            'title' => $product->get_title(),
-            'id' => $product->id,
-            'url' => $product->get_permalink(),
-            'content' => apply_filters('the_content', $product->post->post_content),
-            'price' => $product->get_price_html(),
-            'stock' => $product->is_in_stock(),
-            'availability' => $product->get_availability(),
-            'button_text' => $product->single_add_to_cart_text(),
-          );
+          $product_1_data = IGV_get_product_data($product);
         }
 
         if ($has_product_2) {
           $product = new WC_Product($slide['product_2']);
-          $product_2_data = array(
-            'title' => $product->get_title(),
-            'id' => $product->id,
-            'url' => $product->get_permalink(),
-            'content' => apply_filters('the_content', $product->post->post_content),
-            'price' => $product->get_price_html(),
-            'stock' => $product->is_in_stock(),
-            'availability' => $product->get_availability(),
-            'button_text' => $product->single_add_to_cart_text(),
-          );
+          $product_2_data = IGV_get_product_data($product);
         }
 ?>
               <div class="swiper-slide text-align-center row justify-center align-center" <?php if ($has_product_1) {

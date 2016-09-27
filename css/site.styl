@@ -209,6 +209,9 @@ p
 
 .font-letter-spaced
   letter-spacing: .1em
+  
+.font-leading-larger
+  line-height: $font-leading-larger
 
   // TEXT RULES
 
@@ -262,17 +265,12 @@ $footer-height = 32
 .only-desktop
   display: none
   
-.product-content p
-  margin-bottom: $margin-tiny
+.product-content 
+  p
+    line-height: 2
+  p:last-of-type
+    margin-bottom: 0
   
-.slider-button
-  width: 100%
-  text-align: center
-  svg 
-    max-width: 100%
-    width: $margin-tiny
-    path 
-      fill: $color-black-soft
 
 // ******************************************************
 
@@ -538,6 +536,24 @@ img.shop-product-sold-icon
   img 
     max-height: 100%
     width: auto
+    
+.slider-pagination-holder
+  flex-grow: 1
+  
+.slider-button
+  background: transparent
+  border: none
+  width: 30px
+  height: 30px
+  -webkit-appearance: none
+  padding: 0
+  svg 
+    width: 100%
+    height: 100%
+    path 
+      fill: $color-black-soft
+  &:focus
+    outline: none
 
 // ******************************************************
 

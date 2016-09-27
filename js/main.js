@@ -202,8 +202,8 @@ Site.Editorial = {
         loop: true,
         speed: 800,
         spaceBetween: 36,
-        nextButton: '.button-next',
-        prevButton: '.button-prev',
+        nextButton: '.slider-next',
+        prevButton: '.slider-prev',
         setWrapperSize: true,
         onInit: function(swiper) {
           _this.updateProductDetails();
@@ -223,6 +223,7 @@ Site.Editorial = {
           $('.slider-product-' + prod +'-details .js-product-title').html(productData['title']).attr('href',productData['url']);
           $('.slider-product-' + prod +'-details .js-product-content').html(productData['content']);
           $('.slider-product-' + prod +'-details .js-product-price').html(productData['price']);
+          $('.slider-product-' + prod +'-details .js-product-attributes').html(productData['attributes']);
 
           if (productData['stock']) {
             $('.slider-product-' + prod +'-details .js-product-button').html(productData['button_text']).removeClass('u-hidden');
