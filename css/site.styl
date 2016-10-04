@@ -92,7 +92,7 @@ $gutter = 14px
 // COLUMN SIZES & OFFSETS
 
 .col
-  flex: 1 1 auto
+  flex: 0 1 auto
   box-sizing: border-box
   max-width: 100%
   padding: 0 ($gutter / 2)
@@ -127,12 +127,11 @@ $margin-basic = ($gutter * 2)
 $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
-$font-size-basic = 13px
-$font-size-larger = 1.3rem
-$font-size-h4 = golden-ratio(1rem , .3)
-$font-size-h3 = golden-ratio(1rem , .5)
-$font-size-h2 = golden-ratio(1rem , .8)
-$font-size-h1 = golden-ratio(1rem , 1.2)
+$font-size-small = 10px
+$font-size-basic = 12px
+$font-size-mid = 14px
+$font-size-large = 16px
+$font-size-extra = 18px
 
 $font-leading-basic = 1.35
 $font-leading-tighter = 1.15
@@ -161,22 +160,25 @@ html
 
 body
   line-height: $font-leading-basic
+  
+h1,h2,h3,h4,h5
+  margin: 0
 
   // HTML ELEMENT STYLING
+.font-size-small
+  font-size: $font-size-small
 
-h1, .font-size-h1
-  font-size: $font-size-h1
-  line-height: $font-leading-tighter
+.font-size-basic
+  font-size: $font-size-basic
 
-h2, .font-size-h2
-  font-size: $font-size-h2
-  line-height: $font-leading-tighter
+.font-size-mid
+  font-size: $font-size-mid
 
-h3, .font-size-h3
-  font-size: $font-size-h3
+.font-size-large
+  font-size: $font-size-large
 
-h4, .font-size-h4
-  font-size: $font-size-h4
+.font-size-extra
+  font-size: $font-size-extra
 
 p
   margin-bottom: 1rem
@@ -207,6 +209,9 @@ p
 
 .font-letter-spaced
   letter-spacing: .1em
+  
+.font-leading-larger
+  line-height: $font-leading-larger
 
   // TEXT RULES
 
@@ -251,35 +256,21 @@ img
 .pagination-button
   padding-left: $margin-small
 
-$header-height = (68px + $margin-small)
-$footer-height = (28px)
-
-#main-content-holder
-  min-height: calc("100vh - " + ($header-height + $footer-height))
-  &.main-content-flex-center
-    display: flex
-    align-items: center
+$header-height = 114
+$footer-height = 32
 
 .only-mobile
   display: initial
 
 .only-desktop
   display: none
-
-.set-content-height
-  height: auto
   
-.product-content p
-  margin-bottom: $margin-tiny
+.product-content 
+  p
+    line-height: 2
+  p:last-of-type
+    margin-bottom: 0
   
-.slider-button
-  width: 100%
-  text-align: center
-  svg 
-    max-width: 100%
-    width: $margin-tiny
-    path 
-      fill: $color-black-soft
 
 // ******************************************************
 
@@ -403,7 +394,7 @@ $footer-height = (28px)
     width: 100%
 
 .splash-nav
-  font-size: 12px
+  font-size: $font-size-basic
   ul 
     display: flex
     flex-direction: row
@@ -538,8 +529,31 @@ img.shop-product-sold-icon
 
 // SINGLE EDITORIAL
 
-article.row.editorial 
-  flex-direction: column-reverse
+.slide-column
+  height: 100%
+  display: flex
+  flex-direction: column
+  img 
+    max-height: 100%
+    width: auto
+    
+.slider-pagination-holder
+  flex-grow: 1
+  
+.slider-button
+  background: transparent
+  border: none
+  width: 30px
+  height: 30px
+  -webkit-appearance: none
+  padding: 0
+  svg 
+    width: 100%
+    height: 100%
+    path 
+      fill: $color-black-soft
+  &:focus
+    outline: none
 
 // ******************************************************
 

@@ -83,7 +83,7 @@ Site.Layout = {
     _this.windowHeight = $(window).height();
     _this.windowWidth = $(window).width();
 
-    _this.layout();
+    //_this.layout();
   },
 
   onResize: function() {
@@ -92,7 +92,7 @@ Site.Layout = {
     _this.windowHeight = $(window).height();
     _this.windowWidth = $(window).width();
 
-    _this.layout();
+    //_this.layout();
   },
 
   layout: function() {
@@ -195,8 +195,6 @@ Site.Splash = {
 Site.Editorial = {
 
   Single: {
-    $productDetails: $('.slider-product-details'),
-
     init: function() {
       var _this = this;
 
@@ -204,8 +202,9 @@ Site.Editorial = {
         loop: true,
         speed: 800,
         spaceBetween: 36,
-        nextButton: '.button-next',
-        prevButton: '.button-prev',
+        nextButton: '.slider-next',
+        prevButton: '.slider-prev',
+        setWrapperSize: true,
         onInit: function(swiper) {
           _this.updateProductDetails();
         },
@@ -217,27 +216,28 @@ Site.Editorial = {
     },
 
     updateProductDetails: function() {
-      var _this = this;
+      for(var prod = 1; prod < 3; prod++) {
+        if ($('.swiper-slide-active').attr('data-product-' + prod)) {
+          var productData = JSON.parse($('.swiper-slide-active').attr('data-product-' + prod));
 
-      if ($('.swiper-slide-active').attr('data-product')) {
-        var productData = JSON.parse($('.swiper-slide-active').attr('data-product'));
+          $('.slider-product-' + prod +'-details .js-product-title').html(productData['title']).attr('href',productData['url']);
+          $('.slider-product-' + prod +'-details .js-product-content').html(productData['content']);
+          $('.slider-product-' + prod +'-details .js-product-price').html(productData['price']);
+          $('.slider-product-' + prod +'-details .js-product-attributes').html(productData['attributes']);
 
-        $('.js-product-title').html(productData['title']).attr('href',productData['url']);
-        $('.js-product-content').html(productData['content']);
-        $('.js-product-price').html(productData['price']);
+          if (productData['stock']) {
+            $('.slider-product-' + prod +'-details .js-product-button').html(productData['button_text']).removeClass('u-hidden');
+            $('.slider-product-' + prod +'-details .js-product-id').attr('value',productData['id']);
+            $('.slider-product-' + prod +'-details .js-product-sold').addClass('u-hidden');
+          } else {
+            $('.slider-product-' + prod +'-details .js-product-sold').removeClass('u-hidden').html(productData['availability']['availability']);
+            $('.slider-product-' + prod +'-details .js-product-button').addClass('u-hidden');
+          }
 
-        if (productData['stock']) {
-          $('.js-product-button').html(productData['button_text']).removeClass('u-hidden');
-          $('.js-product-id').attr('value',productData['id']);
-          $('.js-product-sold').addClass('u-hidden');
+          $('.slider-product-' + prod +'-details').show();
         } else {
-          $('.js-product-sold').removeClass('u-hidden').html(productData['availability']['availability']);
-          $('.js-product-button').addClass('u-hidden');
+          $('.slider-product-' + prod +'-details').hide();
         }
-
-        _this.$productDetails.removeClass('u-invisible');
-      } else {
-        _this.$productDetails.addClass('u-invisible');
       }
     },
 

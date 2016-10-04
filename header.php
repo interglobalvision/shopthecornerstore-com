@@ -62,7 +62,7 @@
 ?>
 
   <!-- start content -->
-  <header id="header" class="container margin-top-tiny">
+  <header id="header" class="container padding-top-tiny padding-bottom-tiny">
     <div class="row align-center">
 
       <div id="header-logo" class="col col-no-margin-bottom col-s-4 offset-s-4 col-m-2 offset-m-0">
@@ -79,7 +79,7 @@
       <?php
         if (is_singular('editorial')) {
       ?>
-        <h1 class="font-size-h3 font-letter-spaced"><?php the_title(); ?></h1>
+        <h1 class="font-size-basic font-letter-spaced"><?php the_title(); ?></h1>
       <?php
         }
       ?>

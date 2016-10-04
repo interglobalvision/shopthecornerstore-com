@@ -25,25 +25,11 @@ $margin-large = ($gutter * 5)
 
 // BASIC
 
-$header-height = (71px + $margin-small)
-$footer-height = (28px)
-$content-height = 720px
-
-#main-content-holder
-  min-height: calc("100vh - " + ($header-height + $footer-height))
+$header-height = 91px
+$footer-height = 69px
 
 .pagination-button
   padding-left: $margin-small
-
-.set-content-height
-  height: $content-height
-
-.product-content p
-  margin-bottom: $margin-tiny
-
-.slider-button
-  svg
-    width: $margin-micro
 
 // ******************************************************
 
@@ -140,7 +126,16 @@ $content-height = 720px
   left: $margin-tiny
   padding: $margin-micro
 
+// ******************************************************
+
 // SPLASH
 
 .splash-nav
   font-size: 28px
+
+// ******************************************************
+
+// SINGLE EDITORIAL
+
+.set-swiper-height
+  height: calc('100vh - ' + ($header-height + $footer-height))

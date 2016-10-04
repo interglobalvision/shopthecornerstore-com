@@ -60,16 +60,31 @@ function igv_cmb_metaboxes() {
   ) );
 
   $editorial_group->add_group_field( $editorial_group_field_id, array(
-    'name' => __( 'Slide Image', 'cmb2' ),
-    'id'   => 'image',
+    'name' => __( 'Slide Image 1', 'cmb2' ),
+    'id'   => 'image_1',
+    'type' => 'file',
+  ) );
+
+  $editorial_group->add_group_field( $editorial_group_field_id, array(
+    'name' => __( 'Slide Image 2', 'cmb2' ),
+    'id'   => 'image_2',
     'type' => 'file',
   ) );
 
   if ( class_exists( 'WooCommerce' ) ) {
     $editorial_group->add_group_field( $editorial_group_field_id, array(
-      'name'             => __( 'Slide Product', 'cmb2' ),
+      'name'             => __( 'Slide Product 1', 'cmb2' ),
       'desc'             => __( '', 'cmb2' ),
-      'id'               => 'product',
+      'id'               => 'product_1',
+      'type'             => 'select',
+      'show_option_none' => true,
+      'options' => get_product_options(),
+    ) );
+    
+    $editorial_group->add_group_field( $editorial_group_field_id, array(
+      'name'             => __( 'Slide Product 2', 'cmb2' ),
+      'desc'             => __( '', 'cmb2' ),
+      'id'               => 'product_2',
       'type'             => 'select',
       'show_option_none' => true,
       'options' => get_product_options(),
