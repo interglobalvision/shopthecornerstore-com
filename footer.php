@@ -9,8 +9,8 @@
     $shipping_id = get_id_by_slug('shipping');
   ?>
     <footer id="footer" class="container padding-top-tiny padding-bottom-tiny">
-      <div class="row">
-        <div class="col col-no-margin-bottom col3">
+      <div class="row align-center">
+        <div class="col col-no-margin-bottom col-s-6">
           <?php if (!empty($facebook) || !empty($twitter) || !empty($instagram)) { ?>
           <ul class="u-inline-list">
             <?php if (!empty($facebook)) { ?>
@@ -29,10 +29,7 @@
           </ul>
           <?php } ?>
         </div>
-        <div class="col col-no-margin-bottom col6 text-align-center font-small-caps">
-          &copy; <?php echo date('Y'); ?> The Corner LLC. All Rights Reserved
-        </div>
-        <div class="col col-no-margin-bottom col3 text-align-right">
+        <div class="col col-no-margin-bottom col-s-6 text-align-right">
           <?php if (!empty($contact_id) || !empty($shipping_id)) { ?>
           <nav class="footer-menu">
             <ul class="u-inline-list">

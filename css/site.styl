@@ -258,12 +258,6 @@ img
 
 $header-height = 114
 $footer-height = 32
-
-.only-mobile
-  display: initial
-
-.only-desktop
-  display: none
   
 .product-content 
   p
@@ -404,9 +398,6 @@ $footer-height = 32
 
 // HEADER
 
-#header
-  text-align: center
-
 #header-logo
   svg
     width: 100%
@@ -434,9 +425,6 @@ $footer-height = 32
     background: none
     &:focus
       outline: none
-      
-.header-editorial-title
-  text-align: center
   
 .header-logo-desktop
   display: none
@@ -571,7 +559,7 @@ img.shop-product-sold-icon
 // FOOTER
 
 .social-icon
-  width: $margin-small
+  width: 20px
   margin-right: $margin-tiny
 
 .post-date
@@ -584,12 +572,23 @@ img.shop-product-sold-icon
 
 // MEDIA QUERIES
 
+.only-mobile
+  display: initial
+
+.only-desktop
+  display: none
 
 @media screen and (min-width: 750px)
 
   @import "responsive/tablet"
 
 @media screen and (min-width: 1150px)
+
+  .only-mobile
+    display: none
+
+  .only-desktop
+    display: initial
 
   @import "responsive/laptop"
 
