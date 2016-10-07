@@ -1530,6 +1530,18 @@ img {
 #searchform input:focus {
   outline: none;
 }
+.header-editorial-title {
+  text-align: center;
+}
+.header-logo-desktop {
+  display: none;
+}
+.header-logo {
+  text-align: center;
+}
+.header-logo svg {
+  width: 200px;
+}
 .shop-product {
   position: relative;
 }
@@ -1911,6 +1923,9 @@ img.shop-product-sold-icon {
     width: 24px;
     margin-right: 7.416407864998257px;
   }
+  .header-editorial-title {
+    text-align: right;
+  }
   #archive-editorial-titles {
     margin-left: 48px;
   }
@@ -2168,6 +2183,15 @@ img.shop-product-sold-icon {
   }
   .splash-nav {
     font-size: 24px;
+  }
+  .header-logo-mobile {
+    display: none;
+  }
+  .header-logo-desktop {
+    display: initial;
+  }
+  .header-logo svg {
+    width: 100%;
   }
   .set-swiper-height {
     height: calc(100vh - 128px);

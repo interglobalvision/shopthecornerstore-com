@@ -65,17 +65,23 @@
   <header id="header" class="container padding-top-tiny padding-bottom-tiny">
     <div class="row align-center">
 
-      <div id="header-logo" class="col col-no-margin-bottom col-s-4 offset-s-4 col-m-2 offset-m-0">
+      <div class="header-logo header-logo-mobile col col-s-12">
         <a href="<?php echo home_url(); ?>">
           <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/logo.svg'); ?>
         </a>
       </div>
 
-      <nav class="col col-no-margin-bottom col-s-12 col-m-6">
+      <nav class="col col-no-margin-bottom col-s-12 col-m-6 col-l-5">
         <?php get_template_part('partials/nav'); ?>
       </nav>
-    
-      <div class="col col-no-margin-bottom col-s-12 col-m-3">
+
+      <div class="header-logo header-logo-desktop col col-no-margin-bottom col-l-2">
+        <a href="<?php echo home_url(); ?>">
+          <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/logo.svg'); ?>
+        </a>
+      </div>
+
+      <div class="col col-no-margin-bottom col-s-12 col-m-5 col-l-4 header-editorial-title">
       <?php
         if (is_singular('editorial')) {
       ?>
