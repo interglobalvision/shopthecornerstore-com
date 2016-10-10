@@ -65,17 +65,24 @@
   <header id="header" class="container padding-top-tiny padding-bottom-tiny">
     <div class="row align-center">
 
-      <div id="header-logo" class="col col-no-margin-bottom col-s-4 offset-s-4 col-m-2 offset-m-0">
+      <nav class="col col-s-10 col-l-5">
+        <?php get_template_part('partials/nav'); ?>
+      </nav>
+
+      <div class="col col-s-2 only-mobile">
+        <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart">
+          <img src="<?php echo get_bloginfo('stylesheet_directory') . '/img/dist/cart.svg'; ?>">
+          <?php echo WC()->cart->get_cart_contents_count() ?>
+        </a>
+      </div>
+
+      <div id="header-logo" class="col col-s-12 col-l-2">
         <a href="<?php echo home_url(); ?>">
           <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/logo.svg'); ?>
         </a>
       </div>
 
-      <nav class="col col-no-margin-bottom col-s-12 col-m-6">
-        <?php get_template_part('partials/nav'); ?>
-      </nav>
-    
-      <div class="col col-no-margin-bottom col-s-12 col-m-3">
+      <div class="col col-s-12 col-l-4 text-align-center">
       <?php
         if (is_singular('editorial')) {
       ?>
@@ -85,7 +92,7 @@
       ?>
       </div>
 
-      <div class="col col-no-margin-bottom col-s-12 col-m-1">
+      <div class="col only-desktop col-l-1">
         <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart">
           <img src="<?php echo get_bloginfo('stylesheet_directory') . '/img/dist/cart.svg'; ?>">
           <?php echo WC()->cart->get_cart_contents_count() ?>
