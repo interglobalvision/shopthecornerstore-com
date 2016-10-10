@@ -1481,12 +1481,6 @@ img {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-#header-logo svg {
-  width: 100%;
-}
-#header-logo .logo-path {
-  fill: #0e0e0e;
-}
 .menu-item {
   margin: 0 7px;
 }
@@ -1521,14 +1515,14 @@ img {
 #searchform input:focus {
   outline: none;
 }
-.header-logo-desktop {
-  display: none;
-}
-.header-logo {
+#header-logo {
   text-align: center;
 }
-.header-logo svg {
+#header-logo svg {
   width: 200px;
+}
+#header-logo .logo-path {
+  fill: #0e0e0e;
 }
 .shop-product {
   position: relative;
@@ -2175,17 +2169,11 @@ img.shop-product-sold-icon {
   .splash-nav {
     font-size: 24px;
   }
-  .header-logo-mobile {
-    display: none;
-  }
-  .header-logo-desktop {
-    display: initial;
-  }
-  .header-logo svg {
-    width: 100%;
-  }
   #header .col {
     margin-bottom: 0;
+  }
+  #header-logo svg {
+    width: 100%;
   }
   .set-swiper-height {
     height: calc(100vh - 128px);
