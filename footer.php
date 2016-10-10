@@ -31,7 +31,7 @@
         </div>
         <div class="col col-no-margin-bottom col-s-6 text-align-right">
           <?php if (!empty($contact_id) || !empty($shipping_id)) { ?>
-          <nav class="footer-menu">
+          <nav>
             <ul class="u-inline-list">
               <?php if (!empty($contact_id)) { ?>
               <li>
