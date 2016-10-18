@@ -65,7 +65,7 @@
   <header id="header" class="container padding-top-tiny padding-bottom-tiny">
     <div class="row align-center">
 
-      <nav class="col col-s-10 col-l-5">
+      <nav class="col col-s-10 col-l-5 font-letter-spaced">
         <?php get_template_part('partials/nav'); ?>
       </nav>
 
@@ -86,7 +86,7 @@
       <?php
         if (is_singular('editorial')) {
       ?>
-        <h1 class="font-size-basic font-letter-spaced"><?php the_title(); ?></h1>
+        <h1 class="font-size-basic font-letter-spaced"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
       <?php
         }
       ?>

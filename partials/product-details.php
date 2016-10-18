@@ -1,4 +1,4 @@
-<h1 class="font-size-large margin-bottom-small"><a href="" class="js-product-title"></a></h1>
+<h1 class="font-size-large margin-bottom-small font-bold"><a href="" class="js-product-title"></a></h1>
 <div class="product-content font-serif font-transform-none font-size-mid font-italic js-product-content"></div>
 <ul class="attributes font-bold js-product-attributes margin-top-micro"></ul>
 <div class="price font-bold js-product-price margin-top-small"></div>
