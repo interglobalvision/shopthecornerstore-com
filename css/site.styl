@@ -128,10 +128,10 @@ $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
 $font-size-small = 10px
-$font-size-basic = 12px
-$font-size-mid = 14px
-$font-size-large = 16px
-$font-size-extra = 18px
+$font-size-basic = 10px
+$font-size-mid = 13px
+$font-size-large = 14px
+$font-size-extra = 16px
 
 $font-leading-basic = 1.35
 $font-leading-tighter = 1.15
@@ -208,7 +208,7 @@ p
   text-transform: none
 
 .font-letter-spaced
-  letter-spacing: .1em
+  letter-spacing: .15em
   
 .font-leading-larger
   line-height: $font-leading-larger
@@ -399,9 +399,12 @@ $footer-height = 32
 // HEADER
 
 .menu-item
-  margin: 0 $margin-tiny
-  a:hover
+  margin-right: $margin-tiny
+  &:last-of-type
+    margin-right: 0
+  a:hover, &.active
     color: $color-grey
+  
   
 .header-cart
   display: flex
@@ -552,7 +555,7 @@ img.shop-product-sold-icon
 // FOOTER
 
 .social-icon
-  width: 20px
+  width: 12px
   margin-right: $margin-tiny
 
 .post-date
