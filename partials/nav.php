@@ -9,7 +9,7 @@
     $recent_id = $editorial_posts[0]->ID;
   }
 ?>
-<ul id="menu" class="u-inline-list font-letter-spaced">
+<ul id="menu" class="u-inline-list font-nav">
 <?php if ( class_exists( 'WooCommerce' ) ) { ?>
   <li class="menu-item <?php echo is_post_type_archive('product') || is_singular('product') ? 'active' : ''; ?>">
     <a href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>">Shop</a>

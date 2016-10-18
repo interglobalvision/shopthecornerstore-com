@@ -21,14 +21,14 @@ if( have_posts() ) {
     <article <?php post_class('col col-s col-s-12 col-m col-m-6 col-l col-l-3 shop-product'); ?> id="product-<?php the_ID(); ?>">
       <a href="<?php the_permalink() ?>">
         <div class="shop-product-title-holder">
-          <h3 class="shop-product-title">
+          <h3 class="shop-product-title font-shop-title">
             <?php the_title(); ?>
           </h3>
         </div>
         <?php if (!$in_stock) { ?>
-          <span class="row align-center shop-product-sold font-uppercase">
+          <span class="row align-center shop-product-sold">
             <img class="shop-product-sold-icon" src="<?php echo get_stylesheet_directory_uri() . '/img/dist/teardrop.svg'; ?>">
-            <span class="shop-product-sold-text">&nbsp;<?php echo $availability['availability']; ?></span>
+            <span class="shop-product-sold-text font-product-attr">&nbsp;<?php echo $availability['availability']; ?></span>
           </span>
         <?php } ?>
         <?php the_post_thumbnail('col-m-6-portrait-crop'); ?>

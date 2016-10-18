@@ -20,9 +20,11 @@ if( have_posts() ) {
 
       <article <?php post_class('journal-post col col-s-12 col-m-6'); ?> id="post-<?php the_ID(); ?>">
 
-        <?php the_content(); ?>
+        <h2 class="font-post-title"><?php the_content(); ?></h2>
 
-        <div class="post-date padding-bottom-small"><?php echo get_the_date(); ?></div>
+        <div class="font-post-content margin-bottom-tiny"><?php the_content(); ?></div>
+
+        <div class="post-date padding-bottom-micro font-post-meta"><?php echo get_the_date('m/d/Y'); ?></div>
 
       </article>
 

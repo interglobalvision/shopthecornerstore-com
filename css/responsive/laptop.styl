@@ -30,39 +30,42 @@ $margin-basic = ($gutter * 2)
 $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
-$font-size-small = 11px
-$font-size-basic = 13px
-$font-size-mid = 17px
-$font-size-large = 19px
-$font-size-extra = 36px
-
 // ******************************************************
 
 // TYPOGRAPHY
 
-html
-  font-size: $font-size-basic
-  letter-spacing: $font-tracking-basic
+.font-nav 
+  font-size: 13px   
 
-body
-  line-height: $font-leading-basic
+// PRODUCT FONT 
 
-  // HTML ELEMENT STYLING
+.font-product-title 
+  font-size: 19px   
+  
+.font-product-content 
+  font-size: 16px
+  
+.font-product-attr
+  font-size: 12px
+  
+.font-product-price
+  font-size: 14px
 
-.font-size-small
-  font-size: $font-size-small
+// SHOP FONT 
 
-.font-size-basic
-  font-size: $font-size-basic
+.font-shop-title 
+  font-size: 14px   
 
-.font-size-mid
-  font-size: $font-size-mid
+// POST FONT 
 
-.font-size-large
-  font-size: $font-size-large
-
-.font-size-extra
-  font-size: $font-size-extra
+.font-post-title 
+  font-size: 13px   
+  
+.font-post-content 
+  font-size: 15px
+  
+.font-post-meta 
+  font-size: 12px
 
 // ******************************************************
 
@@ -163,7 +166,7 @@ $footer-height = 53px
 // PRODUCT ARCHIVE
 
 .shop-product-title
-  margin: $margin-basic $margin-tiny
+  margin: $margin-basic $margin-tiny $margin-tiny
 
 .shop-product-sold
   left: $margin-tiny
@@ -189,7 +192,7 @@ $footer-height = 53px
     width: 100%
     
 .menu-item
-  margin-right: $margin-small
+  margin-right: $margin-tiny
   
 // ******************************************************
   

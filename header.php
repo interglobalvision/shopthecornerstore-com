@@ -65,12 +65,12 @@
   <header id="header" class="container padding-top-tiny padding-bottom-tiny">
     <div class="row align-center">
 
-      <nav class="col col-s-10 col-l-5 font-letter-spaced">
+      <nav class="col col-s-10 col-l-5">
         <?php get_template_part('partials/nav'); ?>
       </nav>
 
       <div class="col col-s-2 only-mobile">
-        <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart">
+        <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart font-product-price">
           <img src="<?php echo get_bloginfo('stylesheet_directory') . '/img/dist/cart.svg'; ?>">
           <?php echo WC()->cart->get_cart_contents_count() ?>
         </a>
@@ -86,14 +86,14 @@
       <?php
         if (is_singular('editorial')) {
       ?>
-        <h1 class="font-size-basic font-letter-spaced"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+        <h1 class="font-nav"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
       <?php
         }
       ?>
       </div>
 
       <div class="col only-desktop col-l-1">
-        <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart">
+        <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart font-product-price">
           <img src="<?php echo get_bloginfo('stylesheet_directory') . '/img/dist/cart.svg'; ?>">
           <?php echo WC()->cart->get_cart_contents_count() ?>
         </a>
