@@ -32,7 +32,7 @@
         <div class="col col-no-margin-bottom col-s-6 text-align-right">
           <?php if (!empty($contact_id) || !empty($shipping_id)) { ?>
           <nav>
-            <ul class="u-inline-list">
+            <ul class="u-inline-list font-nav">
               <?php if (!empty($contact_id)) { ?>
               <li>
                 <a href="<?php echo get_the_permalink($contact_id); ?>">Contact</a>

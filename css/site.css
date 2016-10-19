@@ -1250,8 +1250,6 @@ th {
 html {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
-  letter-spacing: 0.001em;
-  text-transform: uppercase;
 }
 body {
   line-height: 1.35;
@@ -1263,20 +1261,77 @@ h4,
 h5 {
   margin: 0;
 }
-.font-size-small {
-  font-size: 10px;
+.font-nav {
+  font-size: 11px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
-.font-size-basic {
-  font-size: 12px;
+.font-nav-splash {
+  font-size: 13px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
 }
-.font-size-mid {
-  font-size: 14px;
-}
-.font-size-large {
+.font-product-title {
   font-size: 16px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
 }
-.font-size-extra {
-  font-size: 18px;
+.font-product-content {
+  font-size: 15px;
+  font-family: 'Crimson Text', Georgia, Times, "Times New Roman", serif;
+  line-height: 2em;
+  font-style: italic;
+  font-weight: normal;
+}
+.font-product-attr {
+  font-size: 10px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.font-product-price {
+  font-size: 12px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.font-shop-title {
+  font-size: 12px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.font-post-title {
+  font-size: 11px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.font-post-content {
+  font-size: 12px;
+  font-family: 'Crimson Text', Georgia, Times, "Times New Roman", serif;
+  font-style: normal;
+  font-weight: normal;
+}
+.font-post-meta {
+  font-size: 10px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: uppercase;
 }
 p {
   margin-bottom: 1rem;
@@ -1304,7 +1359,7 @@ p {
   text-transform: none;
 }
 .font-letter-spaced {
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
 }
 .font-leading-larger {
   line-height: 1.45;
@@ -1466,7 +1521,7 @@ img {
   width: 100%;
 }
 .splash-nav {
-  font-size: 12px;
+  font-size: $font-size-basic;
 }
 .splash-nav ul {
   display: -webkit-box;
@@ -1482,10 +1537,14 @@ img {
           justify-content: space-between;
 }
 .menu-item {
-  margin: 0 7px;
+  margin-right: 14px;
 }
-.menu-item a:hover {
-  color: #b7b7b7;
+.menu-item:last-of-type {
+  margin-right: 0;
+}
+.menu-item a:hover,
+.menu-item.active {
+  color: #7f7f7f;
 }
 .header-cart {
   display: -webkit-box;
@@ -1564,7 +1623,7 @@ img {
   transition: opacity 0.1s;
 }
 .shop-product-title {
-  margin: 28px 7px;
+  margin: 28px 7px 28px;
 }
 .shop-product-sold {
   position: absolute;
@@ -1659,13 +1718,13 @@ img.shop-product-sold-icon {
   outline: none;
 }
 .social-icon {
-  width: 20px;
+  width: 12px;
   margin-right: 7px;
 }
 .post-date {
   display: inline-block;
-  color: #b7b7b7;
-  border-bottom: 2px solid #b7b7b7;
+  color: #7f7f7f;
+  border-bottom: 2px solid #7f7f7f;
 }
 .only-mobile {
   display: initial;
@@ -1789,28 +1848,6 @@ img.shop-product-sold-icon {
         flex-basis: 100%;
     max-width: 100%;
   }
-  html {
-    font-size: 15px;
-    letter-spacing: 0.001em;
-  }
-  body {
-    line-height: 1.35;
-  }
-  .font-size-small {
-    font-size: 12px;
-  }
-  .font-size-basic {
-    font-size: 15px;
-  }
-  .font-size-mid {
-    font-size: 17px;
-  }
-  .font-size-large {
-    font-size: 21px;
-  }
-  .font-size-extra {
-    font-size: 32px;
-  }
   .pagination-button {
     padding-left: 24px;
   }
@@ -1892,6 +1929,9 @@ img.shop-product-sold-icon {
   #header {
     text-align: left;
   }
+  .menu-item {
+    margin-right: 12px;
+  }
   .editorial-title {
     text-align: right;
   }
@@ -1923,11 +1963,14 @@ img.shop-product-sold-icon {
     display: none;
   }
   .shop-product-title {
-    margin: 48px 12px;
+    margin: 48px 12px 48px;
   }
   .shop-product-sold {
     left: 12px;
     padding: 12px;
+  }
+  .social-icon {
+    width: 16px;
   }
   .woocommerce table.shop_table td {
     padding: 12px;
@@ -2062,27 +2105,35 @@ img.shop-product-sold-icon {
         flex-basis: 100%;
     max-width: 100%;
   }
-  html {
-    font-size: 14px;
-    letter-spacing: 0.001em;
+  .font-nav {
+    font-size: 13px;
   }
-  body {
-    line-height: 1.35;
-  }
-  .font-size-small {
-    font-size: 11px;
-  }
-  .font-size-basic {
-    font-size: 14px;
-  }
-  .font-size-mid {
-    font-size: 16px;
-  }
-  .font-size-large {
+  .font-nav-splash {
     font-size: 21px;
   }
-  .font-size-extra {
-    font-size: 36px;
+  .font-product-title {
+    font-size: 19px;
+  }
+  .font-product-content {
+    font-size: 17px;
+  }
+  .font-product-attr {
+    font-size: 12px;
+  }
+  .font-product-price {
+    font-size: 14px;
+  }
+  .font-shop-title {
+    font-size: 14px;
+  }
+  .font-post-title {
+    font-size: 13px;
+  }
+  .font-post-content {
+    font-size: 15px;
+  }
+  .font-post-meta {
+    font-size: 12px;
   }
   .pagination-button {
     padding-left: 32px;
@@ -2160,7 +2211,7 @@ img.shop-product-sold-icon {
     padding-bottom: 160px;
   }
   .shop-product-title {
-    margin: 64px 16px;
+    margin: 64px 16px 16px;
   }
   .shop-product-sold {
     left: 16px;
@@ -2175,8 +2226,14 @@ img.shop-product-sold-icon {
   #header-logo svg {
     width: 100%;
   }
+  .menu-item {
+    margin-right: 16px;
+  }
   .set-swiper-height {
     height: calc(100vh - 128px);
+  }
+  .social-icon {
+    width: 20px;
   }
 }
 @media screen and (min-width: 1320px) {
@@ -2263,7 +2320,7 @@ img.shop-product-sold-icon {
     padding-bottom: 240px;
   }
   .shop-product-title {
-    margin: 96px 24px;
+    margin: 96px 24px 24px;
   }
   .shop-product-sold {
     left: 24px;
@@ -2271,6 +2328,9 @@ img.shop-product-sold-icon {
   }
   .splash-nav {
     font-size: 28px;
+  }
+  .menu-item {
+    margin-right: 24px;
   }
   .set-swiper-height {
     height: calc(100vh - 160px);

@@ -30,39 +30,6 @@ $margin-basic = ($gutter * 2)
 $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
-$font-size-small = 12px
-$font-size-basic = 15px
-$font-size-mid = 17px
-$font-size-large = 21px
-$font-size-extra = 32px
-// ******************************************************
-
-// TYPOGRAPHY
-
-html
-  font-size: $font-size-basic
-  letter-spacing: $font-tracking-basic
-
-body
-  line-height: $font-leading-basic
-
-  // HTML ELEMENT STYLING
-
-.font-size-small
-  font-size: $font-size-small
-
-.font-size-basic
-  font-size: $font-size-basic
-
-.font-size-mid
-  font-size: $font-size-mid
-
-.font-size-large
-  font-size: $font-size-large
-
-.font-size-extra
-  font-size: $font-size-extra
-
 // ******************************************************
 
 // BASIC
@@ -170,6 +137,9 @@ $footer-height = 44px
 
 #header
   text-align: left
+  
+.menu-item
+  margin-right: $margin-tiny
 
 .editorial-title
   text-align: right
@@ -209,11 +179,18 @@ $footer-height = 44px
 // PRODUCT ARCHIVE
 
 .shop-product-title
-  margin: $margin-basic $margin-tiny
+  margin: $margin-basic $margin-tiny $margin-basic
 
 .shop-product-sold
   left: $margin-tiny
   padding: $margin-tiny
+  
+// ******************************************************
+  
+// FOOTER 
+
+.social-icon
+  width: 16px
   
 // ******************************************************
 

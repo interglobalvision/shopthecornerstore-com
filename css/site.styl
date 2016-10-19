@@ -127,12 +127,6 @@ $margin-basic = ($gutter * 2)
 $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
-$font-size-small = 10px
-$font-size-basic = 12px
-$font-size-mid = 14px
-$font-size-large = 16px
-$font-size-extra = 18px
-
 $font-leading-basic = 1.35
 $font-leading-tighter = 1.15
 $font-leading-larger = 1.45
@@ -142,7 +136,7 @@ $font-tracking-wider = 0.05em
 
 $color-black-soft = rgb(14, 14, 14)
 $color-white = rgb(255, 255, 255)
-$color-grey = #B7B7B7
+$color-grey = rgb(127, 127, 127)
 
 $border-width = 2px
 
@@ -154,31 +148,90 @@ $speed-transition-fast = .1s
 
 html
   font-family: "Montserrat", font-stack('Helvetica')
-  font-size: $font-size-basic
-  letter-spacing: $font-tracking-basic
-  text-transform: uppercase
+  font-size: 12px
 
 body
   line-height: $font-leading-basic
   
 h1,h2,h3,h4,h5
   margin: 0
+  
+.font-nav 
+  font-size: 11px   
+  font-family: "Montserrat", font-stack('Helvetica')
+  font-style: normal 
+  font-weight: normal
+  letter-spacing: .15em
+  text-transform: uppercase
+  
+.font-nav-splash
+  font-size: 13px   
+  font-family: "Montserrat", font-stack('Helvetica')
+  font-style: normal 
+  font-weight: bold
+  text-transform: uppercase
 
-  // HTML ELEMENT STYLING
-.font-size-small
-  font-size: $font-size-small
+// PRODUCT FONT 
+.font-product-title 
+  font-size: 16px   
+  font-family: "Montserrat", font-stack('Helvetica')
+  font-style: normal 
+  font-weight: bold
+  text-transform: uppercase
+  
+.font-product-content 
+  font-size: 15px
+  font-family: 'Crimson Text', font-stack('Georgia')
+  line-height: 2em
+  font-style: italic 
+  font-weight: normal
+  
+.font-product-attr
+  font-size: 10px
+  font-family: "Montserrat", font-stack('Helvetica')
+  font-style: normal 
+  font-weight: normal
+  text-transform: uppercase
+  
+.font-product-price
+  font-size: 12px
+  font-family: "Montserrat", font-stack('Helvetica')
+  font-style: normal 
+  font-weight: bold
+  text-transform: uppercase
 
-.font-size-basic
-  font-size: $font-size-basic
+// SHOP FONT 
 
-.font-size-mid
-  font-size: $font-size-mid
+.font-shop-title 
+  font-size: 12px   
+  font-family: "Montserrat", font-stack('Helvetica')
+  font-style: normal 
+  font-weight: normal
+  letter-spacing: .15em
+  text-transform: uppercase
 
-.font-size-large
-  font-size: $font-size-large
+// POST FONT 
 
-.font-size-extra
-  font-size: $font-size-extra
+.font-post-title 
+  font-size: 11px   
+  font-family: "Montserrat", font-stack('Helvetica')
+  font-style: normal 
+  font-weight: normal
+  letter-spacing: .15em
+  text-transform: uppercase
+  
+.font-post-content 
+  font-size: 12px
+  font-family: 'Crimson Text', font-stack('Georgia')
+  font-style: normal 
+  font-weight: normal
+  
+.font-post-meta 
+  font-size: 10px
+  font-family: "Montserrat", font-stack('Helvetica')
+  font-style: normal 
+  font-weight: normal
+  text-transform: uppercase
 
 p
   margin-bottom: 1rem
@@ -208,7 +261,7 @@ p
   text-transform: none
 
 .font-letter-spaced
-  letter-spacing: .1em
+  letter-spacing: .15em
   
 .font-leading-larger
   line-height: $font-leading-larger
@@ -399,9 +452,12 @@ $footer-height = 32
 // HEADER
 
 .menu-item
-  margin: 0 $margin-tiny
-  a:hover
+  margin-right: $margin-small
+  &:last-of-type
+    margin-right: 0
+  a:hover, &.active
     color: $color-grey
+  
   
 .header-cart
   display: flex
@@ -455,7 +511,7 @@ $footer-height = 32
   transition: opacity $speed-transition-fast
 
 .shop-product-title
-  margin: $margin-basic $margin-tiny
+  margin: $margin-basic $margin-tiny $margin-basic
 
 .shop-product-sold
   position: absolute
@@ -552,7 +608,7 @@ img.shop-product-sold-icon
 // FOOTER
 
 .social-icon
-  width: 20px
+  width: 12px
   margin-right: $margin-tiny
 
 .post-date

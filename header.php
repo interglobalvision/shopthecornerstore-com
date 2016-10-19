@@ -70,7 +70,7 @@
       </nav>
 
       <div class="col col-s-2 only-mobile">
-        <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart">
+        <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart font-product-price">
           <img src="<?php echo get_bloginfo('stylesheet_directory') . '/img/dist/cart.svg'; ?>">
           <?php echo WC()->cart->get_cart_contents_count() ?>
         </a>
@@ -86,14 +86,14 @@
       <?php
         if (is_singular('editorial')) {
       ?>
-        <h1 class="font-size-basic font-letter-spaced"><?php the_title(); ?></h1>
+        <h1 class="font-nav"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
       <?php
         }
       ?>
       </div>
 
       <div class="col only-desktop col-l-1">
-        <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart">
+        <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart font-product-price">
           <img src="<?php echo get_bloginfo('stylesheet_directory') . '/img/dist/cart.svg'; ?>">
           <?php echo WC()->cart->get_cart_contents_count() ?>
         </a>
