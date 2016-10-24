@@ -1959,7 +1959,7 @@ img.shop-product-sold-icon {
   .set-swiper-height {
     height: calc(100vh - 109px);
   }
-  .slider-product-details {
+  body.single-editorial .slider-product-details {
     display: none;
   }
   .shop-product-title {
