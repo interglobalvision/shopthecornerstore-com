@@ -91,5 +91,37 @@ function igv_cmb_metaboxes() {
     ) );
   }
 
+  $product_group = new_cmb2_box( array(
+    'id'           => $prefix . 'product_slides',
+    'title'        => __( 'Product slideshow', 'cmb2' ),
+    'object_types' => array( 'product', ),
+  ) );
+
+  // $group_field_id is the field id string, so in this case: $prefix . 'demo'
+  $product_group_field_id = $product_group->add_field( array(
+    'id'          => $prefix . 'slides',
+    'type'        => 'group',
+    'description' => __( '', 'cmb2' ),
+    'options'     => array(
+      'group_title'   => __( 'Slide {#}', 'cmb2' ), // {#} gets replaced by row number
+      'add_button'    => __( 'Add Another Slide', 'cmb2' ),
+      'remove_button' => __( 'Remove Slide', 'cmb2' ),
+      'sortable'      => true, // beta
+      // 'closed'     => true, // true to have the groups closed by default
+    ),
+  ) );
+
+  $product_group->add_group_field( $product_group_field_id, array(
+    'name' => __( 'Slide Image 1', 'cmb2' ),
+    'id'   => 'image_1',
+    'type' => 'file',
+  ) );
+
+  $product_group->add_group_field( $product_group_field_id, array(
+    'name' => __( 'Slide Image 2', 'cmb2' ),
+    'id'   => 'image_2',
+    'type' => 'file',
+  ) );
+
 }
 ?>

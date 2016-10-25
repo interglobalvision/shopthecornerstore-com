@@ -25,7 +25,6 @@ if( have_posts() ) {
     <article <?php post_class('row'); ?> id="post-<?php the_ID(); ?>">
 
 <?php
-    if (!empty($slides)) {
       if ($is_recent) {
 ?>
       
@@ -44,11 +43,19 @@ if( have_posts() ) {
 
         </div>
 
+<?php 
+    if (!empty($slides)) {
+      if (count($slides[0] > 1)) {
+?>
         <div class="slider-pagination-holder margin-top-small margin-bottom-basic row align-end">
 
           <?php get_template_part( 'partials/slider-pagination' ); ?>
 
         </div>
+<?php 
+      }
+    }
+?>
 
       </div>
       <!-- End Product details container -->
@@ -57,7 +64,9 @@ if( have_posts() ) {
       }
 ?>
       <div class="col col-l-9 col-no-margin-bottom">
-
+<?php 
+    if (!empty($slides)) {
+?>
           <!-- Slider main container -->
           <div class="swiper-container set-swiper-height">
             <div class="swiper-wrapper align-center">
@@ -105,7 +114,6 @@ if( have_posts() ) {
           </div>
           <!-- End Slider main container -->
 <?php } ?>
-
       </div>
 
     </article>

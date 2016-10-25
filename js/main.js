@@ -119,6 +119,10 @@ Site.Shop = {
     var _this = this;
 
     this.Search.init();
+
+    if ($('body').hasClass('single-product')) {
+      _this.Product.init();
+    }
   },
 
   Search: {
@@ -153,6 +157,27 @@ Site.Shop = {
       });
     },
 
+  },
+
+  Product: {
+    init: function() {
+      var _this = this;
+
+      if ($('.swiper-container').length) {
+        _this.swiper();
+      }
+    },
+
+    swiper: function() {
+      var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        speed: 800,
+        spaceBetween: 36,
+        nextButton: '.slider-next',
+        prevButton: '.slider-prev',
+        setWrapperSize: true,
+      });
+    }
   },
 
 }
