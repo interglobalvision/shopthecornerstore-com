@@ -1406,6 +1406,21 @@ img {
 .product-content p:last-of-type {
   margin-bottom: 0;
 }
+button.button-shop {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #0e0e0e;
+  color: #fff;
+  border-radius: none;
+  border: 2px solid #0e0e0e;
+  padding: 14px 14px;
+  line-height: 0;
+}
+button.button-shop:hover {
+  background: #fff;
+  color: #0e0e0e;
+}
 .margin-top-micro {
   margin-top: 4.326237921248983px;
 }
