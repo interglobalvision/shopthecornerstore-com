@@ -318,17 +318,37 @@ $footer-height = 32
   p:last-of-type
     margin-bottom: 0
     
-button.button-shop
+button.button-shop, 
+a.button-shop,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce .cart .button, 
+.woocommerce .cart input.button,
+.woocommerce #respond input#submit
   appearance: none
   background: $color-black-soft
   color: $color-white
-  border-radius: none
+  border-radius: 0
   border: $border-width solid $color-black-soft
-  padding: $margin-small $margin-small 
-  line-height: 0
+  padding: 14px 14px
+  line-height: .5
+  letter-spacing: .15em
+  font-size: 10px
+  text-transform: uppercase
+  &:focus 
+    outline: 0
   &:hover 
     background: $color-white
     color: $color-black-soft
+  &.disabled, 
+  &:disabled, 
+  &:disabled[disabled]
+    padding: 14px 14px
+    color: $color-white
+    opacity: 1
+    background: $color-grey
+    border-color: $color-grey
   
 
 // ******************************************************
@@ -577,6 +597,22 @@ img.shop-product-sold-icon
 
 #add_payment_method table.cart img, .woocommerce-cart table.cart img, .woocommerce-checkout table.cart img
   width: 100px
+  
+.woocommerce table.shop_table
+  border-radius: 0
+  border: solid $color-black-soft
+  border-width: $border-width 0 
+  th 
+    padding: $margin-small 0
+  td 
+    padding: $margin-small 0
+    border: solid $color-black-soft
+    border-width: $border-width 0 0
+    
+.woocommerce-cart .cart-collaterals .cart_totals tr td, 
+.woocommerce-cart .cart-collaterals .cart_totals tr th
+  border: solid $color-black-soft
+  border-width: $border-width 0 0
 
 // ******************************************************
 
