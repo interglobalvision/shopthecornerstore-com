@@ -7,16 +7,22 @@ get_header();
 <main id="main-content" class="container">
 
   <!-- main posts loop -->
-  <section id="page">
+  <section id="page" class="row">
 <?php
 if( have_posts() ) {
   while( have_posts() ) {
+?>
+    <div class="col col-s-12">
+<?php
     the_post();
     the_content();
+?>
+    </div>
+<?
   }
 } else {
 ?>
-    <article class="col col12 u-alert"><?php _e('Sorry, no page matched your criteria :{'); ?></article>
+    <article class="col col-s-12 u-alert"><?php _e('Sorry, no page matched your criteria :{'); ?></article>
 <?php
 } ?>
   </section>
