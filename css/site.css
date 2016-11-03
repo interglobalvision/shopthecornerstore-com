@@ -1406,6 +1406,9 @@ img {
 .product-content p:last-of-type {
   margin-bottom: 0;
 }
+input {
+  max-width: 100%;
+}
 button.button-shop,
 a.button-shop,
 .woocommerce a.button,
