@@ -24,7 +24,7 @@ if( have_posts() ) {
 
       <div class="col col-s-12 col-l-3 col-no-margin-bottom column justify-between">
 
-        <div class="slider-product-details margin-top-small margin-bottom-small">
+        <div class="slider-product-details margin-top-basic margin-bottom-basic">
 
           <?php get_template_part( 'partials/product-details' ); ?>
 
@@ -33,7 +33,7 @@ if( have_posts() ) {
     if (!empty($slides)) {
       if (count($slides[0] > 1)) {
 ?>
-        <div class="slider-pagination-holder margin-bottom-small row align-end only-desktop">
+        <div class="slider-pagination-holder margin-bottom-basic row align-end only-desktop">
 
           <div class="col col-s-4 col-no-margin-bottom col-no-gutter">
             <button class="slider-button slider-prev">
@@ -56,7 +56,7 @@ if( have_posts() ) {
   if (!empty($slides)) {
     if (count($slides[0] > 1)) {
 ?>
-          <div class="col col-s-1 col-no-gutter mobile-only row align-center justify-center">
+          <div class="col col-s-1 col-no-gutter only-mobile row align-center justify-center">
             <button class="slider-button slider-prev">
               <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_left.svg'); ?>
             </button>
@@ -101,7 +101,7 @@ if( have_posts() ) {
 <?php
     if (count($slides[0] > 1)) {
 ?>
-          <div class="col col-s-1 col-no-gutter mobile-only row align-center justify-center">
+          <div class="col col-s-1 col-no-gutter only-mobile row align-center justify-center">
             <button class="slider-button slider-next">
               <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_right.svg'); ?>
             </button>
