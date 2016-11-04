@@ -30,7 +30,7 @@ if ( 'no' === get_option( 'woocommerce_enable_shipping_calc' ) || ! WC()->cart->
 
 <form class="woocommerce-shipping-calculator" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 
-	<p><a href="#" class="shipping-calculator-button"><?php _e( 'Calculate Shipping', 'woocommerce' ); ?></a></p>
+	<a href="#" class="shipping-calculator-button button"><?php _e( 'Calculate Shipping', 'woocommerce' ); ?></a>
 
 	<section class="shipping-calculator-form" style="display:none;">
 
@@ -97,6 +97,7 @@ if ( 'no' === get_option( 'woocommerce_enable_shipping_calc' ) || ! WC()->cart->
 
 		<?php wp_nonce_field( 'woocommerce-cart' ); ?>
 	</section>
+
 </form>
 
 <?php do_action( 'woocommerce_after_shipping_calculator' ); ?>

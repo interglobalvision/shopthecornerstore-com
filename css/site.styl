@@ -98,13 +98,16 @@ $gutter = 14px
   padding: 0 ($gutter / 2)
   margin-bottom: $gutter
   
+.table-row .col
+  margin: ($gutter / 2) 0 
+  
 .col.col-no-margin-bottom
   margin-bottom: 0
 
 .col.col-no-gutter
   padding-left: 0
   padding-right: 0
-
+  
 for offset in 0..($cols - 1)
   .offset-s-{offset}
     margin-left: ( 100% / $cols ) * offset
@@ -320,6 +323,9 @@ $footer-height = 32
     
 input
   max-width: 100%
+  
+.table-row 
+  border-bottom: $border-width solid $color-black-soft
     
 button.button-shop, 
 a.button-shop,
@@ -334,6 +340,7 @@ a.button-shop,
   color: $color-white
   border-radius: 0
   border: $border-width solid $color-black-soft
+  display: inline-block
   padding: 14px 14px
   line-height: .5
   letter-spacing: .15em

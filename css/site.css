@@ -1132,6 +1132,9 @@ th {
   padding: 0 7px;
   margin-bottom: 14px;
 }
+.table-row .col {
+  margin: 7px 0;
+}
 .col.col-no-margin-bottom {
   margin-bottom: 0;
 }
@@ -1408,6 +1411,9 @@ img {
 }
 input {
   max-width: 100%;
+}
+.table-row {
+  border-bottom: 2px solid #0e0e0e;
 }
 button.button-shop,
 a.button-shop,
@@ -1836,6 +1842,9 @@ img.shop-product-sold-icon {
     padding: 0 12px;
     margin-bottom: 24px;
   }
+  .table-row .col {
+    margin: 12px 0;
+  }
   .offset-m-0 {
     margin-left: 0%;
   }
@@ -2068,13 +2077,6 @@ img.shop-product-sold-icon {
   .social-icon {
     width: 16px;
   }
-  .woocommerce-cart table.cart td.actions .coupon .input-text {
-    width: auto;
-  }
-  .woocommerce .cart-collaterals .cart_totals,
-  .woocommerce-page .cart-collaterals .cart_totals {
-    width: 35%;
-  }
 }
 @media screen and (min-width: 1150px) {
   .only-mobile {
@@ -2089,6 +2091,9 @@ img.shop-product-sold-icon {
   .col {
     padding: 0 16px;
     margin-bottom: 32px;
+  }
+  .table-row .col {
+    margin: 16px 0;
   }
   .offset-l-0 {
     margin-left: 0%;
@@ -2336,6 +2341,9 @@ img.shop-product-sold-icon {
   .col {
     padding: 0 24px;
     margin-bottom: 48px;
+  }
+  .table-row .col {
+    margin: 24px 0;
   }
   .pagination-button {
     padding-left: 48px;

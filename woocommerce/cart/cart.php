@@ -26,7 +26,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 <?php do_action( 'woocommerce_before_cart_table' ); ?>
 
-<div class="row">
+<div class="row table-row">
 	<div class="col col-s-1 product-remove">&nbsp;</div>
 	<div class="col col-s-2 product-thumbnail">&nbsp;</div>
 	<div class="col col-s-6 product-name"><?php _e( 'Product', 'woocommerce' ); ?></div>
@@ -44,18 +44,20 @@ do_action( 'woocommerce_before_cart' ); ?>
 			if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 				$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 				?>
-				<div class="row <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+				<div class="row table-row <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
-					<div class="col col-s-1">
-						<?php
-							echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-								'<a href="%s" class="remove" title="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
-								esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
-								__( 'Remove this item', 'woocommerce' ),
-								esc_attr( $product_id ),
-								esc_attr( $_product->get_sku() )
-							), $cart_item_key );
-						?>
+					<div class="col col-s-1 row justify-center align-center">
+						<div class="col col-no-gutter col-no-margin-bottom">
+							<?php
+								echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
+									'<a href="%s" class="remove" title="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
+									esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
+									__( 'Remove this item', 'woocommerce' ),
+									esc_attr( $product_id ),
+									esc_attr( $_product->get_sku() )
+								), $cart_item_key );
+							?>
+						</div>
 					</div>
 
 					<div class="col col-s-2">
@@ -123,7 +125,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 		do_action( 'woocommerce_cart_contents' );
 		?>
-		<div class="row">
+		<div class="row table-row">
 			<div class="col actions col-s-6">
 
 				<?php if ( wc_coupons_enabled() ) { ?>
@@ -152,12 +154,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 </form>
 
-<div class="row cart-collaterals">
-
-	<div class="col col-s-12">
-	<?php do_action( 'woocommerce_cart_collaterals' ); ?>
-	</div>
-
-</div>
+<?php do_action( 'woocommerce_cart_collaterals' ); ?>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>
