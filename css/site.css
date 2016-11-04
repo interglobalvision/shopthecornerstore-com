@@ -1815,7 +1815,7 @@ img.shop-product-sold-icon {
   outline: none;
 }
 .social-icon {
-  width: 12px;
+  width: 16px;
   margin-right: 7px;
 }
 .post-date {
@@ -2065,9 +2065,6 @@ img.shop-product-sold-icon {
   .shop-product-sold {
     left: 12px;
     padding: 12px;
-  }
-  .social-icon {
-    width: 16px;
   }
   .woocommerce-cart table.cart td.actions .coupon .input-text {
     width: auto;
