@@ -7,7 +7,7 @@ get_header();
 <main id="main-content" class="container">
 
   <!-- main posts loop -->
-  <section id="products" class="row margin-bottom-small">
+  <section id="products" class="row margin-bottom-tiny">
 <?php
 if( have_posts() ) {
   while( have_posts() ) {
@@ -21,7 +21,7 @@ if( have_posts() ) {
     <article <?php post_class('col col-s col-s-12 col-m col-m-6 col-l col-l-3 shop-product'); ?> id="product-<?php the_ID(); ?>">
       <a href="<?php the_permalink() ?>">
         <div class="shop-product-title-holder">
-          <h3 class="shop-product-title font-shop-title">
+          <h3 class="shop-product-title font-shop-title text-align-center">
             <?php the_title(); ?>
           </h3>
         </div>
@@ -42,11 +42,8 @@ if( have_posts() ) {
 <?php
 } ?>
   </section>
-  <div class="row padding-bottom-basic">
-    <div class="col col12 text-align-center">
-      <?php get_template_part('partials/pagination'); ?>
-    </div>
-  </div>
+
+  <?php get_template_part('partials/pagination'); ?>
 
 <!-- end main-content -->
 
