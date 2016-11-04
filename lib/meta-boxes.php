@@ -39,6 +39,35 @@ function igv_cmb_metaboxes() {
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
 	 */
 
+// POST META 
+
+  $post_meta = new_cmb2_box( array(
+    'id'           => $prefix . 'post_metabox',
+    'title'        => __( 'Post images', 'cmb2' ),
+    'object_types' => array( 'post', ),
+  ) );
+
+  $post_image_group_id = $post_meta->add_field( array(
+    'id'          => $prefix . 'post_images',
+    'type'        => 'group',
+    'description' => __( '', 'cmb2' ),
+    'options'     => array(
+      'group_title'   => __( 'Image {#}', 'cmb2' ), // {#} gets replaced by row number
+      'add_button'    => __( 'Add Another Image', 'cmb2' ),
+      'remove_button' => __( 'Remove Image', 'cmb2' ),
+      'sortable'      => true, // beta
+      // 'closed'     => true, // true to have the groups closed by default
+    ),
+  ) );
+
+  $post_meta->add_group_field( $post_image_group_id, array(
+    'name' => __( 'Image', 'cmb2' ),
+    'id'   => 'image',
+    'type' => 'file',
+  ) );
+
+// EDITORIAL META
+
   $editorial_group = new_cmb2_box( array(
     'id'           => $prefix . 'editorial',
     'title'        => __( 'Editorial slideshow', 'cmb2' ),
@@ -90,6 +119,8 @@ function igv_cmb_metaboxes() {
       'options' => get_product_options(),
     ) );
   }
+
+// PRODUCT META
 
   $product_group = new_cmb2_box( array(
     'id'           => $prefix . 'product_slides',
