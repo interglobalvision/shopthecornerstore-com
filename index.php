@@ -20,7 +20,7 @@ if( have_posts() ) {
 
       <article <?php post_class('journal-post col col-s-12 col-m-6'); ?> id="post-<?php the_ID(); ?>">
 
-        <h2 class="font-post-title"><?php the_content(); ?></h2>
+        <h2 class="font-post-title"><?php the_title(); ?></h2>
 
         <div class="font-post-content margin-bottom-tiny"><?php the_content(); ?></div>
 
