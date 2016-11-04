@@ -31,13 +31,13 @@ if( have_posts() ) {
       <!-- Product details container -->
       <div class="col col-s-12 col-l-3 col-no-margin-bottom column justify-between">
 
-        <div class="slider-product-1-details slider-product-details margin-top-small">
+        <div class="slider-product-1-details slider-product-details margin-top-small margin-bottom-small">
 
           <?php get_template_part( 'partials/product-details' ); ?>
 
         </div>
 
-        <div class="slider-product-2-details slider-product-details margin-top-small">
+        <div class="slider-product-2-details slider-product-details margin-bottom-small">
 
           <?php get_template_part( 'partials/product-details' ); ?>
 
@@ -47,7 +47,7 @@ if( have_posts() ) {
     if (!empty($slides)) {
       if (count($slides[0] > 1)) {
 ?>
-        <div class="slider-pagination-holder margin-top-small margin-bottom-basic row align-end only-desktop">
+        <div class="slider-pagination-holder margin-bottom-small row align-end only-desktop">
 
           <div class="col col-s-4 col-no-margin-bottom col-no-gutter">
             <button class="slider-button slider-prev">
