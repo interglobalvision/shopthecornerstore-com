@@ -1447,6 +1447,7 @@ a.button-shop:hover,
 .woocommerce #respond input#submit:hover {
   background: #fff;
   color: #0e0e0e;
+  font-weight: bold;
 }
 button.button-shop.disabled,
 a.button-shop.disabled,
