@@ -1776,6 +1776,10 @@ img.shop-product-sold-icon {
 #archive-editorial-titles {
   margin-left: 28px;
 }
+.slider-row {
+  -ms-flex-flow: row wrap-reverse;
+  flex-flow: row wrap-reverse;
+}
 .slide-column {
   height: 100%;
   display: -webkit-box;
@@ -2319,6 +2323,10 @@ img.shop-product-sold-icon {
   }
   .menu-item {
     margin-right: 16px;
+  }
+  .slider-row {
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
   }
   .set-swiper-height {
     height: calc(100vh - 128px);
