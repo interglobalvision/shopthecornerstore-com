@@ -184,6 +184,7 @@ Site.Shop = {
 
 Site.Journal = {
   init: function() {
+    console.log('init');
     if ($('#journal-container').length) {
       $('#journal-container').masonry({
         itemSelector: '.journal-post',
