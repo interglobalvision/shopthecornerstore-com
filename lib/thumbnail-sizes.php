@@ -18,5 +18,7 @@ if( function_exists( 'add_image_size' ) ) {
 
   add_image_size( 'col10-square-nocrop', 1044, 1044, false );
 
+  add_image_size( 'col-s-12-nocrop', 715, 9999, false );
+
   add_image_size( 'splash', 2880, 1800, false );
 }

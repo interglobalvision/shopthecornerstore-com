@@ -26,7 +26,7 @@ if( have_posts() ) {
     if (!empty($images)) {
 
       foreach($images as $image) {
-        echo wp_get_attachment_image($image['image_id'], 'full', false, array('class'=>'post-image margin-bottom-tiny'));
+        echo wp_get_attachment_image($image['image_id'], 'col-s-12-nocrop', false, array('class'=>'post-image margin-bottom-tiny'));
       }
 
     }
