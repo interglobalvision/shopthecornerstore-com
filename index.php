@@ -31,7 +31,7 @@ if( have_posts() ) {
 
     }
 
-    $title = get_the_title();
+    $title = get_post_meta($post->ID, '_igv_post_title', true);
     if (!empty($title)) {
 ?>
         <h2 class="font-post-title margin-bottom-tiny"><?php echo $title; ?></h2>

@@ -47,6 +47,13 @@ function igv_cmb_metaboxes() {
     'object_types' => array( 'post', ),
   ) );
 
+  $post_meta->add_field( array(
+    'name'       => __( 'Title', 'cmb2' ),
+    'desc'       => __( 'public facing post title', 'cmb2' ),
+    'id'         => $prefix . 'post_title',
+    'type'       => 'text',
+  ) );
+
   $post_image_group_id = $post_meta->add_field( array(
     'id'          => $prefix . 'post_images',
     'type'        => 'group',
