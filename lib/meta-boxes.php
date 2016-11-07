@@ -43,7 +43,7 @@ function igv_cmb_metaboxes() {
 
   $post_meta = new_cmb2_box( array(
     'id'           => $prefix . 'post_metabox',
-    'title'        => __( 'Post images', 'cmb2' ),
+    'title'        => __( 'Post options', 'cmb2' ),
     'object_types' => array( 'post', ),
   ) );
 
