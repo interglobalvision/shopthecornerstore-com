@@ -1779,6 +1779,11 @@ img.shop-product-sold-icon {
 .journal-post {
   width: 100%;
 }
+.journal-post p a,
+.journal-post p a:active,
+.journal-post p a:visited {
+  text-decoration: underline;
+}
 .post-image {
   margin-left: auto;
   margin-right: auto;
