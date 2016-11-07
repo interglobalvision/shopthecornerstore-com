@@ -20,24 +20,28 @@ if( have_posts() ) {
     $images = get_post_meta($post->ID, '_igv_post_images', true);
 ?>
 
-      <article <?php post_class('journal-post col col-s-12 col-m-6'); ?> id="post-<?php the_ID(); ?>">
+      <article <?php post_class('journal-post col'); ?> id="post-<?php the_ID(); ?>">
 
 <?php 
     if (!empty($images)) {
+
       foreach($images as $image) {
         echo wp_get_attachment_image($image['image_id'], 'full', false, array('class'=>'post-image margin-bottom-tiny'));
       }
+
     }
 
-    if (!empty(get_the_title())) {
+    $title = get_the_title();
+    if (!empty($title)) {
 ?>
-        <h2 class="font-post-title margin-bottom-tiny"><?php the_title(); ?></h2>
+        <h2 class="font-post-title margin-bottom-tiny"><?php echo $title; ?></h2>
 <?php 
     } 
     
-    if (!empty(get_the_content())) {
+    $content = get_the_content();
+    if (!empty($content)) {
 ?>
-        <div class="font-post-content margin-bottom-tiny"><?php the_content(); ?></div>
+        <div class="font-post-content margin-bottom-tiny"><?php echo $content; ?></div>
 <?php 
     } 
 ?>
