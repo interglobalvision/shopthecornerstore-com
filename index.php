@@ -34,14 +34,14 @@ if( have_posts() ) {
     $title = get_post_meta($post->ID, '_igv_post_title', true);
     if (!empty($title)) {
 ?>
-        <h2 class="font-post-title margin-bottom-tiny"><?php echo apply_filters('the_content', $title); ?></h2>
+        <h2 class="font-post-title margin-bottom-tiny"><?php echo $title; ?></h2>
 <?php 
     } 
     
     $content = get_the_content();
     if (!empty($content)) {
 ?>
-        <div class="font-post-content margin-bottom-tiny"><?php echo $content; ?></div>
+        <div class="font-post-content margin-bottom-tiny"><?php echo apply_filters('the_content', $content); ?></div>
 <?php 
     } 
 ?>
