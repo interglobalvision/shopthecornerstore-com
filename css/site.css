@@ -1776,6 +1776,19 @@ img.shop-product-sold-icon {
 #archive-editorial-titles {
   margin-left: 28px;
 }
+.journal-post {
+  width: 100%;
+}
+.journal-post p a,
+.journal-post p a:active,
+.journal-post p a:visited {
+  text-decoration: underline;
+}
+.post-image {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
 .slider-row {
   -ms-flex-flow: row wrap-reverse;
   flex-flow: row wrap-reverse;
@@ -2053,6 +2066,9 @@ img.shop-product-sold-icon {
   .header-cart img {
     width: 24px;
     margin-right: 7.416407864998257px;
+  }
+  .journal-post {
+    width: 50%;
   }
   #archive-editorial-titles {
     margin-left: 48px;
