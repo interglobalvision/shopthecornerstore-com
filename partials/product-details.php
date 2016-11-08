@@ -5,7 +5,7 @@ if (is_singular('product')) {
 }
 ?>
 
-<h1 class="margin-bottom-small font-product-title">
+<h1 class="margin-bottom-basic font-product-title">
   <a href="" class="js-product-title"><?php echo is_singular('product') ? $product_data['title'] : ''; ?></a>
 </h1>
 <div class="product-content font-product-content js-product-content"><?php echo is_singular('product') ? $product_data['content'] : ''; ?></div>
@@ -13,7 +13,7 @@ if (is_singular('product')) {
   <?php echo is_singular('product') ? $product_data['attributes'] : ''; ?>
 </ul>
 
-<div class="price js-product-price margin-top-small font-product-price <?php if (is_singular('product')) {
+<div class="price js-product-price margin-top-basic font-product-price <?php if (is_singular('product')) {
   echo $product_data['stock'] === true ? '' : 'u-hidden'; 
 } ?>">
   <?php echo is_singular('product') ? $product_data['price'] : ''; ?>

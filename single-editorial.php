@@ -22,22 +22,22 @@ if( have_posts() ) {
     $is_recent = ($recent_id === $post->ID ? true : false);
 ?>
 
-    <article <?php post_class('row'); ?> id="post-<?php the_ID(); ?>">
+    <article <?php post_class('row slider-row'); ?> id="post-<?php the_ID(); ?>">
 
 <?php
       if ($is_recent) {
 ?>
       
       <!-- Product details container -->
-      <div class="col col-l-3 col-no-margin-bottom column justify-between">
+      <div class="col col-s-12 col-l-3 col-no-margin-bottom column justify-between">
 
-        <div class="slider-product-1-details slider-product-details margin-top-small">
+        <div class="slider-product-1-details slider-product-details margin-top-basic margin-bottom-basic">
 
           <?php get_template_part( 'partials/product-details' ); ?>
 
         </div>
 
-        <div class="slider-product-2-details slider-product-details margin-top-small">
+        <div class="slider-product-2-details slider-product-details margin-bottom-basic">
 
           <?php get_template_part( 'partials/product-details' ); ?>
 
@@ -47,9 +47,18 @@ if( have_posts() ) {
     if (!empty($slides)) {
       if (count($slides[0] > 1)) {
 ?>
-        <div class="slider-pagination-holder margin-top-small margin-bottom-basic row align-end">
+        <div class="slider-pagination-holder margin-bottom-basic row align-end only-desktop">
 
-          <?php get_template_part( 'partials/slider-pagination' ); ?>
+          <div class="col col-s-4 col-no-margin-bottom col-no-gutter">
+            <button class="slider-button slider-prev">
+              <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_left.svg'); ?>
+            </button>
+          </div>
+          <div class="col col-s-4 col-no-margin-bottom col-no-gutter">
+            <button class="slider-button slider-next">
+              <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_right.svg'); ?>
+            </button>
+          </div>
 
         </div>
 <?php 
@@ -63,10 +72,20 @@ if( have_posts() ) {
 <?php
       }
 ?>
-      <div class="col col-l-9 col-no-margin-bottom">
-<?php 
-    if (!empty($slides)) {
+      
+<?php
+  if (!empty($slides)) {
+    if (count($slides[0] > 1)) {
 ?>
+          <div class="col col-s-1 col-no-gutter only-mobile row align-center justify-center">
+            <button class="slider-button slider-prev">
+              <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_left.svg'); ?>
+            </button>
+          </div>
+<?php 
+      }
+?>
+        <div class="col col-s-10 col-l-9 col-no-margin-bottom">
           <!-- Slider main container -->
           <div class="swiper-container set-swiper-height">
             <div class="swiper-wrapper align-center">
@@ -109,12 +128,23 @@ if( have_posts() ) {
               </div>
 <?php } // End foreach ?>
 
-              <!-- End Slides -->
-            </div>
+          <!-- End Slides -->
           </div>
-          <!-- End Slider main container -->
-<?php } ?>
+        </div>
+        <!-- End Slider main container -->
       </div>
+<?php
+    if (count($slides[0] > 1)) {
+?>
+          <div class="col col-s-1 col-no-gutter only-mobile row align-center justify-center">
+            <button class="slider-button slider-next">
+              <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_right.svg'); ?>
+            </button>
+          </div>
+<?php 
+    }
+  }
+?>
 
     </article>
 

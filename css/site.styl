@@ -645,6 +645,9 @@ img.shop-product-sold-icon
 
 // SINGLE EDITORIAL
 
+.slider-row 
+  flex-flow: row wrap-reverse
+
 .slide-column
   height: 100%
   display: flex
@@ -676,7 +679,7 @@ img.shop-product-sold-icon
 // FOOTER
 
 .social-icon
-  width: 12px
+  width: 16px
   margin-right: $margin-tiny
 
 .post-date
@@ -691,8 +694,10 @@ img.shop-product-sold-icon
 
 .only-mobile
   display: initial
+  &.row, &.column
+    display: flex
 
-.only-desktop
+.only-desktop, .row.only-desktop, .column.only-desktop
   display: none
 
 @media screen and (min-width: 750px)
@@ -701,11 +706,13 @@ img.shop-product-sold-icon
 
 @media screen and (min-width: 1150px)
 
-  .only-mobile
+  .only-mobile, .row.only-mobile, .column.only-mobile
     display: none
 
   .only-desktop
     display: initial
+    &.row, &.column
+      display: flex
 
   @import "responsive/laptop"
 
