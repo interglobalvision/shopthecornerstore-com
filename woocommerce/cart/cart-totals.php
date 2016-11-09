@@ -90,8 +90,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php do_action( 'woocommerce_cart_totals_after_order_total' ); ?>
 
-	<div class="row wc-proceed-to-checkout">
-		<div class="col col-s-12">
+	<div class="row padding-top-tiny wc-proceed-to-checkout">
+		<div class="col col-s-12 col-m-6 offset-m-6">
 			<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
 		</div>
 	</div>
