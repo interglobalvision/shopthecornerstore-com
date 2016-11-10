@@ -22,14 +22,12 @@ Site = {
 
       if ($('body').hasClass('blog')) {
         _this.Journal.init();
-      }
 
-      $(window).bind('resizeEnd', function() {
-        if ($('body').hasClass('blog')) {
+        $(window).bind('resizeEnd', function() {
           _this.Journal.masonryLayout();
-        }
-      });
-      // bind end of resize event triggered by resizeDelay()
+        });
+        // bind end of resize event triggered by resizeDelay()
+      }
 
       if ($('body').hasClass('single-editorial')) {
         _this.Editorial.Single.init();
