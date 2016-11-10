@@ -22,12 +22,12 @@ Site = {
 
       if ($('body').hasClass('blog')) {
         _this.Journal.init();
-      }
 
-      $(window).bind('resizeEnd', function() {
-        _this.Journal.masonryLayout();
-      });
-      // bind end of resize event triggered by resizeDelay()
+        $(window).bind('resizeEnd', function() {
+          _this.Journal.masonryLayout();
+        });
+        // bind end of resize event triggered by resizeDelay()
+      }
 
       if ($('body').hasClass('single-editorial')) {
         _this.Editorial.Single.init();
@@ -189,10 +189,16 @@ Site.Journal = {
         itemSelector: '.journal-post',
         transitionDuration: 0,
       }); 
+
+      $('#journal-container').imagesLoaded().progress( function() {
+        $('#journal-container').masonry('layout');
+      });
     }
   },
 
   masonryLayout: function() {
+    var _this = this;
+
     if ($('#journal-container').length) {
       $('#journal-container').masonry('layout');
     }
