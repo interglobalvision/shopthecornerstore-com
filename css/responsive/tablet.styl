@@ -30,6 +30,9 @@ $margin-basic = ($gutter * 2)
 $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
+$header-height = 153px
+$footer-height = 44px
+
 // ******************************************************
 
 // TYPOGRAPHY 
@@ -41,8 +44,8 @@ $margin-large = ($gutter * 5)
 
 // BASIC
 
-$header-height = 65px
-$footer-height = 44px
+#main-content
+  min-height: calc('100vh - ' + ($header-height + $footer-height))
 
 .pagination-button
   padding-left: $margin-small

@@ -10,7 +10,7 @@ $recent_id = $recent_editorial[0]->ID;
 ?>
 
 <!-- main content -->
-<main id="main-content" class="set-content-height">
+<main id="main-content">
   <div class="container">
 
 <?php

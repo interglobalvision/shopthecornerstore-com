@@ -3,7 +3,7 @@ get_header();
 ?>
 
 <!-- main content -->
-<main id="main-content" class="set-content-height">
+<main id="main-content">
   <div class="container">
 
   <!-- main posts loop -->

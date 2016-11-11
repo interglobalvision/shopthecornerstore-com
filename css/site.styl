@@ -142,6 +142,9 @@ $border-width = 2px
 
 $speed-transition-fast = .1s
 
+$header-height = 111px
+$footer-height = 34px
+
 // ******************************************************
 
 // TYPOGRAPHY
@@ -302,6 +305,9 @@ html
   background-color: $color-white
   color: $color-black-soft
 
+#main-content
+  min-height: calc('100vh - ' + ($header-height + $footer-height))
+
 img
   max-width: 100%
   height: auto
@@ -310,9 +316,6 @@ img
   padding-left: $margin-small
   img 
     height: 30px
-
-$header-height = 114
-$footer-height = 32
   
 .product-content 
   p
