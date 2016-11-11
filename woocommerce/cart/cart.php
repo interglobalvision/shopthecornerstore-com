@@ -155,7 +155,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 </form>
 
 <div class="row">
-	<div class="col col-s-12 col-no-gutter col-no-margin-bottom">
+	<div class="col col-s-12 col-l-6 offset-l-6 col-no-gutter col-no-margin-bottom">
 		<?php do_action( 'woocommerce_cart_collaterals' ); ?>
 	</div>
 </div>

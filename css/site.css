@@ -158,7 +158,8 @@ ul.u-inline-list li {
   -ms-flex-align: start;
   -webkit-box-align: start;
   -ms-align-items: flex-start;
-  align-items: flex-start;
+  -ms-grid-row-align: flex-start;
+      align-items: flex-start;
   -webkit-transition-property: -webkit-transform, height;
   -webkit-transition-property: transform, height;
   -webkit-transition-property: height, -webkit-transform;
@@ -1090,18 +1091,21 @@ th {
   -webkit-box-align: start;
   -ms-align-items: flex-start;
   -ms-flex-align: start;
+      -ms-grid-row-align: flex-start;
       align-items: flex-start;
 }
 .align-center {
   -webkit-box-align: center;
   -ms-align-items: center;
   -ms-flex-align: center;
+      -ms-grid-row-align: center;
       align-items: center;
 }
 .align-end {
   -webkit-box-align: end;
   -ms-align-items: flex-end;
   -ms-flex-align: end;
+      -ms-grid-row-align: flex-end;
       align-items: flex-end;
 }
 .align-content-start {
@@ -1786,6 +1790,9 @@ img.shop-product-sold-icon {
   border: solid #0e0e0e;
   border-width: 2px 0 0;
 }
+.woocommerce-shipping-calculator {
+  text-align: left;
+}
 #archive-editorial-titles {
   margin-left: 28px;
 }
@@ -2081,6 +2088,9 @@ img.shop-product-sold-icon {
   .shop-product-sold {
     left: 12px;
     padding: 12px;
+  }
+  .woocommerce-shipping-calculator {
+    text-align: right;
   }
   .social-icon {
     width: 16px;
