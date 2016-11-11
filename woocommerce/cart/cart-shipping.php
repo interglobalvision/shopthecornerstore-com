@@ -64,7 +64,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	</div>
 
-</div>
-
 <?php endif; ?>
+
+</div>
 
