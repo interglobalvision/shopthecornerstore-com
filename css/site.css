@@ -1657,7 +1657,7 @@ a.button-shop:disabled[disabled],
   text-align: center;
 }
 #header-logo svg {
-  width: 200px;
+  width: 140px;
 }
 #header-logo .logo-path {
   fill: #0e0e0e;
@@ -2069,6 +2069,9 @@ img.shop-product-sold-icon {
   .header-cart img {
     width: 24px;
     margin-right: 7.416407864998257px;
+  }
+  #header-logo svg {
+    width: 180px;
   }
   .journal-post {
     width: 50%;
