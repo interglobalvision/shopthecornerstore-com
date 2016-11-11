@@ -34,25 +34,41 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 
 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
 
-	<?php if ( sizeof( $checkout->checkout_fields ) > 0 ) : ?>
+	<?php if ( sizeof( $checkout->checkout_fields ) > 0 ) { ?>
 
 		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
-		<div class="col2-set" id="customer_details">
-			<div class="col-1">
-				<?php do_action( 'woocommerce_checkout_billing' ); ?>
-			</div>
+  <div id="customer_details">
+    <div class="row table-row">
+      <div class="col col-s-12">
+      <?php if ( wc_ship_to_billing_address_only() && WC()->cart->needs_shipping() ) { ?>
+        <h3><?php _e( 'Billing &amp; Shipping', 'woocommerce' ); ?></h3>
+      <?php } else { ?>
+        <h3><?php _e( 'Billing Details', 'woocommerce' ); ?></h3>
+      <?php }; ?>
+      </div>
+    </div>
 
-			<div class="col-2">
-				<?php do_action( 'woocommerce_checkout_shipping' ); ?>
-			</div>
-		</div>
+    <div class="row">
+      <div class="col col-s-12 col-m-6">
+        <?php do_action( 'woocommerce_checkout_billing' ); ?>
+      </div>
 
-		<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
+      <div class="col col-s-12 col-m-6">
+        <?php do_action( 'woocommerce_checkout_shipping' ); ?>
+      </div>
+    </div>
 
-	<?php endif; ?>
+      <?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
 
-	<h3 id="order_review_heading"><?php _e( 'Your order', 'woocommerce' ); ?></h3>
+    <?php } ?>
+  </div>
+
+  <div id="order_review_heading" class="row table-row">
+    <div class="col col-s-12">
+      <h3><?php _e( 'Your order', 'woocommerce' ); ?></h3>
+    </div>
+  </div>
 
 	<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 
