@@ -23,15 +23,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <form id="order_review" method="post">
 
-	<table class="shop_table">
-		<thead>
-			<tr>
-				<th class="product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>
-				<th class="product-quantity"><?php _e( 'Qty', 'woocommerce' ); ?></th>
-				<th class="product-total"><?php _e( 'Totals', 'woocommerce' ); ?></th>
-			</tr>
-		</thead>
-		<tbody>
+	<div class="shop_table">
+    <div class="row table-row">
+      <div class="col col-s-4">
+				<span class="product-name"><?php _e( 'Product', 'woocommerce' ); ?></span>
+      </div>
+      <div class="col col-s-4">
+				<span class="product-quantity"><?php _e( 'Qty', 'woocommerce' ); ?></span>
+      </div>
+      <div class="col col-s-4">
+				<span class="product-total"><?php _e( 'Totals', 'woocommerce' ); ?></span>
+      </div>
+    </div>
 			<?php if ( sizeof( $order->get_items() ) > 0 ) : ?>
 				<?php foreach ( $order->get_items() as $item_id => $item ) : ?>
 					<?php
@@ -39,33 +42,40 @@ if ( ! defined( 'ABSPATH' ) ) {
 							continue;
 						}
 					?>
-					<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_order_item_class', 'order_item', $item, $order ) ); ?>">
-						<td class="product-name">
-							<?php
-								echo apply_filters( 'woocommerce_order_item_name', esc_html( $item['name'] ), $item, false );
+          <div class="row table-row <?php echo esc_attr( apply_filters( 'woocommerce_order_item_class', 'order_item', $item, $order ) ); ?>">
+            <div class="col col-s-4">
+              <span class="product-name">
+                <?php
+                  echo apply_filters( 'woocommerce_order_item_name', esc_html( $item['name'] ), $item, false );
 
-								do_action( 'woocommerce_order_item_meta_start', $item_id, $item, $order );
-								$order->display_item_meta( $item );
-								do_action( 'woocommerce_order_item_meta_end', $item_id, $item, $order );
-							?>
-						</td>
-						<td class="product-quantity"><?php echo apply_filters( 'woocommerce_order_item_quantity_html', ' <strong class="product-quantity">' . sprintf( '&times; %s', esc_html( $item['qty'] ) ) . '</strong>', $item ); ?></td>
-						<td class="product-subtotal"><?php echo $order->get_formatted_line_subtotal( $item ); ?></td>
-					</tr>
+                  do_action( 'woocommerce_order_item_meta_start', $item_id, $item, $order );
+                  $order->display_item_meta( $item );
+                  do_action( 'woocommerce_order_item_meta_end', $item_id, $item, $order );
+                ?>
+              </span>
+            </div>
+            <div class="col col-s-4">
+              <span class="product-quantity"><?php echo apply_filters( 'woocommerce_order_item_quantity_html', ' <strong class="product-quantity">' . sprintf( '&times; %s', esc_html( $item['qty'] ) ) . '</strong>', $item ); ?></span>
+            </div>
+            <div class="col col-s-4">
+              <span class="product-subtotal"><?php echo $order->get_formatted_line_subtotal( $item ); ?></span>
+            </div>
+					</div>
 				<?php endforeach; ?>
 			<?php endif; ?>
-		</tbody>
-		<tfoot>
 			<?php if ( $totals = $order->get_order_item_totals() ) : ?>
 				<?php foreach ( $totals as $total ) : ?>
-					<tr>
-						<th scope="row" colspan="2"><?php echo $total['label']; ?></th>
-						<td class="product-total"><?php echo $total['value']; ?></td>
-					</tr>
+					<div class="row table-row">
+            <div class="col col-s-8">
+              <span scope="row" colspan="2"><?php echo $total['label']; ?></span>
+            </div>
+            <div class="col col-s-4">
+              <span class="product-total"><?php echo $total['value']; ?></span>
+            </div>
+					</div>
 				<?php endforeach; ?>
 			<?php endif; ?>
-		</tfoot>
-	</table>
+	</div>
 
 	<div id="payment">
 		<?php if ( $order->needs_payment() ) : ?>
