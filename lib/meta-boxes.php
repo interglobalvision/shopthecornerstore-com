@@ -39,7 +39,7 @@ function igv_cmb_metaboxes() {
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
 	 */
 
-// POST META 
+// POST META
 
   $post_meta = new_cmb2_box( array(
     'id'           => $prefix . 'post_metabox',
@@ -116,7 +116,7 @@ function igv_cmb_metaboxes() {
       'show_option_none' => true,
       'options' => get_product_options(),
     ) );
-    
+
     $editorial_group->add_group_field( $editorial_group_field_id, array(
       'name'             => __( 'Slide Product 2', 'cmb2' ),
       'desc'             => __( '', 'cmb2' ),
@@ -159,6 +159,27 @@ function igv_cmb_metaboxes() {
     'name' => __( 'Slide Image 2', 'cmb2' ),
     'id'   => 'image_2',
     'type' => 'file',
+  ) );
+
+  $shipping_meta = new_cmb2_box( array(
+    'id'           => $prefix . 'shipping_metabox',
+    'title'        => __( 'Shipping page extra content', 'cmb2' ),
+    'object_types' => array( 'page', ),
+    'show_on'      => array( 'key' => 'id', 'value' => get_id_by_slug('shipping') ),
+  ) );
+
+  $shipping_meta->add_field( array(
+    'name'       => __( 'Extra Content Title', 'cmb2' ),
+    'desc'       => __( '', 'cmb2' ),
+    'id'         => $prefix . 'shipping_extra_title',
+    'type'       => 'text',
+  ) );
+
+  $shipping_meta->add_field( array(
+    'name'       => __( 'Extra Content Copy', 'cmb2' ),
+    'desc'       => __( '', 'cmb2' ),
+    'id'         => $prefix . 'shipping_extra_copy',
+    'type'       => 'wysiwyg',
   ) );
 
 }
