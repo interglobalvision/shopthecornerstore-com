@@ -18,7 +18,7 @@ if( have_posts() ) {
       the_post();
   ?>
 
-          <li><a href="<?php the_permalink() ?>" class="archive-title" data-id="<?php echo $post->ID; ?>"><?php the_title(); ?></a></li>
+          <li class="margin-bottom-micro"><a href="<?php the_permalink() ?>" class="archive-title font-post-title" data-id="<?php echo $post->ID; ?>"><?php the_title(); ?></a></li>
 
   <?php
     }

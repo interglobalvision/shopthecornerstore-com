@@ -19,14 +19,9 @@ if( have_posts() ) {
     the_post();
 
     $slides = get_post_meta($post->ID, '_igv_slides');
-    $is_recent = ($recent_id === $post->ID ? true : false);
 ?>
 
     <article <?php post_class('row slider-row'); ?> id="post-<?php the_ID(); ?>">
-
-<?php
-      if ($is_recent) {
-?>
       
       <!-- Product details container -->
       <div class="col col-s-12 col-l-3 col-no-margin-bottom column justify-between">
@@ -68,10 +63,6 @@ if( have_posts() ) {
 
       </div>
       <!-- End Product details container -->
-
-<?php
-      }
-?>
       
 <?php
   if (!empty($slides)) {
@@ -92,8 +83,8 @@ if( have_posts() ) {
             <!-- Slides -->
 <?php
       foreach($slides[0] as $slide) {
-        $has_product_1 = ($is_recent && !empty($slide['product_1']) ? true : false);
-        $has_product_2 = ($is_recent && !empty($slide['product_2']) ? true : false);
+        $has_product_1 = (!empty($slide['product_1']) ? true : false);
+        $has_product_2 = (!empty($slide['product_2']) ? true : false);
 
         if ($has_product_1) {
           $product = new WC_Product($slide['product_1']);
