@@ -27,7 +27,7 @@ if( have_posts() ) {
       </ul>
     </div>
 
-    <div id="archive-editorial-images" class="col col-s-12 col-m-6 only-desktop u-flex justify-center align-center set-content-height">
+    <div id="archive-editorial-images" class="col col-s-12 col-m-6 only-desktop u-flex justify-center align-center">
 <?php
   while( have_posts() ) {
     the_post();

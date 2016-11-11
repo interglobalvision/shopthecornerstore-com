@@ -2412,12 +2412,12 @@ img.shop-product-sold-icon {
   #posts-archive-editorial {
     min-height: calc(100vh - 120px);
   }
+  .set-swiper-height {
+    height: calc(100vh - 120px);
+  }
   .slider-row {
     -ms-flex-flow: row wrap;
     flex-flow: row wrap;
-  }
-  .set-swiper-height {
-    height: calc(100vh - 120px);
   }
   .social-icon {
     width: 20px;
@@ -2512,6 +2512,9 @@ img.shop-product-sold-icon {
   .padding-bottom-large {
     padding-bottom: 240px;
   }
+  .menu-item {
+    margin-right: 24px;
+  }
   .shop-product-title {
     margin: 96px 24px 24px;
   }
@@ -2521,9 +2524,6 @@ img.shop-product-sold-icon {
   }
   .splash-nav {
     font-size: 28px;
-  }
-  .menu-item {
-    margin-right: 24px;
   }
   #archive-editorial-titles {
     margin-left: 96px;
