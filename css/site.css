@@ -1393,6 +1393,9 @@ html {
   background-color: #fff;
   color: #0e0e0e;
 }
+#main-content {
+  min-height: calc(100vh - 145px);
+}
 img {
   max-width: 100%;
   height: auto;
@@ -1970,6 +1973,9 @@ img.shop-product-sold-icon {
         flex-basis: 100%;
     max-width: 100%;
   }
+  #main-content {
+    min-height: calc(100vh - 197px);
+  }
   .pagination-button {
     padding-left: 24px;
   }
@@ -2082,7 +2088,7 @@ img.shop-product-sold-icon {
     display: none;
   }
   .set-swiper-height {
-    height: calc(100vh - 109px);
+    height: calc(100vh - 197px);
   }
   body.single-editorial .slider-product-details {
     display: none;
@@ -2262,6 +2268,9 @@ img.shop-product-sold-icon {
   .font-post-meta {
     font-size: 12px;
   }
+  #main-content {
+    min-height: calc(100vh - 120px);
+  }
   .pagination-button {
     padding-left: 32px;
   }
@@ -2361,7 +2370,7 @@ img.shop-product-sold-icon {
     flex-flow: row wrap;
   }
   .set-swiper-height {
-    height: calc(100vh - 128px);
+    height: calc(100vh - 120px);
   }
   .social-icon {
     width: 20px;
@@ -2374,6 +2383,9 @@ img.shop-product-sold-icon {
   .col {
     padding: 0 24px;
     margin-bottom: 48px;
+  }
+  #main-content {
+    min-height: calc(100vh - 154px);
   }
   .pagination-button {
     padding-left: 48px;
@@ -2464,6 +2476,6 @@ img.shop-product-sold-icon {
     margin-right: 24px;
   }
   .set-swiper-height {
-    height: calc(100vh - 160px);
+    height: calc(100vh - 154px);
   }
 }

@@ -3,7 +3,6 @@ get_header();
 ?>
 
 <!-- main content -->
-<div id="main-content-holder" class="main-content-flex-center">
 <main id="main-content" class="container">
 
   <!-- main posts loop -->
@@ -53,7 +52,6 @@ if( have_posts() ) {
 <!-- end main-content -->
 
 </main>
-</div>
 
 <?php
 get_footer();
