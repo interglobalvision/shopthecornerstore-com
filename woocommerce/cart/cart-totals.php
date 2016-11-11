@@ -26,13 +26,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<div class="row table-row cart-subtotal">
 			<div class="col col-s-6"><?php _e( 'Subtotal', 'woocommerce' ); ?></div>
-			<div class="col col-s-6" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>"><?php wc_cart_totals_subtotal_html(); ?></div>
+			<div class="col col-s-6 text-align-right" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>"><?php wc_cart_totals_subtotal_html(); ?></div>
 		</div>
 
 		<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
 			<div class="row table-row cart-discount coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
 				<div class="col col-s-6"><?php wc_cart_totals_coupon_label( $coupon ); ?></div>
-				<div class="col col-s-6" data-title="<?php echo esc_attr( wc_cart_totals_coupon_label( $coupon, false ) ); ?>"><?php wc_cart_totals_coupon_html( $coupon ); ?></div>
+				<div class="col col-s-6 text-align-right" data-title="<?php echo esc_attr( wc_cart_totals_coupon_label( $coupon, false ) ); ?>"><?php wc_cart_totals_coupon_html( $coupon ); ?></div>
 			</div>
 		<?php endforeach; ?>
 
@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<div class="row table-row shipping">
 				<div class="col col-s-6"><?php _e( 'Shipping', 'woocommerce' ); ?></div>
-				<div class="col col-s-6" data-title="<?php esc_attr_e( 'Shipping', 'woocommerce' ); ?>"><?php woocommerce_shipping_calculator(); ?></div>
+				<div class="col col-s-6 text-align-right" data-title="<?php esc_attr_e( 'Shipping', 'woocommerce' ); ?>"><?php woocommerce_shipping_calculator(); ?></div>
 			</div>
 
 		<?php endif; ?>
@@ -56,7 +56,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php foreach ( WC()->cart->get_fees() as $fee ) : ?>
 			<div class="row table-row fee">
 				<div class="col col-s-6"><?php echo esc_html( $fee->name ); ?></div>
-				<div class="col col-s-6" data-title="<?php echo esc_attr( $fee->name ); ?>"><?php wc_cart_totals_fee_html( $fee ); ?></div>
+				<div class="col col-s-6 text-align-right" data-title="<?php echo esc_attr( $fee->name ); ?>"><?php wc_cart_totals_fee_html( $fee ); ?></div>
 			</div>
 		<?php endforeach; ?>
 
@@ -70,13 +70,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php foreach ( WC()->cart->get_tax_totals() as $code => $tax ) : ?>
 					<div class="row table-row tax-rate tax-rate-<?php echo sanitize_title( $code ); ?>">
 						<div class="col col-s-6"><?php echo esc_html( $tax->label ) . $estimated_text; ?></div>
-						<div class="col col-s-6" data-title="<?php echo esc_attr( $tax->label ); ?>"><?php echo wp_kses_post( $tax->formatted_amount ); ?></div>
+						<div class="col col-s-6 text-align-right" data-title="<?php echo esc_attr( $tax->label ); ?>"><?php echo wp_kses_post( $tax->formatted_amount ); ?></div>
 					</div>
 				<?php endforeach; ?>
 			<?php else : ?>
 				<div class="row table-row tax-total">
 					<div class="col col-s-6"><?php echo esc_html( WC()->countries->tax_or_vat() ) . $estimated_text; ?></div>
-					<div class="col col-s-6" data-title="<?php echo esc_attr( WC()->countries->tax_or_vat() ); ?>"><?php wc_cart_totals_taxes_total_html(); ?></div>
+					<div class="col col-s-6 text-align-right" data-title="<?php echo esc_attr( WC()->countries->tax_or_vat() ); ?>"><?php wc_cart_totals_taxes_total_html(); ?></div>
 				</div>
 			<?php endif; ?>
 		<?php endif; ?>
@@ -85,13 +85,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<div class="row table-row order-total">
 			<div class="col col-s-6"><?php _e( 'Total', 'woocommerce' ); ?></div>
-			<div class="col col-s-6" data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>"><?php wc_cart_totals_order_total_html(); ?></div>
+			<div class="col col-s-6 text-align-right" data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>"><?php wc_cart_totals_order_total_html(); ?></div>
 		</div>
 
 		<?php do_action( 'woocommerce_cart_totals_after_order_total' ); ?>
 
 	<div class="row padding-top-tiny wc-proceed-to-checkout">
-		<div class="col col-s-12 col-m-6 offset-m-6">
+		<div class="col col-s-12 text-align-right">
 			<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
 		</div>
 	</div>

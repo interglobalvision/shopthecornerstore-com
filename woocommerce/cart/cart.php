@@ -27,12 +27,12 @@ do_action( 'woocommerce_before_cart' ); ?>
 <?php do_action( 'woocommerce_before_cart_table' ); ?>
 
 <div class="row table-row">
-	<div class="col col-s-1 product-remove">&nbsp;</div>
-	<div class="col col-s-2 product-thumbnail">&nbsp;</div>
-	<div class="col col-s-6 product-name"><?php _e( 'Product', 'woocommerce' ); ?></div>
-	<div class="col col-s-1 product-price"><?php _e( 'Price', 'woocommerce' ); ?></div>
-	<div class="col col-s-1 product-quantity"><?php _e( 'Quantity', 'woocommerce' ); ?></div>
-	<div class="col col-s-1 product-subtotal"><?php _e( 'Total', 'woocommerce' ); ?></div>
+	<div class="col col-s-1 col-m-1 product-remove">&nbsp;</div>
+	<div class="col col-s-2 col-m-2 product-thumbnail">&nbsp;</div>
+	<div class="col col-s-4 col-m-6 product-name"><?php _e( 'Product', 'woocommerce' ); ?></div>
+	<div class="col col-s-2 col-m-1 product-price"><?php _e( 'Price', 'woocommerce' ); ?></div>
+	<div class="col col-s-1 col-m-1 product-quantity"><span class="only-desktop"><?php _e( 'Quantity', 'woocommerce' ); ?></span></div>
+	<div class="col col-s-2 col-m-1 product-subtotal"><?php _e( 'Total', 'woocommerce' ); ?></div>
 </div>
 		<?php do_action( 'woocommerce_before_cart_contents' ); ?>
 
@@ -46,7 +46,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 				?>
 				<div class="row table-row <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
-					<div class="col col-s-1 row justify-center align-center">
+					<div class="col col-s-1 col-m-1 row justify-center align-center">
 						<div class="col col-no-gutter col-no-margin-bottom">
 							<?php
 								echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
@@ -60,7 +60,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						</div>
 					</div>
 
-					<div class="col col-s-2">
+					<div class="col col-s-2 col-m-2">
 						<?php
 							$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 
@@ -72,7 +72,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						?>
 					</div>
 
-					<div class="col col-s-6 product-name" data-title="<?php _e( 'Product', 'woocommerce' ); ?>">
+					<div class="col col-s-4 col-m-6 product-name" data-title="<?php _e( 'Product', 'woocommerce' ); ?>">
 						<?php
 							if ( ! $product_permalink ) {
 								echo apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key ) . '&nbsp;';
@@ -90,13 +90,13 @@ do_action( 'woocommerce_before_cart' ); ?>
 						?>
 					</div>
 
-					<div class="col col-s-1 product-price" data-title="<?php _e( 'Price', 'woocommerce' ); ?>">
+					<div class="col col-s-2 col-m-1 product-price" data-title="<?php _e( 'Price', 'woocommerce' ); ?>">
 						<?php
 							echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
 						?>
 					</div>
 
-					<div class="col col-s-1 product-quantity" data-title="<?php _e( 'Quantity', 'woocommerce' ); ?>">
+					<div class="col col-s-1 col-m-1 product-quantity" data-title="<?php _e( 'Quantity', 'woocommerce' ); ?>">
 						<?php
 							if ( $_product->is_sold_individually() ) {
 								$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
@@ -113,7 +113,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						?>
 					</div>
 
-					<div class="col col-s-1 product-subtotal" data-title="<?php _e( 'Total', 'woocommerce' ); ?>">
+					<div class="col col-s-2 col-m-1 product-subtotal" data-title="<?php _e( 'Total', 'woocommerce' ); ?>">
 						<?php
 							echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
 						?>
@@ -126,7 +126,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 		do_action( 'woocommerce_cart_contents' );
 		?>
 		<div class="row table-row">
-			<div class="col actions col-s-6">
+			<div class="col actions col-s-12 col-m-6">
 
 				<?php if ( wc_coupons_enabled() ) { ?>
 					<div class="coupon row">
@@ -138,14 +138,14 @@ do_action( 'woocommerce_before_cart' ); ?>
 				<?php } ?>
 			</div>
 
-			<div class="col actions col-s-6 text-align-right">
+			<div class="col actions col-s-12 col-m-6 text-align-right">
 				<input type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />
 			</div>
 
 			<?php do_action( 'woocommerce_cart_actions' ); ?>
 
 			<?php wp_nonce_field( 'woocommerce-cart' ); ?>
-			
+
 		</div>
 
 		<?php do_action( 'woocommerce_after_cart_contents' ); ?>
@@ -155,7 +155,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 </form>
 
 <div class="row">
-	<div class="col col-s-12 col-m-8 offset-m-4 col-l-6 offset-l-6 col-no-gutter col-no-margin-bottom">
+	<div class="col col-s-12 col-no-gutter col-no-margin-bottom">
 		<?php do_action( 'woocommerce_cart_collaterals' ); ?>
 	</div>
 </div>

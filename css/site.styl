@@ -45,7 +45,7 @@ $gutter = 14px
   flex-wrap: wrap
   &.reverse
     flex-direction: row-reverse
-    
+
 .column
   box-sizing: border-box
   display: flex
@@ -67,7 +67,7 @@ $gutter = 14px
 
 .justify-end
   justify-content: flex-end
-  
+
 .justify-between
   justify-content: space-between
 
@@ -97,17 +97,17 @@ $gutter = 14px
   max-width: 100%
   padding: 0 ($gutter / 2)
   margin-bottom: $gutter
-  
+
 .table-row .col
-  margin: ($gutter / 2) 0 
-  
+  margin: ($gutter / 2) 0
+
 .col.col-no-margin-bottom
   margin-bottom: 0
 
 .col.col-no-gutter
   padding-left: 0
   padding-right: 0
-  
+
 for offset in 0..($cols - 1)
   .offset-s-{offset}
     margin-left: ( 100% / $cols ) * offset
@@ -155,84 +155,84 @@ html
 
 body
   line-height: $font-leading-basic
-  
+
 h1,h2,h3,h4,h5
   margin: 0
-  
-.font-nav 
-  font-size: 11px   
+
+.font-nav
+  font-size: 11px
   font-family: "Montserrat", font-stack('Helvetica')
-  font-style: normal 
+  font-style: normal
   font-weight: normal
   letter-spacing: .15em
   text-transform: uppercase
-  
+
 .font-nav-splash
-  font-size: 13px   
+  font-size: 13px
   font-family: "Montserrat", font-stack('Helvetica')
-  font-style: normal 
+  font-style: normal
   font-weight: bold
   text-transform: uppercase
 
-// PRODUCT FONT 
-.font-product-title 
-  font-size: 16px   
+// PRODUCT FONT
+.font-product-title
+  font-size: 16px
   font-family: "Montserrat", font-stack('Helvetica')
-  font-style: normal 
+  font-style: normal
   font-weight: bold
   text-transform: uppercase
-  
-.font-product-content 
+
+.font-product-content
   font-size: 15px
   font-family: 'Crimson Text', font-stack('Georgia')
   line-height: 2em
-  font-style: italic 
+  font-style: italic
   font-weight: normal
-  
+
 .font-product-attr
   font-size: 10px
   font-family: "Montserrat", font-stack('Helvetica')
-  font-style: normal 
+  font-style: normal
   font-weight: normal
   text-transform: uppercase
-  
+
 .font-product-price
   font-size: 12px
   font-family: "Montserrat", font-stack('Helvetica')
-  font-style: normal 
+  font-style: normal
   font-weight: bold
   text-transform: uppercase
 
-// SHOP FONT 
+// SHOP FONT
 
-.font-shop-title 
-  font-size: 12px   
+.font-shop-title
+  font-size: 12px
   font-family: "Montserrat", font-stack('Helvetica')
-  font-style: normal 
+  font-style: normal
   font-weight: normal
   letter-spacing: .15em
   text-transform: uppercase
 
-// POST FONT 
+// POST FONT
 
-.font-post-title 
-  font-size: 11px   
+.font-post-title
+  font-size: 11px
   font-family: "Montserrat", font-stack('Helvetica')
-  font-style: normal 
+  font-style: normal
   font-weight: normal
   letter-spacing: .15em
   text-transform: uppercase
-  
-.font-post-content 
+
+.font-post-content
   font-size: 12px
   font-family: 'Crimson Text', font-stack('Georgia')
-  font-style: normal 
+  font-style: normal
   font-weight: normal
-  
-.font-post-meta 
+
+.font-post-meta
   font-size: 10px
   font-family: "Montserrat", font-stack('Helvetica')
-  font-style: normal 
+  font-style: normal
   font-weight: normal
   text-transform: uppercase
 
@@ -259,13 +259,13 @@ p
 
 .font-capitalize
   text-transform: capitalize
-  
+
 .font-transform-none
   text-transform: none
 
 .font-letter-spaced
   letter-spacing: .15em
-  
+
 .font-leading-larger
   line-height: $font-leading-larger
 
@@ -291,7 +291,7 @@ a:visited
   color: inherit
   text-decoration: none
 
-p 
+p
   a,
   a:active,
   a:visited
@@ -314,25 +314,25 @@ img
 
 $header-height = 114
 $footer-height = 32
-  
-.product-content 
+
+.product-content
   p
     line-height: 2
   p:last-of-type
     margin-bottom: 0
-    
+
 input
   max-width: 100%
-  
-.table-row 
+
+.table-row
   border-bottom: $border-width solid $color-black-soft
-    
-button.button-shop, 
+
+button.button-shop,
 a.button-shop,
 .woocommerce a.button,
 .woocommerce button.button,
 .woocommerce input.button,
-.woocommerce .cart .button, 
+.woocommerce .cart .button,
 .woocommerce .cart input.button,
 .woocommerce #respond input#submit
   appearance: none
@@ -346,20 +346,20 @@ a.button-shop,
   letter-spacing: .15em
   font-size: 10px
   text-transform: uppercase
-  &:focus 
+  &:focus
     outline: 0
-  &:hover 
+  &:hover
     background: $color-white
     color: $color-black-soft
-  &.disabled, 
-  &:disabled, 
+  &.disabled,
+  &:disabled,
   &:disabled[disabled]
     padding: 14px 14px
     color: $color-white
     opacity: 1
     background: $color-grey
     border-color: $color-grey
-  
+
 
 // ******************************************************
 
@@ -471,7 +471,7 @@ a.button-shop,
   background-size: cover
   background-position: center
   background-repeat: no-repeat
-  
+
 .splash-header
   position: absolute
   width: 100%
@@ -484,10 +484,10 @@ a.button-shop,
 
 .splash-nav
   font-size: $font-size-basic
-  ul 
+  ul
     display: flex
     flex-direction: row
-    justify-content: space-between 
+    justify-content: space-between
 
 // ******************************************************
 
@@ -499,8 +499,8 @@ a.button-shop,
     margin-right: 0
   a:hover, &.active
     color: $color-grey
-  
-  
+
+
 .header-cart
   display: flex
   justify-content: center
@@ -517,10 +517,10 @@ a.button-shop,
     background: none
     &:focus
       outline: none
-  
-#header-logo 
+
+#header-logo
   text-align: center
-  svg 
+  svg
     width: 200px
   .logo-path
     fill: $color-black-soft
@@ -589,6 +589,15 @@ img.shop-product-sold-icon
 
 // WOO CART
 
+.product-quantity
+  .input-text
+    padding: 0
+    border: none
+    text-align: center
+
+#coupon_code
+  flex-grow 1
+
 .cross-sells
   display: none
 
@@ -607,19 +616,19 @@ img.shop-product-sold-icon
 
 #add_payment_method table.cart img, .woocommerce-cart table.cart img, .woocommerce-checkout table.cart img
   width: 100px
-  
+
 .woocommerce table.shop_table
   border-radius: 0
   border: solid $color-black-soft
-  border-width: $border-width 0 
-  th 
+  border-width: $border-width 0
+  th
     padding: $margin-small 0
-  td 
+  td
     padding: $margin-small 0
     border: solid $color-black-soft
     border-width: $border-width 0 0
-    
-.woocommerce-cart .cart-collaterals .cart_totals tr td, 
+
+.woocommerce-cart .cart-collaterals .cart_totals tr td,
 .woocommerce-cart .cart-collaterals .cart_totals tr th
   border: solid $color-black-soft
   border-width: $border-width 0 0
@@ -639,13 +648,13 @@ img.shop-product-sold-icon
   height: 100%
   display: flex
   flex-direction: column
-  img 
+  img
     max-height: 100%
     width: auto
-    
+
 .slider-pagination-holder
   flex-grow: 1
-  
+
 .slider-button
   background: transparent
   border: none
@@ -653,10 +662,10 @@ img.shop-product-sold-icon
   height: 30px
   -webkit-appearance: none
   padding: 0
-  svg 
+  svg
     width: 100%
     height: 100%
-    path 
+    path
       fill: $color-black-soft
   &:focus
     outline: none
