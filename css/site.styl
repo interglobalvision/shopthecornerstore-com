@@ -145,6 +145,9 @@ $border-width = 2px
 
 $speed-transition-fast = .1s
 
+$header-height = 111px
+$footer-height = 34px
+
 // ******************************************************
 
 // TYPOGRAPHY
@@ -158,9 +161,8 @@ body
 
 h1,h2,h3,h4,h5
   margin: 0
-
-.font-nav
-  font-size: 11px
+.font-nav 
+  font-size: 9px   
   font-family: "Montserrat", font-stack('Helvetica')
   font-style: normal
   font-weight: normal
@@ -305,17 +307,19 @@ html
   background-color: $color-white
   color: $color-black-soft
 
+#main-content
+  min-height: calc('100vh - ' + ($header-height + $footer-height))
+
 img
   max-width: 100%
   height: auto
 
 .pagination-button
   padding-left: $margin-small
-
-$header-height = 114
-$footer-height = 32
-
-.product-content
+  img 
+    height: 30px
+  
+.product-content 
   p
     line-height: 2
   p:last-of-type
@@ -351,8 +355,9 @@ a.button-shop,
   &:hover
     background: $color-white
     color: $color-black-soft
-  &.disabled,
-  &:disabled,
+    font-weight: bold
+  &.disabled, 
+  &:disabled, 
   &:disabled[disabled]
     padding: 14px 14px
     color: $color-white
@@ -494,7 +499,7 @@ a.button-shop,
 // HEADER
 
 .menu-item
-  margin-right: $margin-small
+  margin-right: $margin-tiny
   &:last-of-type
     margin-right: 0
   a:hover, &.active
@@ -506,7 +511,7 @@ a.button-shop,
   justify-content: center
   align-items: center
   img
-    width: $margin-small
+    width: 16px
     height: auto
     margin-right: $margin-micro
 
@@ -520,8 +525,8 @@ a.button-shop,
 
 #header-logo
   text-align: center
-  svg
-    width: 200px
+  svg 
+    width: 140px
   .logo-path
     fill: $color-black-soft
 
@@ -640,12 +645,35 @@ img.shop-product-sold-icon
 
 // ARCHIVE EDITORIAL
 
+#posts-archive-editorial
+  min-height: calc('100vh - ' + ($header-height + $footer-height))
+  
 #archive-editorial-titles
   margin-left: $margin-basic
 
 // ******************************************************
 
+// JOURNAL 
+
+.journal-post 
+  width: 100% 
+  p 
+    a,
+    a:active,
+    a:visited
+      text-decoration: underline
+  
+.post-image
+  margin-left: auto
+  margin-right: auto
+  display: block
+
+// ******************************************************
+
 // SINGLE EDITORIAL
+
+.slider-row 
+  flex-flow: row wrap-reverse
 
 .slide-column
   height: 100%
@@ -678,7 +706,7 @@ img.shop-product-sold-icon
 // FOOTER
 
 .social-icon
-  width: 12px
+  width: 16px
   margin-right: $margin-tiny
 
 .post-date
@@ -693,8 +721,10 @@ img.shop-product-sold-icon
 
 .only-mobile
   display: initial
+  &.row, &.column
+    display: flex
 
-.only-desktop
+.only-desktop, .row.only-desktop, .column.only-desktop
   display: none
 
 @media screen and (min-width: 750px)
@@ -703,11 +733,13 @@ img.shop-product-sold-icon
 
 @media screen and (min-width: 1150px)
 
-  .only-mobile
+  .only-mobile, .row.only-mobile, .column.only-mobile
     display: none
 
   .only-desktop
     display: initial
+    &.row, &.column
+      display: flex
 
   @import "responsive/laptop"
 

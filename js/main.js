@@ -22,12 +22,12 @@ Site = {
 
       if ($('body').hasClass('blog')) {
         _this.Journal.init();
-      }
 
-      $(window).bind('resizeEnd', function() {
-        _this.Journal.masonryLayout();
-      });
-      // bind end of resize event triggered by resizeDelay()
+        $(window).bind('resizeEnd', function() {
+          _this.Journal.masonryLayout();
+        });
+        // bind end of resize event triggered by resizeDelay()
+      }
 
       if ($('body').hasClass('single-editorial')) {
         _this.Editorial.Single.init();
@@ -69,49 +69,6 @@ Site = {
     });
   },
 
-};
-
-Site.Layout = {
-  init: function() {
-    var _this = this;
-
-    _this.$mainContentHolder = $('#main-content-holder');
-    _this.$mainContent = $('#main-content');
-    _this.$header = $('#header');
-    _this.$footer = $('#footer');
-
-    _this.windowHeight = $(window).height();
-    _this.windowWidth = $(window).width();
-
-    //_this.layout();
-  },
-
-  onResize: function() {
-    var _this = this;
-
-    _this.windowHeight = $(window).height();
-    _this.windowWidth = $(window).width();
-
-    //_this.layout();
-  },
-
-  layout: function() {
-    var _this = this;
-
-    _this.$mainContentHolder.css({
-      'height': 'auto'
-    });
-
-    if (_this.$mainContent.height() < _this.windowHeight) {
-
-      var height = _this.windowHeight - (_this.$header.outerHeight(true) + _this.$footer.outerHeight(true));
-
-      _this.$mainContentHolder.css({
-        'height': height
-      });
-    }
-
-  },
 };
 
 Site.Shop = {
@@ -189,10 +146,16 @@ Site.Journal = {
         itemSelector: '.journal-post',
         transitionDuration: 0,
       }); 
+
+      $('#journal-container').imagesLoaded().progress( function() {
+        $('#journal-container').masonry('layout');
+      });
     }
   },
 
   masonryLayout: function() {
+    var _this = this;
+
     if ($('#journal-container').length) {
       $('#journal-container').masonry('layout');
     }

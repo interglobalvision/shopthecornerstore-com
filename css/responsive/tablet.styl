@@ -33,12 +33,22 @@ $margin-basic = ($gutter * 2)
 $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
+$header-height = 153px
+$footer-height = 44px
+
+// ******************************************************
+
+// TYPOGRAPHY 
+
+.font-nav 
+  font-size: 11px  
+  
 // ******************************************************
 
 // BASIC
 
-$header-height = 65px
-$footer-height = 44px
+#main-content
+  min-height: calc('100vh - ' + ($header-height + $footer-height))
 
 .pagination-button
   padding-left: $margin-small
@@ -142,7 +152,7 @@ $footer-height = 44px
   text-align: left
   
 .menu-item
-  margin-right: $margin-tiny
+  margin-right: $margin-small
 
 .editorial-title
   text-align: right
@@ -152,10 +162,24 @@ $footer-height = 44px
   img
     width: $margin-small
     margin-right: $margin-micro
+    
+#header-logo 
+  svg 
+    width: 180px
+    
+// ******************************************************
+
+// JOURNAL 
+
+.journal-post 
+  width: 50%
 
 // ******************************************************
 
 // ARCHIVE EDITORIAL
+
+#posts-archive-editorial
+  min-height: calc('100vh - ' + ($header-height + $footer-height))
 
 #archive-editorial-titles
   margin-left: $margin-basic
