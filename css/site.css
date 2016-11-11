@@ -158,8 +158,7 @@ ul.u-inline-list li {
   -ms-flex-align: start;
   -webkit-box-align: start;
   -ms-align-items: flex-start;
-  -ms-grid-row-align: flex-start;
-      align-items: flex-start;
+  align-items: flex-start;
   -webkit-transition-property: -webkit-transform, height;
   -webkit-transition-property: transform, height;
   -webkit-transition-property: height, -webkit-transform;
@@ -1091,21 +1090,18 @@ th {
   -webkit-box-align: start;
   -ms-align-items: flex-start;
   -ms-flex-align: start;
-      -ms-grid-row-align: flex-start;
       align-items: flex-start;
 }
 .align-center {
   -webkit-box-align: center;
   -ms-align-items: center;
   -ms-flex-align: center;
-      -ms-grid-row-align: center;
       align-items: center;
 }
 .align-end {
   -webkit-box-align: end;
   -ms-align-items: flex-end;
   -ms-flex-align: end;
-      -ms-grid-row-align: flex-end;
       align-items: flex-end;
 }
 .align-content-start {
@@ -1262,7 +1258,7 @@ h5 {
   margin: 0;
 }
 .font-nav {
-  font-size: 11px;
+  font-size: 9px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -1619,7 +1615,7 @@ a.button-shop:disabled[disabled],
           justify-content: space-between;
 }
 .menu-item {
-  margin-right: 14px;
+  margin-right: 7px;
 }
 .menu-item:last-of-type {
   margin-right: 0;
@@ -1642,7 +1638,7 @@ a.button-shop:disabled[disabled],
       align-items: center;
 }
 .header-cart img {
-  width: 14px;
+  width: 16px;
   height: auto;
   margin-right: 4.326237921248983px;
 }
@@ -1660,7 +1656,7 @@ a.button-shop:disabled[disabled],
   text-align: center;
 }
 #header-logo svg {
-  width: 200px;
+  width: 140px;
 }
 #header-logo .logo-path {
   fill: #0e0e0e;
@@ -1973,6 +1969,9 @@ img.shop-product-sold-icon {
         flex-basis: 100%;
     max-width: 100%;
   }
+  .font-nav {
+    font-size: 11px;
+  }
   #main-content {
     min-height: calc(100vh - 197px);
   }
@@ -2058,7 +2057,7 @@ img.shop-product-sold-icon {
     text-align: left;
   }
   .menu-item {
-    margin-right: 12px;
+    margin-right: 24px;
   }
   .editorial-title {
     text-align: right;
@@ -2072,6 +2071,9 @@ img.shop-product-sold-icon {
   .header-cart img {
     width: 24px;
     margin-right: 7.416407864998257px;
+  }
+  #header-logo svg {
+    width: 180px;
   }
   .journal-post {
     width: 50%;
