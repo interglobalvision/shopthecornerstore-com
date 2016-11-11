@@ -87,7 +87,7 @@ if( have_posts() ) {
 ?>
         <div class="col col-s-10 col-l-9 col-no-margin-bottom">
           <!-- Slider main container -->
-          <div class="swiper-container set-content-height">
+          <div class="swiper-container">
             <div class="swiper-wrapper align-center">
             <!-- Slides -->
 <?php
