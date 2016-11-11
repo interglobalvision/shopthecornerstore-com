@@ -1262,7 +1262,7 @@ h5 {
   margin: 0;
 }
 .font-nav {
-  font-size: 11px;
+  font-size: 9px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -1616,7 +1616,7 @@ a.button-shop:disabled[disabled],
           justify-content: space-between;
 }
 .menu-item {
-  margin-right: 14px;
+  margin-right: 7px;
 }
 .menu-item:last-of-type {
   margin-right: 0;
@@ -1639,7 +1639,7 @@ a.button-shop:disabled[disabled],
       align-items: center;
 }
 .header-cart img {
-  width: 14px;
+  width: 16px;
   height: auto;
   margin-right: 4.326237921248983px;
 }
@@ -1970,6 +1970,9 @@ img.shop-product-sold-icon {
         flex-basis: 100%;
     max-width: 100%;
   }
+  .font-nav {
+    font-size: 11px;
+  }
   .pagination-button {
     padding-left: 24px;
   }
@@ -2052,7 +2055,7 @@ img.shop-product-sold-icon {
     text-align: left;
   }
   .menu-item {
-    margin-right: 12px;
+    margin-right: 24px;
   }
   .editorial-title {
     text-align: right;
