@@ -7,6 +7,9 @@ $gutter = 48px
 .col
   padding: 0 ($gutter / 2)
   margin-bottom: $gutter
+  
+.table-row .col
+  margin: ($gutter / 2) 0 
 
 // ******************************************************
 
@@ -138,7 +141,17 @@ $footer-height = 72px
 
 // ******************************************************
 
-// HEADER
+// ARCHIVE EDITORIAL
+
+#archive-editorial-titles
+  margin-left: $margin-basic
+ 
+#posts-archive-editorial
+  min-height: calc('100vh - ' + ($header-height + $footer-height))
+  
+// ******************************************************
+
+// SINGLE EDITORIAL
 
 .menu-item
   margin-right: $margin-tiny

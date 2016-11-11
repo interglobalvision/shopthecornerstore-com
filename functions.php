@@ -68,6 +68,8 @@ function cmb_initialize_cmb_meta_boxes() {
   }
 }
 
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+
 // Add custom functions
 
 get_template_part( 'lib/functions-misc' );

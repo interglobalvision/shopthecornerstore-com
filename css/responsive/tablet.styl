@@ -7,6 +7,9 @@ $gutter = 24px
 .col
   padding: 0 ($gutter / 2)
   margin-bottom: $gutter
+  
+.table-row .col
+  margin: ($gutter / 2) 0 
 
 for offset in 0..($cols - 1)
   .offset-m-{offset}
@@ -175,6 +178,9 @@ $footer-height = 44px
 
 // ARCHIVE EDITORIAL
 
+#posts-archive-editorial
+  min-height: calc('100vh - ' + ($header-height + $footer-height))
+
 #archive-editorial-titles
   margin-left: $margin-basic
 
@@ -206,10 +212,18 @@ body.single-editorial
 
 // ******************************************************
 
+// CART 
+
+.woocommerce-shipping-calculator
+  text-align: right 
+  
+// ******************************************************
+  
+// FOOTER 
+
+.social-icon
+  width: 16px
+  
+// ******************************************************
+
 // WOO CART
-
-.woocommerce-cart table.cart td.actions .coupon .input-text
-  width: auto
-
-.woocommerce .cart-collaterals .cart_totals, .woocommerce-page .cart-collaterals .cart_totals
-  width: 35%
