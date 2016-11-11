@@ -27,7 +27,7 @@ if( have_posts() ) {
 <?php
       if ($is_recent) {
 ?>
-      
+
       <!-- Product details container -->
       <div class="col col-s-12 col-l-3 col-no-margin-bottom column justify-between">
 
@@ -43,7 +43,7 @@ if( have_posts() ) {
 
         </div>
 
-<?php 
+<?php
     if (!empty($slides)) {
       if (count($slides[0] > 1)) {
 ?>
@@ -61,7 +61,7 @@ if( have_posts() ) {
           </div>
 
         </div>
-<?php 
+<?php
       }
     }
 ?>
@@ -72,7 +72,7 @@ if( have_posts() ) {
 <?php
       }
 ?>
-      
+
 <?php
   if (!empty($slides)) {
     if (count($slides[0] > 1)) {
@@ -82,12 +82,12 @@ if( have_posts() ) {
               <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_left.svg'); ?>
             </button>
           </div>
-<?php 
+<?php
       }
 ?>
         <div class="col col-s-10 col-l-9 col-no-margin-bottom">
           <!-- Slider main container -->
-          <div class="swiper-container set-swiper-height">
+          <div class="swiper-container set-content-height">
             <div class="swiper-wrapper align-center">
             <!-- Slides -->
 <?php
@@ -109,20 +109,20 @@ if( have_posts() ) {
                 echo 'data-product-1="' . htmlspecialchars(json_encode($product_1_data)) . '"'; } if ($has_product_2) {
                 echo 'data-product-2="' . htmlspecialchars(json_encode($product_2_data)) . '"';
               } ?>>
-                <?php 
+                <?php
                   if (!empty($slide['image_1_id'])) {
                 ?>
                 <div class="col <?php echo !empty($slide['image_2_id']) ? 'col-s-6' : 'col-s-12'; ?> col-no-margin-bottom slide-column justify-center align-center">
                   <?php echo wp_get_attachment_image($slide['image_1_id'], 'col10-square-nocrop', false, array( 'class' => '' )); ?>
                 </div>
-                <?php 
+                <?php
                   }
                   if (!empty($slide['image_2_id'])) {
                 ?>
                 <div class="col <?php echo !empty($slide['image_1_id']) ? 'col-s-6' : 'col-s-12'; ?> col-no-margin-bottom slide-column justify-center align-center">
                   <?php echo wp_get_attachment_image($slide['image_2_id'], 'col10-square-nocrop', false, array( 'class' => '' )); ?>
                 </div>
-                <?php 
+                <?php
                   }
                 ?>
               </div>
@@ -141,7 +141,7 @@ if( have_posts() ) {
               <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_right.svg'); ?>
             </button>
           </div>
-<?php 
+<?php
     }
   }
 ?>

@@ -22,7 +22,7 @@ $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
 $header-height = 82px
-$footer-height = 72px 
+$footer-height = 72px
 
 // ******************************************************
 
@@ -30,6 +30,9 @@ $footer-height = 72px
 
 #main-content
   min-height: calc('100vh - ' + ($header-height + $footer-height))
+
+.set-content-height
+  height: calc('100vh - ' + ($header-height + $footer-height))
 
 .pagination-button
   padding-left: $margin-small
@@ -135,17 +138,10 @@ $footer-height = 72px
 
 .splash-nav
   font-size: 28px
-  
+
 // ******************************************************
 
-// HEADER 
+// HEADER
 
 .menu-item
   margin-right: $margin-tiny
-    
-// ******************************************************
-
-// SINGLE EDITORIAL
-
-.set-swiper-height
-  height: calc('100vh - ' + ($header-height + $footer-height))
