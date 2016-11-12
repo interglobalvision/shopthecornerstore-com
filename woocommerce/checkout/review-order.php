@@ -124,11 +124,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php do_action( 'woocommerce_review_order_before_order_total' ); ?>
 
-		<div class="row order-total">
-      <div class="col col-s-12 col-m-6">
+		<div class="row table-row order-total">
+      <div class="col col-s-6">
         <span><?php _e( 'Total', 'woocommerce' ); ?></span>
       </div>
-      <div class="col col-s-12 col-m-6">
+      <div class="col col-s-6">
         <span><?php wc_cart_totals_order_total_html(); ?></span>
       </div>
 		</div>
