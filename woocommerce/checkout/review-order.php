@@ -20,14 +20,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class="row table-row">
-  <div class="col col-s-12 col-m-6">
-    <h3><?php _e( 'Product', 'woocommerce' ); ?></h3>
-  </div>
-  <div class="col col-s-12 col-m-6">
-    <h3><?php _e( 'Total', 'woocommerce' ); ?></h3>
-  </div>
-</div>
 
 <div class="shop_table woocommerce-checkout-review-order-table">
 <?php

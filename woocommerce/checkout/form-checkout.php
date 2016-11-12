@@ -70,6 +70,15 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
     </div>
   </div>
 
+<div class="row table-row">
+  <div class="col col-s-12 col-m-6">
+    <h3><?php _e( 'Product', 'woocommerce' ); ?></h3>
+  </div>
+  <div class="col col-s-12 col-m-6">
+    <h3><?php _e( 'Total', 'woocommerce' ); ?></h3>
+  </div>
+</div>
+
 	<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 
 	<div id="order_review" class="woocommerce-checkout-review-order">
