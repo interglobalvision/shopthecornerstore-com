@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<div class="woocommerce-shipping-fields">
+<div class="woocommerce-shipping-fields column">
 	<?php if ( true === WC()->cart->needs_shipping_address() ) : ?>
 
 		<h3 id="ship-to-different-address">
@@ -29,13 +29,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<input id="ship-to-different-address-checkbox" class="input-checkbox" <?php checked( apply_filters( 'woocommerce_ship_to_different_address_checked', 'shipping' === get_option( 'woocommerce_ship_to_destination' ) ? 1 : 0 ), 1 ); ?> type="checkbox" name="ship_to_different_address" value="1" />
 		</h3>
 
-		<div class="shipping_address">
+		<div class="shipping_address column">
 
 			<?php do_action( 'woocommerce_before_checkout_shipping_form', $checkout ); ?>
 
 			<?php foreach ( $checkout->checkout_fields['shipping'] as $key => $field ) : ?>
 
-				<?php woocommerce_form_field( $key, $field, $checkout->get_value( $key ) ); ?>
+				<div class="col col-s-12 col-no-gutter">
+					<?php woocommerce_form_field( $key, $field, $checkout->get_value( $key ) ); ?>
+				</div>
 
 			<?php endforeach; ?>
 
