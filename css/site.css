@@ -1861,6 +1861,12 @@ img.shop-product-sold-icon {
 .slider-button:focus {
   outline: none;
 }
+p.form-row {
+  margin-bottom: 0;
+}
+p.form-row label {
+  display: block;
+}
 .social-icon {
   width: 16px;
   margin-right: 7px;
