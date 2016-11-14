@@ -1642,10 +1642,10 @@ a.button-shop:disabled[disabled],
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-justify-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
   -ms-align-items: center;
   -ms-flex-align: center;
