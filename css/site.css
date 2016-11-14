@@ -1862,10 +1862,22 @@ img.shop-product-sold-icon {
   outline: none;
 }
 p.form-row {
-  margin-bottom: 0;
+  -ms-flex: 1 1 100%;
+  -webkit-box-flex: 1;
+          flex: 1 1 100%;
 }
 p.form-row label {
   display: block;
+  margin-bottom: 4.326237921248983px;
+}
+p.form-row label.checkbox {
+  display: inline-block;
+}
+p.form-row input {
+  width: 100%;
+}
+p.form-row input.input-checkbox {
+  width: auto;
 }
 .social-icon {
   width: 16px;

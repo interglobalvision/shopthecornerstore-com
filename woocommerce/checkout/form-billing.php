@@ -29,11 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<?php foreach ( $checkout->checkout_fields['billing'] as $key => $field ) : ?>
 
-		<div class="col col-s-6 col-no-gutter">
-
-			<?php woocommerce_form_field( $key, $field, $checkout->get_value( $key ) ); ?>
-
-		</div>
+		<?php woocommerce_form_field( $key, $field, $checkout->get_value( $key ) ); ?>
 
 	<?php endforeach; ?>
 

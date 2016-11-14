@@ -706,9 +706,17 @@ img.shop-product-sold-icon
 // CHECKOUT 
 
 p.form-row
-  margin-bottom: 0
+  flex: 1 1 100%
   label 
     display: block
+    margin-bottom: $margin-micro
+    &.checkbox 
+      display: inline-block
+  input 
+    width: 100%
+    &.input-checkbox 
+      width: auto
+  
 
 // ******************************************************
 
