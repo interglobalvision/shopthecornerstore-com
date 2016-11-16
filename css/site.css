@@ -1873,11 +1873,15 @@ p.form-row label {
 p.form-row label.checkbox {
   display: inline-block;
 }
-p.form-row input {
+p.form-row input,
+p.form-row textarea {
   width: 100%;
 }
-p.form-row input.input-checkbox {
+p.form-row .input-checkbox {
   width: auto;
+}
+.wc_payment_method img {
+  display: block;
 }
 .social-icon {
   width: 16px;
