@@ -38,7 +38,7 @@ if ( ! is_ajax() ) {
 				?>
 			</ul>
 		<?php endif; ?>
-		<div class="form-row place-order">
+		<div class="form-row place-order text-align-right">
 			<noscript>
 				<?php _e( 'Since your browser does not support JavaScript, or it is disabled, please ensure you click the <em>Update Totals</em> button before placing your order. You may be charged more than the amount stated above if you fail to do so.', 'woocommerce' ); ?>
 				<br/><input type="submit" class="button alt" name="woocommerce_checkout_update_totals" value="<?php esc_attr_e( 'Update totals', 'woocommerce' ); ?>" />

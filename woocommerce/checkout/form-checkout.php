@@ -46,7 +46,7 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
     </div>
 
     <div class="row table-row">
-      <div class="col col-s-12 offset-s-6 margin-top-tiny"> 
+      <div class="col col-s-12 offset-s-6 margin-top-tiny">
         <h3 id="ship-to-different-address">
           <label for="ship-to-different-address-checkbox" class="checkbox"><?php _e( 'Ship to a different address?', 'woocommerce' ); ?></label>
           <input id="ship-to-different-address-checkbox" class="input-checkbox" <?php checked( apply_filters( 'woocommerce_ship_to_different_address_checked', 'shipping' === get_option( 'woocommerce_ship_to_destination' ) ? 1 : 0 ), 1 ); ?> type="checkbox" name="ship_to_different_address" value="1" />
@@ -68,7 +68,7 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
   </div>
 
   <div class="row">
-    <div class="col col-s-12 col-m-6 col-no-gutter col-no-margin-bottom">
+    <div class="col col-s-12 col-m-6 offset-m-6 col-no-gutter col-no-margin-bottom">
       <div id="order_review_heading" class="row table-row">
         <div class="col col-s-12">
           <h3><?php _e( 'Your order', 'woocommerce' ); ?></h3>
@@ -79,7 +79,7 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
         <div class="col col-s-12 col-m-6">
           <h3><?php _e( 'Product', 'woocommerce' ); ?></h3>
         </div>
-        <div class="col col-s-12 col-m-6">
+        <div class="col col-s-12 col-m-6 text-align-right">
           <h3><?php _e( 'Total', 'woocommerce' ); ?></h3>
         </div>
       </div>
