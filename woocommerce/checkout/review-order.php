@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             <?php echo WC()->cart->get_item_data( $cart_item ); ?>
           </span>
         </div>
-        <div class="col col-s-6 product-total">
+        <div class="col col-s-6 text-align-right product-total">
             <?php echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); ?>
         </div>
       </div>
@@ -53,7 +53,7 @@ if ( ! defined( 'ABSPATH' ) ) {
       <div class="col col-s-6">
         <span><?php _e( 'Subtotal', 'woocommerce' ); ?></span>
       </div>
-      <div class="col col-s-6">
+      <div class="col col-s-6 text-align-right">
         <?php wc_cart_totals_subtotal_html(); ?>
       </div>
 		</div>
@@ -63,7 +63,7 @@ if ( ! defined( 'ABSPATH' ) ) {
       <div class="col col-s-6">
 				<span><?php wc_cart_totals_coupon_label( $coupon ); ?></span>
       </div>
-      <div class="col col-s-6">
+      <div class="col col-s-6 text-align-right">
 				<span><?php wc_cart_totals_coupon_html( $coupon ); ?></span>
       </div>
     </div>
@@ -84,7 +84,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         <div class="col col-s-12 col-m-6">
           <span><?php echo esc_html( $fee->name ); ?></span>
         </div>
-        <div class="col col-s-12 col-m-6">
+        <div class="col col-s-12 col-m-6 text-align-right">
           <span><?php wc_cart_totals_fee_html( $fee ); ?></span>
         </div>
       </div>
@@ -97,7 +97,7 @@ if ( ! defined( 'ABSPATH' ) ) {
           <div class="col col-s-12 col-m-6">
 						<span><?php echo esc_html( $tax->label ); ?></span>
           </div>
-          <div class="col col-s-12 col-m-6">
+          <div class="col col-s-12 col-m-6 text-align-right">
 						<span><?php echo wp_kses_post( $tax->formatted_amount ); ?></span>
 					</div>
         </div>
@@ -107,7 +107,7 @@ if ( ! defined( 'ABSPATH' ) ) {
           <div class="col col-s-12 col-m-6">
             <span><?php echo esc_html( WC()->countries->tax_or_vat() ); ?></span>
           </div>
-          <div class="col col-s-12 col-m-6">
+          <div class="col col-s-12 col-m-6 text-align-right">
             <span><?php wc_cart_totals_taxes_total_html(); ?></span>
           </div>
 				</div>
@@ -120,7 +120,7 @@ if ( ! defined( 'ABSPATH' ) ) {
       <div class="col col-s-6">
         <span><?php _e( 'Total', 'woocommerce' ); ?></span>
       </div>
-      <div class="col col-s-6">
+      <div class="col col-s-6 text-align-right">
         <span><?php wc_cart_totals_order_total_html(); ?></span>
       </div>
 		</div>

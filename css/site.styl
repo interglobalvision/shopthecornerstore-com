@@ -161,8 +161,8 @@ body
 
 h1,h2,h3,h4,h5
   margin: 0
-.font-nav 
-  font-size: 9px   
+.font-nav
+  font-size: 9px
   font-family: "Montserrat", font-stack('Helvetica')
   font-style: normal
   font-weight: normal
@@ -316,10 +316,10 @@ img
 
 .pagination-button
   padding-left: $margin-small
-  img 
+  img
     height: 30px
-  
-.product-content 
+
+.product-content
   p
     line-height: 2
   p:last-of-type
@@ -356,8 +356,8 @@ a.button-shop,
     background: $color-white
     color: $color-black-soft
     font-weight: bold
-  &.disabled, 
-  &:disabled, 
+  &.disabled,
+  &:disabled,
   &:disabled[disabled]
     padding: 14px 14px
     color: $color-white
@@ -365,6 +365,13 @@ a.button-shop,
     background: $color-grey
     border-color: $color-grey
 
+.woocommerce-message,
+.woocommerce-info
+  display:none
+
+#order_review
+  .table-row.cart_item
+    border-bottom: 0
 
 // ******************************************************
 
@@ -508,7 +515,7 @@ a.button-shop,
 
 .header-cart
   display: flex
-  justify-content: center
+  justify-content: flex-end
   align-items: center
   img
     width: 16px
@@ -525,7 +532,7 @@ a.button-shop,
 
 #header-logo
   text-align: center
-  svg 
+  svg
     width: 140px
   .logo-path
     fill: $color-black-soft
@@ -637,7 +644,7 @@ img.shop-product-sold-icon
 .woocommerce-cart .cart-collaterals .cart_totals tr th
   border: solid $color-black-soft
   border-width: $border-width 0 0
-  
+
 .woocommerce-shipping-calculator
   text-align: left
 
@@ -647,22 +654,22 @@ img.shop-product-sold-icon
 
 #posts-archive-editorial
   min-height: calc('100vh - ' + ($header-height + $footer-height))
-  
+
 #archive-editorial-titles
   margin-left: $margin-basic
 
 // ******************************************************
 
-// JOURNAL 
+// JOURNAL
 
-.journal-post 
-  width: 100% 
-  p 
+.journal-post
+  width: 100%
+  p
     a,
     a:active,
     a:visited
       text-decoration: underline
-  
+
 .post-image
   margin-left: auto
   margin-right: auto
@@ -672,7 +679,7 @@ img.shop-product-sold-icon
 
 // SINGLE EDITORIAL
 
-.slider-row 
+.slider-row
   flex-flow: row wrap-reverse
 
 .slide-column
@@ -700,6 +707,27 @@ img.shop-product-sold-icon
       fill: $color-black-soft
   &:focus
     outline: none
+
+// ******************************************************
+
+// CHECKOUT
+
+p.form-row
+  flex: 1 1 100%
+  label
+    display: block
+    margin-bottom: $margin-micro
+    &.checkbox
+      display: inline-block
+  input, textarea
+    width: 100%
+  .input-checkbox
+    width: auto
+
+.wc_payment_method
+  img
+    display: block
+
 
 // ******************************************************
 
