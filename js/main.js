@@ -121,18 +121,44 @@ Site.Shop = {
       var _this = this;
 
       if ($('.swiper-container').length) {
-        _this.swiper();
+        _this.initSwiper();
       }
     },
 
-    swiper: function() {
-      var swiper = new Swiper('.swiper-container', {
+    initSwiper: function() {
+      var _this = this;
+
+      _this.swiper = new Swiper('.swiper-container', {
         loop: true,
         speed: 800,
         spaceBetween: 36,
-        nextButton: '.slider-next',
-        prevButton: '.slider-prev',
         setWrapperSize: true,
+      });
+
+      _this.bindPagination();
+    },
+
+    bindPagination: function() {
+      var _this = this;
+
+      // Prev moves gallery until first slide, then allows <a> link
+      $('.slider-prev').on('click', function(e) {
+        var href = $(this).attr('href');
+
+        if (!_this.swiper.isBeginning || typeof href == typeof undefined || href == false) {
+          e.preventDefault();
+          _this.swiper.slidePrev();
+        }
+      });
+
+      // Next moves gallery until last slide, then allows <a> link
+      $('.slider-next').on('click', function(e) {
+        var href = $(this).attr('href');
+
+        if (!_this.swiper.isEnd || typeof href == typeof undefined || href == false) {
+          e.preventDefault();
+          _this.swiper.slideNext();
+        }
       });
     }
   },
