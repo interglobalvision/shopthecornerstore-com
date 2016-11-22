@@ -1723,6 +1723,7 @@ a.button-shop:disabled[disabled],
 }
 .shop-product-title {
   margin: 28px 7px 28px;
+  padding: 0 14px;
 }
 .shop-product-sold {
   position: absolute;
@@ -2164,6 +2165,7 @@ p.form-row .input-checkbox {
   }
   .shop-product-title {
     margin: 48px 12px 48px;
+    padding: 0 12px;
   }
   .shop-product-sold {
     left: 12px;
@@ -2419,6 +2421,7 @@ p.form-row .input-checkbox {
   }
   .shop-product-title {
     margin: 64px 16px 16px;
+    padding: 0 9.888543819997675px;
   }
   .shop-product-sold {
     left: 16px;
@@ -2547,6 +2550,7 @@ p.form-row .input-checkbox {
   }
   .shop-product-title {
     margin: 96px 24px 24px;
+    padding: 0 14.832815729996513px;
   }
   .shop-product-sold {
     left: 24px;
