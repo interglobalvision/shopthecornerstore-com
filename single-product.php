@@ -14,10 +14,38 @@ if( have_posts() ) {
   while( have_posts() ) {
     the_post();
 
+    $nextPost = get_adjacent_post(null, null, true);
+    $prevPost = get_adjacent_post(null, null, false);
+
+    $firstPost = get_posts(array (
+      'posts_per_page'         => '1',
+      'order'                  => 'DESC',
+      'post_type'              => 'product'));
+
+    $lastPost = get_posts(array (
+      'posts_per_page'         => '1',
+      'order'                  => 'ASC',
+      'post_type'              => 'product'));
+
+    if ($nextPost) {
+      $nextLink = get_permalink($nextPost->ID);
+    } elseif ($firstPost) {
+      $nextLink = get_permalink($firstPost[0]->ID);
+    } else {
+      $nextLink = false;
+    }
+
+    if ($prevPost) {
+      $prevLink = get_permalink($prevPost->ID);
+    } elseif ($lastPost) {
+      $prevLink = get_permalink($lastPost[0]->ID);
+    } else {
+      $prevLink = false;
+    }
+
     $product = new WC_Product($post->ID);
     $product_id = $product->id;
     $slides = get_post_meta($post->ID, '_igv_slides');
-
 ?>
 
     <article <?php post_class('row slider-row'); ?> id="post-<?php the_ID(); ?>">
@@ -36,14 +64,14 @@ if( have_posts() ) {
         <div class="slider-pagination-holder margin-bottom-basic row align-end only-desktop">
 
           <div class="col col-s-4 col-no-margin-bottom col-no-gutter">
-            <button class="slider-button slider-prev">
+            <a class="slider-button slider-prev" <?php echo $prevLink ? 'href="' . $prevLink . '"' : ''; ?>>
               <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_left.svg'); ?>
-            </button>
+            </a>
           </div>
           <div class="col col-s-4 col-no-margin-bottom col-no-gutter">
-            <button class="slider-button slider-next">
+            <a class="slider-button slider-next" <?php echo $nextLink ? 'href="' . $nextLink . '"' : ''; ?>>
               <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_right.svg'); ?>
-            </button>
+            </a>
           </div>
 
         </div>
@@ -57,9 +85,9 @@ if( have_posts() ) {
     if (count($slides[0] > 1)) {
 ?>
           <div class="col col-s-1 col-no-gutter only-mobile row align-center justify-center">
-            <button class="slider-button slider-prev">
+            <a class="slider-button slider-prev" <?php echo $prevLink ? 'href="' . $prevLink . '"' : ''; ?>>
               <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_left.svg'); ?>
-            </button>
+            </a>
           </div>
 <?php 
       }
@@ -102,9 +130,9 @@ if( have_posts() ) {
     if (count($slides[0] > 1)) {
 ?>
           <div class="col col-s-1 col-no-gutter only-mobile row align-center justify-center">
-            <button class="slider-button slider-next">
+            <a class="slider-button slider-next" <?php echo $nextLink ? 'href="' . $nextLink . '"' : ''; ?>>
               <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_right.svg'); ?>
-            </button>
+            </a>
           </div>
 <?php 
     }

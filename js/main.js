@@ -121,18 +121,46 @@ Site.Shop = {
       var _this = this;
 
       if ($('.swiper-container').length) {
-        _this.swiper();
+        _this.initSwiper();
       }
     },
 
-    swiper: function() {
-      var swiper = new Swiper('.swiper-container', {
-        loop: true,
+    initSwiper: function() {
+      var _this = this;
+
+      _this.$sliderPrev = $('.slider-prev');
+      _this.$sliderNext = $('.slider-next');
+
+      _this.swiper = new Swiper('.swiper-container', {
         speed: 800,
         spaceBetween: 36,
-        nextButton: '.slider-next',
-        prevButton: '.slider-prev',
         setWrapperSize: true,
+      });
+
+      _this.bindPagination();
+    },
+
+    bindPagination: function() {
+      var _this = this;
+
+      // Prev moves gallery until first slide, then allows <a> link
+      _this.$sliderPrev.on('click', function(e) {
+        var href = $(this).attr('href');
+
+        if (!_this.swiper.isBeginning || typeof href == typeof undefined || href == false) {
+          e.preventDefault();
+          _this.swiper.slidePrev();
+        }
+      });
+
+      // Next moves gallery until last slide, then allows <a> link
+      _this.$sliderNext.on('click', function(e) {
+        var href = $(this).attr('href');
+
+        if (!_this.swiper.isEnd || typeof href == typeof undefined || href == false) {
+          e.preventDefault();
+          _this.swiper.slideNext();
+        }
       });
     }
   },
