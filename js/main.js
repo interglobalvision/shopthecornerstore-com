@@ -128,8 +128,10 @@ Site.Shop = {
     initSwiper: function() {
       var _this = this;
 
+      _this.$sliderPrev = $('.slider-prev');
+      _this.$sliderNext = $('.slider-next');
+
       _this.swiper = new Swiper('.swiper-container', {
-        loop: true,
         speed: 800,
         spaceBetween: 36,
         setWrapperSize: true,
@@ -142,7 +144,7 @@ Site.Shop = {
       var _this = this;
 
       // Prev moves gallery until first slide, then allows <a> link
-      $('.slider-prev').on('click', function(e) {
+      _this.$sliderPrev.on('click', function(e) {
         var href = $(this).attr('href');
 
         if (!_this.swiper.isBeginning || typeof href == typeof undefined || href == false) {
@@ -152,7 +154,7 @@ Site.Shop = {
       });
 
       // Next moves gallery until last slide, then allows <a> link
-      $('.slider-next').on('click', function(e) {
+      _this.$sliderNext.on('click', function(e) {
         var href = $(this).attr('href');
 
         if (!_this.swiper.isEnd || typeof href == typeof undefined || href == false) {
