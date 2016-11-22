@@ -17,8 +17,31 @@ if( have_posts() ) {
     $nextPost = get_adjacent_post(null, null, true);
     $prevPost = get_adjacent_post(null, null, false);
 
-    $nextLink = $nextPost ? get_permalink($nextPost->ID) : false;
-    $prevLink = $prevPost ? get_permalink($prevPost->ID) : false;
+    $firstPost = get_posts(array (
+      'posts_per_page'         => '1',
+      'order'                  => 'DESC',
+      'post_type'              => 'product'));
+
+    $lastPost = get_posts(array (
+      'posts_per_page'         => '1',
+      'order'                  => 'ASC',
+      'post_type'              => 'product'));
+
+    if ($nextPost) {
+      $nextLink = get_permalink($nextPost->ID);
+    } elseif ($firstPost) {
+      $nextLink = get_permalink($firstPost[0]->ID);
+    } else {
+      $nextLink = false;
+    }
+
+    if ($prevPost) {
+      $prevLink = get_permalink($prevPost->ID);
+    } elseif ($lastPost) {
+      $prevLink = get_permalink($lastPost[0]->ID);
+    } else {
+      $prevLink = false;
+    }
 
     $product = new WC_Product($post->ID);
     $product_id = $product->id;
