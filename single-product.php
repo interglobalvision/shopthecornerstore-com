@@ -14,34 +14,80 @@ if( have_posts() ) {
   while( have_posts() ) {
     the_post();
 
-    $nextPost = get_adjacent_post(null, null, true);
-    $prevPost = get_adjacent_post(null, null, false);
+    $firstPost = false;
+    $lastPost = false;
+    $nextPost = false;
+    $prevPost = false;
 
-    $firstPost = get_posts(array (
-      'posts_per_page'         => '1',
-      'order'                  => 'DESC',
-      'post_type'              => 'product'));
+    $ordering  = WC()->query->get_catalog_ordering_args();
 
-    $lastPost = get_posts(array (
-      'posts_per_page'         => '1',
-      'order'                  => 'ASC',
-      'post_type'              => 'product'));
+    $nextPosts = get_posts( array(
+      'order'           => 'ASC',
+      'orderby'         => $ordering['orderby'],
+      'post_type'       => 'product'
+    ));
 
-    if ($nextPost) {
-      $nextLink = get_permalink($nextPost->ID);
-    } elseif ($firstPost) {
-      $nextLink = get_permalink($firstPost[0]->ID);
+    if (count($nextPosts) > 1) {
+      $firstPost = $nextPosts[0];
+
+      $n = false;
+
+      foreach ($nextPosts as $p) {
+        if ($n) {
+          $nextPost = $p;
+          break;
+        } elseif ($p->ID === $post->ID) {
+          $n = true;
+        } else {
+          $n = false;
+        }
+      }
+
+      if ($nextPost) {
+        $nextLink = get_permalink($nextPost->ID);
+      } elseif ($firstPost) {
+        $nextLink = get_permalink($firstPost->ID);
+      } else {
+        $nextLink = false;
+      }
+
     } else {
       $nextLink = false;
     }
 
-    if ($prevPost) {
-      $prevLink = get_permalink($prevPost->ID);
-    } elseif ($lastPost) {
-      $prevLink = get_permalink($lastPost[0]->ID);
+    $prevPosts = get_posts( array(
+      'order'           => 'DESC',
+      'orderby'         => $ordering['orderby'],
+      'post_type'       => 'product'
+    ));
+
+    if (count($prevPosts) > 1) {
+      $lastPost = $prevPosts[0];
+
+      $n = false;
+
+      foreach ($prevPosts as $p) {
+        if ($n) {
+          $prevPost = $p;
+          break;
+        } elseif ($p->ID === $post->ID) {
+          $n = true;
+        } else {
+          $n = false;
+        }
+      }
+
+      if ($prevPost) {
+        $prevLink = get_permalink($prevPost->ID);
+      } elseif ($lastPost) {
+        $prevLink = get_permalink($lastPost->ID);
+      } else {
+        $prevLink = false;
+      }
     } else {
-      $prevLink = false;
+      $nextLink = false;
     }
+
 
     $product = new WC_Product($post->ID);
     $product_id = $product->id;
