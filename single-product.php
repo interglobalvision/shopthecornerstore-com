@@ -22,6 +22,7 @@ if( have_posts() ) {
     $ordering  = WC()->query->get_catalog_ordering_args();
 
     $nextPosts = get_posts( array(
+      'numberposts'   => -1,
       'order'           => 'ASC',
       'orderby'         => $ordering['orderby'],
       'post_type'       => 'product'
@@ -33,13 +34,20 @@ if( have_posts() ) {
       $n = false;
 
       foreach ($nextPosts as $p) {
-        if ($n) {
-          $nextPost = $p;
-          break;
-        } elseif ($p->ID === $post->ID) {
-          $n = true;
-        } else {
-          $n = false;
+        $product = new WC_Product($p->ID);
+        
+        if ($product->is_visible()) {
+          if ($n) {
+            // assign this post as the next
+            $nextPost = $p;
+            break;
+          } elseif ($p->ID === $post->ID) {
+            // assign the next post
+            $n = true;
+          } else {
+            // not there yet, keep going
+            $n = false;
+          }
         }
       }
 
@@ -56,6 +64,7 @@ if( have_posts() ) {
     }
 
     $prevPosts = get_posts( array(
+      'numberposts'   => -1,
       'order'           => 'DESC',
       'orderby'         => $ordering['orderby'],
       'post_type'       => 'product'
@@ -67,13 +76,20 @@ if( have_posts() ) {
       $n = false;
 
       foreach ($prevPosts as $p) {
-        if ($n) {
-          $prevPost = $p;
-          break;
-        } elseif ($p->ID === $post->ID) {
-          $n = true;
-        } else {
-          $n = false;
+        $product = new WC_Product($p->ID);
+        
+        if ($product->is_visible()) {
+          if ($n) {
+            // assign this post as the previous
+            $prevPost = $p;
+            break;
+          } elseif ($p->ID === $post->ID) {
+            // assign the next post
+            $n = true;
+          } else {
+            // not there yet, keep going
+            $n = false;
+          }
         }
       }
 
@@ -85,7 +101,7 @@ if( have_posts() ) {
         $prevLink = false;
       }
     } else {
-      $nextLink = false;
+      $prevLink = false;
     }
 
 
