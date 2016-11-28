@@ -135,6 +135,9 @@ Site.Shop = {
         speed: 800,
         spaceBetween: 36,
         setWrapperSize: true,
+        onInit: function(swiper){
+          $('.swiper-container').css('visibility','visible');
+        },
       });
 
       _this.bindPagination();
@@ -222,6 +225,7 @@ Site.Editorial = {
         prevButton: '.slider-prev',
         setWrapperSize: true,
         onInit: function(swiper) {
+          $('.swiper-container').css('visibility','visible');
           _this.updateProductDetails();
         },
         onSlideChangeStart: function(swiper) {
