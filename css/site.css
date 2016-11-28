@@ -1820,7 +1820,8 @@ img.shop-product-sold-icon {
 .journal-post p a,
 .journal-post p a:active,
 .journal-post p a:visited {
-  text-decoration: underline;
+  text-decoration: none;
+  color: #7f7f7f;
 }
 .post-image {
   margin-left: auto;
