@@ -81,6 +81,13 @@ function igv_cmb_metaboxes() {
     'object_types' => array( 'editorial', ),
   ) );
 
+  $editorial_group->add_field( array(
+    'name'       => __( 'Credits', 'cmb2' ),
+    'desc'       => __( '', 'cmb2' ),
+    'id'         => $prefix . 'credits_text',
+    'type'       => 'wysiwyg',
+  ) );
+
   // $group_field_id is the field id string, so in this case: $prefix . 'demo'
   $editorial_group_field_id = $editorial_group->add_field( array(
     'id'          => $prefix . 'slides',
@@ -133,6 +140,13 @@ function igv_cmb_metaboxes() {
     'id'           => $prefix . 'product_slides',
     'title'        => __( 'Product slideshow', 'cmb2' ),
     'object_types' => array( 'product', ),
+  ) );
+
+  $product_group->add_field( array(
+    'name'       => __( 'Credits', 'cmb2' ),
+    'desc'       => __( '', 'cmb2' ),
+    'id'         => $prefix . 'credits_text',
+    'type'       => 'wysiwyg',
   ) );
 
   // $group_field_id is the field id string, so in this case: $prefix . 'demo'

@@ -12,6 +12,7 @@ if( have_posts() ) {
     the_post();
 
     $slides = get_post_meta($post->ID, '_igv_slides');
+    $credits = get_post_meta($post->ID, '_igv_credits_text', true);
 ?>
 
     <article <?php post_class('row slider-row'); ?> id="post-<?php the_ID(); ?>">
@@ -110,7 +111,19 @@ if( have_posts() ) {
                   }
                 ?>
               </div>
-<?php } // End foreach ?>
+<?php 
+      } // End foreach 
+
+      if (!empty($credits)) {
+?> 
+              <div class="swiper-slide text-align-center row justify-center align-center">
+                <div class="col col-s-12 col-no-margin-bottom slide-column justify-center">
+                  <?php echo apply_filters('the_content', $credits); ?>
+                </div>
+              </div>
+<?php 
+      }
+?>
 
           <!-- End Slides -->
           </div>
