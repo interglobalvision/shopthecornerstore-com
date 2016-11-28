@@ -1618,6 +1618,7 @@ a.button-shop:disabled[disabled],
 }
 .splash-logo svg {
   width: 100%;
+  height: auto;
 }
 .splash-nav {
   font-size: $font-size-basic;
