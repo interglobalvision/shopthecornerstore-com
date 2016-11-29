@@ -44,6 +44,7 @@ if( have_posts() ) {
 <?php
     }
 
+    if ($post->post_content!="") {
 ?>
       <div class="<?php echo $is_recent ? 'slider-credits' : '' ; ?> margin-top-basic margin-bottom-basic">
 
@@ -51,6 +52,7 @@ if( have_posts() ) {
 
       </div>
 <?php
+    }
 
     if (!empty($slides)) {
       if (count($slides[0] > 1)) {
