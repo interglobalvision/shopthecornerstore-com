@@ -183,16 +183,6 @@ if( have_posts() ) {
             </div>
 <?php
     }
-
-    if (!empty($credits)) {
-?> 
-            <div class="swiper-slide text-align-center row justify-center align-center">
-              <div class="col col-s-12 col-no-margin-bottom slide-column justify-center">
-                <?php echo apply_filters('the_content', $credits); ?>
-              </div>
-            </div>
-<?php 
-    }
 ?>
           <!-- End Slides -->
           </div>
