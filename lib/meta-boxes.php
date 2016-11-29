@@ -81,18 +81,11 @@ function igv_cmb_metaboxes() {
     'object_types' => array( 'editorial', ),
   ) );
 
-  $editorial_group->add_field( array(
-    'name'       => __( 'Credits', 'cmb2' ),
-    'desc'       => __( 'These show as the caption to the last slide. Make sure the last slide does not have any products attached otherwise the credits will not show', 'cmb2' ),
-    'id'         => $prefix . 'credits_text',
-    'type'       => 'wysiwyg',
-  ) );
-
   // $group_field_id is the field id string, so in this case: $prefix . 'demo'
   $editorial_group_field_id = $editorial_group->add_field( array(
     'id'          => $prefix . 'slides',
     'type'        => 'group',
-    'description' => __( 'Make sure the last slide does not have any products attached otherwise the credits will not show', 'cmb2' ),
+    'description' => __( 'Make sure the last slide does not have any products attached otherwise the content/credits will not show', 'cmb2' ),
     'options'     => array(
       'group_title'   => __( 'Slide {#}', 'cmb2' ), // {#} gets replaced by row number
       'add_button'    => __( 'Add Another Slide', 'cmb2' ),

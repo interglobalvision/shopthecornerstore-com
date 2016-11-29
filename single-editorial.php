@@ -19,7 +19,6 @@ if( have_posts() ) {
     the_post();
 
     $slides = get_post_meta($post->ID, '_igv_slides');
-    $credits = get_post_meta($post->ID, '_igv_credits_text', true);
     $is_recent = ($recent_id === $post->ID ? true : false);
 ?>
 
@@ -28,9 +27,9 @@ if( have_posts() ) {
       <!-- Product details container -->
       <div class="col col-s-12 col-l-3 col-no-margin-bottom column justify-between">
 
-<?php 
+<?php
     if ($is_recent) {
-?> 
+?>
         <div class="slider-product-1-details slider-product-details margin-top-basic margin-bottom-basic">
 
           <?php get_template_part( 'partials/product-details' ); ?>
@@ -42,18 +41,16 @@ if( have_posts() ) {
           <?php get_template_part( 'partials/product-details' ); ?>
 
         </div>
-<?php 
-    } 
-
-    if (!empty($credits)) {
-?>
-        <div class="<?php echo $is_recent ? 'slider-credits' : '' ; ?> margin-top-basic margin-bottom-basic">
-
-          <?php echo apply_filters('the_content', $credits); ?>
-
-        </div>
 <?php
-    } 
+    }
+
+?>
+      <div class="<?php echo $is_recent ? 'slider-credits' : '' ; ?> margin-top-basic margin-bottom-basic">
+
+        <?php the_content(); ?>
+
+      </div>
+<?php
 
     if (!empty($slides)) {
       if (count($slides[0] > 1)) {
@@ -133,8 +130,8 @@ if( have_posts() ) {
                   }
                 ?>
               </div>
-<?php 
-      } // End foreach 
+<?php
+      } // End foreach
 ?>
 
           <!-- End Slides -->
