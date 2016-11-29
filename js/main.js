@@ -221,7 +221,7 @@ Site.Editorial = {
         nextButton: '.slider-next',
         prevButton: '.slider-prev',
         setWrapperSize: true,
-        onInit: function() {
+        onInit: function(swiper) {
           $('.swiper-container').css('visibility','visible');
           _this.updateProductDetails();
         },
