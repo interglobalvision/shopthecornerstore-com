@@ -1,5 +1,5 @@
 /* jshint browser: true, devel: true, indent: 2, curly: true, eqeqeq: true, futurehostile: true, latedef: true, undef: true, unused: true */
-/* global $, jQuery, document, Site, Modernizr, Swiper */
+/* global $, document, Site, Swiper */
 
 Site = {
   mobileThreshold: 601,
@@ -31,7 +31,7 @@ Site = {
 
       if ($('body').hasClass('single-editorial')) {
         _this.Editorial.Single.init();
-      } 
+      }
 
       if ($('body').hasClass('post-type-archive-editorial')) {
         _this.Editorial.Archive.init();
@@ -51,12 +51,12 @@ Site = {
     _this.resizeDelay();
   },
 
-  resizeDelay: function() { 
+  resizeDelay: function() {
     var resizeTimer;
 
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function() {
-      $(window).trigger('resizeEnd');   
+      $(window).trigger('resizeEnd');
     }, 500);
   },
 
@@ -135,7 +135,7 @@ Site.Shop = {
         speed: 800,
         spaceBetween: 36,
         setWrapperSize: true,
-        onInit: function(swiper){
+        onInit: function() {
           $('.swiper-container').css('visibility','visible');
         },
       });
@@ -167,8 +167,7 @@ Site.Shop = {
       });
     }
   },
-
-}
+};
 
 Site.Journal = {
   init: function() {
@@ -176,7 +175,7 @@ Site.Journal = {
       $('#journal-container').masonry({
         itemSelector: '.journal-post',
         transitionDuration: 0,
-      }); 
+      });
 
       $('#journal-container').imagesLoaded().progress( function() {
         $('#journal-container').masonry('layout');
@@ -185,8 +184,6 @@ Site.Journal = {
   },
 
   masonryLayout: function() {
-    var _this = this;
-
     if ($('#journal-container').length) {
       $('#journal-container').masonry('layout');
     }
@@ -198,7 +195,7 @@ Site.Splash = {
   init: function() {
     var _this = this;
 
-    var swiper = new Swiper('.swiper-container', {
+    _this.swiper = new Swiper('.swiper-container', {
       autoplay: 3000,
       loop: true,
       speed: 1500,
@@ -217,50 +214,69 @@ Site.Editorial = {
     init: function() {
       var _this = this;
 
-      var swiper = new Swiper('.swiper-container', {
-        loop: true,
+      _this.swiper = new Swiper('.swiper-container', {
+        loop: false,
         speed: 800,
         spaceBetween: 36,
         nextButton: '.slider-next',
         prevButton: '.slider-prev',
         setWrapperSize: true,
-        onInit: function(swiper) {
+        onInit: function() {
           $('.swiper-container').css('visibility','visible');
           _this.updateProductDetails();
         },
         onSlideChangeStart: function(swiper) {
           _this.updateProductDetails();
+
+          if (swiper.isBeginning) {
+            $('.slider-prev').hide();
+            $('.slider-next').show();
+          } else if (swiper.isEnd) {
+            $('.slider-prev').show();
+            $('.slider-next').hide();
+          } else {
+            $('.slider-prev').show();
+            $('.slider-next').show();
+          }
         }
       });
-
     },
 
     updateProductDetails: function() {
-      for(var prod = 1; prod < 3; prod++) {
-        if ($('.swiper-slide-active').attr('data-product-' + prod)) {
-          var productData = JSON.parse($('.swiper-slide-active').attr('data-product-' + prod));
+      var _this = this;
 
-          $('.slider-product-' + prod +'-details .js-product-title').html(productData['title']).attr('href',productData['url']);
-          $('.slider-product-' + prod +'-details .js-product-content').html(productData['content']);
-          $('.slider-product-' + prod +'-details .js-product-price').html(productData['price']);
-          $('.slider-product-' + prod +'-details .js-product-attributes').html(productData['attributes']);
+      if ($('.swiper-slide-active').attr('data-product-1') || $('.swiper-slide-active').attr('data-product-2')) {
+        for(var prod = 1; prod < 3; prod++) {
+          if ($('.swiper-slide-active').attr('data-product-' + prod)) {
+            var productData = JSON.parse($('.swiper-slide-active').attr('data-product-' + prod));
 
-          if (productData['stock']) {
-            $('.slider-product-' + prod +'-details .js-product-button').html(productData['button_text']).removeClass('u-hidden');
-            $('.slider-product-' + prod +'-details .js-product-id').attr('value',productData['id']);
-            $('.slider-product-' + prod +'-details .js-product-sold').addClass('u-hidden');
+            $('.slider-product-' + prod +'-details .js-product-title').html(productData['title']).attr('href',productData['url']);
+            $('.slider-product-' + prod +'-details .js-product-content').html(productData['content']);
+            $('.slider-product-' + prod +'-details .js-product-price').html(productData['price']);
+            $('.slider-product-' + prod +'-details .js-product-attributes').html(productData['attributes']);
+
+            if (productData['stock']) {
+              $('.slider-product-' + prod +'-details .js-product-button').html(productData['button_text']).removeClass('u-hidden');
+              $('.slider-product-' + prod +'-details .js-product-id').attr('value',productData['id']);
+              $('.slider-product-' + prod +'-details .js-product-sold').addClass('u-hidden');
+            } else {
+              $('.slider-product-' + prod +'-details .js-product-sold').removeClass('u-hidden').html(productData['availability']['availability']);
+              $('.slider-product-' + prod +'-details .js-product-button').addClass('u-hidden');
+            }
+
+            $('.slider-product-' + prod +'-details').show();
+            $('.slider-credits').hide();
           } else {
-            $('.slider-product-' + prod +'-details .js-product-sold').removeClass('u-hidden').html(productData['availability']['availability']);
-            $('.slider-product-' + prod +'-details .js-product-button').addClass('u-hidden');
+            $('.slider-product-' + prod +'-details, .slider-credits').hide();
           }
-
-          $('.slider-product-' + prod +'-details').show();
-        } else {
-          $('.slider-product-' + prod +'-details').hide();
         }
+      } else if (_this.swiper.isEnd) {
+        $('.slider-product-details').hide();
+        $('.slider-credits').show();
+      } else {
+        $('.slider-product-details').hide();
       }
     },
-
   },
 
   Archive: {
@@ -274,14 +290,10 @@ Site.Editorial = {
     },
 
     showImage: function(id) {
-      var _this = this;
-
       $('.archive-editorial-image').hide();
       $('.archive-editorial-image[data-id=' + id + ']').show();
     }
-
   },
-
 };
 
 Site.init();

@@ -1682,6 +1682,7 @@ a.button-shop:disabled[disabled],
 }
 #header-logo svg {
   width: 140px;
+  height: auto;
 }
 #header-logo .logo-path {
   fill: #0e0e0e;
@@ -1874,6 +1875,12 @@ img.shop-product-sold-icon {
 }
 .slider-button:focus {
   outline: none;
+}
+.slider-credits {
+  display: none;
+}
+.editorial .slider-prev {
+  display: none;
 }
 p.form-row {
   -ms-flex: 1 1 100%;
