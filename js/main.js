@@ -270,9 +270,11 @@ Site.Editorial = {
             $('.slider-product-' + prod +'-details, .slider-credits').hide();
           }
         }
-      } else if (_this.swiper.isEnd && $('.slider-credits').length) {
+      } else if (_this.swiper.isEnd) {
         $('.slider-product-details').hide();
         $('.slider-credits').show();
+      } else {
+        $('.slider-product-details').hide();
       }
     },
   },
