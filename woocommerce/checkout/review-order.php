@@ -93,7 +93,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php if ( wc_tax_enabled() && 'excl' === WC()->cart->tax_display_cart ) : ?>
 			<?php if ( 'itemized' === get_option( 'woocommerce_tax_total_display' ) ) : ?>
 				<?php foreach ( WC()->cart->get_tax_totals() as $code => $tax ) : ?>
-        <div class="row tax-rate tax-rate-<?php echo sanitize_title( $code ); ?>">
+        <div class="row table-row tax-rate tax-rate-<?php echo sanitize_title( $code ); ?>">
           <div class="col col-s-12 col-m-6">
 						<span><?php echo esc_html( $tax->label ); ?></span>
           </div>
@@ -103,7 +103,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
 				<?php endforeach; ?>
 			<?php else : ?>
-				<div class="row tax-total">
+				<div class="row table-row tax-total">
           <div class="col col-s-12 col-m-6">
             <span><?php echo esc_html( WC()->countries->tax_or_vat() ); ?></span>
           </div>
