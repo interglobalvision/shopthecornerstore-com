@@ -1879,6 +1879,9 @@ img.shop-product-sold-icon {
 .slider-credits {
   display: none;
 }
+.editorial .slider-prev {
+  display: none;
+}
 p.form-row {
   -ms-flex: 1 1 100%;
   -webkit-box-flex: 1;

@@ -230,6 +230,17 @@ Site.Editorial = {
         },
         onSlideChangeStart: function(swiper) {
           _this.updateProductDetails();
+
+          if (_this.swiper.isBeginning) {
+            $('.slider-prev').hide();
+            $('.slider-next').show();
+          } else if (_this.swiper.isEnd) {
+            $('.slider-prev').show();
+            $('.slider-next').hide();
+          } else {
+            $('.slider-prev').show();
+            $('.slider-next').show();
+          }
         }
       });
 
@@ -239,7 +250,6 @@ Site.Editorial = {
       var _this = this;
 
       if ($('.swiper-slide-active').attr('data-product-1') || $('.swiper-slide-active').attr('data-product-2')) {
-        console.log('has product');
         for(var prod = 1; prod < 3; prod++) {
           if ($('.swiper-slide-active').attr('data-product-' + prod)) {
             var productData = JSON.parse($('.swiper-slide-active').attr('data-product-' + prod));
