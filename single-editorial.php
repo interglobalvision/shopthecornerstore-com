@@ -1,5 +1,12 @@
 <?php
 get_header();
+
+$args = array(
+  'post_type' => 'editorial',
+  'post_per_page' => 1,
+);
+$recent_editorial = get_posts($args);
+$recent_id = $recent_editorial[0]->ID;
 ?>
 
 <!-- main content -->
@@ -13,6 +20,7 @@ if( have_posts() ) {
 
     $slides = get_post_meta($post->ID, '_igv_slides');
     $credits = get_post_meta($post->ID, '_igv_credits_text', true);
+    $is_recent = ($recent_id === $post->ID ? true : false);
 ?>
 
     <article <?php post_class('row slider-row'); ?> id="post-<?php the_ID(); ?>">
@@ -20,6 +28,9 @@ if( have_posts() ) {
       <!-- Product details container -->
       <div class="col col-s-12 col-l-3 col-no-margin-bottom column justify-between">
 
+<?php 
+    if ($is_recent) {
+?> 
         <div class="slider-product-1-details slider-product-details margin-top-basic margin-bottom-basic">
 
           <?php get_template_part( 'partials/product-details' ); ?>
@@ -31,8 +42,19 @@ if( have_posts() ) {
           <?php get_template_part( 'partials/product-details' ); ?>
 
         </div>
+<?php 
+    } 
 
+    if (!empty($credits)) {
+?>
+        <div class="<?php echo $is_recent ? 'slider-credits' : '' ; ?> margin-top-basic margin-bottom-basic">
+
+          <?php echo apply_filters('the_content', $credits); ?>
+
+        </div>
 <?php
+    } 
+
     if (!empty($slides)) {
       if (count($slides[0] > 1)) {
 ?>
@@ -113,16 +135,6 @@ if( have_posts() ) {
               </div>
 <?php 
       } // End foreach 
-
-      if (!empty($credits)) {
-?> 
-              <div class="swiper-slide text-align-center row justify-center align-center">
-                <div class="col col-s-12 col-no-margin-bottom slide-column justify-center">
-                  <?php echo apply_filters('the_content', $credits); ?>
-                </div>
-              </div>
-<?php 
-      }
 ?>
 
           <!-- End Slides -->
