@@ -1598,6 +1598,9 @@ a.button-shop:disabled[disabled],
   -ms-flex-direction: column;
   flex-direction: column;
 }
+.splash-container .swiper-container {
+  visibility: visible;
+}
 .splash-swiper {
   position: fixed !important;
   top: 0;
