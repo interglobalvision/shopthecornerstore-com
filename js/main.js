@@ -214,7 +214,7 @@ Site.Editorial = {
     init: function() {
       var _this = this;
 
-      _this.swiper = new Swiper('.swiper-container', {
+      var swiper = new Swiper('.swiper-container', {
         loop: false,
         speed: 800,
         spaceBetween: 36,
@@ -223,10 +223,10 @@ Site.Editorial = {
         setWrapperSize: true,
         onInit: function(swiper) {
           $('.swiper-container').css('visibility','visible');
-          _this.updateProductDetails();
+          _this.updateProductDetails(swiper);
         },
         onSlideChangeStart: function(swiper) {
-          _this.updateProductDetails();
+          _this.updateProductDetails(swiper);
 
           if (swiper.isBeginning) {
             $('.slider-prev').hide();
@@ -242,7 +242,7 @@ Site.Editorial = {
       });
     },
 
-    updateProductDetails: function() {
+    updateProductDetails: function(swiper) {
       var _this = this;
 
       if ($('.swiper-slide-active').attr('data-product-1') || $('.swiper-slide-active').attr('data-product-2')) {
@@ -270,7 +270,7 @@ Site.Editorial = {
             $('.slider-product-' + prod +'-details, .slider-credits').hide();
           }
         }
-      } else if (_this.swiper.isEnd) {
+      } else if (swiper.isEnd) {
         $('.slider-product-details').hide();
         $('.slider-credits').show();
       } else {
