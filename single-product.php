@@ -35,7 +35,7 @@ if( have_posts() ) {
 
       foreach ($nextPosts as $p) {
         $product = new WC_Product($p->ID);
-        
+
         if ($product->is_visible()) {
           if ($n) {
             // assign this post as the next
@@ -77,7 +77,7 @@ if( have_posts() ) {
 
       foreach ($prevPosts as $p) {
         $product = new WC_Product($p->ID);
-        
+
         if ($product->is_visible()) {
           if ($n) {
             // assign this post as the previous
@@ -120,7 +120,7 @@ if( have_posts() ) {
           <?php get_template_part( 'partials/product-details' ); ?>
 
         </div>
-<?php 
+<?php
     if (!empty($slides)) {
       if (count($slides[0] > 1)) {
 ?>
@@ -128,17 +128,17 @@ if( have_posts() ) {
 
           <div class="col col-s-4 col-no-margin-bottom col-no-gutter">
             <a class="slider-button slider-prev" <?php echo $prevLink ? 'href="' . $prevLink . '"' : ''; ?>>
-              <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_left.svg'); ?>
+              <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_left.svg'); ?>
             </a>
           </div>
           <div class="col col-s-4 col-no-margin-bottom col-no-gutter">
             <a class="slider-button slider-next" <?php echo $nextLink ? 'href="' . $nextLink . '"' : ''; ?>>
-              <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_right.svg'); ?>
+              <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_right.svg'); ?>
             </a>
           </div>
 
         </div>
-<?php 
+<?php
       }
     }
 ?>
@@ -149,10 +149,10 @@ if( have_posts() ) {
 ?>
           <div class="col col-s-1 col-no-gutter only-mobile row align-center justify-center">
             <a class="slider-button slider-prev" <?php echo $prevLink ? 'href="' . $prevLink . '"' : ''; ?>>
-              <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_left.svg'); ?>
+              <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_left.svg'); ?>
             </a>
           </div>
-<?php 
+<?php
       }
 ?>
       <div class="col col-s-10 col-l-9 col-no-margin-bottom">
@@ -160,24 +160,24 @@ if( have_posts() ) {
         <div class="swiper-container set-swiper-height">
           <div class="swiper-wrapper align-center">
           <!-- Slides -->
-<?php 
+<?php
     foreach($slides[0] as $slide) {
 ?>
             <div class="swiper-slide text-align-center row justify-center align-center">
-              <?php 
+              <?php
                 if (!empty($slide['image_1_id'])) {
               ?>
               <div class="col <?php echo !empty($slide['image_2_id']) ? 'col-s-6' : 'col-s-12'; ?> col-no-margin-bottom slide-column justify-center align-center">
                 <?php echo wp_get_attachment_image($slide['image_1_id'], 'col10-square-nocrop', false, array( 'class' => '' )); ?>
               </div>
-              <?php 
+              <?php
                 }
                 if (!empty($slide['image_2_id'])) {
               ?>
               <div class="col <?php echo !empty($slide['image_1_id']) ? 'col-s-6' : 'col-s-12'; ?> col-no-margin-bottom slide-column justify-center align-center">
                 <?php echo wp_get_attachment_image($slide['image_2_id'], 'col10-square-nocrop', false, array( 'class' => '' )); ?>
               </div>
-              <?php 
+              <?php
                 }
               ?>
             </div>
@@ -194,10 +194,10 @@ if( have_posts() ) {
 ?>
           <div class="col col-s-1 col-no-gutter only-mobile row align-center justify-center">
             <a class="slider-button slider-next" <?php echo $nextLink ? 'href="' . $nextLink . '"' : ''; ?>>
-              <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_right.svg'); ?>
+              <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_right.svg'); ?>
             </a>
           </div>
-<?php 
+<?php
     }
   }
 ?>

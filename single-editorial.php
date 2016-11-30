@@ -61,12 +61,12 @@ if( have_posts() ) {
 
           <div class="col col-s-4 col-no-margin-bottom col-no-gutter">
             <button class="slider-button slider-prev">
-              <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_left.svg'); ?>
+              <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_left.svg'); ?>
             </button>
           </div>
           <div class="col col-s-4 col-no-margin-bottom col-no-gutter">
             <button class="slider-button slider-next">
-              <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_right.svg'); ?>
+              <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_right.svg'); ?>
             </button>
           </div>
 
@@ -85,7 +85,7 @@ if( have_posts() ) {
 ?>
           <div class="col col-s-1 col-no-gutter only-mobile row align-center justify-center">
             <button class="slider-button slider-prev">
-              <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_left.svg'); ?>
+              <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_left.svg'); ?>
             </button>
           </div>
 <?php
@@ -146,7 +146,7 @@ if( have_posts() ) {
 ?>
           <div class="col col-s-1 col-no-gutter only-mobile row align-center justify-center">
             <button class="slider-button slider-next">
-              <?php echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_right.svg'); ?>
+              <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_right.svg'); ?>
             </button>
           </div>
 <?php
