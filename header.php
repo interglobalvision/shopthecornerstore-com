@@ -78,7 +78,7 @@
 
       <div id="header-logo" class="col col-s-12 col-l-2">
         <a href="<?php echo home_url(); ?>">
-          <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/logo.svg'); ?>
+          <?php echo '<img src="' . get_bloginfo('stylesheet_directory') . '/img/dist/logo.svg">'; ?>
         </a>
       </div>
 

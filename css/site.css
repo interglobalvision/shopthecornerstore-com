@@ -1622,7 +1622,8 @@ a.button-shop:disabled[disabled],
 .splash-logo {
   fill: #fff;
 }
-.splash-logo svg {
+.splash-logo svg,
+.splash-logo img {
   width: 100%;
   height: auto;
 }
@@ -1683,8 +1684,9 @@ a.button-shop:disabled[disabled],
 #header-logo {
   text-align: center;
 }
-#header-logo svg {
-  width: 140px;
+#header-logo svg,
+#header-logo img {
+  width: 160px;
   height: auto;
 }
 #header-logo .logo-path {
@@ -1869,11 +1871,13 @@ img.shop-product-sold-icon {
   -webkit-appearance: none;
   padding: 0;
 }
-.slider-button svg {
+.slider-button svg,
+.slider-button img {
   width: 100%;
   height: 100%;
 }
-.slider-button svg path {
+.slider-button svg path,
+.slider-button img path {
   fill: #0e0e0e;
 }
 .slider-button:focus {

@@ -128,12 +128,12 @@ if( have_posts() ) {
 
           <div class="col col-s-4 col-no-margin-bottom col-no-gutter">
             <a class="slider-button slider-prev" <?php echo $prevLink ? 'href="' . $prevLink . '"' : ''; ?>>
-              <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_left.svg'); ?>
+              <?php echo '<img src="'. get_bloginfo('stylesheet_directory') . '/img/dist/arrow_left.svg">'; ?>
             </a>
           </div>
           <div class="col col-s-4 col-no-margin-bottom col-no-gutter">
             <a class="slider-button slider-next" <?php echo $nextLink ? 'href="' . $nextLink . '"' : ''; ?>>
-              <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_right.svg'); ?>
+              <?php echo '<img src="'. get_bloginfo('stylesheet_directory') . '/img/dist/arrow_right.svg">'; ?>
             </a>
           </div>
 
@@ -149,7 +149,7 @@ if( have_posts() ) {
 ?>
           <div class="col col-s-1 col-no-gutter only-mobile row align-center justify-center">
             <a class="slider-button slider-prev" <?php echo $prevLink ? 'href="' . $prevLink . '"' : ''; ?>>
-              <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_left.svg'); ?>
+              <?php echo '<img src="'. get_bloginfo('stylesheet_directory') . '/img/dist/arrow_left.svg">'; ?>
             </a>
           </div>
 <?php
@@ -194,7 +194,7 @@ if( have_posts() ) {
 ?>
           <div class="col col-s-1 col-no-gutter only-mobile row align-center justify-center">
             <a class="slider-button slider-next" <?php echo $nextLink ? 'href="' . $nextLink . '"' : ''; ?>>
-              <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/arrow_right.svg'); ?>
+              <?php echo '<img src="'. get_bloginfo('stylesheet_directory') . '/img/dist/arrow_right.svg">'; ?>
             </a>
           </div>
 <?php
