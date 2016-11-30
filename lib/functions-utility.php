@@ -9,7 +9,13 @@ function url_get_contents($Url) {
   curl_setopt($ch, CURLOPT_URL, $Url);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   $output = curl_exec($ch);
+  $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
   curl_close($ch);
+
+  if ($httpcode == 404) {
+    return false;
+  }
+
   return $output;
 }
 
@@ -88,6 +94,6 @@ function get_product_options() {
 // Get attachment ID by url
 function attachment_id_from_url($image_url) {
   global $wpdb;
-  $attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url )); 
-  return $attachment[0]; 
+  $attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url ));
+  return $attachment[0];
 }
