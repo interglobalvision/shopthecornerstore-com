@@ -95,6 +95,7 @@ Site.Shop = {
         $('.toggle-sold').on('click', function(event) {
           event.preventDefault();
 
+          // Check if products are hidden
           if($('body').hasClass('hidden-products')) {
             // show sold out products
             $('body').removeClass('hidden-products');
