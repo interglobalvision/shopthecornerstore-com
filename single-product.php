@@ -122,7 +122,7 @@ if( have_posts() ) {
         </div>
 <?php
     if (!empty($slides)) {
-      if (count($slides[0] > 1)) {
+      if (count($slides[0]) > 1) {
 ?>
         <div class="slider-pagination-holder margin-bottom-basic row align-end only-desktop">
 
@@ -145,7 +145,7 @@ if( have_posts() ) {
       </div>
 <?php
   if (!empty($slides)) {
-    if (count($slides[0] > 1)) {
+    if (count($slides[0]) > 1) {
 ?>
           <div class="col col-s-1 col-no-gutter only-mobile row align-center justify-center">
             <a class="slider-button slider-prev" <?php echo $prevLink ? 'href="' . $prevLink . '"' : ''; ?>>
