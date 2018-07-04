@@ -10,7 +10,7 @@ function scripts_and_styles_method() {
   $jslib = $templateuri . 'library.js';
   wp_enqueue_script( 'jslib', $jslib,'','',true);
 
-  $myscripts = $templateuri . 'main.min.js';
+  $myscripts = $templateuri . 'main.js';
   wp_register_script( 'myscripts', $myscripts );
 
   $is_admin = current_user_can('administrator') ? 1 : 0;
@@ -79,8 +79,8 @@ function mgt_dequeue_stylesandscripts() {
         wp_dequeue_script( 'select2');
         wp_deregister_script('select2');
 
-    } 
-} 
+    }
+}
 
 // Add custom functions
 

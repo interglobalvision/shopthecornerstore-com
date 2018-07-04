@@ -34,4 +34,14 @@
   <li class="menu-item <?php echo is_home() ? 'active' : ''; ?>">
     <a href="<?php echo get_permalink( get_option('page_for_posts' ) ); ?>">Journal</a>
   </li>
+
+<?php
+  if (is_post_type_archive('product')) {
+?>
+  <li class="menu-item toggle-sold">
+    <a href="">TOGGLE</a>
+  </li>
+<?php
+  }
+?>
 </ul>

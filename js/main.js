@@ -80,6 +80,36 @@ Site.Shop = {
     if ($('body').hasClass('single-product')) {
       _this.Product.init();
     }
+
+    if ($('#products')) {
+      _this.ToggleProducts.init();
+    }
+  },
+
+  ToggleProducts: {
+    init: function() {
+      var _this = this;
+
+      if($('.toggle-sold').length) {
+        // bind on click
+        $('.toggle-sold').on('click', function(event) {
+          event.preventDefault();
+
+          // Check if products are hidden
+          if($('body').hasClass('hidden-products')) {
+            // show sold out products
+            $('body').removeClass('hidden-products');
+            $('.outofstock').fadeIn(300)
+          } else {
+            // hide sold out products
+            $('.outofstock').fadeOut(300, function() {
+              $('body').addClass('hidden-products');
+            });
+          }
+        });
+
+      }
+    }
   },
 
   Search: {
