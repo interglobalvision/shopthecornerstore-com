@@ -1702,9 +1702,6 @@ a.button-shop:disabled[disabled],
           filter: none;
   opacity: 1;
 }
-.hideen-products .shop-product {
-  display: none;
-}
 .shop-product-title-holder {
   position: absolute;
   top: 0;
