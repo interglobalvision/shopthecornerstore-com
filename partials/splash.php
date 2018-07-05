@@ -8,8 +8,8 @@ if (!empty($images)) {
   <div class="splash-swiper swiper-container">
     <div class="swiper-wrapper">
 <?php
-  foreach($images as $image) {
-    $image_url = wp_get_attachment_image_src($image, 'splash');
+  foreach($images as $id => $url) {
+    $image_url = wp_get_attachment_image_src($id, 'splash');
 ?>
       <div class="splash-slide swiper-slide" style="background-image: url(<?php echo $image_url[0]; ?>)"></div>
 <?php

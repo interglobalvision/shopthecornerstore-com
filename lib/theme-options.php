@@ -127,8 +127,7 @@ class IGV_Admin {
       'name'         => __( 'Background Images', 'cmb2' ),
       'desc'         => __( 'Upload or add multiple images.', 'cmb2' ),
       'id'           => $this->prefix . 'splash_images',
-      'type'         => 'pw_gallery',
-      'sanitization_cb' => 'pw_gallery_field_sanitise',
+      'type'         => 'file_list',
       'preview_size' => array( 150, 150 ),
     ) );
 
