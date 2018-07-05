@@ -1605,6 +1605,19 @@ a.button-shop:disabled[disabled],
   height: 100%;
   z-index: -9999;
 }
+#splash-video {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 300ms linear;
+  transition: opacity 300ms linear;
+}
+#splash-video.show {
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
+  opacity: 1;
+}
 .splash-slide {
   background-size: cover;
   background-position: center;
