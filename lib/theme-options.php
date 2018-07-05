@@ -116,7 +116,7 @@ class IGV_Admin {
     ) );
 
     $options_metabox->add_field( array(
-      'name'         => __( 'Logo', 'cmb2' ),
+      'name'         => __( 'Logo & Text Color', 'cmb2' ),
       'desc'         => __( '', 'cmb2' ),
       'id'           => $this->prefix . 'splash_color',
       'type'         => 'colorpicker',
@@ -124,11 +124,34 @@ class IGV_Admin {
     ) );
 
     $options_metabox->add_field( array(
+  		'name'             => __( 'Background Option', 'cmb2' ),
+  		'id'               => $this->prefix . 'splash_option',
+  		'type'             => 'radio_inline',
+      'default' => 'images',
+  		'options'          => array(
+  			'images' => __( 'Images', 'cmb2' ),
+  			'video'   => __( 'Video', 'cmb2' ),
+  		),
+  	) );
+
+    $options_metabox->add_field( array(
       'name'         => __( 'Background Images', 'cmb2' ),
       'desc'         => __( 'Upload or add multiple images.', 'cmb2' ),
       'id'           => $this->prefix . 'splash_images',
       'type'         => 'file_list',
       'preview_size' => array( 150, 150 ),
+    ) );
+
+    $options_metabox->add_field( array(
+      'name'         => __( 'Background Video .mp4', 'cmb2' ),
+      'id'           => $this->prefix . 'splash_video_mp4',
+      'type'         => 'file',
+    ) );
+
+    $options_metabox->add_field( array(
+      'name'         => __( 'Background Video .webm', 'cmb2' ),
+      'id'           => $this->prefix . 'splash_video_webm',
+      'type'         => 'file',
     ) );
 
     // SOCIAL MEDIA OPTIONS
