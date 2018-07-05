@@ -16,7 +16,9 @@ Site = {
 
 //       Site.Layout.layout();
 
-      if ($('.splash-swiper').length) {
+      if ($('#splash-video').length) {
+        $('#splash-video').coverVid(1920, 1080).addClass('show');
+      } else if ($('.splash-swiper').length) {
         _this.Splash.init();
       }
 
