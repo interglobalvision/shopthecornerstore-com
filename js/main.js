@@ -43,6 +43,8 @@ Site = {
         _this.Shop.init();
       }
 
+      _this.bindMenuToggle();
+
       if ($('.newsletter-form').length && WP.mailchimp !== null) {
         _this.Mailchimp.init();
       }
@@ -75,6 +77,11 @@ Site = {
     });
   },
 
+  bindMenuToggle: function() {
+    $('#toggle-menu').on('click', function() {
+      $('body').toggleClass('mobile-menu-active');
+    });
+  },
 };
 
 Site.Shop = {

@@ -7,9 +7,9 @@ $gutter = 48px
 .col
   padding: 0 ($gutter / 2)
   margin-bottom: $gutter
-  
+
 .table-row .col
-  margin: ($gutter / 2) 0 
+  margin: ($gutter / 2) 0
 
 // ******************************************************
 
@@ -24,7 +24,7 @@ $margin-basic = ($gutter * 2)
 $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
-$header-height = 82px
+$header-height = 80px
 $footer-height = 72px
 
 // ******************************************************
@@ -32,7 +32,8 @@ $footer-height = 72px
 // BASIC
 
 #main-content
-  min-height: calc('100vh - ' + ($header-height + $footer-height))
+  min-height: calc('100vh - ' + ($header-height + $footer-height + $margin-small))
+  margin-top: calc($header-height + $margin-small)
 
 .pagination-button
   padding-left: $margin-small
@@ -120,7 +121,7 @@ $footer-height = 72px
 
 .padding-bottom-large
   padding-bottom: $margin-large
-  
+
 // ******************************************************
 
 // HEADER
@@ -153,10 +154,10 @@ $footer-height = 72px
 
 #archive-editorial-titles
   margin-left: $margin-basic
- 
+
 #posts-archive-editorial
   min-height: calc('100vh - ' + ($header-height + $footer-height))
-  
+
 // ******************************************************
 
 // SINGLE EDITORIAL

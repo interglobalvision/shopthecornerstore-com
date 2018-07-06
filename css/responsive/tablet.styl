@@ -7,9 +7,9 @@ $gutter = 24px
 .col
   padding: 0 ($gutter / 2)
   margin-bottom: $gutter
-  
+
 .table-row .col
-  margin: ($gutter / 2) 0 
+  margin: ($gutter / 2) 0
 
 for offset in 0..($cols - 1)
   .offset-m-{offset}
@@ -33,7 +33,7 @@ $margin-basic = ($gutter * 2)
 $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
-$header-height = 153px
+$header-height = 56px
 $footer-height = 44px
 
 // ******************************************************
@@ -48,7 +48,8 @@ $footer-height = 44px
 // BASIC
 
 #main-content
-  min-height: calc('100vh - ' + ($header-height + $footer-height))
+  min-height: calc('100vh - ' + ($header-height + $footer-height + $margin-small))
+  margin-top: calc($header-height + $margin-small)
 
 .pagination-button
   padding-left: $margin-small
@@ -167,6 +168,10 @@ $footer-height = 44px
   svg
     width: 180px
 
+#mobile-nav
+  height: calc('100vh - ' + $header-height)
+  top: $header-height
+
 // ******************************************************
 
 // JOURNAL
@@ -216,18 +221,18 @@ body.single-editorial
 
 // ******************************************************
 
-// CART 
+// CART
 
 .woocommerce-shipping-calculator
-  text-align: right 
-  
+  text-align: right
+
 // ******************************************************
-  
-// FOOTER 
+
+// FOOTER
 
 .social-icon
   width: 16px
-  
+
 // ******************************************************
 
 // WOO CART

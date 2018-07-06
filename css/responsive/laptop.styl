@@ -7,9 +7,9 @@ $gutter = 32px
 .col
   padding: 0 ($gutter / 2)
   margin-bottom: $gutter
-  
+
 .table-row .col
-  margin: ($gutter / 2) 0 
+  margin: ($gutter / 2) 0
 
 for offset in 0..($cols - 1)
   .offset-l-{offset}
@@ -81,7 +81,8 @@ $footer-height = 56px
 // BASIC
 
 #main-content
-  min-height: calc('100vh - ' + ($header-height + $footer-height))
+  min-height: calc('100vh - ' + ($header-height + $footer-height + $margin-small))
+  margin-top: calc($header-height + $margin-small)
 
 .pagination-button
   padding-left: $margin-small
@@ -204,16 +205,22 @@ $footer-height = 56px
 .menu-item
   margin-right: $margin-tiny
 
+.toggle-sold-holder
+  text-align: left
+
+#mobile-nav
+  display: none
+
 // ******************************************************
 
 // ARCHIVE EDITORIAL
 
 #archive-editorial-titles
   margin-left: $margin-basic
- 
+
 #posts-archive-editorial
   min-height: calc('100vh - ' + ($header-height + $footer-height))
-  
+
 // ******************************************************
 
 // SINGLE EDITORIAL

@@ -89,6 +89,9 @@ $gutter = 14px
 .align-content-end
   align-content: flex-end
 
+.flex-grow
+  flex-grow: 1
+
 // COLUMN SIZES & OFFSETS
 
 .col
@@ -145,7 +148,7 @@ $border-width = 2px
 
 $speed-transition-fast = .1s
 
-$header-height = 111px
+$header-height = 46px
 $footer-height = 34px
 
 // ******************************************************
@@ -308,7 +311,8 @@ html
   color: $color-black-soft
 
 #main-content
-  min-height: calc('100vh - ' + ($header-height + $footer-height))
+  min-height: calc('100vh - ' + ($header-height + $footer-height + $margin-small))
+  margin-top: calc($header-height + $margin-small)
 
 img
   max-width: 100%
@@ -517,20 +521,32 @@ a.button-shop,
 
 // HEADER
 
+#header
+  position: fixed
+  z-index: 200
+  background-color: $color-white
+  width: 100%
+  top: 0
+  left: 0
+  .col
+    margin-bottom: 0
+
 .menu-item
-  margin-right: $margin-tiny
-  &:last-of-type
-    margin-right: 0
   a:hover, &.active
     color: $color-grey
 
+#menu-list
+  .menu-item
+    margin-right: $margin-tiny
+    &:last-of-type
+      margin-right: 0
 
 .header-cart
   display: flex
   justify-content: flex-end
   align-items: center
   img
-    width: 16px
+    width: 20px
     height: auto
     margin-right: $margin-micro
 
@@ -549,6 +565,46 @@ a.button-shop,
     height: auto
   .logo-path
     fill: $color-black-soft
+
+.toggle-sold-holder
+  text-align: center
+
+#toggle-sold-icon
+  fill: $color-black-soft
+  stroke: $color-black-soft
+  stroke-width: 10px
+  height: 18px
+  width: 18px
+
+body.hidden-products
+  #toggle-sold-icon
+    fill: $color-white
+
+.toggle-menu-icon
+  width: 100%
+  max-width: 20px
+
+#mobile-nav
+  position: fixed
+  height: calc('100vh - ' + $header-height)
+  width: 100vw
+  top: $header-height
+  left: 0
+  z-index: 100
+  background: $color-white
+  transform: translateY(-100%)
+  transition: transform 300ms ease-in
+  border-top: 1px solid $color-black-soft
+
+#mobile-menu-list
+  display: flex
+  flex-direction: column
+  height: 100%
+
+body
+  &.mobile-menu-active
+    #mobile-nav
+      transform: translateY(0)
 
 // ******************************************************
 
@@ -783,7 +839,10 @@ p.form-row
 
 @media screen and (min-width: 1150px)
 
-  .only-mobile, .row.only-mobile, .column.only-mobile
+  .only-mobile,
+  .row.only-mobile,
+  .column.only-mobile
+  .u-inline-list li.only-mobile
     display: none
 
   .only-desktop
