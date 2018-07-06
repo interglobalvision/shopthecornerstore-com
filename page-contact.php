@@ -21,7 +21,7 @@ if( have_posts() ) {
 <?php
     if (!empty($mailchimp_url)) {
 ?>
-      <div class="col col-s-12 col-m-6">
+      <div class="col col-s-12 col-m-6 col-l-5">
         <h1 class="font-product-price margin-bottom-tiny font-uppercase">Newsletter</h1>
         <span>Sign up to our newsletter to receive weekly updates on new items:</span>
         <form class="newsletter-form margin-top-micro">
