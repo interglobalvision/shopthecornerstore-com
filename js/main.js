@@ -43,7 +43,9 @@ Site = {
         _this.Shop.init();
       }
 
-      _this.Mailchimp.init();
+      if ($('.newsletter-form').length && WP.mailchimp !== null) {
+        _this.Mailchimp.init();
+      }
 
     });
 
