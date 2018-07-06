@@ -1421,6 +1421,7 @@ input.newsletter-email {
   width: 100%;
   border: 2px solid #0e0e0e;
   padding: 1em;
+  max-width: 440px;
 }
 .table-row {
   border-bottom: 2px solid #0e0e0e;
