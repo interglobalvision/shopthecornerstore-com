@@ -1515,6 +1515,10 @@ button.button-submit:disabled[disabled],
 #order_review .table-row.cart_item {
   border-bottom: 0;
 }
+p a:link,
+p a:visited {
+  color: #7f7f7f;
+}
 .margin-top-micro {
   margin-top: 4.326237921248983px;
 }
