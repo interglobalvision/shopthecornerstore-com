@@ -43,6 +43,8 @@ Site = {
         _this.Shop.init();
       }
 
+      _this.bindMenuToggle();
+
     });
 
   },
@@ -71,6 +73,11 @@ Site = {
     });
   },
 
+  bindMenuToggle: function() {
+    $('#toggle-menu').on('click', function() {
+      $('body').toggleClass('mobile-menu-active');
+    });
+  },
 };
 
 Site.Shop = {
