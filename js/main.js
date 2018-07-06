@@ -2,7 +2,7 @@
 /* global $, document, Site, Swiper */
 
 Site = {
-  mobileThreshold: 601,
+  mobilethreshold: 601,
   init: function() {
     var _this = this;
 
@@ -42,6 +42,8 @@ Site = {
       if ($('body').hasClass('woocommerce')) {
         _this.Shop.init();
       }
+
+      _this.Mailchimp.init();
 
     });
 
@@ -325,6 +327,85 @@ Site.Editorial = {
       $('.archive-editorial-image').hide();
       $('.archive-editorial-image[data-id=' + id + ']').show();
     }
+  },
+};
+
+Site.Mailchimp = {
+  $form: $('.newsletter-form'),
+  init: function() {
+    var _this = this;
+
+    _this.successCallback = _this.successCallback.bind(_this);
+
+    _this.$form.submit(function(e) {
+      e.preventDefault();
+
+      var email = $(this).children('.newsletter-email').val();
+      _this.$reply = $(this).children('.newsletter-reply');
+
+      _this.subscribe(email);
+
+    });
+
+  },
+
+  subscribe: function(email) {
+    var _this = this;
+
+    // Rewrite action URL for JSONP
+    var url = WP.mailchimp.replace('/post?', '/post-json?').concat('&c=?');
+
+    // Ajax post to Mailchimp API
+    $.ajax({
+      url: url,
+      data: {
+        EMAIL: email,
+      },
+      success: _this.successCallback,
+      dataType: 'jsonp',
+      error: function (resp, text) {
+        console.log('mailchimp ajax submit error: ' + text);
+      }
+    });
+  },
+
+  successCallback: function(response) {
+    var _this = this;
+
+    var msg = '';
+
+    if (response.result === 'success') {
+      // Success message
+      msg = 'You\'ve been successfully subscribed';
+    } else {
+      // Make error message from API response
+      var index = -1;
+
+      try {
+        var parts = response.msg.split(' - ', 2);
+
+        if (parts[1] === undefined) {
+          msg = response.msg;
+        } else {
+          var i = parseInt(parts[0], 10);
+
+          if (i.toString() === parts[0]) {
+            index = parts[0];
+            msg = parts[1];
+          } else {
+            index = -1;
+            msg = response.msg;
+          }
+        }
+      }
+      catch (e) {
+        index = -1;
+        msg = response.msg;
+      }
+    }
+
+    // Show message
+    _this.$reply.html(msg);
   },
 };
 
