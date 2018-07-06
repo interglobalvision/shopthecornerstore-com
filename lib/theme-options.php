@@ -188,6 +188,19 @@ class IGV_Admin {
     ) );
 
 
+    // MAiLCHIMP
+    $options_metabox->add_field( array(
+      'name'    => esc_html__( 'Mailing List', 'cmb2' ),
+      'id'      => $this->prefix . 'mailinglist_title',
+      'type'    => 'title',
+    ) );
+
+    $options_metabox->add_field( array(
+      'name'    => esc_html__( 'Mailchimp Form Action URL', 'cmb2' ),
+      'id'      => $this->prefix . 'mailchimp_url',
+      'type'    => 'text',
+    ) );
+
     // METADATA OPTIONS
 
     $options_metabox->add_field( array(
