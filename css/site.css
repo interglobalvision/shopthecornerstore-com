@@ -2010,9 +2010,6 @@ p.form-row .input-checkbox {
   display: none;
 }
 @media screen and (min-width: 750px) {
-  .container {
-    width: 750px;
-  }
   .col {
     padding: 0 12px;
     margin-bottom: 24px;
