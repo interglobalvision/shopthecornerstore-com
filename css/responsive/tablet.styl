@@ -1,9 +1,6 @@
 $cols = 12
 $gutter = 24px
 
-.container
-  width: 750px
-
 .col
   padding: 0 ($gutter / 2)
   margin-bottom: $gutter
@@ -19,6 +16,16 @@ for col in 1..$cols
   .col-m-{col}
     flex-basis: ( 100% / $cols ) * col
     max-width: ( 100% / $cols ) * col
+
+@media screen and (min-width: 786px)
+  for offset in 0..($cols - 1)
+    .offset-ml-{offset}
+      margin-left: ( 100% / $cols ) * offset
+
+  for col in 1..$cols
+    .col-ml-{col}
+      flex-basis: ( 100% / $cols ) * col
+      max-width: ( 100% / $cols ) * col
 
 // ******************************************************
 
