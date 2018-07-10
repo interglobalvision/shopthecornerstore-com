@@ -1995,6 +1995,29 @@ p.form-row .input-checkbox {
   color: #7f7f7f;
   border-bottom: 2px solid #7f7f7f;
 }
+.show-popup .newsletter-popup {
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
+  opacity: 1;
+  pointer-events: auto;
+}
+.newsletter-popup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 300ms;
+  transition: opacity 300ms;
+  pointer-events: none;
+}
 .only-mobile {
   display: initial;
 }
