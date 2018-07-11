@@ -8,10 +8,12 @@
   </li>
 <?php
   }
+
+  $latest_editorial = get_posts('post_type=editorial&numberposts=1');
 ?>
 
-  <li class="menu-item <?php echo is_singular('editorial') && $post->ID === $recent_id ? 'active' : ''; ?>">
-    <a href="<?php echo get_permalink($editorial_posts[0]->ID); ?>">Collection</a>
+  <li class="menu-item <?php echo $post->ID === $latest_editorial[0]->ID ? 'active' : ''; ?>">
+    <a href="<?php echo get_permalink($latest_editorial[0]->ID); ?>">Collection</a>
   </li>
 
   <li class="menu-item <?php echo is_home() ? 'active' : ''; ?>">
