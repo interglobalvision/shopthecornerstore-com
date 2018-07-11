@@ -830,6 +830,27 @@ p.form-row
   color: $color-grey
   border-bottom: $border-width solid $color-grey
 
+// ******************************************************
+
+// POPUP
+
+.show-popup
+  .newsletter-popup
+    opacity: 1
+    pointer-events: auto
+
+.newsletter-popup
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  width: 100vw
+  height: 100vh
+  z-index: 1000
+  opacity: 0
+  transition: opacity 300ms
+  pointer-events: none
 
 // ******************************************************
 
