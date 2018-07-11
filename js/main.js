@@ -121,15 +121,15 @@ Site.Popup = {
     }, 2000); // Delayfor 2 sec
 
     // Get how many times the popup has been shown from cookies
-    let count = Cookies.get('popup-count') || 0; // Defaults to 0
+    var cookieCount = Cookies.get('popup-count') || 0; // Defaults to 0
 
-    count = parseInt(count) + 1; // Increse the count
+    cookieCount = parseInt(cookieCount) + 1; // Increse the count
 
-    if (count >= 2) {
+    if (cookieCount >= 2) {
       Cookies.set('show-popup', 0, { expires: 90 }); // Disable popup for 90 days
     }
 
-    Cookies.set('popup-count', count, { expires: 30 }); // Save new count or 30 days
+    Cookies.set('popup-count', cookieCount, { expires: 30 }); // Save new count or 30 days
   },
 
   closePopup: function(disable) {
