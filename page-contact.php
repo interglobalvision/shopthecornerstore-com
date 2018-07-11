@@ -27,7 +27,7 @@ if( have_posts() ) {
         <form class="newsletter-form margin-top-micro">
           <input class="newsletter-email margin-bottom-tiny" type="email" />
           <button type="submit" class="button-submit">Subscribe</button>
-          <span class="newsletter-reply"></span>
+          <p class="newsletter-reply margin-top-tiny"></p>
         </form>
       </div>
 <?php
