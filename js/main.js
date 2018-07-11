@@ -377,6 +377,9 @@ Site.Mailchimp = {
     var msg = '';
 
     if (response.result === 'success') {
+      // Clean input
+      $('.newsletter-email').val('');
+      
       // Success message
       msg = 'You\'ve been successfully subscribed';
     } else {
