@@ -53,6 +53,8 @@ Site = {
         _this.Popup.init();
       }
 
+      _this.fixWidows();
+
     });
 
   },

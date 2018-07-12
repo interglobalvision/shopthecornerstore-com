@@ -1416,7 +1416,7 @@ h5 {
   font-size: 12px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
-  font-weight: bold;
+  font-weight: normal;
   text-transform: uppercase;
 }
 .font-shop-title {
@@ -1522,8 +1522,15 @@ img {
 .pagination-button img {
   height: 30px;
 }
+.product-content {
+  border: 1px solid #0e0e0e;
+  border-width: 1px 0 1px;
+  overflow-y: scroll;
+}
 .product-content p {
   line-height: 2;
+  max-width: 300px;
+  margin: 0 auto;
 }
 .product-content p:last-of-type {
   margin-bottom: 0;
@@ -2687,6 +2694,9 @@ p.form-row .input-checkbox {
   }
   .pagination-button {
     padding-left: 32px;
+  }
+  .product-content {
+    max-height: 250px;
   }
   .margin-top-micro {
     margin-top: 9.888543819997675px;
