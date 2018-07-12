@@ -8,7 +8,7 @@
     $contact_id = get_id_by_slug('contact');
     $shipping_id = get_id_by_slug('shipping');
   ?>
-    <footer id="footer" class="container padding-top-tiny padding-bottom-tiny">
+    <footer id="footer" class="container padding-top-tiny padding-bottom-tiny only-desktop">
       <div class="row align-center">
         <div class="col col-no-margin-bottom col-s-6">
           <?php if (!empty($facebook) || !empty($twitter) || !empty($instagram)) { ?>
@@ -53,6 +53,7 @@
   </section>
 
   <?php
+    get_template_part('partials/newsletter-popup');
     get_template_part('partials/scripts');
     get_template_part('partials/schema-org');
   ?>

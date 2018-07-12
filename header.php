@@ -31,43 +31,48 @@
 ?>
 
   <!-- start content -->
-  <header id="header" class="container padding-top-tiny padding-bottom-tiny">
-    <div class="row align-center">
+  <nav id="mobile-nav" class="grid-row justify-center align-items-center">
+    <?php get_template_part('partials/nav-mobile'); ?>
+  </nav>
 
-      <nav class="col col-s-10 col-l-5">
-        <?php get_template_part('partials/nav'); ?>
-      </nav>
+  <header id="header" class="padding-top-tiny padding-bottom-tiny">
+    <div class="container">
+      <div class="row align-center">
 
-      <div class="col col-s-2 only-mobile">
-        <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart font-product-price">
-          <img src="<?php echo get_bloginfo('stylesheet_directory') . '/img/dist/cart.svg'; ?>">
-          <?php echo WC()->cart->get_cart_contents_count() ?>
-        </a>
+        <nav id="main-nav" class="col col-l-4 only-desktop">
+          <?php get_template_part('partials/nav'); ?>
+        </nav>
+
+        <div class="col col-s-1 only-mobile">
+          <span id="toggle-menu" class="u-pointer">
+            <?php echo '<img class="toggle-menu-icon" src="' . get_bloginfo('stylesheet_directory') . '/img/dist/hamburger.svg">'; ?>
+          </span>
+        </div>
+
+        <div class="col col-s-2 col-l-1 toggle-sold-holder">
+        <?php
+          if (is_post_type_archive('product')) {
+        ?>
+          <span class="toggle-sold u-pointer"><?php get_template_part('partials/teardrop'); ?></span>
+        <?php
+          }
+        ?>
+        </div>
+
+        <div id="header-logo" class="col col-s-6 col-l-2">
+          <a href="<?php echo home_url(); ?>">
+            <?php echo '<img src="' . get_bloginfo('stylesheet_directory') . '/img/dist/logo.svg">'; ?>
+          </a>
+        </div>
+
+        <div class="col col-s-2 offset-s-1 offset-l-3">
+          <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart font-product-price">
+            <img src="<?php echo get_bloginfo('stylesheet_directory') . '/img/dist/cart.svg'; ?>">
+            <?php echo WC()->cart->get_cart_contents_count() ?>
+          </a>
+        </div>
+
       </div>
-
-      <div id="header-logo" class="col col-s-12 col-l-2">
-        <a href="<?php echo home_url(); ?>">
-          <?php echo '<img src="' . get_bloginfo('stylesheet_directory') . '/img/dist/logo.svg">'; ?>
-        </a>
-      </div>
-
-      <div class="col col-s-12 col-l-4 text-align-center">
-      <?php
-        if (is_singular('editorial')) {
-      ?>
-        <h1 class="font-nav"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-      <?php
-        }
-      ?>
-      </div>
-
-      <div class="col only-desktop col-l-1">
-        <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart font-product-price">
-          <img src="<?php echo get_bloginfo('stylesheet_directory') . '/img/dist/cart.svg'; ?>">
-          <?php echo WC()->cart->get_cart_contents_count() ?>
-        </a>
-      </div>
-
     </div>
   </header>
 

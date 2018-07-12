@@ -43,8 +43,14 @@ Site = {
         _this.Shop.init();
       }
 
+      _this.bindMenuToggle();
+
       if ($('.newsletter-form').length && WP.mailchimp !== null) {
         _this.Mailchimp.init();
+      }
+
+      if ($('.newsletter-popup').length && !$('body').hasClass('home')) {
+        _this.Popup.init();
       }
 
     });
@@ -75,6 +81,64 @@ Site = {
     });
   },
 
+  bindMenuToggle: function() {
+    $('#toggle-menu').on('click', function() {
+      $('body').toggleClass('mobile-menu-active');
+    });
+  },
+};
+
+Site.Popup = {
+  init: function() {
+    var _this = this;
+
+    // Check popup cookie
+    var showPopup = Cookies.get('show-popup');
+
+    if(typeof showPopup === 'undefined') { // Cookie is not set
+      showPopup = true; // Default to true
+    } else { // Cookie is set
+      showPopup = parseInt(showPopup); // Parse the value of the cookie
+    }
+
+    if (showPopup) {
+      _this.bindCloseButton();
+      _this.showPopup();
+    } else {
+      $('.newsleter-popup').remove(); // Remove the popup element from the DOM
+    }
+  },
+
+  bindCloseButton: function() {
+    var _this = this;
+
+    $('#close-popup').on('click', _this.closePopup);
+  },
+
+  showPopup: function() {
+    setTimeout( function() {
+      $('body').addClass('show-popup');
+    }, 2000); // Delayfor 2 sec
+
+    // Get how many times the popup has been shown from cookies
+    var cookieCount = Cookies.get('popup-count') || 0; // Defaults to 0
+
+    cookieCount = parseInt(cookieCount) + 1; // Increse the count
+
+    if (cookieCount >= 2) {
+      Cookies.set('show-popup', 0, { expires: 90 }); // Disable popup for 90 days
+    }
+
+    Cookies.set('popup-count', cookieCount, { expires: 30 }); // Save new count or 30 days
+  },
+
+  closePopup: function(disable) {
+    $('body').removeClass('show-popup');
+
+    if(disable) {
+      Cookies.set('show-popup', 0, { expires: 90 }); // Disable popup for 90 days
+    }
+  },
 };
 
 Site.Shop = {
@@ -379,7 +443,7 @@ Site.Mailchimp = {
     if (response.result === 'success') {
       // Clean input
       $('.newsletter-email').val('');
-      
+
       // Success message
       msg = 'You\'ve been successfully subscribed';
     } else {
@@ -411,6 +475,14 @@ Site.Mailchimp = {
 
     // Show message
     _this.$reply.html(msg);
+
+    // If the popup is showing
+    if ($('body').hasClass('show-popup')) {
+      // close popup after 3 sec
+      setTimeout(function() {
+        Site.Popup.closePopup(true);
+      }, 3000);
+    }
   },
 };
 

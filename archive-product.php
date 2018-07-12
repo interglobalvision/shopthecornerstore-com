@@ -17,7 +17,7 @@ if( have_posts() ) {
     $availability = $product->get_availability();
 
 ?>
-    <article <?php post_class('col col-s col-s-12 col-m col-m-6 col-l col-l-3 shop-product'); ?> id="product-<?php the_ID(); ?>">
+    <article <?php post_class('col col-s col-s-12 col-sm col-sm-6 col-m col-m-6 col-ml col-ml-4 col-l col-l-3 shop-product'); ?> id="product-<?php the_ID(); ?>">
       <a href="<?php the_permalink() ?>">
         <div class="shop-product-title-holder">
           <h3 class="shop-product-title font-shop-title text-align-center">
