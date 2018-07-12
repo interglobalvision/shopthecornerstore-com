@@ -1621,6 +1621,9 @@ a.button-shop:disabled[disabled],
   background: #7f7f7f;
   border-color: #7f7f7f;
 }
+button.add-to-cart {
+  width: 200px;
+}
 .woocommerce-message,
 .woocommerce-info {
   display: none;
