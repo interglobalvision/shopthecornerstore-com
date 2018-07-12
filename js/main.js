@@ -53,6 +53,8 @@ Site = {
         _this.Popup.init();
       }
 
+      _this.fixWidows();
+
     });
 
   },
@@ -233,11 +235,30 @@ Site.Shop = {
 
       _this.swiper = new Swiper('.swiper-container', {
         speed: 800,
-        spaceBetween: 36,
+        spaceBetween: 0,
         setWrapperSize: true,
-        onInit: function() {
-          $('.swiper-container').css('visibility','visible');
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        breakpoints: {
+          // when window width is <= 600px
+          600: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+          }
         },
+        onInit: function(swiper) {
+          // show slider
+          $('.swiper-container').css('visibility','visible');
+
+          // conditionally hide slider/product pagination
+          if (swiper.isBeginning && !$('.slider-prev').is('[href]')) {
+            $('.slider-prev').hide();
+          }
+
+          if (swiper.isEnd && !$('.slider-next').is('[href]')) {
+            $('.slider-next').hide();
+          }
+        }
       });
 
       _this.bindPagination();

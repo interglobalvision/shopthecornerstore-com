@@ -123,7 +123,7 @@ for col in 1..$cols
 @media screen and (min-width: 500px)
   for offset in 0..($cols - 1)
     .offset-sm-{offset}
-      margin-left: ( 100% / $cols ) * offset 
+      margin-left: ( 100% / $cols ) * offset
 
   for col in 1..$cols
     .col-sm-{col}
@@ -215,7 +215,7 @@ h1,h2,h3,h4,h5
   font-size: 12px
   font-family: "Montserrat", font-stack('Helvetica')
   font-style: normal
-  font-weight: bold
+  font-weight: normal
   text-transform: uppercase
 
 // SHOP FONT
@@ -334,8 +334,13 @@ img
     height: 30px
 
 .product-content
+  border: 1px solid $color-black-soft
+  border-width: 1px 0 1px
+  overflow-y: scroll
   p
     line-height: 2
+    max-width: 300px
+    margin: 0 auto
   p:last-of-type
     margin-bottom: 0
 
@@ -387,6 +392,9 @@ button.button-submit,
     opacity: 1
     background: $color-grey
     border-color: $color-grey
+
+button.add-to-cart
+  width: 200px
 
 .woocommerce-message,
 .woocommerce-info
