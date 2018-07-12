@@ -344,12 +344,18 @@ img
 
 input
   max-width: 100%
+  &.newsletter-email
+    width: 100%
+    border: $border-width solid $color-black-soft
+    padding: 1em
+    max-width: 440px
 
 .table-row
   border-bottom: $border-width solid $color-black-soft
 
 button.button-shop,
 a.button-shop,
+button.button-submit,
 .woocommerce a.button,
 .woocommerce button.button,
 .woocommerce input.button,
@@ -365,7 +371,7 @@ a.button-shop,
   padding: 14px 14px
   line-height: .5
   letter-spacing: .15em
-  font-size: 10px
+  font-size: 12px
   text-transform: uppercase
   &:focus
     outline: 0
@@ -389,6 +395,10 @@ a.button-shop,
 #order_review
   .table-row.cart_item
     border-bottom: 0
+
+p
+  a:link, a:visited
+    color: $color-grey
 
 // ******************************************************
 

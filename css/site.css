@@ -1534,11 +1534,18 @@ img {
 input {
   max-width: 100%;
 }
+input.newsletter-email {
+  width: 100%;
+  border: 2px solid #0e0e0e;
+  padding: 1em;
+  max-width: 440px;
+}
 .table-row {
   border-bottom: 2px solid #0e0e0e;
 }
 button.button-shop,
 a.button-shop,
+button.button-submit,
 .woocommerce a.button,
 .woocommerce button.button,
 .woocommerce input.button,
@@ -1556,11 +1563,12 @@ a.button-shop,
   padding: 14px 14px;
   line-height: 0.5;
   letter-spacing: 0.15em;
-  font-size: 10px;
+  font-size: 12px;
   text-transform: uppercase;
 }
 button.button-shop:focus,
 a.button-shop:focus,
+button.button-submit:focus,
 .woocommerce a.button:focus,
 .woocommerce button.button:focus,
 .woocommerce input.button:focus,
@@ -1571,6 +1579,7 @@ a.button-shop:focus,
 }
 button.button-shop:hover,
 a.button-shop:hover,
+button.button-submit:hover,
 .woocommerce a.button:hover,
 .woocommerce button.button:hover,
 .woocommerce input.button:hover,
@@ -1583,6 +1592,7 @@ a.button-shop:hover,
 }
 button.button-shop.disabled,
 a.button-shop.disabled,
+button.button-submit.disabled,
 .woocommerce a.button.disabled,
 .woocommerce button.button.disabled,
 .woocommerce input.button.disabled,
@@ -1591,6 +1601,7 @@ a.button-shop.disabled,
 .woocommerce #respond input#submit.disabled,
 button.button-shop:disabled,
 a.button-shop:disabled,
+button.button-submit:disabled,
 .woocommerce a.button:disabled,
 .woocommerce button.button:disabled,
 .woocommerce input.button:disabled,
@@ -1599,6 +1610,7 @@ a.button-shop:disabled,
 .woocommerce #respond input#submit:disabled,
 button.button-shop:disabled[disabled],
 a.button-shop:disabled[disabled],
+button.button-submit:disabled[disabled],
 .woocommerce a.button:disabled[disabled],
 .woocommerce button.button:disabled[disabled],
 .woocommerce input.button:disabled[disabled],
@@ -1620,6 +1632,10 @@ a.button-shop:disabled[disabled],
 }
 #order_review .table-row.cart_item {
   border-bottom: 0;
+}
+p a:link,
+p a:visited {
+  color: #7f7f7f;
 }
 .margin-top-micro {
   margin-top: 4.326237921248983px;
