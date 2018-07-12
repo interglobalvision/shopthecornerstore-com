@@ -235,11 +235,40 @@ Site.Shop = {
 
       _this.swiper = new Swiper('.swiper-container', {
         speed: 800,
-        spaceBetween: 36,
+        spaceBetween: 0,
         setWrapperSize: true,
-        onInit: function() {
-          $('.swiper-container').css('visibility','visible');
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        breakpoints: {
+          // when window width is <= 600px
+          600: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+          }
         },
+        onInit: function(swiper) {
+          $('.swiper-container').css('visibility','visible');
+
+          if (swiper.isBeginning && !$('.slider-prev').is('[href]')) {
+            $('.slider-prev').hide();
+          }
+
+          if (swiper.isEnd && !$('.slider-next').is('[href]')) {
+            $('.slider-next').hide();
+          }
+        },
+        onSlideChangeStart: function(swiper) {
+          if (swiper.isBeginning && !$('.slider-prev').is('[href]')) {
+            $('.slider-prev').hide();
+            $('.slider-next').show();
+          } else if (swiper.isEnd && !$('.slider-next').is('[href]')) {
+            $('.slider-next').hide();
+            $('.slider-prev').show();
+          } else {
+            $('.slider-prev').show();
+            $('.slider-next').show();
+          }
+        }
       });
 
       _this.bindPagination();
