@@ -247,26 +247,16 @@ Site.Shop = {
           }
         },
         onInit: function(swiper) {
+          // show slider
           $('.swiper-container').css('visibility','visible');
 
+          // conditionally hide slider/product pagination
           if (swiper.isBeginning && !$('.slider-prev').is('[href]')) {
             $('.slider-prev').hide();
           }
 
           if (swiper.isEnd && !$('.slider-next').is('[href]')) {
             $('.slider-next').hide();
-          }
-        },
-        onSlideChangeStart: function(swiper) {
-          if (swiper.isBeginning && !$('.slider-prev').is('[href]')) {
-            $('.slider-prev').hide();
-            $('.slider-next').show();
-          } else if (swiper.isEnd && !$('.slider-next').is('[href]')) {
-            $('.slider-next').hide();
-            $('.slider-prev').show();
-          } else {
-            $('.slider-prev').show();
-            $('.slider-next').show();
           }
         }
       });
