@@ -12,22 +12,22 @@ if( have_posts() ) {
 
     $mailchimp_url = IGV_get_option('_igv_mailchimp_url');
 ?>
-  <section id="page">
+  <section id="page" class="margin-top-basic">
     <div class="row">
       <div class="col col-s-12 col-m-6">
-        <h1 class="font-product-price margin-bottom-micro"><?php the_title(); ?>:</h1>
+        <h1 class="font-product-price margin-bottom-tiny"><?php the_title(); ?></h1>
         <?php the_content(); ?>
       </div>
 <?php
     if (!empty($mailchimp_url)) {
 ?>
       <div class="col col-s-12 col-m-6">
-        <h1 class="font-product-price margin-bottom-micro font-uppercase">Newsletter</h1>
+        <h1 class="font-product-price margin-bottom-tiny font-uppercase">Newsletter</h1>
         <span>Sign up to our newsletter to receive weekly updates on new items:</span>
-        <form class="newsletter-form">
-          <input class="newsletter-email" type="email" />
-          <button type="submit">Subscribe</button>
-          <span class="newsletter-reply"></span>
+        <form class="newsletter-form margin-top-micro">
+          <input class="newsletter-email margin-bottom-tiny" type="email" />
+          <button type="submit" class="button-submit">Subscribe</button>
+          <p class="newsletter-reply margin-top-tiny"></p>
         </form>
       </div>
 <?php
