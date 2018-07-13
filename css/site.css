@@ -2100,6 +2100,10 @@ img.shop-product-sold-icon {
 .editorial .slider-prev {
   display: none;
 }
+#editorial-title {
+  display: none;
+  letter-spacing: 0.15em;
+}
 p.form-row {
   -ms-flex: 1 1 100%;
   -webkit-box-flex: 1;
@@ -2402,8 +2406,11 @@ p.form-row .input-checkbox {
   .menu-item {
     margin-right: 24px;
   }
-  .editorial-title {
-    text-align: right;
+  #editorial-title {
+    display: block;
+    text-align: center;
+    font-size: 11px;
+    text-transform: uppercase;
   }
   .header-cart {
     -ms-justify-content: flex-end;
@@ -2861,6 +2868,9 @@ p.form-row .input-checkbox {
   .slider-row {
     -ms-flex-flow: row wrap;
     flex-flow: row wrap;
+  }
+  #editorial-title {
+    font-size: 13px;
   }
   .social-icon {
     width: 20px;
