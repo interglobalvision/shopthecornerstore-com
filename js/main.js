@@ -49,7 +49,7 @@ Site = {
         _this.Mailchimp.init();
       }
 
-      if ($('.newsletter-popup').length && !$('body').hasClass('home')) {
+      if ($('#newsletter-popup').length && !$('body').hasClass('home')) {
         _this.Popup.init();
       }
 
@@ -120,7 +120,7 @@ Site.Popup = {
   showPopup: function() {
     setTimeout( function() {
       $('body').addClass('show-popup');
-    }, 2000); // Delayfor 2 sec
+    }, 4000); // Delayfor 4 sec
 
     // Get how many times the popup has been shown from cookies
     var cookieCount = Cookies.get('popup-count') || 0; // Defaults to 0
