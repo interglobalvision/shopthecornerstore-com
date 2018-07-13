@@ -159,7 +159,7 @@ $border-width = 2px
 $speed-transition-fast = .1s
 
 $header-height = 46px
-$footer-height = 34px
+$footer-height = 0
 
 // ******************************************************
 
@@ -565,7 +565,7 @@ p
 
 #menu-list
   .menu-item
-    margin-right: $margin-tiny
+    margin-right: 1em
     &:last-of-type
       margin-right: 0
 
@@ -751,7 +751,7 @@ img.shop-product-sold-icon
 // ARCHIVE EDITORIAL
 
 #posts-archive-editorial
-  min-height: calc('100vh - ' + ($header-height + $footer-height))
+  min-height: calc('100vh - ' + ($header-height + $footer-height + $margin-small))
 
 #archive-editorial-titles
   margin-left: $margin-basic
@@ -847,6 +847,13 @@ p.form-row
   display: inline-block
   color: $color-grey
   border-bottom: $border-width solid $color-grey
+
+#footer
+  .menu-item
+    margin-left: 1em
+    margin-right: 0
+    &:first-of-type
+      margin-left: 0
 
 // ******************************************************
 

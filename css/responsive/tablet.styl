@@ -41,7 +41,7 @@ $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
 $header-height = 56px
-$footer-height = 44px
+$footer-height = 0
 
 // ******************************************************
 
@@ -191,7 +191,7 @@ $footer-height = 44px
 // ARCHIVE EDITORIAL
 
 #posts-archive-editorial
-  min-height: calc('100vh - ' + ($header-height + $footer-height))
+  min-height: calc('100vh - ' + ($header-height + $footer-height + $margin-small))
 
 #archive-editorial-titles
   margin-left: $margin-basic
@@ -208,7 +208,7 @@ $footer-height = 44px
 // SINGLE EDITORIAL
 
 .set-swiper-height
-  height: calc('100vh - ' + ($header-height + $footer-height))
+  height: calc('100vh - ' + ($header-height + $footer-height + $margin-small))
 
 body.single-editorial
   .slider-product-details
