@@ -43,7 +43,7 @@
           <?php get_template_part('partials/nav'); ?>
         </nav>
 
-        <div class="col col-s-1 only-mobile">
+        <div class="col col-s-1 col-m-2 only-mobile">
           <span id="toggle-menu" class="u-pointer">
             <?php echo '<img class="toggle-menu-icon" src="' . get_bloginfo('stylesheet_directory') . '/img/dist/hamburger.svg">'; ?>
           </span>
@@ -59,13 +59,23 @@
         ?>
         </div>
 
-        <div id="header-logo" class="col col-s-6 col-l-2">
+        <div id="header-logo" class="col col-s-6 col-m-4 col-l-2">
           <a href="<?php echo home_url(); ?>">
             <?php echo '<img src="' . get_bloginfo('stylesheet_directory') . '/img/dist/logo.svg">'; ?>
           </a>
         </div>
 
-        <div class="col col-s-2 offset-s-1 offset-l-3">
+        <div class="col col-s-2 col-m-3 col-l-4">
+          <?php
+            if (is_singular('editorial')) {
+          ?>
+            <h1 id="editorial-title"><?php the_title(); ?></h1>
+          <?php
+            }
+          ?>
+        </div>
+
+        <div class="col col-s-1">
           <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart font-product-price">
             <img src="<?php echo get_bloginfo('stylesheet_directory') . '/img/dist/cart.svg'; ?>">
             <?php echo WC()->cart->get_cart_contents_count() ?>
