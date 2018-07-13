@@ -1,3 +1,9 @@
+<?php
+
+$mailchimp_url = IGV_get_option('_igv_mailchimp_url');
+
+if (!empty($mailchimp_url)) {
+?>
 <div id="newsletter-popup" class="row justify-center align-center">
   <div id="newsletter-popup-content" class="col col-s-10 col-m-6 col-l-4 text-align-center">
     <button id="close-popup"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/dist/close-x.png" /></button>
@@ -12,3 +18,6 @@
     </div>
   </div>
 </div>
+<?php
+}
+?>
