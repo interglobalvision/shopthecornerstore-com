@@ -7,5 +7,8 @@
       <div><button type="submit" class="button-submit">Subscribe</button></div>
       <span class="newsletter-reply margin-top-tiny"></span>
     </form>
+    <div id="cookie-policy" class="margin-top-tiny">
+      <span>By continuing to use this site you agree to the storage and use of cookies.</span>
+    </div>
   </div>
 </div>
