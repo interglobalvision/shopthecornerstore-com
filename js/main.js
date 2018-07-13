@@ -125,7 +125,7 @@ Site.Popup = {
     // Get how many times the popup has been shown from cookies
     var cookieCount = Cookies.get('popup-count') || 0; // Defaults to 0
 
-    cookieCount = parseInt(cookieCount) + 1; // Increse the count
+    cookieCount = parseInt(cookieCount) + 1; // Increase the count
 
     if (cookieCount >= 2) {
       Cookies.set('show-popup', 0, { expires: 90 }); // Disable popup for 90 days
