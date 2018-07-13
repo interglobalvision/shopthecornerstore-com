@@ -2102,6 +2102,7 @@ img.shop-product-sold-icon {
 }
 #editorial-title {
   display: none;
+  letter-spacing: 0.15em;
 }
 p.form-row {
   -ms-flex: 1 1 100%;
