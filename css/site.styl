@@ -860,11 +860,11 @@ p.form-row
 // POPUP
 
 .show-popup
-  .newsletter-popup
+  #newsletter-popup
     opacity: 1
     pointer-events: auto
 
-.newsletter-popup
+#newsletter-popup
   position: fixed
   top: 0
   bottom: 0
@@ -876,6 +876,24 @@ p.form-row
   opacity: 0
   transition: opacity 300ms
   pointer-events: none
+
+#newsletter-popup-content
+  background-color: $color-white
+  padding: $margin-basic
+  position: relative
+  border: $border-width solid $color-black-soft
+
+#close-popup
+  position: absolute
+  top: $margin-tiny
+  right: $margin-tiny
+  appearance: none
+  border: 0
+  background: transparent
+  padding: 0
+
+#newsletter-popup-title
+  font-size: 1.5em
 
 // ******************************************************
 
