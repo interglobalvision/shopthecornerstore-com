@@ -11,18 +11,21 @@ if ($fbAppId) {
   echo '<meta name="fb:app_id" value="' . $fbAppId . '">';
 }
 
-// Getting values from current post [should this be in the is_single() section?]
-if (have_posts()) {
-  while (have_posts()) {
-    the_post();
-      $excerpt = get_the_excerpt();
-      if (has_post_thumbnail()) {
-        $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'opengraph' );
-      }
-  }
-}
-
 $ogImage = IGV_get_option('_igv_og_image');
+
+// Getting values from current post
+if (is_single()) {
+  if (have_posts()) {
+    while (have_posts()) {
+      the_post();
+        $excerpt = get_the_excerpt();
+        if (has_post_thumbnail()) {
+          $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'opengraph' );
+        }
+    }
+  }
+  rewind_posts();
+}
 
 if (!empty($thumb) && is_single()) {
   echo '<meta property="og:image" content="' . $thumb[0] . '" />';
@@ -49,6 +52,16 @@ if (is_home()) {
   <meta property="og:description" content="<?php echo htmlspecialchars($excerpt) ?>" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="<?php bloginfo('name'); ?>" />
+<?php
+} elseif (is_archive()){
+  $title = str_replace('Archives: ', '', get_the_archive_title());
+  $permalink = get_post_type_archive_link( get_query_var('post_type') );
+?>
+  <meta property="og:url" content="<?php echo $permalink ?>"/>
+  <meta property="og:title" content="<?php echo $title; ?>" />
+  <meta property="og:site_name" content="<?php bloginfo('name'); ?>" />
+  <meta property="og:description" content="<?php bloginfo('description'); ?>" />
+  <meta property="og:type" content="website" />
 <?php
 } else {
 ?>
