@@ -373,7 +373,7 @@ Site.Editorial = {
 
             $('.slider-product-' + prod +'-details .js-product-title').html(productData['title']).attr('href',productData['url']);
             $('.slider-product-' + prod +'-details .js-product-content').html(productData['content']);
-            $('.slider-product-' + prod +'-details .js-product-price').html(productData['price']);
+            $('.slider-product-' + prod +'-details .js-product-price').removeClass('u-hidden').html(productData['price']);
             $('.slider-product-' + prod +'-details .js-product-attributes').html(productData['attributes']);
 
             if (productData['stock']) {
@@ -381,6 +381,7 @@ Site.Editorial = {
               $('.slider-product-' + prod +'-details .js-product-id').attr('value',productData['id']);
               $('.slider-product-' + prod +'-details .js-product-sold').addClass('u-hidden');
             } else {
+              $('.slider-product-' + prod +'-details .js-product-price').addClass('u-hidden');
               $('.slider-product-' + prod +'-details .js-product-sold').removeClass('u-hidden').html(productData['availability']['availability']);
               $('.slider-product-' + prod +'-details .js-product-button').addClass('u-hidden');
             }
