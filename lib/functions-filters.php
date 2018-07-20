@@ -71,3 +71,14 @@ function add_lazysize_on_srcset($attr) {
 	return $attr;
 }
 add_filter('wp_get_attachment_image_attributes', 'add_lazysize_on_srcset');
+
+// Replace srcset http with https
+add_filter( 'wp_get_attachment_url', 'set_url_scheme' );
+add_filter( 'wp_calculate_image_srcset', function($sources) {
+ $filtered_sources = array();
+ foreach($sources as $source_key=>$source) {
+  $source['url'] = str_replace('http://','https://', $source['url']);
+  $filtered_sources[$source_key] = $source;
+ }
+ return $filtered_sources;
+});
