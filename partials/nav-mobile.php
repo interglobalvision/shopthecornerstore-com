@@ -1,3 +1,7 @@
+<?php
+$instagram = IGV_get_option('_igv_socialmedia_instagram');
+?>
+
 <ul id="mobile-menu-list" class="padding-top-basic <?php echo is_front_page() ? 'font-nav-splash' : 'font-nav'; ?> text-align-center">
 
 <?php
@@ -28,7 +32,13 @@
     <a href="<?php echo home_url('shipping'); ?>">Shipping</a>
   </li>
 
+<?php
+  if (!empty($instagram)) {
+?>
   <li class="menu-item margin-bottom-basic">
     <a href="https://instagram.com/<?php echo $instagram; ?>"><img class="social-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/img/dist/instagram_icon.svg"></a>
   </li>
+<?php
+  }
+?>
 </ul>
