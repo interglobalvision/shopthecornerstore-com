@@ -1,18 +1,10 @@
 <ul id="menu-list" class="u-inline-list <?php echo is_front_page() ? 'font-nav-splash' : 'font-nav'; ?>">
 
-<?php
-  $shop_page = get_page_by_path('shop');
-
-  if (!empty($shop_page)) {
-?>
-
   <li class="menu-item <?php echo is_post_type_archive('product') || is_singular('product') ? 'active' : ''; ?>">
-    <a href="<?php echo get_permalink($shop_page->ID); ?>">Vintage</a>
+    <a href="<?php echo home_url('shop'); ?>">Vintage</a>
   </li>
 
 <?php
-  }
-
   $latest_editorial = get_posts('post_type=editorial&numberposts=1');
 
   if (!empty($latest_editorial)) {
