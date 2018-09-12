@@ -12,24 +12,24 @@ if( have_posts() ) {
   while( have_posts() ) {
     the_post();
 
-    $product = new WC_Product($post->ID);
-    $in_stock = $product->is_in_stock();
-    $availability = $product->get_availability();
-
+    $shopify_handle = get_post_meta($post->ID, '_igv_shopify_product_handle', true);
 ?>
-    <article <?php post_class('col col-s col-s-12 col-sm col-sm-6 col-m col-m-6 col-ml col-ml-4 col-l col-l-3 shop-product'); ?> id="product-<?php the_ID(); ?>">
+    <article
+      <?php post_class('col col-s col-s-12 col-sm col-sm-6 col-m col-m-6 col-ml col-ml-4 col-l col-l-3 shop-product'); ?>
+      id="product-<?php the_ID(); ?>"
+      <?php echo !empty($shopify_handle) ? 'data-shopify-handle="' . $shopify_handle . '"' : ''; ?>
+      data-available="true"
+    >
       <a href="<?php the_permalink() ?>">
         <div class="shop-product-title-holder">
           <h3 class="shop-product-title font-shop-title text-align-center">
             <?php the_title(); ?>
           </h3>
         </div>
-        <?php if (!$in_stock) { ?>
-          <span class="row align-center shop-product-sold">
-            <img class="shop-product-sold-icon" src="<?php echo get_stylesheet_directory_uri() . '/img/dist/teardrop.svg'; ?>">
-            <span class="shop-product-sold-text font-product-attr">&nbsp;<?php echo $availability['availability']; ?></span>
-          </span>
-        <?php } ?>
+        <span class="row align-center shop-product-sold">
+          <img class="shop-product-sold-icon" src="<?php echo get_stylesheet_directory_uri() . '/img/dist/teardrop.svg'; ?>">
+          <span class="shop-product-sold-text font-product-attr">&nbsp;SOLD</span>
+        </span>
         <?php the_post_thumbnail('col-m-6-portrait-crop'); ?>
       </a>
     </article>
