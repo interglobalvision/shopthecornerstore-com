@@ -1917,6 +1917,9 @@ body.mobile-menu-active #mobile-nav {
           filter: none;
   opacity: 1;
 }
+.shop-product[data-available="true"] .shop-product-sold {
+  display: none;
+}
 .shop-product-title-holder {
   position: absolute;
   top: 0;
