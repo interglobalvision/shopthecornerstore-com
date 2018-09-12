@@ -14,11 +14,12 @@ if( have_posts() ) {
   while( have_posts() ) {
     the_post();
 
-
     $firstPost = false;
     $lastPost = false;
+
     $nextPost = false;
     $prevPost = false;
+
     $nextLink = false;
     $prevLink = false;
 
@@ -106,7 +107,7 @@ if( have_posts() ) {
 
         <div class="slider-product-details margin-top-basic margin-bottom-basic text-align-center">
 
-          <?php //get_template_part( 'partials/product-details' ); ?>
+          <?php get_template_part( 'partials/product-details' ); ?>
 
         </div>
 
