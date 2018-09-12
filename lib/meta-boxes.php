@@ -85,7 +85,7 @@ function igv_cmb_metaboxes() {
   $editorial_group_field_id = $editorial_group->add_field( array(
     'id'          => $prefix . 'slides',
     'type'        => 'group',
-    'description' => __( 'Make sure the last slide does not have any products attached otherwise the content/credits will not show', 'cmb2' ),
+    'description' => __( '', 'cmb2' ),
     'options'     => array(
       'group_title'   => __( 'Slide {#}', 'cmb2' ), // {#} gets replaced by row number
       'add_button'    => __( 'Add Another Slide', 'cmb2' ),
