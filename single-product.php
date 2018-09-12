@@ -14,21 +14,19 @@ if( have_posts() ) {
   while( have_posts() ) {
     the_post();
 
+
     $firstPost = false;
     $lastPost = false;
     $nextPost = false;
     $prevPost = false;
-
-    $ordering  = WC()->query->get_catalog_ordering_args();
+    $nextLink = false;
+    $prevLink = false;
 
     $nextPosts = get_posts( array(
       'numberposts'   => -1,
-      'order'           => 'ASC',
-      'orderby'         => $ordering['orderby'],
+      'order'           => 'DESC',
       'post_type'       => 'product'
     ));
-
-    $nextLink = false;
 
     if (count($nextPosts) > 1) {
       $firstPost = $nextPosts[0];
@@ -37,20 +35,17 @@ if( have_posts() ) {
 
       if ($post->ID !== $nextPosts[count($nextPosts)-1]->ID) {
         foreach ($nextPosts as $p) {
-          $product = new WC_Product($p->ID);
 
-          if ($product->is_visible()) {
-            if ($n) {
-              // assign this post as the next
-              $nextPost = $p;
-              break;
-            } elseif ($p->ID === $post->ID) {
-              // assign the next post
-              $n = true;
-            } else {
-              // not there yet, keep going
-              $n = false;
-            }
+          if ($n) {
+            // assign this post as the next
+            $nextPost = $p;
+            break;
+          } elseif ($p->ID === $post->ID) {
+            // assign the next post
+            $n = true;
+          } else {
+            // not there yet, keep going
+            $n = false;
           }
         }
 
@@ -66,12 +61,9 @@ if( have_posts() ) {
 
     $prevPosts = get_posts( array(
       'numberposts'   => -1,
-      'order'           => 'DESC',
-      'orderby'         => $ordering['orderby'],
+      'order'           => 'ASC',
       'post_type'       => 'product'
     ));
-
-    $prevLink = false;
 
     if (count($prevPosts) > 1) {
       $lastPost = $prevPosts[0];
@@ -80,20 +72,17 @@ if( have_posts() ) {
 
       if ($post->ID !== $prevPosts[count($prevPosts)-1]->ID) {
         foreach ($prevPosts as $p) {
-          $product = new WC_Product($p->ID);
 
-          if ($product->is_visible()) {
-            if ($n) {
-              // assign this post as the previous
-              $prevPost = $p;
-              break;
-            } elseif ($p->ID === $post->ID) {
-              // assign the next post
-              $n = true;
-            } else {
-              // not there yet, keep going
-              $n = false;
-            }
+          if ($n) {
+            // assign this post as the previous
+            $prevPost = $p;
+            break;
+          } elseif ($p->ID === $post->ID) {
+            // assign the next post
+            $n = true;
+          } else {
+            // not there yet, keep going
+            $n = false;
           }
         }
 
@@ -107,8 +96,6 @@ if( have_posts() ) {
       }
     }
 
-    $product = new WC_Product($post->ID);
-    $product_id = $product->id;
     $slides = get_post_meta($post->ID, '_igv_slides');
     $credits = get_post_meta($post->ID, '_igv_credits_text', true);
 ?>
@@ -119,7 +106,7 @@ if( have_posts() ) {
 
         <div class="slider-product-details margin-top-basic margin-bottom-basic text-align-center">
 
-          <?php get_template_part( 'partials/product-details' ); ?>
+          <?php //get_template_part( 'partials/product-details' ); ?>
 
         </div>
 
