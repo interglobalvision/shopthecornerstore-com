@@ -1917,7 +1917,7 @@ body.mobile-menu-active #mobile-nav {
           filter: none;
   opacity: 1;
 }
-.shop-product[data-available="true"] .shop-product-sold {
+.shop-product[data-gws-available="true"] .shop-product-sold {
   display: none;
 }
 .shop-product-title-holder {

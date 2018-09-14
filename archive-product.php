@@ -12,12 +12,12 @@ if( have_posts() ) {
   while( have_posts() ) {
     the_post();
 
-    $shopify_handle = get_post_meta($post->ID, '_igv_shopify_product_handle', true);
+    $shopify_handle = get_post_meta($post->ID, '_gws_shopify_product_handle', true);
 ?>
     <article
-      <?php post_class('col col-s col-s-12 col-sm col-sm-6 col-m col-m-6 col-ml col-ml-4 col-l col-l-3 shop-product'); ?>
+      <?php post_class('col col-s col-s-12 col-sm col-sm-6 col-m col-m-6 col-ml col-ml-4 col-l col-l-3 shop-product gws-product'); ?>
       id="product-<?php the_ID(); ?>"
-      <?php echo !empty($shopify_handle) ? 'data-shopify-handle="' . $shopify_handle . '"' : ''; ?>
+      <?php echo !empty($shopify_handle) ? 'data-gws-product-handle="' . $shopify_handle . '"' : ''; ?>
       data-available="true"
     >
       <a href="<?php the_permalink() ?>">

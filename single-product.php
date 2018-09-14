@@ -99,9 +99,15 @@ if( have_posts() ) {
 
     $slides = get_post_meta($post->ID, '_igv_slides');
     $credits = get_post_meta($post->ID, '_igv_credits_text', true);
+    $shopify_handle = get_post_meta($post->ID, '_gws_product_handle', true);
 ?>
 
-    <article <?php post_class('row slider-row justify-center'); ?> id="post-<?php the_ID(); ?>">
+    <article
+      <?php post_class('gws-product row slider-row justify-center'); ?>
+      id="post-<?php the_ID(); ?>"
+      <?php echo !empty($shopify_handle) ? 'data-gws-product-handle="' . $shopify_handle . '"' : ''; ?>
+      data-gws-available="true"
+    >
 
       <div class="col col-s-12 col-l-3 col-no-margin-bottom column justify-between">
 
