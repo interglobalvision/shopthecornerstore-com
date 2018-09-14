@@ -5,7 +5,7 @@
 <div class="sold shop-product-sold shopify-product-sold margin-bottom-small font-product-price">Sold</div>
 <div class="product-content font-product-content js-product-content padding-top-small padding-bottom-small js-fix-widows"><?php the_content(); ?></div>
 
-<form class="gws-add-form cart margin-top-small" method="post" enctype='multipart/form-data'>
+<form class="gws-product-form cart margin-top-small" method="post" enctype='multipart/form-data'>
   <input type="hidden" name="variant-id" class="gws-variant-id" value="" />
-  <button type="submit" class="gws-add-button add-to-cart button-shop js-product-button">Add to Basket</button>
+  <button type="submit" class="gws-product-add add-to-cart button-shop js-product-button">Add to Basket</button>
 </form>
