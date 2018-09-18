@@ -4,15 +4,10 @@ $instagram = IGV_get_option('_igv_socialmedia_instagram');
 
 <ul id="mobile-menu-list" class="padding-top-basic <?php echo is_front_page() ? 'font-nav-splash' : 'font-nav'; ?> text-align-center">
 
-<?php
-  if ( class_exists( 'WooCommerce' ) ) {
-?>
   <li class="menu-item margin-bottom-basic <?php echo is_post_type_archive('product') || is_singular('product') ? 'active' : ''; ?>">
-    <a href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>">Vintage</a>
+    <a href="<?php echo home_url('shop'); ?>">Vintage</a>
   </li>
 <?php
-  }
-
   $latest_editorial = get_posts('post_type=editorial&numberposts=1');
 ?>
 

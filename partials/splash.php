@@ -33,9 +33,9 @@ if ($splash === 'video' && !empty($mp4) && !empty($webm)) {
   <header class="splash-header" <?php echo !empty($color) ? 'style="color:' . $color . ';"' : ''; ?>>
     <div class="container">
       <div class="row">
-        <a href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>" class="col col-s-12 col-m-8 offset-m-2 splash-logo" <?php echo !empty($color) ? 'style="fill:' . $color . ';"' : ''; ?>>
+        <div class="col col-s-12 col-m-8 offset-m-2 splash-logo" <?php echo !empty($color) ? 'style="fill:' . $color . ';"' : ''; ?>>
           <?php get_template_part('partials/logo'); ?>
-        </a>
+        </div>
 
         <nav class="col col-s-12 col-m-8 offset-m-2 splash-nav">
           <?php get_template_part('partials/nav'); ?>

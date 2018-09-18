@@ -39,9 +39,7 @@ Site = {
         _this.Editorial.Archive.init();
       }
 
-      if ($('body').hasClass('woocommerce')) {
-        _this.Shop.init();
-      }
+      _this.Shop.init();
 
       _this.bindMenuToggle();
 
@@ -147,8 +145,6 @@ Site.Shop = {
   init: function() {
     var _this = this;
 
-    this.Search.init();
-
     if ($('body').hasClass('single-product')) {
       _this.Product.init();
     }
@@ -182,40 +178,6 @@ Site.Shop = {
 
       }
     }
-  },
-
-  Search: {
-    init: function() {
-      var _this = this;
-
-      if ($('#searchform').length) {
-        if (!$('#s').val()) {
-          $('#searchform').addClass('active');
-        }
-        _this.bindFocus();
-        _this.bindFocusOut();
-      }
-    },
-
-    bindFocus: function() {
-      $('#searchform').on('click', function(e) {
-        if (!$(this).hasClass('active')) {
-          e.preventDefault();
-
-          $(this).addClass('active');
-          $('#s').focus();
-        }
-      });
-    },
-
-    bindFocusOut: function() {
-      $('#s').on('focusout', function() {
-        if(!$(this).val()) {
-          $('#searchform').removeClass('active');
-        }
-      });
-    },
-
   },
 
   Product: {

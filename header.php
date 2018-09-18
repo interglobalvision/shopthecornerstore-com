@@ -76,9 +76,9 @@
         </div>
 
         <div class="col col-s-1">
-          <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart font-product-price">
+          <a href="<?php echo home_url('cart'); ?>" class="header-cart font-product-price">
             <img src="<?php echo get_bloginfo('stylesheet_directory') . '/img/dist/cart.svg'; ?>">
-            <?php echo WC()->cart->get_cart_contents_count() ?>
+            <span class="gws-cart-counter">0</span>
           </a>
         </div>
 
