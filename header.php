@@ -75,11 +75,12 @@
           ?>
         </div>
 
-        <div class="col col-s-1">
+        <div id="header-cart-holder" class="col col-s-1">
           <a href="<?php echo home_url('cart'); ?>" class="header-cart font-product-price">
             <img src="<?php echo get_bloginfo('stylesheet_directory') . '/img/dist/cart.svg'; ?>">
             <span class="gws-cart-counter">0</span>
           </a>
+          <div id="cart-update-notice"></div>
         </div>
 
       </div>
