@@ -143,14 +143,56 @@ Site.Popup = {
 
 Site.Shop = {
   init: function() {
-    var _this = this;
-
     if ($('body').hasClass('single-product')) {
-      _this.Product.init();
+      this.Product.init();
     }
 
     if ($('#products')) {
-      _this.ToggleProducts.init();
+      this.ToggleProducts.init();
+    }
+
+    this.Cart.init();
+  },
+
+  Cart: {
+    init: function() {
+      this.$updateNotice = $('#cart-update-notice');
+
+      this.handleCartUpdate = this.handleCartUpdate.bind(this);
+
+      this.bindCartUpdate();
+    },
+
+    bindCartUpdate: function() {
+      window.addEventListener('gwsCartUpdate', this.handleCartUpdate);
+    },
+
+    handleCartUpdate: function(e) {
+      const context = e.detail.context;
+      const variant = e.detail.variant;
+
+      switch (context) {
+        case 'added':
+          this.handleItemAdded(variant);
+          break;
+        case 'removed':
+          this.handleItemRemoved();
+          break;
+        default:
+          console.log('context undefined');
+      }
+    },
+
+    handleItemAdded: function(variant) {
+      this.displayCartNotice('Item added');
+    },
+
+    handleItemRemoved: function() {
+      console.log('removed');
+    },
+
+    displayCartNotice: function(notice) {
+      this.$updateNotice.text(notice).fadeIn(300).delay(1000).fadeOut(500).text();
     }
   },
 
