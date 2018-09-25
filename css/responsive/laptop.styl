@@ -6,10 +6,6 @@ $gutter = 32px
 
 .col
   padding: 0 ($gutter / 2)
-  margin-bottom: $gutter
-
-.table-row .col
-  margin: ($gutter / 2) 0
 
 for offset in 0..($cols - 1)
   .offset-l-{offset}
@@ -213,6 +209,10 @@ $footer-height = 56px
 
 #mobile-nav
   display: none
+
+#cart-update-notice
+  right: $margin-tiny
+  margin-top: $margin-tiny
 
 // ******************************************************
 
