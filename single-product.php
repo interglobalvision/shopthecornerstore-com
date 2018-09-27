@@ -107,6 +107,7 @@ if( have_posts() ) {
       id="post-<?php the_ID(); ?>"
       <?php echo !empty($shopify_handle) ? 'data-gws-product-handle="' . $shopify_handle . '"' : ''; ?>
       data-gws-available="true"
+      data-gws-post-id="<?php the_ID(); ?>"
     >
 
       <div class="col col-s-12 col-l-3 col-no-margin-bottom column justify-between">
