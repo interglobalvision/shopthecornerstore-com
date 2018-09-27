@@ -36,6 +36,7 @@ $gutter = 14px
 .container
   margin: 0 auto
   width: 96%
+  max-width: 1320px
 
 .row
   box-sizing: border-box
@@ -99,10 +100,6 @@ $gutter = 14px
   box-sizing: border-box
   max-width: 100%
   padding: 0 ($gutter / 2)
-  margin-bottom: $gutter
-
-.table-row .col
-  margin: ($gutter / 2) 0
 
 .col.col-no-margin-bottom
   margin-bottom: 0
@@ -154,7 +151,7 @@ $color-black-soft = rgb(14, 14, 14)
 $color-white = rgb(255, 255, 255)
 $color-grey = rgb(127, 127, 127)
 
-$border-width = 2px
+$border-width = 1px
 
 $speed-transition-fast = .1s
 
@@ -335,7 +332,7 @@ img
 
 .product-content
   border: 1px solid $color-black-soft
-  border-width: 1px 0 1px
+  border-width: $border-width 0 $border-width
   overflow-y: scroll
   p
     line-height: 2
@@ -355,18 +352,10 @@ input
     padding: 1em
     max-width: 440px
 
-.table-row
-  border-bottom: $border-width solid $color-black-soft
-
 button.button-shop,
 a.button-shop,
 button.button-submit,
-.woocommerce a.button,
-.woocommerce button.button,
-.woocommerce input.button,
-.woocommerce .cart .button,
-.woocommerce .cart input.button,
-.woocommerce #respond input#submit
+.button
   appearance: none
   background: $color-black-soft
   color: $color-white
@@ -395,14 +384,6 @@ button.button-submit,
 
 button.add-to-cart
   width: 200px
-
-.woocommerce-message,
-.woocommerce-info
-  display:none
-
-#order_review
-  .table-row.cart_item
-    border-bottom: 0
 
 p
   a:link, a:visited
@@ -578,6 +559,21 @@ p
     height: auto
     margin-right: $margin-micro
 
+#header-cart-holder
+  position: relative
+
+#cart-update-notice
+  display: block
+  min-width: 90px
+  position: absolute
+  background: white
+  border: $border-width solid $color-black-soft
+  padding: .7em
+  right: $margin-tiny
+  margin-top: $margin-tiny
+  text-align: right
+  display: none
+
 #searchform
   input
     appearance: none
@@ -622,7 +618,7 @@ body.hidden-products
   background: $color-white
   transform: translateY(-100%)
   transition: transform 300ms ease-in
-  border-top: 1px solid $color-black-soft
+  border-top: $border-width solid $color-black-soft
 
 #mobile-menu-list
   display: flex
@@ -686,68 +682,26 @@ img.shop-product-sold-icon
 
 // ******************************************************
 
-// WOO BUTTONS
+// CART
 
-.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button
-  font-weight: normal
+.gws-cart
+  &[data-gws-cart-empty="false"]
+    #cart-items
+      display: block
+  &[data-gws-cart-empty="true"]
+    #cart-empty
+      display: flex
 
-// ******************************************************
+#cart-items,
+#cart-empty
+  display: none
 
-// WOO MESSAGES
-
-.woocommerce-message, .woocommerce-info
-  border-top: none
-
-// ******************************************************
-
-// WOO CART
-
-.product-quantity
-  .input-text
-    padding: 0
-    border: none
-    text-align: center
+#cart-header,
+.gws-cart-item
+  border-bottom: $border-width solid $color-black-soft
 
 #coupon_code
   flex-grow 1
-
-.cross-sells
-  display: none
-
-.woocommerce table.shop_table td
-  padding: $margin-tiny
-
-.woocommerce .cart-collaterals .cart_totals, .woocommerce-page .cart-collaterals .cart_totals
-  width: 100%
-
-.woocommerce a.remove
-  color: $color-black-soft !important
-
-.woocommerce a.remove:hover
-  color: $color-black-soft !important
-  background: transparent
-
-#add_payment_method table.cart img, .woocommerce-cart table.cart img, .woocommerce-checkout table.cart img
-  width: 100px
-
-.woocommerce table.shop_table
-  border-radius: 0
-  border: solid $color-black-soft
-  border-width: $border-width 0
-  th
-    padding: $margin-small 0
-  td
-    padding: $margin-small 0
-    border: solid $color-black-soft
-    border-width: $border-width 0 0
-
-.woocommerce-cart .cart-collaterals .cart_totals tr td,
-.woocommerce-cart .cart-collaterals .cart_totals tr th
-  border: solid $color-black-soft
-  border-width: $border-width 0 0
-
-.woocommerce-shipping-calculator
-  text-align: left
 
 // ******************************************************
 

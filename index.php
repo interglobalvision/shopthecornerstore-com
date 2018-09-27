@@ -20,9 +20,9 @@ if( have_posts() ) {
     $images = get_post_meta($post->ID, '_igv_post_images', true);
 ?>
 
-      <article <?php post_class('journal-post col'); ?> id="post-<?php the_ID(); ?>">
+      <article <?php post_class('journal-post col margin-bottom-small'); ?> id="post-<?php the_ID(); ?>">
 
-<?php 
+<?php
     if (!empty($images)) {
 
       foreach($images as $image) {
@@ -35,15 +35,15 @@ if( have_posts() ) {
     if (!empty($title)) {
 ?>
         <h2 class="font-post-title margin-bottom-tiny"><?php echo $title; ?></h2>
-<?php 
-    } 
-    
+<?php
+    }
+
     $content = get_the_content();
     if (!empty($content)) {
 ?>
         <div class="font-post-content margin-bottom-tiny"><?php echo apply_filters('the_content', $content); ?></div>
-<?php 
-    } 
+<?php
+    }
 ?>
         <div class="post-date padding-bottom-micro font-post-meta"><?php echo get_the_date('m/d/Y'); ?></div>
 
@@ -54,7 +54,7 @@ if( have_posts() ) {
 ?>
     </div>
 
-<?php 
+<?php
 } else {
 ?>
     <article class="u-alert journal-post col col-s-12"><?php _e('Sorry, no posts matched your criteria :{'); ?></article>

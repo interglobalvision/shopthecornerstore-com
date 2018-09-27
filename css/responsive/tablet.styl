@@ -3,10 +3,6 @@ $gutter = 24px
 
 .col
   padding: 0 ($gutter / 2)
-  margin-bottom: $gutter
-
-.table-row .col
-  margin: ($gutter / 2) 0
 
 for offset in 0..($cols - 1)
   .offset-m-{offset}
@@ -173,6 +169,10 @@ $footer-height = 0
   img
     width: $margin-small
     margin-right: $margin-micro
+
+#cart-update-notice
+  right: $margin-tiny
+  margin-top: $margin-tiny
 
 #header-logo
   svg

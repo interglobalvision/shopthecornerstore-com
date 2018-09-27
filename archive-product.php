@@ -15,7 +15,7 @@ if( have_posts() ) {
     $shopify_handle = get_post_meta($post->ID, '_gws_product_handle', true);
 ?>
     <article
-      <?php post_class('col col-s col-s-12 col-sm col-sm-6 col-m col-m-6 col-ml col-ml-4 col-l col-l-3 shop-product gws-product'); ?>
+      <?php post_class('col col-s col-s-12 col-sm col-sm-6 col-m col-m-6 col-ml col-ml-4 col-l col-l-3 shop-product gws-product margin-bottom-small'); ?>
       id="product-<?php the_ID(); ?>"
       <?php echo !empty($shopify_handle) ? 'data-gws-product-handle="' . $shopify_handle . '"' : ''; ?>
       data-gws-available="true"
