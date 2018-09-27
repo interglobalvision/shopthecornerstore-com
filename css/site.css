@@ -1016,6 +1016,7 @@ th {
 .container {
   margin: 0 auto;
   width: 96%;
+  max-width: 1320px;
 }
 .row {
   box-sizing: border-box;
@@ -2532,9 +2533,6 @@ p.form-row .input-checkbox {
     display: -ms-flexbox;
     display: flex;
   }
-  .container {
-    width: 1150px;
-  }
   .col {
     padding: 0 16px;
   }
@@ -2812,9 +2810,6 @@ p.form-row .input-checkbox {
   }
 }
 @media screen and (min-width: 1320px) {
-  .container {
-    width: 1320px;
-  }
   .col {
     padding: 0 24px;
   }
