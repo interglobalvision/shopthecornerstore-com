@@ -10,7 +10,7 @@ if (!empty($mailchimp_url)) {
     <span id="newsletter-popup-title" class="font-uppercase js-fix-widows">Sign up to our mailing list to be the first to receive weekly updates on new items</span>
     <form class="newsletter-form margin-top-tiny">
       <input class="newsletter-email margin-bottom-tiny" type="email" />
-      <div><button type="submit" class="button-submit">Subscribe</button></div>
+      <div><button type="submit" class="button">Subscribe</button></div>
       <span class="newsletter-reply margin-top-tiny"></span>
     </form>
     <div id="cookie-policy" class="margin-top-tiny">

@@ -7,5 +7,5 @@
 
 <form class="gws-product-form cart margin-top-small" method="post" enctype='multipart/form-data'>
   <input type="hidden" name="variant-id" class="gws-variant-id" value="" />
-  <button type="submit" class="gws-product-add add-to-cart button-shop js-product-button">Add to Basket</button>
+  <button type="submit" class="gws-product-add add-to-cart button js-product-button">Add to Basket</button>
 </form>

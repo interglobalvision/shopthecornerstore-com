@@ -26,7 +26,7 @@ if( have_posts() ) {
         <span>Sign up to our newsletter to receive weekly updates on new items:</span>
         <form class="newsletter-form margin-top-micro">
           <input class="newsletter-email margin-bottom-tiny" type="email" />
-          <button type="submit" class="button-submit">Subscribe</button>
+          <button type="submit" class="button">Subscribe</button>
           <p class="newsletter-reply margin-top-tiny"></p>
         </form>
       </div>
