@@ -209,10 +209,10 @@ Site.Shop = {
           if($('body').hasClass('hidden-products')) {
             // show sold out products
             $('body').removeClass('hidden-products');
-            $('.outofstock').fadeIn(300)
+            $('.shop-product[data-gws-available="false"]').fadeIn(300);
           } else {
             // hide sold out products
-            $('.outofstock').fadeOut(300, function() {
+            $('.shop-product[data-gws-available="false"]').fadeOut(300, function() {
               $('body').addClass('hidden-products');
             });
           }
