@@ -90,9 +90,6 @@ $gutter = 14px
 .align-content-end
   align-content: flex-end
 
-.flex-grow
-  flex-grow: 1
-
 // COLUMN SIZES & OFFSETS
 
 .col
@@ -100,13 +97,13 @@ $gutter = 14px
   box-sizing: border-box
   max-width: 100%
   padding: 0 ($gutter / 2)
-
-.col.col-no-margin-bottom
-  margin-bottom: 0
-
-.col.col-no-gutter
-  padding-left: 0
-  padding-right: 0
+  &.col-no-margin-bottom
+    margin-bottom: 0
+  &.col-no-gutter
+    padding-left: 0
+    padding-right: 0
+  &.flex-grow
+    flex-grow: 1
 
 for offset in 0..($cols - 1)
   .offset-s-{offset}
@@ -352,10 +349,11 @@ input
     padding: 1em
     max-width: 440px
 
-button.button-shop,
-a.button-shop,
-button.button-submit,
-.button
+.button,
+button.button,
+a.button,
+a:link.button,
+a:visited.button
   appearance: none
   background: $color-black-soft
   color: $color-white
@@ -685,6 +683,8 @@ img.shop-product-sold-icon
 // CART
 
 .gws-cart
+  width: 100%
+  margin: 0 auto
   &[data-gws-cart-empty="false"]
     #cart-items
       display: block
@@ -702,6 +702,15 @@ img.shop-product-sold-icon
 
 #coupon_code
   flex-grow 1
+
+.gws-cart-thumb
+  height: 100px
+  width: 100px
+  background-size: cover
+  background-position: center
+
+.gws-cart-remove
+  padding: $margin-tiny
 
 // ******************************************************
 
