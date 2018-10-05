@@ -17,18 +17,25 @@ if( have_posts() ) {
     </div>
 
     <div id="cart-items" class="gws-cart-items">
-      <div class="row gws-cart-item padding-bottom-tiny margin-bottom-tiny">
-        <div class="col col-s-1 row justify-center align-center">
-          <div class="col col-no-gutter col-no-margin-bottom">
-            <a class="gws-cart-remove u-pointer">&times;</a>
-          </div>
+      <div class="row gws-cart-item padding-bottom-tiny margin-bottom-tiny align-center">
+        <div class="col text-align-center">
+          <a class="gws-cart-remove u-pointer">&times;</a>
         </div>
 
-        <div class="col col-s-3 col-m-2 col-l-2 gws-cart-thumb"></div>
+        <div class="col"><div class="gws-cart-thumb"></div></div>
 
-        <div class="col col-s-6 col-m-7 gws-cart-title"></div>
+        <div class="col flex-grow gws-cart-title"></div>
 
-        <div class="col col-s-2 gws-cart-subtotal"></div>
+        <div class="col text-align-right">$ <span class="gws-cart-item-subtotal"></span></div>
+      </div>
+    </div>
+
+    <div id="cart-footer" class="row padding-top-tiny text-align-right">
+      <div class="col col-s-12 padding-bottom-small">
+        SUBTOTAL: $ <span id="gws-cart-subtotal"></span>
+      </div>
+      <div class="col col-s-12 padding-bottom-small">
+        <a href="" class="button gws-checkout-link">Proceed to Checkout</a>
       </div>
     </div>
 
