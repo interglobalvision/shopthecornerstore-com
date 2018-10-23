@@ -379,6 +379,10 @@ a:visited.button
     opacity: 1
     background: $color-grey
     border-color: $color-grey
+    &:hover
+      font-weight: normal
+      background: $color-grey
+      color: $color-white
 
 button.add-to-cart
   width: 200px
@@ -677,6 +681,31 @@ img.shop-product-sold-icon
 .shop-product-sold-text
   opacity: 0
   transition: opacity $speed-transition-fast
+
+// ******************************************************
+
+// SINGLE PRODUCT
+.gws-product
+  .product-price,
+  .product-sold,
+  .add-to-cart,
+  .item-in-cart
+    display: none
+  &[data-gws-in-cart="true"]
+    .item-in-cart
+      display: inline-block
+  &[data-gws-in-cart="false"]
+    .add-to-cart
+      display: inline-block
+  &[data-gws-available="true"]
+    .product-price
+      display: block
+  &[data-gws-available="false"]
+    .add-to-cart,
+    .item-in-cart
+      display: none
+    .product-sold
+      display: block
 
 // ******************************************************
 

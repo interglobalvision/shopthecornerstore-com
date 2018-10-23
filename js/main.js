@@ -178,6 +178,9 @@ Site.Shop = {
         case 'removed':
           this.handleItemRemoved();
           break;
+        case 'incart':
+          this.handleItemAdded();
+          break;
         default:
           console.log('context undefined');
       }
