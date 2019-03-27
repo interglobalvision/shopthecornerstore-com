@@ -3,12 +3,14 @@ get_header();
 ?>
 
 <!-- main content -->
-
-<section id="main-content">
-  <h1>Not found</h1>
-  <p>:(</p>
-<!-- end main-content -->
-</section>
+<main id="main-content" class="container">
+  <section id="main-content" class="row">
+    <div class="col">
+      <h1>Not found</h1>
+    </div>
+  <!-- end main-content -->
+  </section>
+</main>
 
 <?php
 get_footer();
