@@ -33,10 +33,6 @@ if ($splash === 'video' && !empty($mp4) && !empty($webm)) {
   <header class="splash-header" <?php echo !empty($color) ? 'style="color:' . $color . ';"' : ''; ?>>
     <div class="container">
       <div class="row">
-        <div class="col col-s-12 col-m-8 offset-m-2 splash-logo margin-bottom-small" <?php echo !empty($color) ? 'style="fill:' . $color . ';"' : ''; ?>>
-          <?php get_template_part('partials/logo'); ?>
-        </div>
-
         <nav class="col col-s-12 col-m-8 offset-m-2 splash-nav">
           <?php get_template_part('partials/nav'); ?>
         </nav>

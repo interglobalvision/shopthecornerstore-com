@@ -4,19 +4,12 @@ $instagram = IGV_get_option('_igv_socialmedia_instagram');
 
 <ul id="mobile-menu-list" class="padding-top-basic <?php echo is_front_page() ? 'font-nav-splash' : 'font-nav'; ?> text-align-center">
 
-  <li class="menu-item margin-bottom-basic <?php echo is_post_type_archive('product') || is_singular('product') ? 'active' : ''; ?>">
-    <a href="<?php echo home_url('shop'); ?>">Vintage</a>
-  </li>
-<?php
-  $latest_editorial = get_posts('post_type=editorial&numberposts=1');
-?>
-
-  <li class="menu-item margin-bottom-basic <?php echo $post->ID === $latest_editorial[0]->ID ? 'active' : ''; ?>">
-    <a href="<?php echo get_permalink($latest_editorial[0]->ID); ?>">Collection</a>
+  <li class="menu-item margin-bottom-basic <?php echo is_post_type_archive('product') || (is_singular('product') && has_category('corner-store')) ? 'active' : ''; ?>">
+    <a href="<?php echo home_url('shop'); ?>">The Corner Store</a>
   </li>
 
-  <li class="menu-item margin-bottom-basic <?php echo is_home() ? 'active' : ''; ?>">
-    <a href="<?php echo get_permalink( get_option('page_for_posts' ) ); ?>">Journal</a>
+  <li class="menu-item margin-bottom-basic <?php echo is_page('stacey-nishimoto') || (is_singular('product') && has_category('stacey-nishimoto')) ? 'active' : ''; ?>">
+    <a href="<?php echo home_url('stacey-nishimoto'); ?>">Stacey Nishimoto</a>
   </li>
 
   <li class="menu-item margin-bottom-basic <?php echo is_page('contact') ? 'active' : ''; ?>">
