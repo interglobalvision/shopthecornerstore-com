@@ -305,8 +305,11 @@ Site.StaceyNishimotoCatalog = {
   init: function() {
     var _this = this;
 
-    if ($('.swiper-container').length) {
+    if ($('.swiper-slide').length > 1) {
       _this.initSwiper();
+    } else {
+      $('.swiper-container').css('visibility','visible');
+      $('.slider-button').addClass('u-visuallyhidden');
     }
   },
 
