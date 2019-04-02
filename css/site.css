@@ -1856,14 +1856,14 @@ p a:visited {
   text-align: center;
 }
 #toggle-sold-icon {
-  fill: #0e0e0e;
+  fill: #fff;
   stroke: #0e0e0e;
   stroke-width: 10px;
   height: 18px;
   width: 18px;
 }
 body.hidden-products #toggle-sold-icon {
-  fill: #fff;
+  fill: #0e0e0e;
 }
 .toggle-menu-icon {
   width: 100%;
