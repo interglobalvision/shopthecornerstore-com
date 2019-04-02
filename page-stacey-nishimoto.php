@@ -8,7 +8,7 @@ get_header();
 <main id="main-content" class="container">
 
   <!-- main posts loop -->
-  <section id="products-stacey-nishimoto" class="margin-bottom-tiny row slider-row justify-center">
+  <section id="products-stacey-nishimoto" class="row slider-row justify-center">
 <?php
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $args_shop_query = array(

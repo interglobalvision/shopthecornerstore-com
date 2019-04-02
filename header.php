@@ -37,7 +37,7 @@
 
   <header id="header" class="padding-top-tiny padding-bottom-tiny font-nav">
     <div class="container">
-      <div class="row align-center">
+      <div class="row align-center padding-top-micro">
 
         <nav id="main-nav" class="col col-no-gutter flex-grow only-desktop row">
           <div class="col">

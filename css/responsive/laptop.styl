@@ -26,8 +26,8 @@ $margin-basic = ($gutter * 2)
 $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
-$header-height = 64px
-$footer-height = 56px
+$header-height = 60px
+$footer-height = 49px
 
 // ******************************************************
 
@@ -75,7 +75,7 @@ $footer-height = 56px
 
 #main-content
   min-height: calc('100vh - ' + ($header-height + $footer-height + $margin-small))
-  margin-top: calc($header-height + $margin-small)
+  margin-top: ($header-height + $margin-small)
 
 .pagination-button
   padding-left: $margin-small
@@ -226,7 +226,7 @@ $footer-height = 56px
 // SINGLE EDITORIAL
 
 .set-swiper-height
-  height: calc('100vh - ' + ($header-height + $footer-height))
+  height: calc('100vh - ' + ($header-height + $footer-height + $margin-small))
 
 .slider-row
   flex-flow: row wrap
@@ -253,4 +253,4 @@ $footer-height = 56px
 // CART
 
 .gws-cart
-  width: 50% 
+  width: 50%

@@ -1506,8 +1506,8 @@ html {
   color: #0e0e0e;
 }
 #main-content {
-  min-height: calc(100vh - 60px);
-  margin-top: calc(60px);
+  min-height: calc(100vh - 84px);
+  margin-top: calc(49px);
 }
 img {
   max-width: 100%;
@@ -1871,9 +1871,9 @@ body.hidden-products #toggle-sold-icon {
 }
 #mobile-nav {
   position: fixed;
-  height: calc(100vh - 46px);
+  height: calc(100vh - 35px);
   width: 100vw;
-  top: 46px;
+  top: 35px;
   left: 0;
   z-index: 100;
   background: #fff;
@@ -2023,7 +2023,7 @@ img.shop-product-sold-icon {
   padding: 7px;
 }
 #posts-archive-editorial {
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 84px);
 }
 #archive-editorial-titles {
   margin-left: 28px;
@@ -2308,8 +2308,8 @@ p.form-row .input-checkbox {
     font-size: 11px;
   }
   #main-content {
-    min-height: calc(100vh - 80px);
-    margin-top: calc(80px);
+    min-height: calc(100vh - 124px);
+    margin-top: 74px;
   }
   .pagination-button {
     padding-left: 24px;
@@ -2419,14 +2419,14 @@ p.form-row .input-checkbox {
     width: 180px;
   }
   #mobile-nav {
-    height: calc(100vh - 56px);
-    top: 56px;
+    height: calc(100vh - 50px);
+    top: 50px;
   }
   .journal-post {
     width: 50%;
   }
   #posts-archive-editorial {
-    min-height: calc(100vh - 80px);
+    min-height: calc(100vh - 124px);
   }
   #archive-editorial-titles {
     margin-left: 48px;
@@ -2440,7 +2440,7 @@ p.form-row .input-checkbox {
     display: none;
   }
   .set-swiper-height {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 124px);
   }
   body.single-editorial .slider-product-details {
     display: none;
@@ -2732,8 +2732,8 @@ p.form-row .input-checkbox {
     font-size: 12px;
   }
   #main-content {
-    min-height: calc(100vh - 152px);
-    margin-top: calc(96px);
+    min-height: calc(100vh - 141px);
+    margin-top: 92px;
   }
   .pagination-button {
     padding-left: 32px;
@@ -2847,10 +2847,10 @@ p.form-row .input-checkbox {
     margin-left: 64px;
   }
   #posts-archive-editorial {
-    min-height: calc(100vh - 120px);
+    min-height: calc(100vh - 109px);
   }
   .set-swiper-height {
-    height: calc(100vh - 120px);
+    height: calc(100vh - 141px);
   }
   .slider-row {
     -ms-flex-flow: row wrap;
@@ -2874,8 +2874,8 @@ p.form-row .input-checkbox {
     padding: 0 24px;
   }
   #main-content {
-    min-height: calc(100vh - 200px);
-    margin-top: calc(128px);
+    min-height: calc(100vh - 194px);
+    margin-top: 129px;
   }
   .pagination-button {
     padding-left: 48px;
@@ -2974,10 +2974,10 @@ p.form-row .input-checkbox {
     margin-left: 96px;
   }
   #posts-archive-editorial {
-    min-height: calc(100vh - 200px);
+    min-height: calc(100vh - 194px);
   }
   .set-swiper-height {
-    height: calc(100vh - 200px);
+    height: calc(100vh - 194px);
   }
   #newsletter-popup-content {
     padding: 48px;
