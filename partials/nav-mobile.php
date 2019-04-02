@@ -4,6 +4,10 @@ $instagram = IGV_get_option('_igv_socialmedia_instagram');
 
 <ul id="mobile-menu-list" class="padding-top-basic <?php echo is_front_page() ? 'font-nav-splash' : 'font-nav'; ?> text-align-center">
 
+  <li class="menu-item margin-bottom-basic">
+    <a href="<?php echo home_url(); ?>">Home</a>
+  </li>
+
   <li class="menu-item margin-bottom-basic <?php echo is_post_type_archive('product') || (is_singular('product') && has_category('corner-store')) ? 'active' : ''; ?>">
     <a href="<?php echo home_url('shop'); ?>">The Corner Store</a>
   </li>
