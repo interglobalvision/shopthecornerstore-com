@@ -3,13 +3,13 @@
 // https://developer.wordpress.org/resource/dashicons/
 function add_menu_icons_styles(){
 ?>
- 
+
 <style>
 #menu-posts-editorial .dashicons-admin-post:before {
     content: '\f319';
 }
 </style>
- 
+
 <?php
 }
 add_action( 'admin_head', 'add_menu_icons_styles' );
@@ -20,7 +20,7 @@ add_action( 'init', 'register_cpt_editorial' );
 
 function register_cpt_editorial() {
 
-  $labels = array( 
+  $labels = array(
     'name' => _x( 'Editorials', 'editorial' ),
     'singular_name' => _x( 'Editorial', 'editorial' ),
     'add_new' => _x( 'Add New', 'editorial' ),
@@ -35,17 +35,17 @@ function register_cpt_editorial() {
     'menu_name' => _x( 'Editorials', 'editorial' ),
   );
 
-  $args = array( 
+  $args = array(
     'labels' => $labels,
     'hierarchical' => false,
-    
+
     'supports' => array( 'title', 'editor', 'thumbnail' ),
-    
+
     'public' => true,
     'show_ui' => true,
     'show_in_menu' => true,
     'menu_position' => 5,
-    
+
     'show_in_nav_menus' => true,
     'publicly_queryable' => true,
     'exclude_from_search' => false,
@@ -57,4 +57,36 @@ function register_cpt_editorial() {
   );
 
   register_post_type( 'editorial', $args );
+}
+
+
+add_action( 'init', 'create_product_line_tax' );
+function create_product_line_tax() {
+  if (post_type_exists('product')) {
+  	register_taxonomy(
+  		'line',
+  		'product',
+  		array(
+  			'label' => __( 'Product Line' ),
+  			'rewrite' => array( 'slug' => 'line' ),
+  			'hierarchical' => true,
+  		)
+  	);
+
+    wp_insert_term(
+      'Stacey Nishimoto', // the term
+      'line', // the taxonomy
+      array(
+        'slug' => 'stacey-nishimoto',
+      )
+    );
+
+    wp_insert_term(
+      'Corner Store', // the term
+      'line', // the taxonomy
+      array(
+        'slug' => 'corner-store',
+      )
+    );
+  }
 }

@@ -35,54 +35,42 @@
     <?php get_template_part('partials/nav-mobile'); ?>
   </nav>
 
-  <header id="header" class="padding-top-tiny padding-bottom-tiny">
+  <header id="header" class="padding-top-tiny padding-bottom-tiny font-nav">
     <div class="container">
       <div class="row align-center">
 
-        <nav id="main-nav" class="col col-l-4 only-desktop">
-          <?php get_template_part('partials/nav'); ?>
+        <nav id="main-nav" class="col col-no-gutter flex-grow only-desktop row">
+          <div class="col <?php echo is_post_type_archive('product') || (is_singular('product') && has_category('vintage')) ? 'active' : ''; ?>">
+            <a href="<?php echo home_url('shop'); ?>">The Corner Store</a>
+          </div>
+
+          <div class="col <?php echo is_page('stacey-nishimoto') || (is_singular('product') && !has_category('stacey-nishimoto')) ? 'active' : ''; ?>">
+            <a href="<?php echo home_url('stacey-nishimoto'); ?>">Stacey Nishimoto</a>
+          </div>
         </nav>
 
-        <div class="col col-s-1 col-m-2 only-mobile">
+        <div class="col flex-grow only-mobile">
           <span id="toggle-menu" class="u-pointer">
             <?php echo '<img class="toggle-menu-icon" src="' . get_bloginfo('stylesheet_directory') . '/img/dist/hamburger.svg">'; ?>
           </span>
         </div>
 
-        <div class="col col-s-2 col-l-1 toggle-sold-holder">
-        <?php
-          if (is_post_type_archive('product')) {
-        ?>
-          <span class="toggle-sold u-pointer"><?php get_template_part('partials/teardrop'); ?></span>
-        <?php
-          }
-        ?>
-        </div>
+        <div class="col row">
+          <?php if (is_post_type_archive('product') || is_page('shop')) { ?>
+          <div class="col">
+            <span class="toggle-sold u-pointer"><?php get_template_part('partials/teardrop'); ?></span>
+          </div>
+          <?php } ?>
 
-        <div id="header-logo" class="col col-s-6 col-m-4 col-l-2">
-          <a href="<?php echo home_url(); ?>">
-            <?php echo '<img src="' . get_bloginfo('stylesheet_directory') . '/img/dist/logo.svg">'; ?>
-          </a>
-        </div>
+          <div id="header-cart-holder" class="col col-no-gutter">
+            <a href="<?php echo home_url('cart'); ?>" class="header-cart font-product-price">
+              <img src="<?php echo get_bloginfo('stylesheet_directory') . '/img/dist/cart.svg'; ?>">
+              <span class="gws-cart-counter">0</span>
+            </a>
+            <div id="cart-update-notice"></div>
+          </div>
 
-        <div class="col col-s-2 col-m-3 col-l-4">
-          <?php
-            if (is_singular('editorial')) {
-          ?>
-            <h1 id="editorial-title"><?php the_title(); ?></h1>
-          <?php
-            }
-          ?>
         </div>
-
-        <div id="header-cart-holder" class="col col-s-1">
-          <a href="<?php echo home_url('cart'); ?>" class="header-cart font-product-price">
-            <img src="<?php echo get_bloginfo('stylesheet_directory') . '/img/dist/cart.svg'; ?>">
-            <span class="gws-cart-counter">0</span>
-          </a>
-          <div id="cart-update-notice"></div>
-        </div>
-
       </div>
     </div>
   </header>
