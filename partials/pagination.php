@@ -1,7 +1,7 @@
 <?php
 $previous = get_previous_posts_link('<img src="' . get_bloginfo('stylesheet_directory') . '/img/dist/arrow_left.svg">');
 $max_pages = 0;
-if ($shop_query) {
+if (isset($shop_query)) {
   $max_pages = $shop_query->max_num_pages;
 }
 $next = get_next_posts_link('<img src="'. get_bloginfo('stylesheet_directory') . '/img/dist/arrow_right.svg">', $max_pages);

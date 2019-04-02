@@ -57,9 +57,9 @@ if ( $shop_query->have_posts() ) {
 ?>
   </section>
 
-  <?php include( locate_template( 'partials/pagination.php', false, false ) ); ?>
+<?php include( locate_template( 'partials/pagination.php', false, false ) ); ?>
 
-  <?php wp_reset_postdata(); ?>
+<?php wp_reset_postdata(); ?>
 
 <!-- end main-content -->
 
