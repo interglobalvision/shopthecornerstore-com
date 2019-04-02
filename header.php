@@ -40,6 +40,10 @@
       <div class="row align-center">
 
         <nav id="main-nav" class="col col-no-gutter flex-grow only-desktop row">
+          <div class="col">
+            <a href="<?php echo home_url(); ?>">Home</a>
+          </div>
+
           <div class="col <?php echo is_post_type_archive('product') || (is_singular('product') && has_category('vintage')) ? 'active' : ''; ?>">
             <a href="<?php echo home_url('shop'); ?>">The Corner Store</a>
           </div>
