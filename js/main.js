@@ -39,6 +39,10 @@ Site = {
         _this.Editorial.Archive.init();
       }
 
+      if ($('#products-stacey-nishimoto').length) {
+        _this.StaceyNishimotoCatalog.init();
+      }
+
       _this.Shop.init();
 
       _this.bindMenuToggle();
@@ -296,6 +300,34 @@ Site.Shop = {
     }
   },
 };
+
+Site.StaceyNishimotoCatalog = {
+  init: function() {
+    var _this = this;
+
+    if ($('.swiper-container').length) {
+      _this.initSwiper();
+    }
+  },
+
+  initSwiper: function() {
+    var _this = this;
+
+    _this.swiper = new Swiper('.swiper-container', {
+      speed: 800,
+      spaceBetween: 0,
+      setWrapperSize: true,
+      slidesPerView: 1,
+      nextButton: '.swiper-next',
+      prevButton: '.swiper-prev',
+      loop: true,
+      onInit: function(swiper) {
+        // show slider
+        $('.swiper-container').css('visibility','visible');
+      }
+    });
+  }
+}
 
 Site.Journal = {
   init: function() {
