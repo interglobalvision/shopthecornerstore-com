@@ -11,7 +11,7 @@ get_header();
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $args_shop_query = array(
 	'post_type' => array('product'),
-	'post_status' => array('published'),
+	'post_status' => array('publish'),
 	'order' => 'DESC',
   'paged' => $paged,
 	'tax_query' => array(
