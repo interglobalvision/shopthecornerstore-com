@@ -56,7 +56,7 @@
         </div>
 
         <div class="col row">
-          <?php if (is_post_type_archive('product')) { ?>
+          <?php if (is_post_type_archive('product') || is_page('shop')) { ?>
           <div class="col">
             <span class="toggle-sold u-pointer"><?php get_template_part('partials/teardrop'); ?></span>
           </div>
