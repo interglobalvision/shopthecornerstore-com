@@ -4,6 +4,10 @@ $gutter = 24px
 .col
   padding: 0 ($gutter / 2)
 
+.col-m-0
+  flex-basis: 0
+  max-width: 0
+
 for offset in 0..($cols - 1)
   .offset-m-{offset}
     margin-left: ( 100% / $cols ) * offset
@@ -228,6 +232,12 @@ body.single-editorial
 .shop-product-sold
   left: $margin-tiny
   padding: $margin-tiny
+
+#products-stacey-nishimoto
+  .swiper-wrapper
+    display: flex
+  .swiper-slide
+    margin-bottom: none
 
 // ******************************************************
 

@@ -4,6 +4,10 @@ $gutter = 32px
 .col
   padding: 0 ($gutter / 2)
 
+.col-l-0
+  flex-basis: 0
+  max-width: 0
+
 for offset in 0..($cols - 1)
   .offset-l-{offset}
     margin-left: ( 100% / $cols ) * offset

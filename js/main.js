@@ -41,6 +41,10 @@ Site = {
 
       if ($('#products-stacey-nishimoto').length) {
         _this.StaceyNishimotoCatalog.init();
+
+        $(window).bind('resizeEnd', function() {
+          _this.StaceyNishimotoCatalog.init();
+        });
       }
 
       _this.Shop.init();
@@ -305,11 +309,15 @@ Site.StaceyNishimotoCatalog = {
   init: function() {
     var _this = this;
 
-    if ($('.swiper-slide').length > 1) {
+    if ($('.swiper-slide').length > 1 && $(window).width() >= 786) {
+      $('.slider-button').removeClass('u-visuallyhidden');
       _this.initSwiper();
     } else {
       $('.swiper-container').css('visibility','visible');
       $('.slider-button').addClass('u-visuallyhidden');
+      if (_this.swiper !== undefined) {
+        _this.swiper.destroy(true,true);
+      }
     }
   },
 

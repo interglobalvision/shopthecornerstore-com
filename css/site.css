@@ -1141,6 +1141,12 @@ th {
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
+.col-s-0 {
+  -ms-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+  max-width: 0;
+}
 .offset-s-0 {
   margin-left: 0%;
 }
@@ -1534,6 +1540,12 @@ img {
 }
 .swiper-container {
   visibility: hidden;
+}
+#products-stacey-nishimoto .swiper-wrapper {
+  display: block;
+}
+#products-stacey-nishimoto .swiper-slide {
+  margin-bottom: 14px;
 }
 input {
   max-width: 100%;
@@ -2196,6 +2208,12 @@ p.form-row .input-checkbox {
   .col {
     padding: 0 12px;
   }
+  .col-m-0 {
+    -ms-flex-basis: 0;
+    -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+    max-width: 0;
+  }
   .offset-m-0 {
     margin-left: 0%;
   }
@@ -2453,6 +2471,14 @@ p.form-row .input-checkbox {
     left: 12px;
     padding: 12px;
   }
+  #products-stacey-nishimoto .swiper-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #products-stacey-nishimoto .swiper-slide {
+    margin-bottom: none;
+  }
   .social-icon {
     width: 16px;
   }
@@ -2592,6 +2618,12 @@ p.form-row .input-checkbox {
   }
   .col {
     padding: 0 16px;
+  }
+  .col-l-0 {
+    -ms-flex-basis: 0;
+    -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+    max-width: 0;
   }
   .offset-l-0 {
     margin-left: 0%;

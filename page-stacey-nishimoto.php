@@ -29,12 +29,12 @@ $shop_query = new WP_Query( $args_shop_query );
 
 if ( $shop_query->have_posts() ) {
 ?>
-    <div class="col col-s-1 col-no-gutter row align-center justify-center">
+    <div class="col col-s-0 col-m-1 col-no-gutter row align-center justify-center">
       <a class="slider-button swiper-prev u-pointer">
         <?php echo '<img src="'. get_bloginfo('stylesheet_directory') . '/img/dist/catalog_arrow_left.svg">'; ?>
       </a>
     </div>
-    <div class="col col-s-10 col-l-9 col-no-margin-bottom">
+    <div class="col col-s-12 col-m-10 col-l-9 col-no-margin-bottom">
       <!-- Slider main container -->
       <div class="swiper-container set-swiper-height">
         <div class="swiper-wrapper align-center">
@@ -68,7 +68,7 @@ if ( $shop_query->have_posts() ) {
         </div>
       </div>
     </div>
-    <div class="col col-s-1 col-no-gutter row align-center justify-center">
+    <div class="col col-s-0 col-m-1 col-no-gutter row align-center justify-center">
       <a class="slider-button swiper-next u-pointer">
         <?php echo '<img src="'. get_bloginfo('stylesheet_directory') . '/img/dist/catalog_arrow_right.svg">'; ?>
       </a>

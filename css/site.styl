@@ -105,6 +105,10 @@ $gutter = 14px
   &.flex-grow
     flex-grow: 1
 
+.col-s-0
+  flex-basis: 0
+  max-width: 0
+
 for offset in 0..($cols - 1)
   .offset-s-{offset}
     margin-left: ( 100% / $cols ) * offset
@@ -340,6 +344,12 @@ img
 
 .swiper-container
   visibility: hidden
+
+#products-stacey-nishimoto
+  .swiper-wrapper
+    display: block
+  .swiper-slide
+    margin-bottom: $margin-small
 
 input
   max-width: 100%
